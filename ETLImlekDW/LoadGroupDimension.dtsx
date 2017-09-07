@@ -1,0 +1,629 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/30/2017 2:48:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INF-SAGASUP"
+  DTS:CreatorName="IMLEK\saga_support"
+  DTS:DTSID="{8DA65534-5714-4628-8361-A5D5198C6048}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadGroupDimension"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{BFE1DB7E-BA75-44BA-AB89-63DB421AD8C4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{88C53BD5-5C7C-46E0-AB21-F4A66ABD4665}"
+      DTS:ObjectName="ExtractDateFrom">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">8/30/2017 3:13:31 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{BBBB8DA7-14EA-42D5-96EE-329DA418A1DF}"
+      DTS:ObjectName="ExtractDateTo">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">8/31/2017 8:32:22 PM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F659EA0-F5F7-46BD-AD5C-424F61DA9724}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51BC0294-0D94-44F8-808F-F7E5C260434D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{80E1D19B-C696-4E38-A229-CF1A4E2B7CD4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="End">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{414C9EED-3040-4A0B-A8EF-DF5A3C366637}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndBatchAudit">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9387D498-D945-4C2F-9E7F-8826A8AD5D06}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractDate">
+      <DTS:VariableValue
+        DTS:DataType="7">9/1/2017 11:46:04 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E23BECCC-4124-42F3-B1AA-3B5A1041B644}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract Dimension"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{76938D84-AB58-455F-924F-12EB925DAC61}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Dimension">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\DimArtikal"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{20ADC62E-987B-461B-85D9-8131BBAF0BEE}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimArtikal"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DimArtikal.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDate</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\DimIstovarnoMesto"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{c5975cc9-93e6-4d26-97f6-b9d277443dbc}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimIstovarnoMesto"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DimIstovarnoMesto.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDate</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\DimMagacin"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{f791fb1b-d5e2-45c1-a065-2375b3d823d7}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimMagacin"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DimMagacin.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDate</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\Get ExtractDate"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F4722753-E7D5-44A0-BFBE-076174879EA4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get ExtractDate"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="Exec ? = selExtractDate_GetExtractDate ?, ? OUTPUT, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Count"
+                SQLTask:ParameterDirection="ReturnValue"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::ExtractDate"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="135"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::End"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="11"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\Set Last Suceeded Date"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3b2290a0-31bd-4f5c-a83c-b0e8f43af4fc}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set Last Suceeded Date"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="exec updExtractDate_SetLastSucceededDate ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::ExtractDate"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{259EBBE9-0BCA-4641-AB0B-537CCA5AB8AE}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::End] ==false"
+          DTS:From="Package\Extract Dimension\Get ExtractDate"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Extract Dimension\DimArtikal" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D65CF1F4-DCA5-4ECA-9B58-1B1808F18E00}"
+          DTS:From="Package\Extract Dimension\DimArtikal"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Extract Dimension\DimIstovarnoMesto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{629128F9-3DDE-480C-9835-9111CB1493A0}"
+          DTS:From="Package\Extract Dimension\DimIstovarnoMesto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Extract Dimension\DimMagacin" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{17B61A3C-42F5-45B0-B85B-28DEC1022014}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::End] ==false"
+          DTS:From="Package\Extract Dimension\DimMagacin"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Extract Dimension\Set Last Suceeded Date" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{E8986122-8510-42A2-803C-062F983DDD54}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{DAF635D7-FB77-44F3-B4F5-D819ABBE2008}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send email if Task Fails"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{7F2BBCB7-6EB8-4C96-88F9-7803C647503C}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send email if Task Fails"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::From]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Package:                              "+ (DT_WSTR, 50)  @[System::PackageName] +".
+Time:                                      " + (DT_WSTR, 50) @[System::StartTime]  +".
+Task:                                       "+  (DT_WSTR, 50) @[System::TaskName]  +".
+Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"SSIS Error: " +  (DT_STR, 50,1252)  @[System::PackageName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::To]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
+              SendMailTask:From="sanja.vukovic@saga.rs"
+              SendMailTask:To="sanja.vukovic@saga.rs"
+              SendMailTask:Subject="SSIS Error: LoadGroupDimension"
+              SendMailTask:MessageSource="Package:                              LoadGroupDimension.&#xA;Time:                                      9/1/2017 11:43:30 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{227168DA-2D43-4453-8F40-95FDB37EC0A4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL LogPackageError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="exec dbo.insLogPackageError_Insert&#xA;@pPackageName = ?&#xA;,@pSourceName = ?&#xA;,@pSourceID = ?&#xA;,@pErrorCode = ?&#xA;,@pErrorDescription = ?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B4C892AD-9E3C-470C-8D36-F40D1C15DE9E}"
+          DTS:From="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Send email if Task Fails" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Extract Dimension\Get ExtractDate"
+          TopLeft="84.1523860775698,34.5725511874294" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Extract Dimension\Set Last Suceeded Date"
+          TopLeft="108.571432191498,409.411769965281" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Extract Dimension\DimArtikal"
+          TopLeft="95.4285748248198,121.270589453621" />
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint]"
+          TopLeft="160.55238607757,76.1725511874294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.0761887472501,45.0980382661919"
+              Start="0,0"
+              End="26.0761887472501,37.5980382661919">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.549019133096" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.549019133096"
+                    Point2="0,22.549019133096"
+                    Point3="4,22.549019133096" />
+                  <mssgle:LineSegment
+                    End="22.0761887472501,22.549019133096" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.0761887472501,22.549019133096"
+                    Point2="26.0761887472501,22.549019133096"
+                    Point3="26.0761887472501,26.549019133096" />
+                  <mssgle:LineSegment
+                    End="26.0761887472501,37.5980382661919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="5.03809437362503,27.549019133096,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Extract Dimension\DimIstovarnoMesto"
+          TopLeft="170.857147537932,213.647061337402" />
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 1]"
+          TopLeft="186.62857482482,162.870589453621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.4285727131123,50.7764718837804"
+              Start="0,0"
+              End="75.4285727131123,43.2764718837804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3882359418902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3882359418902"
+                    Point2="0,25.3882359418902"
+                    Point3="4,25.3882359418902" />
+                  <mssgle:LineSegment
+                    End="71.4285727131123,25.3882359418902" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.4285727131123,25.3882359418902"
+                    Point2="75.4285727131123,25.3882359418902"
+                    Point3="75.4285727131123,29.3882359418902" />
+                  <mssgle:LineSegment
+                    End="75.4285727131123,43.2764718837804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Extract Dimension\DimMagacin"
+          TopLeft="195.42857652781,294.400003646402" />
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="262.057147537932,255.247061337402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.5714289898776,39.1529423090001"
+              Start="0,0"
+              End="24.5714289898776,31.6529423090001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5764711545001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5764711545001"
+                    Point2="0,19.5764711545001"
+                    Point3="4,19.5764711545001" />
+                  <mssgle:LineSegment
+                    End="20.5714289898776,19.5764711545001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.5714289898776,19.5764711545001"
+                    Point2="24.5714289898776,19.5764711545001"
+                    Point3="24.5714289898776,23.5764711545001" />
+                  <mssgle:LineSegment
+                    End="24.5714289898776,31.6529423090001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="286.62857652781,336.000003646402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.8571443363113,73.411766318879"
+              Start="0,0"
+              End="-82.8571443363113,65.911766318879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7058831594395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.7058831594395"
+                    Point2="0,36.7058831594395"
+                    Point3="-4,36.7058831594395" />
+                  <mssgle:LineSegment
+                    End="-78.8571443363113,36.7058831594395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.8571443363113,36.7058831594395"
+                    Point2="-82.8571443363113,36.7058831594395"
+                    Point3="-82.8571443363113,40.7058831594395" />
+                  <mssgle:LineSegment
+                    End="-82.8571443363113,65.911766318879" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.4285721681556,41.7058831594395,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="424.8,505.6"
+          Size="424.8,548.8"
+          Id="Package\Extract Dimension"
+          TopLeft="103.61904938367,0.407843142974798" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package.EventHandlers[OnError]\Send email if Task Fails"
+          TopLeft="493.6,292.8" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package.EventHandlers[OnError]\SQL LogPackageError"
+          TopLeft="417.6,116" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="507.6,157.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.4,135.2"
+              Start="0,0"
+              End="60.4,127.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.6"
+                    Point2="0,67.6"
+                    Point3="4,67.6" />
+                  <mssgle:LineSegment
+                    End="56.4,67.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.4,67.6"
+                    Point2="60.4,67.6"
+                    Point3="60.4,71.6" />
+                  <mssgle:LineSegment
+                    End="60.4,127.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
