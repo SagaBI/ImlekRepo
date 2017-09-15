@@ -12,8 +12,8 @@
   DTS:ObjectName="DimArtikal"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{55835842-4C44-4FCF-B089-25350510F0F8}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{6A443C56-0784-4247-A9BC-1463F8951343}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDate">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">8/30/2017 3:13:31 PM</DTS:Property>
+        DTS:Name="ParameterValue">6/1/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\ArtikalSource_2017-09-03.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFile\ArtikalSource_2017-09-12.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -129,7 +129,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selDimArtikal '20170830'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selDimArtikal '20170601'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -161,14 +161,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -557,35 +578,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -8576,7 +8576,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimArtikal"
-              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      9/3/2017 11:50:20 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      9/12/2017 11:17:30 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -8652,57 +8652,57 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="215.2,41.6"
+          Size="215,42"
           Id="Package\Calculate New Surrogate Key"
           TopLeft="894.857158096469,955.105892202516" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\Extract Stage\Check Nulls"
           TopLeft="111.009527620977,246.007847226945" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178,42"
           Id="Package\Extract Stage\CurrentPreviousSwap"
           TopLeft="12.1523830803075,101.223531470909" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Extract Stage\Extract To Raw File"
           TopLeft="50.2476235954131,5.5" />
         <NodeLayout
-          Size="225.6,41.6"
+          Size="226,42"
           Id="Package\Extract Stage\Load To Staging From Raw File"
           TopLeft="74.8190508141811,172.59608149149" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Extract Stage\Truncate Stage"
           TopLeft="210.819054901357,58.0235319084774" />
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\Extract Stage\Update  HashSCD"
           TopLeft="123.390480212776,319.419612962399" />
         <NodeLayout
-          Size="194.4,41.6"
+          Size="194,42"
           Id="Package\Extract Stage\Update inferred member"
           TopLeft="122.666670526777,410.745104416844" />
         <EdgeLayout
           Id="Package\Extract Stage.PrecedenceConstraints[Constraint]"
-          TopLeft="219.847623595413,26.3">
+          TopLeft="220.247623595413,26.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.1714313059435,31.7235319084774"
+              EndConnector="65.5714313059439,31.5235319084774"
               Start="0,0"
-              End="66.1714313059435,24.2235319084774">
+              End="65.5714313059439,24.0235319084774">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="62.1714313059435,0" />
+                    End="61.5714313059439,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="62.1714313059435,0"
-                    Point2="66.1714313059435,0"
-                    Point3="66.1714313059435,4" />
+                    Point1="61.5714313059439,0"
+                    Point2="65.5714313059439,0"
+                    Point3="65.5714313059439,4" />
                   <mssgle:LineSegment
-                    End="66.1714313059435,24.2235319084774" />
+                    End="65.5714313059439,24.0235319084774" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8878,36 +8878,36 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="424.8,505.6"
-          Size="424.8,548.8"
+          PanelSize="425,506"
+          Size="425,549"
           Id="Package\Extract Stage"
           TopLeft="103.61904938367,0.407843142974798" />
         <NodeLayout
-          Size="218.4,41.6"
+          Size="218,42"
           Id="Package\GetStartSurrogate Key"
           TopLeft="219.047622777978,600.549028030316" />
         <NodeLayout
-          Size="218.4,41.6"
+          Size="218,42"
           Id="Package\Set Surrogate Key"
           TopLeft="870.857157687752,1064.56471650411" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Transform And Load\DimArtikal Set ExpiredDate"
           TopLeft="295.504771133345,160.345110007993" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Transform And Load\Insert DimArtikal"
           TopLeft="112.457148968444,223.952953345443" />
         <NodeLayout
-          Size="168.8,41.6"
+          Size="169,42"
           Id="Package\Transform And Load\Load To ArtikalSCD"
           TopLeft="27.8857189567724,20.1882466623116" />
         <NodeLayout
-          Size="162.4,67.2"
+          Size="162,67"
           Id="Package\Transform And Load\Update DimArtikal InferredMember"
           TopLeft="282.933342347827,25.4274623285668" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Transform And Load\Update DimArtikal SCD1"
           TopLeft="59.6952433080091,123.874521915695" />
         <EdgeLayout
@@ -9047,8 +9047,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="463.2,320.8"
-          Size="463.2,364"
+          PanelSize="463,321"
+          Size="463,364"
           Id="Package\Transform And Load"
           TopLeft="246.666670867375,751.450990930973" />
         <EdgeLayout
@@ -9196,13 +9196,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package.EventHandlers[OnError]\Send email if Task Fails"
           TopLeft="493.6,292.8" />
         <NodeLayout
-          Size="180,41.6"
+          Size="180,42"
           Id="Package.EventHandlers[OnError]\SQL LogPackageError"
           TopLeft="417.6,116" />
         <EdgeLayout
@@ -9236,9 +9236,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9250,39 +9248,39 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Extract Stage\Extract To Raw File\Artikal Source"
           TopLeft="158.857145562464,34.870588724341" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="175,42"
           Id="Package\Extract Stage\Extract To Raw File\Raw File Destination"
-          TopLeft="239.428575506016,215.341179490667" />
+          TopLeft="172,171" />
         <EdgeLayout
           Id="Package\Extract Stage\Extract To Raw File.Paths[OLE DB Source Output]"
-          TopLeft="230.457145562464,76.470588724341">
+          TopLeft="230.357145562464,76.870588724341">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.1714299435519,138.870590766326"
+              EndConnector="29.142854437536,94.129411275659"
               Start="0,0"
-              End="96.1714299435519,131.370590766326">
+              End="29.142854437536,86.629411275659">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.435295383163" />
+                    End="0,43.0647056378295" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,65.435295383163"
-                    Point2="0,69.435295383163"
-                    Point3="4,69.435295383163" />
+                    Point1="0,43.0647056378295"
+                    Point2="0,47.0647056378295"
+                    Point3="4,47.0647056378295" />
                   <mssgle:LineSegment
-                    End="92.1714299435519,69.435295383163" />
+                    End="25.142854437536,47.0647056378295" />
                   <mssgle:CubicBezierSegment
-                    Point1="92.1714299435519,69.435295383163"
-                    Point2="96.1714299435519,69.435295383163"
-                    Point3="96.1714299435519,73.435295383163" />
+                    Point1="25.142854437536,47.0647056378295"
+                    Point2="29.142854437536,47.0647056378295"
+                    Point3="29.142854437536,51.0647056378295" />
                   <mssgle:LineSegment
-                    End="96.1714299435519,131.370590766326" />
+                    End="29.142854437536,86.629411275659" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9306,11 +9304,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Extract Stage\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
-          TopLeft="175.2,55.2" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144.8,41.6"
           Id="Package\Extract Stage\Load To Staging From Raw File\current Artikal"
@@ -9319,6 +9313,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="176,41.6"
           Id="Package\Extract Stage\Load To Staging From Raw File\Add InferredMember"
           TopLeft="535.2,104.8" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
+          TopLeft="175.2,55.2" />
         <EdgeLayout
           Id="Package\Extract Stage\Load To Staging From Raw File.Paths[Raw File Source Output]"
           TopLeft="328.8,76">
@@ -9350,7 +9348,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9384,7 +9384,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9413,323 +9415,57 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage"
           TopLeft="268,10.4" />
         <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Check InferredMember"
-          TopLeft="248.8,87.2" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[OLE DB Source Output]"
-          TopLeft="341.4,52">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.2"
-              Start="0,0"
-              End="0,27.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="239.2,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - IM"
-          TopLeft="709.6,92.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[InferredMember]"
-          TopLeft="435.2,110.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="274.4,0"
-              Start="0,0"
-              End="266.9,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="266.9,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="96.94970703125,5,73.0005859375,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="120,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Multicast"
-          TopLeft="272.8,163.2" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[NonInferredMember]"
-          TopLeft="342,128.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.19999999999999,34.4"
-              Start="0,0"
-              End="-9.19999999999999,26.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.2"
-                    Point2="0,17.2"
-                    Point3="-4,17.2" />
-                  <mssgle:LineSegment
-                    End="-5.19999999999999,17.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.19999999999999,17.2"
-                    Point2="-9.19999999999999,17.2"
-                    Point3="-9.19999999999999,21.2" />
-                  <mssgle:LineSegment
-                    End="-9.19999999999999,26.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.79869140625,22.2,90.3973828125,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Deleted Rows"
-          TopLeft="57.6,232.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 1]"
-          TopLeft="332.8,204.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-204,28"
-              Start="0,0"
-              End="-204,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="-4,14" />
-                  <mssgle:LineSegment
-                    End="-200,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-200,14"
-                    Point2="-204,14"
-                    Point3="-204,18" />
-                  <mssgle:LineSegment
-                    End="-204,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Transform And Load\Load To ArtikalSCD\Union All"
+          TopLeft="583.2,403.2" />
         <NodeLayout
           Size="127.2,41.6"
           Id="Package\Transform And Load\Load To ArtikalSCD\New Rows"
           TopLeft="292.8,256.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 2]"
-          TopLeft="332.8,204.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.6,52"
-              Start="0,0"
-              End="23.6,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="19.6,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.6,26"
-                    Point2="23.6,26"
-                    Point3="23.6,30" />
-                  <mssgle:LineSegment
-                    End="23.6,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="104,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\SCD1"
-          TopLeft="501.6,169.6" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 3]"
-          TopLeft="392.8,187.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108.8,0"
-              Start="0,0"
-              End="101.3,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="101.3,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="120,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Multicast"
+          TopLeft="272.8,163.2" />
         <NodeLayout
           Size="125.6,41.6"
           Id="Package\Transform And Load\Load To ArtikalSCD\NumOfDR"
           TopLeft="93.6,360.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[DeletedRows]"
-          TopLeft="128.8,274.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.6,86.4"
-              Start="0,0"
-              End="27.6,78.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.2"
-                    Point2="0,43.2"
-                    Point3="4,43.2" />
-                  <mssgle:LineSegment
-                    End="23.6,43.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.6,43.2"
-                    Point2="27.6,43.2"
-                    Point3="27.6,47.2" />
-                  <mssgle:LineSegment
-                    End="27.6,78.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfNR"
-          TopLeft="284.8,331.2" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[NewRows]"
-          TopLeft="356.4,298.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.20000000000005,32.8"
-              Start="0,0"
-              End="-9.20000000000005,25.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.4"
-                    Point2="0,16.4"
-                    Point3="-4,16.4" />
-                  <mssgle:LineSegment
-                    End="-5.20000000000005,16.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.20000000000005,16.4"
-                    Point2="-9.20000000000005,16.4"
-                    Point3="-9.20000000000005,20.4" />
-                  <mssgle:LineSegment
-                    End="-9.20000000000005,25.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.572578125,21.4,43.94515625,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="239.2,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - IM"
+          TopLeft="709.6,92.8" />
         <NodeLayout
-          Size="120,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Union All"
-          TopLeft="583.2,403.2" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output]"
-          TopLeft="829.2,134.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-167.333333333333,268.8"
-              Start="0,0"
-              End="-167.333333333333,261.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,155.157894736842" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,155.157894736842"
-                    Point2="0,159.157894736842"
-                    Point3="-4,159.157894736842" />
-                  <mssgle:LineSegment
-                    End="-163.333333333333,159.157894736842" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-163.333333333333,159.157894736842"
-                    Point2="-167.333333333333,159.157894736842"
-                    Point3="-167.333333333333,163.157894736842" />
-                  <mssgle:LineSegment
-                    End="-167.333333333333,261.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="186.4,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Check InferredMember"
+          TopLeft="248.8,87.2" />
+        <NodeLayout
+          Size="104,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\SCD1"
+          TopLeft="501.6,169.6" />
         <NodeLayout
           Size="127.2,41.6"
           Id="Package\Transform And Load\Load To ArtikalSCD\scd Artikal"
           TopLeft="727.2,470.4" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Deleted Rows"
+          TopLeft="57.6,232.8" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfNR"
+          TopLeft="284.8,331.2" />
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - SCD1"
+          TopLeft="440.8,252.8" />
+        <NodeLayout
+          Size="240.8,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - DR"
+          TopLeft="156.8,468.8" />
+        <NodeLayout
+          Size="240.8,41.6"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - NR"
+          TopLeft="283.2,387.2" />
         <EdgeLayout
           Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Union All Output 1]"
           TopLeft="661.866666666667,444.8">
@@ -9761,151 +9497,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="240.8,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - DR"
-          TopLeft="156.8,468.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Row Count Output 1]"
-          TopLeft="156.4,402.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120.8,66.4"
-              Start="0,0"
-              End="120.8,58.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2"
-                    Point2="0,33.2"
-                    Point3="4,33.2" />
-                  <mssgle:LineSegment
-                    End="116.8,33.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="116.8,33.2"
-                    Point2="120.8,33.2"
-                    Point3="120.8,37.2" />
-                  <mssgle:LineSegment
-                    End="120.8,58.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output1]"
-          TopLeft="316,468.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="308.533333333334,-23.9999999999999"
-              Start="0,0"
-              End="308.533333333334,-16.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-7.90211225757655" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-7.90211225757655"
-                    Point2="0,-11.9021122575765"
-                    Point3="4,-11.9021122575765" />
-                  <mssgle:LineSegment
-                    End="304.533333333334,-11.9021122575765" />
-                  <mssgle:CubicBezierSegment
-                    Point1="304.533333333334,-11.9021122575765"
-                    Point2="308.533333333334,-11.9021122575765"
-                    Point3="308.533333333334,-15.9021122575765" />
-                  <mssgle:LineSegment
-                    End="308.533333333334,-16.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="240.8,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - NR"
-          TopLeft="283.2,387.2" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Row Count Output 11]"
-          TopLeft="409.6,352">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-6,35.1999999999999"
-              Start="0,0"
-              End="-6,27.6999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-2,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-2,0"
-                    Point2="-6,0"
-                    Point3="-6,4" />
-                  <mssgle:LineSegment
-                    End="-6,27.6999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output2]"
-          TopLeft="524,408">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.2,16.0000000000001"
-              Start="0,0"
-              End="51.7,16.0000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25.6,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.6,0"
-                    Point2="29.6,0"
-                    Point3="29.6,4" />
-                  <mssgle:LineSegment
-                    End="29.6,12.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.6,12.0000000000001"
-                    Point2="29.6,16.0000000000001"
-                    Point3="33.6,16.0000000000001" />
-                  <mssgle:LineSegment
-                    End="51.7,16.0000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="252.8,41.6"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - SCD1"
-          TopLeft="440.8,252.8" />
         <EdgeLayout
           Id="Package\Transform And Load\Load To ArtikalSCD.Paths[SCD1]"
           TopLeft="553.6,211.2">
@@ -9943,6 +9539,288 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Row Count Output 11]"
+          TopLeft="409.6,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-6,35.1999999999999"
+              Start="0,0"
+              End="-6,27.6999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-2,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-2,0"
+                    Point2="-6,0"
+                    Point3="-6,4" />
+                  <mssgle:LineSegment
+                    End="-6,27.6999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Row Count Output 1]"
+          TopLeft="156.4,402.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.8,66.4"
+              Start="0,0"
+              End="120.8,58.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2"
+                    Point2="0,33.2"
+                    Point3="4,33.2" />
+                  <mssgle:LineSegment
+                    End="116.8,33.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.8,33.2"
+                    Point2="120.8,33.2"
+                    Point3="120.8,37.2" />
+                  <mssgle:LineSegment
+                    End="120.8,58.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[OLE DB Source Output]"
+          TopLeft="341.4,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.2"
+              Start="0,0"
+              End="0,27.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[NonInferredMember]"
+          TopLeft="342,128.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.19999999999999,34.4"
+              Start="0,0"
+              End="-9.19999999999999,26.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.2"
+                    Point2="0,17.2"
+                    Point3="-4,17.2" />
+                  <mssgle:LineSegment
+                    End="-5.19999999999999,17.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.19999999999999,17.2"
+                    Point2="-9.19999999999999,17.2"
+                    Point3="-9.19999999999999,21.2" />
+                  <mssgle:LineSegment
+                    End="-9.19999999999999,26.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.79869140625,22.2,90.3973828125,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[NewRows]"
+          TopLeft="356.4,298.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.20000000000005,32.8"
+              Start="0,0"
+              End="-9.20000000000005,25.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4"
+                    Point2="0,16.4"
+                    Point3="-4,16.4" />
+                  <mssgle:LineSegment
+                    End="-5.20000000000005,16.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.20000000000005,16.4"
+                    Point2="-9.20000000000005,16.4"
+                    Point3="-9.20000000000005,20.4" />
+                  <mssgle:LineSegment
+                    End="-9.20000000000005,25.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.572578125,21.4,43.94515625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 3]"
+          TopLeft="392.8,187.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.8,0"
+              Start="0,0"
+              End="101.3,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="101.3,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 2]"
+          TopLeft="332.8,204.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.6,52"
+              Start="0,0"
+              End="23.6,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="19.6,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.6,26"
+                    Point2="23.6,26"
+                    Point3="23.6,30" />
+                  <mssgle:LineSegment
+                    End="23.6,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Multicast Output 1]"
+          TopLeft="332.8,204.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-204,28"
+              Start="0,0"
+              End="-204,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="-4,14" />
+                  <mssgle:LineSegment
+                    End="-200,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-200,14"
+                    Point2="-204,14"
+                    Point3="-204,18" />
+                  <mssgle:LineSegment
+                    End="-204,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[InferredMember]"
+          TopLeft="435.2,110.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="274.4,0"
+              Start="0,0"
+              End="266.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="266.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="96.94970703125,5,73.0005859375,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output3]"
           TopLeft="567.2,294.4">
           <EdgeLayout.Curve>
@@ -9973,7 +9851,153 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output2]"
+          TopLeft="524,408">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.2,16.0000000000001"
+              Start="0,0"
+              End="51.7,16.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.6,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.6,0"
+                    Point2="29.6,0"
+                    Point3="29.6,4" />
+                  <mssgle:LineSegment
+                    End="29.6,12.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.6,12.0000000000001"
+                    Point2="29.6,16.0000000000001"
+                    Point3="33.6,16.0000000000001" />
+                  <mssgle:LineSegment
+                    End="51.7,16.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output1]"
+          TopLeft="316,468.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="308.533333333334,-23.9999999999999"
+              Start="0,0"
+              End="308.533333333334,-16.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-7.90211225757655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-7.90211225757655"
+                    Point2="0,-11.9021122575765"
+                    Point3="4,-11.9021122575765" />
+                  <mssgle:LineSegment
+                    End="304.533333333334,-11.9021122575765" />
+                  <mssgle:CubicBezierSegment
+                    Point1="304.533333333334,-11.9021122575765"
+                    Point2="308.533333333334,-11.9021122575765"
+                    Point3="308.533333333334,-15.9021122575765" />
+                  <mssgle:LineSegment
+                    End="308.533333333334,-16.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[Derived Column Output]"
+          TopLeft="829.2,134.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-167.333333333333,268.8"
+              Start="0,0"
+              End="-167.333333333333,261.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,155.157894736842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,155.157894736842"
+                    Point2="0,159.157894736842"
+                    Point3="-4,159.157894736842" />
+                  <mssgle:LineSegment
+                    End="-163.333333333333,159.157894736842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-163.333333333333,159.157894736842"
+                    Point2="-167.333333333333,159.157894736842"
+                    Point3="-167.333333333333,163.157894736842" />
+                  <mssgle:LineSegment
+                    End="-167.333333333333,261.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To ArtikalSCD.Paths[DeletedRows]"
+          TopLeft="128.8,274.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.6,86.4"
+              Start="0,0"
+              End="27.6,78.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2"
+                    Point2="0,43.2"
+                    Point3="4,43.2" />
+                  <mssgle:LineSegment
+                    End="23.6,43.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.6,43.2"
+                    Point2="27.6,43.2"
+                    Point3="27.6,47.2" />
+                  <mssgle:LineSegment
+                    End="27.6,78.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
