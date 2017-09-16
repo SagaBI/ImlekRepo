@@ -12,8 +12,8 @@
   DTS:ObjectName="fctProdaja"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{1021B08A-9C42-421F-BBF8-C82DB3046173}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{9A0E192C-6DB1-4CA5-90D1-2F50AFE136AA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -547,21 +547,25 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicnaDistributivna]"
-                          dataType="i4"
+                          dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicnaDistributivna]"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicnaDistributivna]"
                           name="KolicnaDistributivna"
+                          precision="34"
+                          scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaPrimarna]"
-                          dataType="i4"
+                          dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaPrimarna]"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaPrimarna]"
                           name="KolicinaPrimarna"
+                          precision="34"
+                          scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDV]"
@@ -589,6 +593,28 @@
                           externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosUValuti]"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[BrutoIznosUValuti]"
                           name="BrutoIznosUValuti"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -747,12 +773,16 @@
                           scale="6" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicnaDistributivna]"
-                          dataType="i4"
-                          name="KolicnaDistributivna" />
+                          dataType="numeric"
+                          name="KolicnaDistributivna"
+                          precision="34"
+                          scale="12" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaPrimarna]"
-                          dataType="i4"
-                          name="KolicinaPrimarna" />
+                          dataType="numeric"
+                          name="KolicinaPrimarna"
+                          precision="34"
+                          scale="12" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosSaPDV]"
                           dataType="i4"
@@ -765,6 +795,18 @@
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosUValuti]"
                           dataType="i4"
                           name="BrutoIznosUValuti" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
+                          dataType="numeric"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
+                          dataType="numeric"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -942,6 +984,20 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[PriceOverrideCode]"
                           name="PriceOverrideCode" />
                         <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaSec]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaSec]"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaCenovna]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaCenovna]"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12" />
+                        <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDV]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDV]"
@@ -957,14 +1013,18 @@
                           scale="6" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicnaDistributivna]"
-                          dataType="i4"
+                          dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicnaDistributivna]"
-                          name="KolicnaDistributivna" />
+                          name="KolicnaDistributivna"
+                          precision="34"
+                          scale="12" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaPrimarna]"
-                          dataType="i4"
+                          dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[KolicinaPrimarna]"
-                          name="KolicinaPrimarna" />
+                          name="KolicinaPrimarna"
+                          precision="34"
+                          scale="12" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Error Output].Columns[BrutoIznosSaPDV]"
                           dataType="i4"
@@ -1216,13 +1276,17 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[PDVIznosDin]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[KolicnaDistributivna]"
-                          cachedDataType="i4"
+                          cachedDataType="numeric"
                           cachedName="KolicnaDistributivna"
+                          cachedPrecision="34"
+                          cachedScale="12"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicnaDistributivna]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[KolicinaPrimarna]"
-                          cachedDataType="i4"
+                          cachedDataType="numeric"
                           cachedName="KolicinaPrimarna"
+                          cachedPrecision="34"
+                          cachedScale="12"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaPrimarna]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[BrutoIznosSaPDV]"
@@ -1239,6 +1303,20 @@
                           cachedDataType="i4"
                           cachedName="BrutoIznosUValuti"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[BrutoIznosUValuti]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[KolicinaSec]"
+                          cachedDataType="numeric"
+                          cachedName="KolicinaSec"
+                          cachedPrecision="34"
+                          cachedScale="12"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[KolicinaCenovna]"
+                          cachedDataType="numeric"
+                          cachedName="KolicinaCenovna"
+                          cachedPrecision="34"
+                          cachedScale="12"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1253,6 +1331,36 @@
                   startId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load To Fct\insert Koeficijent konverzije JM"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CFCBB94A-5653-434E-830F-A33A4FD9D117}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="insert Koeficijent konverzije JM"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="exec stg.insAritkal_KoefKonverzijeJM ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::ExtractDateFrom"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Package::ExtractDateTo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -16968,6 +17076,13 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[MagacinSifra]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Sifra_Magacina]" />
                         <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Sifra_Rute]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="Sifra_Rute"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraRute]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Sifra_Rute]" />
+                        <inputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Datum_GK]"
                           cachedDataType="dbDate"
                           cachedName="Datum_GK"
@@ -17015,68 +17130,18 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Broj_Fakture]" />
                         <inputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicinaPrimarna]"
-                          cachedDataType="i4"
+                          cachedDataType="numeric"
                           cachedName="KolicinaPrimarna"
+                          cachedPrecision="34"
+                          cachedScale="12"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenPrimarnaJM]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaPrimarna]" />
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicinaSec]"
-                          cachedDataType="numeric"
-                          cachedName="KolicinaSec"
-                          cachedPrecision="34"
-                          cachedScale="12"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Kolicina]"
-                          cachedDataType="numeric"
-                          cachedName="Kolicina"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenTransakcionaJM]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Kolicina]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicnaDistributivna]"
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosUValuti]"
                           cachedDataType="i4"
-                          cachedName="KolicnaDistributivna"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenDistributivnaJM]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicnaDistributivna]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicinaCenovna]"
-                          cachedDataType="numeric"
-                          cachedName="KolicinaCenovna"
-                          cachedPrecision="34"
-                          cachedScale="12"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenCenovnaJM]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Iznos_Domaci]"
-                          cachedDataType="numeric"
-                          cachedName="Iznos_Domaci"
-                          cachedPrecision="15"
-                          cachedScale="4"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[IznosDin]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Iznos_Domaci]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[NetoIznosSaPDV]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDV"
-                          cachedPrecision="35"
-                          cachedScale="6"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosBezPDV]"
-                          cachedDataType="i4"
-                          cachedName="BrutoIznosBezPDV"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosBezPDV]" />
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosSaPDV]"
-                          cachedDataType="i4"
-                          cachedName="BrutoIznosSaPDV"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosSaPDV]" />
+                          cachedName="BrutoIznosUValuti"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoznosUValuti]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosUValuti]" />
                         <inputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Iznos_Strani]"
                           cachedDataType="numeric"
@@ -17086,18 +17151,65 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[IznosUValuti]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Iznos_Strani]" />
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosUValuti]"
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosSaPDV]"
                           cachedDataType="i4"
-                          cachedName="BrutoIznosUValuti"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoznosUValuti]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosUValuti]" />
+                          cachedName="BrutoIznosSaPDV"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosSaPDV]" />
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Sifra_Rute]"
-                          cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="Sifra_Rute"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraRute]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Sifra_Rute]" />
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[BrutoIznosBezPDV]"
+                          cachedDataType="i4"
+                          cachedName="BrutoIznosBezPDV"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosBezPDV]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[NetoIznosSaPDV]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDV"
+                          cachedPrecision="35"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Iznos_Domaci]"
+                          cachedDataType="numeric"
+                          cachedName="Iznos_Domaci"
+                          cachedPrecision="15"
+                          cachedScale="4"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[IznosDin]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Iznos_Domaci]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicnaDistributivna]"
+                          cachedDataType="numeric"
+                          cachedName="KolicnaDistributivna"
+                          cachedPrecision="34"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenDistributivnaJM]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicnaDistributivna]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[Kolicina]"
+                          cachedDataType="numeric"
+                          cachedName="Kolicina"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenTransakcionaJM]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Kolicina]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicinaSec]"
+                          cachedDataType="numeric"
+                          cachedName="KolicinaSec"
+                          cachedPrecision="34"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].Columns[KolicinaCenovna]"
+                          cachedDataType="numeric"
+                          cachedName="KolicinaCenovna"
+                          cachedPrecision="34"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenCenovnaJM]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -17134,6 +17246,11 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="wstr"
                           length="12"
                           name="MagacinSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraRute]"
+                          dataType="wstr"
+                          length="7"
+                          name="SifraRute" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[DatumGlavneKnjige]"
                           dataType="dbDate"
@@ -17238,11 +17355,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           name="BrutoznosUValuti"
                           precision="10"
                           scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraRute]"
-                          dataType="wstr"
-                          length="7"
-                          name="SifraRute" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -17276,8 +17388,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   componentClassID="Microsoft.RawSource"
                   contactInfo="Reads raw data from a flat file that was previously written by the Raw File destination. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Reads raw data from a flat file that was previously written by the Raw File destination. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers."
-                  name="Raw File Source"
-                  version="1">
+                  name="Raw File Source">
                   <properties>
                     <property
                       dataType="System.Int32"
@@ -17498,22 +17609,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceOverrideCode]"
                           name="PriceOverrideCode" />
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]"
-                          dataType="numeric"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaSec]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]"
-                          name="KolicinaSec"
-                          precision="34"
-                          scale="12" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]"
-                          dataType="numeric"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaCenovna]"
-                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]"
-                          name="KolicinaCenovna"
-                          precision="34"
-                          scale="12" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]"
                           dataType="numeric"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[NetoIznosSaPDV]"
@@ -17531,16 +17626,20 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           scale="6" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicnaDistributivna]"
-                          dataType="i4"
+                          dataType="numeric"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicnaDistributivna]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicnaDistributivna]"
-                          name="KolicnaDistributivna" />
+                          name="KolicnaDistributivna"
+                          precision="34"
+                          scale="12" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaPrimarna]"
-                          dataType="i4"
+                          dataType="numeric"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaPrimarna]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaPrimarna]"
-                          name="KolicinaPrimarna" />
+                          name="KolicinaPrimarna"
+                          precision="34"
+                          scale="12" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosSaPDV]"
                           dataType="i4"
@@ -17559,6 +17658,22 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[BrutoIznosUValuti]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoIznosUValuti]"
                           name="BrutoIznosUValuti" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaSec]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaSec]"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]"
+                          dataType="numeric"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaCenovna]"
+                          lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[KolicinaCenovna]"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -17703,18 +17818,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           length="1"
                           name="PriceOverrideCode" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaSec]"
-                          dataType="numeric"
-                          name="KolicinaSec"
-                          precision="34"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaCenovna]"
-                          dataType="numeric"
-                          name="KolicinaCenovna"
-                          precision="34"
-                          scale="12" />
-                        <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[NetoIznosSaPDV]"
                           dataType="numeric"
                           name="NetoIznosSaPDV"
@@ -17728,12 +17831,16 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           scale="6" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicnaDistributivna]"
-                          dataType="i4"
-                          name="KolicnaDistributivna" />
+                          dataType="numeric"
+                          name="KolicnaDistributivna"
+                          precision="34"
+                          scale="12" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaPrimarna]"
-                          dataType="i4"
-                          name="KolicinaPrimarna" />
+                          dataType="numeric"
+                          name="KolicinaPrimarna"
+                          precision="34"
+                          scale="12" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[BrutoIznosSaPDV]"
                           dataType="i4"
@@ -17746,6 +17853,18 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[BrutoIznosUValuti]"
                           dataType="i4"
                           name="BrutoIznosUValuti" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaSec]"
+                          dataType="numeric"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[KolicinaCenovna]"
+                          dataType="numeric"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -17783,11 +17902,11 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{CBF3E916-7950-4EB6-A450-8E350841E865}"
+          DTS:DTSID="{173A2AC2-C79E-4549-AA3B-467E9CC2EE15}"
           DTS:From="Package\Load To Fct\Truncate Stage"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Load To Fct\Extract To Raw File" />
+          DTS:To="Package\Load To Fct\insert Koeficijent konverzije JM" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
@@ -17804,6 +17923,14 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\Load To Fct\Load To Fct" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{3A086704-D85C-4BFC-B43C-FE3B49DB7E8C}"
+          DTS:From="Package\Load To Fct\insert Koeficijent konverzije JM"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Load To Fct\Extract To Raw File" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -17929,71 +18056,49 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170,42"
           Id="Package\Load To Fct\Extract To Raw File"
-          TopLeft="103.580957837008,115.617648603182" />
+          TopLeft="96.580957837008,199.617648603182" />
         <NodeLayout
           Size="134,42"
           Id="Package\Load To Fct\Load To Fct"
-          TopLeft="150.285718616174,363.843142974748" />
+          TopLeft="141.285718616174,366.843142974748" />
         <NodeLayout
           Size="226,42"
           Id="Package\Load To Fct\Load To Staging From Raw File"
-          TopLeft="80.5333366257806,242.949023654634" />
+          TopLeft="79.5333366257806,279.949023654634" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load To Fct\Truncate Stage"
           TopLeft="84.1523860775698,34.5725511874294" />
         <EdgeLayout
-          Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
-          TopLeft="159.35238607757,76.1725511874294">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="29.0285717594382,39.4450974157526"
-              Start="0,0"
-              End="29.0285717594382,31.9450974157526">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.7225487078763" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.7225487078763"
-                    Point2="0,19.7225487078763"
-                    Point3="4,19.7225487078763" />
-                  <mssgle:LineSegment
-                    End="25.0285717594382,19.7225487078763" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.0285717594382,19.7225487078763"
-                    Point2="29.0285717594382,19.7225487078763"
-                    Point3="29.0285717594382,23.7225487078763" />
-                  <mssgle:LineSegment
-                    End="29.0285717594382,31.9450974157526" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
-          TopLeft="190.857147231394,157.217648603182">
+          TopLeft="181.580957837008,241.617648603182">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,85.7313750514523"
+              EndConnector="10.9523787887726,38.331375051452"
               Start="0,0"
-              End="0,78.2313750514523">
+              End="10.9523787887726,30.831375051452">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.2313750514523" />
+                    End="0,15.165687525726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.165687525726"
+                    Point2="0,19.165687525726"
+                    Point3="4,19.165687525726" />
+                  <mssgle:LineSegment
+                    End="6.95237878877262,19.165687525726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.95237878877262,19.165687525726"
+                    Point2="10.9523787887726,19.165687525726"
+                    Point3="10.9523787887726,23.165687525726" />
+                  <mssgle:LineSegment
+                    End="10.9523787887726,30.831375051452" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18004,30 +18109,90 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint 2]"
-          TopLeft="193.333336625781,284.549023654634">
+          TopLeft="192.533336625781,321.949023654634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.7523819903937,79.2941193201137"
+              EndConnector="15.7523819903934,44.894119320114"
               Start="0,0"
-              End="23.7523819903937,71.7941193201137">
+              End="15.7523819903934,37.394119320114">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.6470596600569" />
+                    End="0,18.447059660057" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.6470596600569"
-                    Point2="0,39.6470596600569"
-                    Point3="4,39.6470596600569" />
+                    Point1="0,18.447059660057"
+                    Point2="0,22.447059660057"
+                    Point3="4,22.447059660057" />
                   <mssgle:LineSegment
-                    End="19.7523819903937,39.6470596600569" />
+                    End="11.7523819903934,22.447059660057" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.7523819903937,39.6470596600569"
-                    Point2="23.7523819903937,39.6470596600569"
-                    Point3="23.7523819903937,43.6470596600569" />
+                    Point1="11.7523819903934,22.447059660057"
+                    Point2="15.7523819903934,22.447059660057"
+                    Point3="15.7523819903934,26.447059660057" />
                   <mssgle:LineSegment
-                    End="23.7523819903937,71.7941193201137" />
+                    End="15.7523819903934,37.394119320114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Load To Fct\insert Koeficijent konverzije JM"
+          TopLeft="69,120" />
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
+          TopLeft="159.15238607757,76.5725511874294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.8476139224302,43.4274488125706"
+              Start="0,0"
+              End="21.8476139224302,35.9274488125706">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7137244062853" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7137244062853"
+                    Point2="0,21.7137244062853"
+                    Point3="4,21.7137244062853" />
+                  <mssgle:LineSegment
+                    End="17.8476139224302,21.7137244062853" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.8476139224302,21.7137244062853"
+                    Point2="21.8476139224302,21.7137244062853"
+                    Point3="21.8476139224302,25.7137244062853" />
+                  <mssgle:LineSegment
+                    End="21.8476139224302,35.9274488125706" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 3]"
+          TopLeft="181.290478918504,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.617648603182"
+              Start="0,0"
+              End="0,30.117648603182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.117648603182" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18553,30 +18718,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
-          TopLeft="730.780952380952,137.6">
+          TopLeft="731.047619047619,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="54.0190476190476,42.9714285714285"
+              EndConnector="53.9523809523806,42.571428571429"
               Start="0,0"
-              End="54.0190476190476,35.4714285714285">
+              End="53.9523809523806,35.071428571429">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.5029965156794" />
+                    End="0,13.339122883196" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.5029965156794"
-                    Point2="0,17.5029965156794"
-                    Point3="4,17.5029965156794" />
+                    Point1="0,13.339122883196"
+                    Point2="0,17.339122883196"
+                    Point3="4,17.339122883196" />
                   <mssgle:LineSegment
-                    End="50.0190476190476,17.5029965156794" />
+                    End="49.9523809523806,17.339122883196" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.0190476190476,17.5029965156794"
-                    Point2="54.0190476190476,17.5029965156794"
-                    Point3="54.0190476190476,21.5029965156794" />
+                    Point1="49.9523809523806,17.339122883196"
+                    Point2="53.9523809523806,17.339122883196"
+                    Point3="53.9523809523806,21.339122883196" />
                   <mssgle:LineSegment
-                    End="54.0190476190476,35.4714285714285" />
+                    End="53.9523809523806,35.071428571429" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18871,37 +19036,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[MatchedIstovarnoMesto]"
-          TopLeft="322.742857142857,76.8">
+          TopLeft="323.142857142857,77">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="322.971428571429,40"
+              EndConnector="322.571428571429,40"
               Start="0,0"
-              End="315.471428571429,40">
+              End="315.071428571429,40">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="157.485714285714,0" />
+                    End="157.285714285714,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="157.485714285714,0"
-                    Point2="161.485714285714,0"
-                    Point3="161.485714285714,4" />
+                    Point1="157.285714285714,0"
+                    Point2="161.285714285714,0"
+                    Point3="161.285714285714,4" />
                   <mssgle:LineSegment
-                    End="161.485714285714,36" />
+                    End="161.285714285714,36" />
                   <mssgle:CubicBezierSegment
-                    Point1="161.485714285714,36"
-                    Point2="161.485714285714,40"
-                    Point3="165.485714285714,40" />
+                    Point1="161.285714285714,36"
+                    Point2="161.285714285714,40"
+                    Point3="165.285714285714,40" />
                   <mssgle:LineSegment
-                    End="315.471428571429,40" />
+                    End="315.071428571429,40" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="108.353683035714,-15.7490234375,106.2640625,9.7490234375"
+              BoundingBox="108.153683035714,-15.7490234375,106.2640625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19080,284 +19245,38 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="217.942857142857,403.428571428571">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
+          TopLeft="833.942857142857,441.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="316.777142857143,-265.828571428571"
+              EndConnector="52.5714285714283,46.4"
               Start="0,0"
-              End="316.777142857143,-258.328571428571">
+              End="52.5714285714283,38.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-103.373893557423" />
+                    End="0,19.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-103.373893557423"
-                    Point2="0,-107.373893557423"
-                    Point3="4,-107.373893557423" />
+                    Point1="0,19.2"
+                    Point2="0,23.2"
+                    Point3="4,23.2" />
                   <mssgle:LineSegment
-                    End="312.777142857143,-107.373893557423" />
+                    End="48.5714285714283,23.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="312.777142857143,-107.373893557423"
-                    Point2="316.777142857143,-107.373893557423"
-                    Point3="316.777142857143,-111.373893557423" />
+                    Point1="48.5714285714283,23.2"
+                    Point2="52.5714285714283,23.2"
+                    Point3="52.5714285714283,27.2" />
                   <mssgle:LineSegment
-                    End="316.777142857143,-258.328571428571" />
+                    End="52.5714285714283,38.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="110.197184709821,-102.373893557423,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
-          TopLeft="770.285714285714,356.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.1428571428571,-53.7142857142857"
-              Start="0,0"
-              End="17.6428571428571,-53.7142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="8.57142857142856,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.57142857142856,0"
-                    Point2="12.5714285714286,0"
-                    Point3="12.5714285714286,-4" />
-                  <mssgle:LineSegment
-                    End="12.5714285714286,-49.7142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5714285714286,-49.7142857142857"
-                    Point2="12.5714285714286,-53.7142857142857"
-                    Point3="16.5714285714286,-53.7142857142857" />
-                  <mssgle:LineSegment
-                    End="17.6428571428571,-53.7142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.6199581473214,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
-          TopLeft="784.8,222.171428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.4285714285714,60.1142857142858"
-              Start="0,0"
-              End="75.4285714285714,52.6142857142858">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0571428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0571428571429"
-                    Point2="0,30.0571428571429"
-                    Point3="4,30.0571428571429" />
-                  <mssgle:LineSegment
-                    End="71.4285714285714,30.0571428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.4285714285714,30.0571428571429"
-                    Point2="75.4285714285714,30.0571428571429"
-                    Point3="75.4285714285714,34.0571428571429" />
-                  <mssgle:LineSegment
-                    End="75.4285714285714,52.6142857142858" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.4771010044643,35.0571428571429,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="523.428571428571,1427.65714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.714285714286,12.5714285714284"
-              Start="0,0"
-              End="-102.214285714286,12.5714285714284">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-50.8571428571428,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.8571428571428,0"
-                    Point2="-54.8571428571428,0"
-                    Point3="-54.8571428571428,4" />
-                  <mssgle:LineSegment
-                    End="-54.8571428571428,8.57142857142844" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-54.8571428571428,8.57142857142844"
-                    Point2="-54.8571428571428,12.5714285714284"
-                    Point3="-58.8571428571428,12.5714285714284" />
-                  <mssgle:LineSegment
-                    End="-102.214285714286,12.5714285714284" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-103.048529575893,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="840.4,786.742857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="192.4,29.2571428571429"
-              Start="0,0"
-              End="192.4,21.7571428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.6285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.6285714285714"
-                    Point2="0,14.6285714285714"
-                    Point3="4,14.6285714285714" />
-                  <mssgle:LineSegment
-                    End="188.4,14.6285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="188.4,14.6285714285714"
-                    Point2="192.4,14.6285714285714"
-                    Point3="192.4,18.6285714285714" />
-                  <mssgle:LineSegment
-                    End="192.4,21.7571428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="48.00861328125,19.6285714285714,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
-          TopLeft="736,1384.35714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114.171428571429,22.5"
-              Start="0,0"
-              End="-114.171428571429,15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-110.171428571429,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-110.171428571429,0"
-                    Point2="-114.171428571429,0"
-                    Point3="-114.171428571429,4" />
-                  <mssgle:LineSegment
-                    End="-114.171428571429,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-162.362815290179,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
-          TopLeft="982.857142857143,1357.94285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-119.657142857143,36.5714285714287"
-              Start="0,0"
-              End="-112.157142857143,36.5714285714287">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-55.8285714285714,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.8285714285714,0"
-                    Point2="-59.8285714285714,0"
-                    Point3="-59.8285714285714,4" />
-                  <mssgle:LineSegment
-                    End="-59.8285714285714,32.5714285714287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.8285714285714,32.5714285714287"
-                    Point2="-59.8285714285714,36.5714285714287"
-                    Point3="-63.8285714285714,36.5714285714287" />
-                  <mssgle:LineSegment
-                    End="-112.157142857143,36.5714285714287" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-108.019958147321,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
-          TopLeft="949.028571428571,1284.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.6857142857143,-52.5714285714287"
-              Start="0,0"
-              End="17.1857142857143,-52.5714285714287">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="8.34285714285716,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.34285714285716,0"
-                    Point2="12.3428571428572,0"
-                    Point3="12.3428571428572,-4" />
-                  <mssgle:LineSegment
-                    End="12.3428571428572,-48.5714285714287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.3428571428572,-48.5714285714287"
-                    Point2="12.3428571428572,-52.5714285714287"
-                    Point3="16.3428571428572,-52.5714285714287" />
-                  <mssgle:LineSegment
-                    End="17.1857142857143,-52.5714285714287" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.8485295758928,1,96.3827734375,11.609375"
+              BoundingBox="-21.9056724330359,28.2,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19398,74 +19317,98 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
-          TopLeft="973.028570260807,1085.65378157266">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
+          TopLeft="727.257142857143,483.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.257144521207,-28.4571427112837"
+              EndConnector="138.990476190476,4.57142857142856"
               Start="0,0"
-              End="33.757144521207,-28.4571427112837">
+              End="138.990476190476,-2.92857142857144">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="16.6285722606035,0" />
+                    End="0,-18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.6285722606035,0"
-                    Point2="20.6285722606035,0"
-                    Point3="20.6285722606035,-4" />
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
                   <mssgle:LineSegment
-                    End="20.6285722606035,-24.4571427112837" />
+                    End="134.990476190476,-22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.6285722606035,-24.4571427112837"
-                    Point2="20.6285722606035,-28.4571427112837"
-                    Point3="24.6285722606035,-28.4571427112837" />
+                    Point1="134.990476190476,-22.5"
+                    Point2="138.990476190476,-22.5"
+                    Point3="138.990476190476,-18.5" />
                   <mssgle:LineSegment
-                    End="33.757144521207,-28.4571427112837" />
+                    End="138.990476190476,-2.92857142857144" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.5628144581465,1,96.3827734375,11.609375"
+              BoundingBox="21.303851376488,-17.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
-          TopLeft="936,888.228571428571">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
+          TopLeft="821.942857142857,646.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.9999999999999,-51.4285714285714"
+              EndConnector="71.7714285714287,-2.05714285714294"
               Start="0,0"
-              End="24.4999999999999,-51.4285714285714">
+              End="64.2714285714287,-2.05714285714294">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="11.9999999999999,0" />
+                    End="0,1.94285714285706" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.9999999999999,0"
-                    Point2="15.9999999999999,0"
-                    Point3="15.9999999999999,-4" />
+                    Point1="0,1.94285714285706"
+                    Point2="0,-2.05714285714294"
+                    Point3="4,-2.05714285714294" />
                   <mssgle:LineSegment
-                    End="15.9999999999999,-47.4285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.9999999999999,-47.4285714285714"
-                    Point2="15.9999999999999,-51.4285714285714"
-                    Point3="19.9999999999999,-51.4285714285714" />
-                  <mssgle:LineSegment
-                    End="24.4999999999999,-51.4285714285714" />
+                    End="64.2714285714287,-2.05714285714294" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.1913867187501,1,96.3827734375,11.609375"
+              BoundingBox="-14.0556724330357,2.94285714285706,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
+          TopLeft="961.257142857143,584.228571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-2.74285714285702,39.7714285714286"
+              Start="0,0"
+              End="-2.74285714285702,32.2714285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="1.25714285714298,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="1.25714285714298,0"
+                    Point2="-2.74285714285702,0"
+                    Point3="-2.74285714285702,4" />
+                  <mssgle:LineSegment
+                    End="-2.74285714285702,32.2714285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-50.934243861607,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19506,134 +19449,356 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
-          TopLeft="961.257142857143,584.228571428571">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
+          TopLeft="936,888.228571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-2.74285714285702,39.7714285714286"
+              EndConnector="31.9999999999999,-51.4285714285714"
               Start="0,0"
-              End="-2.74285714285702,32.2714285714286">
+              End="24.4999999999999,-51.4285714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="1.25714285714298,0" />
+                    End="11.9999999999999,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="1.25714285714298,0"
-                    Point2="-2.74285714285702,0"
-                    Point3="-2.74285714285702,4" />
+                    Point1="11.9999999999999,0"
+                    Point2="15.9999999999999,0"
+                    Point3="15.9999999999999,-4" />
                   <mssgle:LineSegment
-                    End="-2.74285714285702,32.2714285714286" />
+                    End="15.9999999999999,-47.4285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9999999999999,-47.4285714285714"
+                    Point2="15.9999999999999,-51.4285714285714"
+                    Point3="19.9999999999999,-51.4285714285714" />
+                  <mssgle:LineSegment
+                    End="24.4999999999999,-51.4285714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-50.934243861607,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-32.1913867187501,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
-          TopLeft="821.942857142857,646.857142857143">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+          TopLeft="973.028570260807,1085.65378157266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71.7714285714287,-2.05714285714294"
+              EndConnector="41.257144521207,-28.4571427112837"
               Start="0,0"
-              End="64.2714285714287,-2.05714285714294">
+              End="33.757144521207,-28.4571427112837">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,1.94285714285706" />
+                    End="16.6285722606035,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,1.94285714285706"
-                    Point2="0,-2.05714285714294"
-                    Point3="4,-2.05714285714294" />
+                    Point1="16.6285722606035,0"
+                    Point2="20.6285722606035,0"
+                    Point3="20.6285722606035,-4" />
                   <mssgle:LineSegment
-                    End="64.2714285714287,-2.05714285714294" />
+                    End="20.6285722606035,-24.4571427112837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.6285722606035,-24.4571427112837"
+                    Point2="20.6285722606035,-28.4571427112837"
+                    Point3="24.6285722606035,-28.4571427112837" />
+                  <mssgle:LineSegment
+                    End="33.757144521207,-28.4571427112837" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-14.0556724330357,2.94285714285706,96.3827734375,11.609375"
+              BoundingBox="-27.5628144581465,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
-          TopLeft="727.257142857143,483.428571428571">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
+          TopLeft="770.285714285714,356.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.990476190476,4.57142857142856"
+              EndConnector="25.1428571428571,-53.7142857142857"
               Start="0,0"
-              End="138.990476190476,-2.92857142857144">
+              End="17.6428571428571,-53.7142857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.5" />
+                    End="8.57142857142856,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-18.5"
-                    Point2="0,-22.5"
-                    Point3="4,-22.5" />
+                    Point1="8.57142857142856,0"
+                    Point2="12.5714285714286,0"
+                    Point3="12.5714285714286,-4" />
                   <mssgle:LineSegment
-                    End="134.990476190476,-22.5" />
+                    End="12.5714285714286,-49.7142857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="134.990476190476,-22.5"
-                    Point2="138.990476190476,-22.5"
-                    Point3="138.990476190476,-18.5" />
+                    Point1="12.5714285714286,-49.7142857142857"
+                    Point2="12.5714285714286,-53.7142857142857"
+                    Point3="16.5714285714286,-53.7142857142857" />
                   <mssgle:LineSegment
-                    End="138.990476190476,-2.92857142857144" />
+                    End="17.6428571428571,-53.7142857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="21.303851376488,-17.5,96.3827734375,11.609375"
+              BoundingBox="-35.6199581473214,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
-          TopLeft="833.942857142857,441.6">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
+          TopLeft="949.028571428571,1284.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.5714285714283,46.4"
+              EndConnector="24.6857142857143,-52.5714285714287"
               Start="0,0"
-              End="52.5714285714283,38.9">
+              End="17.1857142857143,-52.5714285714287">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2" />
+                    End="8.34285714285716,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.2"
-                    Point2="0,23.2"
-                    Point3="4,23.2" />
+                    Point1="8.34285714285716,0"
+                    Point2="12.3428571428572,0"
+                    Point3="12.3428571428572,-4" />
                   <mssgle:LineSegment
-                    End="48.5714285714283,23.2" />
+                    End="12.3428571428572,-48.5714285714287" />
                   <mssgle:CubicBezierSegment
-                    Point1="48.5714285714283,23.2"
-                    Point2="52.5714285714283,23.2"
-                    Point3="52.5714285714283,27.2" />
+                    Point1="12.3428571428572,-48.5714285714287"
+                    Point2="12.3428571428572,-52.5714285714287"
+                    Point3="16.3428571428572,-52.5714285714287" />
                   <mssgle:LineSegment
-                    End="52.5714285714283,38.9" />
+                    End="17.1857142857143,-52.5714285714287" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-21.9056724330359,28.2,96.3827734375,11.609375"
+              BoundingBox="-35.8485295758928,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+          TopLeft="982.857142857143,1357.94285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-119.657142857143,36.5714285714287"
+              Start="0,0"
+              End="-112.157142857143,36.5714285714287">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-55.8285714285714,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.8285714285714,0"
+                    Point2="-59.8285714285714,0"
+                    Point3="-59.8285714285714,4" />
+                  <mssgle:LineSegment
+                    End="-59.8285714285714,32.5714285714287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.8285714285714,32.5714285714287"
+                    Point2="-59.8285714285714,36.5714285714287"
+                    Point3="-63.8285714285714,36.5714285714287" />
+                  <mssgle:LineSegment
+                    End="-112.157142857143,36.5714285714287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.019958147321,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="736,1384.35714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.171428571429,22.5"
+              Start="0,0"
+              End="-114.171428571429,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-110.171428571429,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.171428571429,0"
+                    Point2="-114.171428571429,0"
+                    Point3="-114.171428571429,4" />
+                  <mssgle:LineSegment
+                    End="-114.171428571429,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-162.362815290179,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          TopLeft="840.4,786.742857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192.4,29.2571428571429"
+              Start="0,0"
+              End="192.4,21.7571428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.6285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6285714285714"
+                    Point2="0,14.6285714285714"
+                    Point3="4,14.6285714285714" />
+                  <mssgle:LineSegment
+                    End="188.4,14.6285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188.4,14.6285714285714"
+                    Point2="192.4,14.6285714285714"
+                    Point3="192.4,18.6285714285714" />
+                  <mssgle:LineSegment
+                    End="192.4,21.7571428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="48.00861328125,19.6285714285714,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="523.428571428571,1427.65714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.714285714286,12.5714285714284"
+              Start="0,0"
+              End="-102.214285714286,12.5714285714284">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-50.8571428571428,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.8571428571428,0"
+                    Point2="-54.8571428571428,0"
+                    Point3="-54.8571428571428,4" />
+                  <mssgle:LineSegment
+                    End="-54.8571428571428,8.57142857142844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54.8571428571428,8.57142857142844"
+                    Point2="-54.8571428571428,12.5714285714284"
+                    Point3="-58.8571428571428,12.5714285714284" />
+                  <mssgle:LineSegment
+                    End="-102.214285714286,12.5714285714284" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.048529575893,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="784.8,222.171428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.4285714285714,60.1142857142858"
+              Start="0,0"
+              End="75.4285714285714,52.6142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0571428571429"
+                    Point2="0,30.0571428571429"
+                    Point3="4,30.0571428571429" />
+                  <mssgle:LineSegment
+                    End="71.4285714285714,30.0571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.4285714285714,30.0571428571429"
+                    Point2="75.4285714285714,30.0571428571429"
+                    Point3="75.4285714285714,34.0571428571429" />
+                  <mssgle:LineSegment
+                    End="75.4285714285714,52.6142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.4771010044643,35.0571428571429,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="217.809523809524,403.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="472.571428571429,-265.428571428571"
+              Start="0,0"
+              End="472.571428571429,-257.928571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-127.786730402205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-127.786730402205"
+                    Point2="0,-131.786730402205"
+                    Point3="4,-131.786730402205" />
+                  <mssgle:LineSegment
+                    End="468.571428571429,-131.786730402205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="468.571428571429,-131.786730402205"
+                    Point2="472.571428571429,-131.786730402205"
+                    Point3="472.571428571429,-135.786730402205" />
+                  <mssgle:LineSegment
+                    End="472.571428571429,-257.928571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="188.094327566964,-126.786730402205,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -20403,49 +20568,47 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage"
+          TopLeft="429,246" />
         <NodeLayout
           Size="154,42"
           Id="Package\Load To Fct\Load To Staging From Raw File\Raw File Source"
-          TopLeft="175.2,55.2" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Load To Fct\Load To Staging From Raw File\Prodaja Stage"
-          TopLeft="281.6,166.4" />
+          TopLeft="386,87" />
         <EdgeLayout
           Id="Package\Load To Fct\Load To Staging From Raw File.Paths[Raw File Source Output]"
-          TopLeft="252,96.8">
+          TopLeft="463,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.6,69.6"
+              EndConnector="38.5,117"
               Start="0,0"
-              End="101.6,62.1">
+              End="38.5,109.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.8" />
+                    End="0,54.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.8"
-                    Point2="0,34.8"
-                    Point3="4,34.8" />
+                    Point1="0,54.5"
+                    Point2="0,58.5"
+                    Point3="4,58.5" />
                   <mssgle:LineSegment
-                    End="97.6,34.8" />
+                    End="34.5,58.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="97.6,34.8"
-                    Point2="101.6,34.8"
-                    Point3="101.6,38.8" />
+                    Point1="34.5,58.5"
+                    Point2="38.5,58.5"
+                    Point3="38.5,62.5" />
                   <mssgle:LineSegment
-                    End="101.6,62.1" />
+                    End="38.5,109.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
