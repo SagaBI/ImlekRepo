@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{3B202B70-EB24-4337-AD3E-4D33B63E3706}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{404D3B4E-FED7-4663-B880-CE6B330CBE83}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt SEP17.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -51,6 +51,15 @@
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2458C5E3-15DC-4F98-98B9-BFCD4A844535}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Arhiva">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Saga\Arhiva</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{8FC36D16-C620-4338-91BF-EA6CF6FD244F}"
@@ -85,7 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\SPV _ bgt SEP17.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -96,7 +105,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\C:\Saga\Budzeti\SPV _ bgt SEP17.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Budzeti\C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -116,7 +125,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Godina">
       <DTS:VariableValue
-        DTS:DataType="8">EP17</DTS:VariableValue>
+        DTS:DataType="8">2017</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -131,12 +140,12 @@
       DTS:CreationName=""
       DTS:DTSID="{BD14C2A5-2E52-4454-B72F-F6D0F8BBEC0B}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="(LEFT((RIGHT( @[User::FileName] , 11 )),2))"
+      DTS:Expression="(LEFT((RIGHT( @[User::FileName] , 12 )),2))"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8"> S</DTS:VariableValue>
+        DTS:DataType="8"> 9</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -255,7 +264,7 @@
                 <FEFEProperty
                   Folder="C:\Saga\Budzeti" />
                 <FEFEProperty
-                  FileSpec="*.xlsx" />
+                  FileSpec="SPV*.xlsx" />
                 <FEFEProperty
                   FileNameRetrievalType="0" />
                 <FEFEProperty
@@ -924,6 +933,294 @@
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate"
+                      componentClassID="Microsoft.Aggregate"
+                      contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                      description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+                      name="Aggregate"
+                      version="3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                          name="KeyScale"
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                          name="Keys" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                          name="CountDistinctScale"
+                          typeConverter="KeyScaleType">0</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                          name="CountDistinctKeys" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                          name="AutoExtendFactor">25</property>
+                      </properties>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1]"
+                          name="Aggregate Input 1">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[VolumenSecJM]"
+                              cachedDataType="numeric"
+                              cachedName="VolumenSecJM"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[datum]"
+                              cachedDataType="dbDate"
+                              cachedName="datum"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[SifraArtikal]"
+                              cachedDataType="wstr"
+                              cachedLength="25"
+                              cachedName="SifraArtikal"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SifraArtikal]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[SupervizorSifra]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="SupervizorSifra"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorSifra]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[BudzetTip]"
+                              cachedDataType="wstr"
+                              cachedLength="30"
+                              cachedName="BudzetTip"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BudzetTip]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[SupervizorID]"
+                              cachedDataType="i4"
+                              cachedName="SupervizorID"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorID]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1].Columns[ArtikalID]"
+                              cachedDataType="i4"
+                              cachedName="ArtikalID"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ArtikalID]" />
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1]"
+                          name="Aggregate Output 1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                              name="KeyScale"
+                              typeConverter="KeyScaleType">0</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                              name="Keys" />
+                          </properties>
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[VolumenSecJM]"
+                              dataType="numeric"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[VolumenSecJM]"
+                              name="VolumenSecJM"
+                              precision="18"
+                              scale="5">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">0</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[datum]"
+                              dataType="dbDate"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[datum]"
+                              name="datum">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">0</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SifraArtikal]"
+                              dataType="wstr"
+                              length="25"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SifraArtikal]"
+                              name="SifraArtikal">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SifraArtikal]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">0</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorSifra]"
+                              dataType="wstr"
+                              length="10"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorSifra]"
+                              name="SupervizorSifra">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorSifra]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">0</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[BudzetTip]"
+                              dataType="wstr"
+                              length="30"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[BudzetTip]"
+                              name="BudzetTip">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BudzetTip]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">0</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorID]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorID]"
+                              name="SupervizorID">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorID]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">7</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[ArtikalID]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[ArtikalID]"
+                              name="ArtikalID">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the ID of the input column used in the aggregation."
+                                  name="AggregationColumnId">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the type of aggregation."
+                                  name="AggregationType"
+                                  typeConverter="AggregationType">7</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                                  name="IsBig">1</property>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Specifies the string comparison options."
+                                  name="AggregationComparisonFlags">0</property>
+                              </properties>
+                            </outputColumn>
                           </outputColumns>
                           <externalMetadataColumns />
                         </output>
@@ -3201,17 +3498,17 @@ where [refTable].[SifraArtikla] = ?</property>
                           <externalMetadataColumns />
                         </input>
                         <input
-                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4]"
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2]"
                           hasSideEffects="true"
-                          name="Union All Input 4">
+                          name="Union All Input 2">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[VolumenSecJM]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[VolumenSecJM]"
                               cachedDataType="numeric"
                               cachedName="VolumenSecJM"
                               cachedPrecision="18"
                               cachedScale="5"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[VolumenSecJM]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3221,36 +3518,10 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[startdate]"
-                              cachedDataType="dbDate"
-                              cachedName="startdate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[startdate]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[enddate]"
-                              cachedDataType="dbDate"
-                              cachedName="enddate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[enddate]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[datum]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[datum]"
                               cachedDataType="dbDate"
                               cachedName="datum"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[datum]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3260,11 +3531,11 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[SifraArtikal]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[SifraArtikal]"
                               cachedDataType="wstr"
                               cachedLength="25"
                               cachedName="SifraArtikal"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SifraArtikal]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SifraArtikal]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3274,11 +3545,11 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[SupervizorSifra]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[SupervizorSifra]"
                               cachedDataType="wstr"
                               cachedLength="10"
                               cachedName="SupervizorSifra"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorSifra]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorSifra]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3288,11 +3559,11 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[BudzetTip]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[BudzetTip]"
                               cachedDataType="wstr"
                               cachedLength="30"
                               cachedName="BudzetTip"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BudzetTip]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[BudzetTip]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3302,10 +3573,10 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[SupervizorID]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[SupervizorID]"
                               cachedDataType="i4"
                               cachedName="SupervizorID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[SupervizorID]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[SupervizorID]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3315,10 +3586,10 @@ where [refTable].[SifraArtikla] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4].Columns[ArtikalID]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2].Columns[ArtikalID]"
                               cachedDataType="i4"
                               cachedName="ArtikalID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ArtikalID]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1].Columns[ArtikalID]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -3331,10 +3602,10 @@ where [refTable].[SifraArtikla] = ?</property>
                           <externalMetadataColumns />
                         </input>
                         <input
-                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2]"
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
                           dangling="true"
                           hasSideEffects="true"
-                          name="Union All Input 2">
+                          name="Union All Input 3">
                           <externalMetadataColumns />
                         </input>
                       </inputs>
@@ -4463,15 +4734,20 @@ where [refTable].[SifraArtikla] = ?</property>
                   </components>
                   <paths>
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output1]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Supervizor.Inputs[OLE DB Command Input]"
-                      name="Derived Column Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup.Outputs[Derived Column Output]" />
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Aggregate Output 1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 2]"
+                      name="Aggregate Output 1"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Outputs[Aggregate Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]"
                       name="Derived Column Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Supervizor.Inputs[OLE DB Command Input]"
+                      name="Derived Column Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Error]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -4488,30 +4764,30 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="InferredSupervizor"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Supervizor.Outputs[InferredSupervizor]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Inputs[Lookup Input]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination.Inputs[OLE DB Destination Input]"
                       name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 1]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                     <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Inputs[Lookup Input]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
+                    <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Artikal Lookup.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination.Inputs[OLE DB Destination Input]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -4563,25 +4839,25 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="OLE DB Source Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage.Outputs[OLE DB Source Output]" />
                     <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1]"
+                      name="Union All Output 1"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
+                    <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 4]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 2]"
                       name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup.Inputs[Derived Column Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 2]"
-                      name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -4668,8 +4944,8 @@ where [refTable].[SifraArtikla] = ?</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{4CDE8091-C11B-47C8-9670-38B6890C0DF0}"
-              DTS:ObjectName="{4CDE8091-C11B-47C8-9670-38B6890C0DF0}"
+              DTS:DTSID="{D4ECBB3D-8F51-4B01-9A39-520C7B62CE69}"
+              DTS:ObjectName="{D4ECBB3D-8F51-4B01-9A39-520C7B62CE69}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -5837,27 +6113,33 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="113,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup"
-          TopLeft="154,555" />
+          TopLeft="103,560" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output1]"
-          TopLeft="178,514">
+          TopLeft="91.5,535">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.5,41"
+              EndConnector="68,25"
               Start="0,0"
-              End="32.5,33.5">
+              End="68,17.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="28.5,0" />
+                    End="0,8.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.5,0"
-                    Point2="32.5,0"
-                    Point3="32.5,4" />
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="4,12.5" />
                   <mssgle:LineSegment
-                    End="32.5,33.5" />
+                    End="64,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,12.5"
+                    Point2="68,12.5"
+                    Point3="68,16.5" />
+                  <mssgle:LineSegment
+                    End="68,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5909,40 +6191,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3"
-          TopLeft="373,607" />
+          TopLeft="297,640" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="267,576">
+          TopLeft="159.5,602">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="106,52"
+              EndConnector="172,38"
               Start="0,0"
-              End="98.5,52">
+              End="172,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="49,0" />
+                    End="0,20.8241206030151" />
                   <mssgle:CubicBezierSegment
-                    Point1="49,0"
-                    Point2="53,0"
-                    Point3="53,4" />
+                    Point1="0,20.8241206030151"
+                    Point2="0,24.8241206030151"
+                    Point3="4,24.8241206030151" />
                   <mssgle:LineSegment
-                    End="53,48" />
+                    End="168,24.8241206030151" />
                   <mssgle:CubicBezierSegment
-                    Point1="53,48"
-                    Point2="53,52"
-                    Point3="57,52" />
+                    Point1="168,24.8241206030151"
+                    Point2="172,24.8241206030151"
+                    Point3="172,28.8241206030151" />
                   <mssgle:LineSegment
-                    End="98.5,52" />
+                    End="172,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="4.80861328125,-17.609375,96.3827734375,11.609375"
+              BoundingBox="37.80861328125,29.8241206030151,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5952,60 +6234,26 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-248,33"
+              EndConnector="-324,66"
               Start="0,0"
-              End="-248,25.5">
+              End="-324,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
+                    End="0,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="-4,16.5" />
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
                   <mssgle:LineSegment
-                    End="-244,16.5" />
+                    End="-320,33" />
                   <mssgle:CubicBezierSegment
-                    Point1="-244,16.5"
-                    Point2="-248,16.5"
-                    Point3="-248,20.5" />
+                    Point1="-320,33"
+                    Point2="-324,33"
+                    Point3="-324,37" />
                   <mssgle:LineSegment
-                    End="-248,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
-          TopLeft="495,607">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="482.666666666667,-275"
-              Start="0,0"
-              End="482.666666666667,-267.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.6524765894528" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.6524765894528"
-                    Point2="0,25.6524765894528"
-                    Point3="4,25.6524765894528" />
-                  <mssgle:LineSegment
-                    End="478.666666666667,25.6524765894528" />
-                  <mssgle:CubicBezierSegment
-                    Point1="478.666666666667,25.6524765894528"
-                    Point2="482.666666666667,25.6524765894528"
-                    Point3="482.666666666667,21.6524765894528" />
-                  <mssgle:LineSegment
-                    End="482.666666666667,-267.5" />
+                    End="-324,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6052,6 +6300,78 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <mssgm:EdgeLabel
               BoundingBox="-279.19138671875,83.5,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate"
+          TopLeft="833,552" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
+          TopLeft="392.5,640">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="504,-46"
+              Start="0,0"
+              End="504,-38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-11.9497487437186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-11.9497487437186"
+                    Point2="0,-15.9497487437186"
+                    Point3="4,-15.9497487437186" />
+                  <mssgle:LineSegment
+                    End="500,-15.9497487437186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="500,-15.9497487437186"
+                    Point2="504,-15.9497487437186"
+                    Point3="504,-19.9497487437186" />
+                  <mssgle:LineSegment
+                    End="504,-38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Aggregate Output 1]"
+          TopLeft="896.5,552">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.1666666666666,-220"
+              Start="0,0"
+              End="81.1666666666666,-212.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-126.277324632953" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-126.277324632953"
+                    Point2="0,-130.277324632953"
+                    Point3="4,-130.277324632953" />
+                  <mssgle:LineSegment
+                    End="77.1666666666666,-130.277324632953" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.1666666666666,-130.277324632953"
+                    Point2="81.1666666666666,-130.277324632953"
+                    Point3="81.1666666666666,-134.277324632953" />
+                  <mssgle:LineSegment
+                    End="81.1666666666666,-212.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
