@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetKA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="93"
-  DTS:VersionGUID="{C1A5DB72-02E3-4AC4-B699-F7FBCD2255CB}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{42C2ECA9-9694-477F-99AB-C513F6B0803E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4781,8 +4781,8 @@ where [refTable].[SifraArtikla] = ?</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{D169BBA4-9DDA-45F0-8858-10215F990EC7}"
-              DTS:ObjectName="{D169BBA4-9DDA-45F0-8858-10215F990EC7}"
+              DTS:DTSID="{50164C6F-6716-4021-A54E-037ED5B7A155}"
+              DTS:ObjectName="{50164C6F-6716-4021-A54E-037ED5B7A155}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -4838,7 +4838,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetKA"
-              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      9/18/2017 9:19:17 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      9/18/2017 12:28:40 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5285,7 +5285,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Budzet Ka Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5298,7 +5298,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Budzet Ka Stage">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6235,7 +6235,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -6245,35 +6245,12 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
           type="q3:string">[dim].[DimKupac]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6322,7 +6299,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6372,6 +6349,29 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
