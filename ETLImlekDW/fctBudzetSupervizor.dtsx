@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="92"
-  DTS:VersionGUID="{404D3B4E-FED7-4663-B880-CE6B330CBE83}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{D867324B-DB3D-4AA0-B894-CE140022ED33}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFile\Source_2017-09-16.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-09-20.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1411,14 +1411,14 @@ where [refTable].[SifraArtikla] = ?</property>
                           name="SqlCommand"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  SifraArtikal,datum,p.[SupervizorSifra], p.BudzetTip, 
 	s.SupervizorID, s.startdate, s.enddate,
-	(select max(OU2.StartDate) from  ImlekDWTest.dim.DimSupervizor OU2 where OU2.SupervizorSifra = p.SupervizorSifra ) as MaxSupervizorStartDate,
+	(select max(OU2.StartDate) from  synTblImlekDWSupervizor OU2 where OU2.SupervizorSifra = p.SupervizorSifra ) as MaxSupervizorStartDate,
 	case when  p.SifraArtikal = a.[GrupaArtiklaSifra] and a.SifraArtikla is not null then a.ArtikalID end as ArtikalID,
 	case when p.SifraArtikal &lt;&gt;  a.[GrupaArtiklaSifra] and a.SifraArtikla is not null  then a.GrupaArtiklaSifra 
 		 when a.SifraArtikla is null then p.SifraArtikal end as NovaSifraArtikla,
    [VolumenSecJM]
 from [stg].[BudzetSupervizorStage] p left join
-ImlekDWTest.dim.DimArtikal a on a.[SifraArtikla] = p.SifraArtikal left join
-ImlekDWTest.dim.DimSupervizor s on (p.SupervizorSifra = s.SupervizorSifra  and p.Datum &gt;=s.StartDate and p.Datum&lt;=s.EndDate)</property>
+synTblImlekDWArtikal a on a.[SifraArtikla] = p.SifraArtikal left join
+synTblImlekDWSupervizor s on (p.SupervizorSifra = s.SupervizorSifra  and p.Datum &gt;=s.StartDate and p.Datum&lt;=s.EndDate)</property>
                         <property
                           dataType="System.String"
                           description="The variable that contains the SQL command to be executed."
@@ -4764,27 +4764,27 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="InferredSupervizor"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Supervizor.Outputs[InferredSupervizor]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination.Inputs[OLE DB Destination Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Artikal Lookup.Outputs[Lookup Match Output]" />
@@ -4814,12 +4814,12 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="NonMatchedArtikal"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Artikal.Outputs[NonMatchedArtikal]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Inputs[Multicast Input 1]"
                       name="NonMatchedSupervizor"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Supervizor.Outputs[NonMatchedSupervizor]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check MaxStartDate.Inputs[Conditional Split Input]"
                       name="NonMatchedSupervizor"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Supervizor.Outputs[NonMatchedSupervizor]" />
@@ -4839,7 +4839,7 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="OLE DB Source Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage.Outputs[OLE DB Source Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate.Inputs[Aggregate Input 1]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
@@ -4854,7 +4854,7 @@ where [refTable].[SifraArtikla] = ?</property>
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup.Inputs[Derived Column Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
@@ -5001,7 +5001,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      9/16/2017 11:47:11 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      9/20/2017 7:44:00 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5124,6 +5124,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="-16.0079409613902,4" />
                   <mssgle:LineSegment
                     End="-16.0079409613902,24.3960782097285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="226.922226943289,185.215687890366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.960315458629,35.375166856817"
+              Start="0,0"
+              End="-31.960315458629,27.875166856817">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6875834284085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6875834284085"
+                    Point2="0,17.6875834284085"
+                    Point3="-4,17.6875834284085" />
+                  <mssgle:LineSegment
+                    End="-27.960315458629,17.6875834284085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.960315458629,17.6875834284085"
+                    Point2="-31.960315458629,17.6875834284085"
+                    Point3="-31.960315458629,21.6875834284085" />
+                  <mssgle:LineSegment
+                    End="-31.960315458629,27.875166856817" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5294,40 +5328,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="226.922226943289,185.215687890366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-31.960315458629,35.375166856817"
-              Start="0,0"
-              End="-31.960315458629,27.875166856817">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.6875834284085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.6875834284085"
-                    Point2="0,17.6875834284085"
-                    Point3="-4,17.6875834284085" />
-                  <mssgle:LineSegment
-                    End="-27.960315458629,17.6875834284085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.960315458629,17.6875834284085"
-                    Point2="-31.960315458629,17.6875834284085"
-                    Point3="-31.960315458629,21.6875834284085" />
-                  <mssgle:LineSegment
-                    End="-31.960315458629,27.875166856817" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -5447,19 +5447,261 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="171,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination"
+          TopLeft="231,362" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Artikal Lookup"
+          TopLeft="594,244" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Artikal"
+          TopLeft="363,168" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast"
+          TopLeft="242,97" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet"
+          TopLeft="972,395" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All"
+          TopLeft="936,290" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Supervizor"
+          TopLeft="41,168" />
+        <NodeLayout
           Size="194,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage"
           TopLeft="453.857142857143,15.6" />
         <NodeLayout
+          Size="174,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check MaxStartDate"
+          TopLeft="207,296" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate"
+          TopLeft="833,552" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination"
+          TopLeft="503,734" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Supervizor"
+          TopLeft="5,493" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date"
+          TopLeft="996,535" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2"
+          TopLeft="621,532" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup"
+          TopLeft="11,401" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal"
+          TopLeft="425,374" />
+        <NodeLayout
           Size="203,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Supervizor"
           TopLeft="476,90" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal"
+          TopLeft="443,454" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup"
+          TopLeft="103,560" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal"
+          TopLeft="431.4,303" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1"
+          TopLeft="21,301" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3"
+          TopLeft="297,640" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
+          TopLeft="86,343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,58"
+              Start="0,0"
+              End="8,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="4,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,29"
+                    Point2="8,29"
+                    Point3="8,33" />
+                  <mssgle:LineSegment
+                    End="8,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+          TopLeft="686,574">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-324,66"
+              Start="0,0"
+              End="-324,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-320,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-320,33"
+                    Point2="-324,33"
+                    Point3="-324,37" />
+                  <mssgle:LineSegment
+                    End="-324,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+          TopLeft="996.5,332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.5,63"
+              Start="0,0"
+              End="49.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="45.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,31.5"
+                    Point2="49.5,31.5"
+                    Point3="49.5,35.5" />
+                  <mssgle:LineSegment
+                    End="49.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="392.5,640">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="504,-46"
+              Start="0,0"
+              End="504,-38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-11.9497487437186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-11.9497487437186"
+                    Point2="0,-15.9497487437186"
+                    Point3="4,-15.9497487437186" />
+                  <mssgle:LineSegment
+                    End="500,-15.9497487437186" />
+                  <mssgle:CubicBezierSegment
+                    Point1="500,-15.9497487437186"
+                    Point2="504,-15.9497487437186"
+                    Point3="504,-19.9497487437186" />
+                  <mssgle:LineSegment
+                    End="504,-38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Source Output]"
           TopLeft="550.857142857143,57.6">
@@ -5494,10 +5736,238 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All"
-          TopLeft="936,290" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output1]"
+          TopLeft="91.5,535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,25"
+              Start="0,0"
+              End="68,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="4,12.5" />
+                  <mssgle:LineSegment
+                    End="64,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64,12.5"
+                    Point2="68,12.5"
+                    Point3="68,16.5" />
+                  <mssgle:LineSegment
+                    End="68,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output]"
+          TopLeft="502.5,416">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.5,38"
+              Start="0,0"
+              End="21.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="17.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.5,19"
+                    Point2="21.5,19"
+                    Point3="21.5,23" />
+                  <mssgle:LineSegment
+                    End="21.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor1]"
+          TopLeft="146.333333333333,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.666666666667,86"
+              Start="0,0"
+              End="147.666666666667,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9108910891089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9108910891089"
+                    Point2="0,34.9108910891089"
+                    Point3="4,34.9108910891089" />
+                  <mssgle:LineSegment
+                    End="143.666666666667,34.9108910891089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.666666666667,34.9108910891089"
+                    Point2="147.666666666667,34.9108910891089"
+                    Point3="147.666666666667,38.9108910891089" />
+                  <mssgle:LineSegment
+                    End="147.666666666667,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.6046419270833,39.9108910891089,102.4573828125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
+          TopLeft="476,114.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114,0"
+              Start="0,0"
+              End="-106.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-106.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.47869140625,5,102.4573828125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedArtikal]"
+          TopLeft="433,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="234,34"
+              Start="0,0"
+              End="234,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="230,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="230,17"
+                    Point2="234,17"
+                    Point3="234,21" />
+                  <mssgle:LineSegment
+                    End="234,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="75.35787109375,22,83.2842578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 3]"
+          TopLeft="320.666666666667,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.333333333333,29"
+              Start="0,0"
+              End="112.333333333333,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.82894736842106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.82894736842106"
+                    Point2="0,11.8289473684211"
+                    Point3="4,11.8289473684211" />
+                  <mssgle:LineSegment
+                    End="108.333333333333,11.8289473684211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.333333333333,11.8289473684211"
+                    Point2="112.333333333333,11.8289473684211"
+                    Point3="112.333333333333,15.8289473684211" />
+                  <mssgle:LineSegment
+                    End="112.333333333333,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 1]"
+          TopLeft="283.333333333333,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-162.333333333333,29"
+              Start="0,0"
+              End="-162.333333333333,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.82894736842105" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.82894736842105"
+                    Point2="0,11.828947368421"
+                    Point3="-4,11.828947368421" />
+                  <mssgle:LineSegment
+                    End="-158.333333333333,11.828947368421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-158.333333333333,11.828947368421"
+                    Point2="-162.333333333333,11.828947368421"
+                    Point3="-162.333333333333,15.828947368421" />
+                  <mssgle:LineSegment
+                    End="-162.333333333333,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[MatchedDimensions]"
           TopLeft="577.5,132">
@@ -5534,54 +6004,216 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Supervizor"
-          TopLeft="41,168" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check MaxStartDate"
-          TopLeft="207,296" />
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
-          TopLeft="146.333333333333,210">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="594,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.666666666667,86"
+              EndConnector="-73.6,38"
               Start="0,0"
-              End="147.666666666667,78.5">
+              End="-73.6,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.9108910891089" />
+                    End="-69.6,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.9108910891089"
-                    Point2="0,34.9108910891089"
-                    Point3="4,34.9108910891089" />
+                    Point1="-69.6,0"
+                    Point2="-73.6,0"
+                    Point3="-73.6,4" />
                   <mssgle:LineSegment
-                    End="143.666666666667,34.9108910891089" />
-                  <mssgle:CubicBezierSegment
-                    Point1="143.666666666667,34.9108910891089"
-                    Point2="147.666666666667,34.9108910891089"
-                    Point3="147.666666666667,38.9108910891089" />
-                  <mssgle:LineSegment
-                    End="147.666666666667,78.5" />
+                    End="-73.6,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.6046419270833,39.9108910891089,102.4573828125,11.609375"
+              BoundingBox="-129.40638671875,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1"
-          TopLeft="21,301" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="667,286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.3333333333334,246"
+              Start="0,0"
+              End="39.3333333333334,238.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,141.80547112462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,141.80547112462"
+                    Point2="0,145.80547112462"
+                    Point3="4,145.80547112462" />
+                  <mssgle:LineSegment
+                    End="35.3333333333334,145.80547112462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.3333333333334,145.80547112462"
+                    Point2="39.3333333333334,145.80547112462"
+                    Point3="39.3333333333334,149.80547112462" />
+                  <mssgle:LineSegment
+                    End="39.3333333333334,238.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.5247200520833,150.80547112462,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+          TopLeft="1046,437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19,98"
+              Start="0,0"
+              End="19,90.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45"
+                    Point2="0,49"
+                    Point3="4,49" />
+                  <mssgle:LineSegment
+                    End="15,49" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15,49"
+                    Point2="19,49"
+                    Point3="19,53" />
+                  <mssgle:LineSegment
+                    End="19,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.69138671875,54,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="159.5,602">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,38"
+              Start="0,0"
+              End="172,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8241206030151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.8241206030151"
+                    Point2="0,24.8241206030151"
+                    Point3="4,24.8241206030151" />
+                  <mssgle:LineSegment
+                    End="168,24.8241206030151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168,24.8241206030151"
+                    Point2="172,24.8241206030151"
+                    Point3="172,28.8241206030151" />
+                  <mssgle:LineSegment
+                    End="172,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.80861328125,29.8241206030151,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="524,496">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.666666666667,36"
+              Start="0,0"
+              End="141.666666666667,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3373860182371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3373860182371"
+                    Point2="0,21.3373860182371"
+                    Point3="4,21.3373860182371" />
+                  <mssgle:LineSegment
+                    End="137.666666666667,21.3373860182371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.666666666667,21.3373860182371"
+                    Point2="141.666666666667,21.3373860182371"
+                    Point3="141.666666666667,25.3373860182371" />
+                  <mssgle:LineSegment
+                    End="141.666666666667,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.6419466145833,26.3373860182371,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="1065,577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-462,157"
+              Start="0,0"
+              End="-462,149.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.5"
+                    Point2="0,78.5"
+                    Point3="-4,78.5" />
+                  <mssgle:LineSegment
+                    End="-458,78.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-458,78.5"
+                    Point2="-462,78.5"
+                    Point3="-462,82.5" />
+                  <mssgle:LineSegment
+                    End="-462,149.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-279.19138671875,83.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[InferredSupervizor]"
           TopLeft="95.6666666666667,210">
@@ -5642,516 +6274,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Sup"
-          TopLeft="11,401" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
-          TopLeft="86,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8,58"
-              Start="0,0"
-              End="8,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="4,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,29"
-                    Point2="8,29"
-                    Point3="8,33" />
-                  <mssgle:LineSegment
-                    End="8,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast"
-          TopLeft="242,97" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor1]"
-          TopLeft="476,114.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114,0"
-              Start="0,0"
-              End="-106.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-106.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.47869140625,5,102.4573828125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 1]"
-          TopLeft="283.333333333333,139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-162.333333333333,29"
-              Start="0,0"
-              End="-162.333333333333,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.82894736842105" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.82894736842105"
-                    Point2="0,11.828947368421"
-                    Point3="-4,11.828947368421" />
-                  <mssgle:LineSegment
-                    End="-158.333333333333,11.828947368421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-158.333333333333,11.828947368421"
-                    Point2="-162.333333333333,11.828947368421"
-                    Point3="-162.333333333333,15.828947368421" />
-                  <mssgle:LineSegment
-                    End="-162.333333333333,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Artikal Lookup"
-          TopLeft="594,244" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal"
-          TopLeft="431.4,303" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
-          TopLeft="594,265">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-73.6,38"
-              Start="0,0"
-              End="-73.6,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-69.6,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-69.6,0"
-                    Point2="-73.6,0"
-                    Point3="-73.6,4" />
-                  <mssgle:LineSegment
-                    End="-73.6,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-129.40638671875,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal"
-          TopLeft="425,374" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
-          TopLeft="520.4,345">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.9,29"
-              Start="0,0"
-              End="-17.9,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5"
-                    Point2="0,14.5"
-                    Point3="-4,14.5" />
-                  <mssgle:LineSegment
-                    End="-13.9,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.9,14.5"
-                    Point2="-17.9,14.5"
-                    Point3="-17.9,18.5" />
-                  <mssgle:LineSegment
-                    End="-17.9,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet"
-          TopLeft="972,395" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
-          TopLeft="996.5,332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49.5,63"
-              Start="0,0"
-              End="49.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="4,31.5" />
-                  <mssgle:LineSegment
-                    End="45.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="45.5,31.5"
-                    Point2="49.5,31.5"
-                    Point3="49.5,35.5" />
-                  <mssgle:LineSegment
-                    End="49.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date"
-          TopLeft="996,535" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="1046,437">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19,98"
-              Start="0,0"
-              End="19,90.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45"
-                    Point2="0,49"
-                    Point3="4,49" />
-                  <mssgle:LineSegment
-                    End="15,49" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15,49"
-                    Point2="19,49"
-                    Point3="19,53" />
-                  <mssgle:LineSegment
-                    End="19,90.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.69138671875,54,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal"
-          TopLeft="443,454" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output]"
-          TopLeft="502.5,416">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21.5,38"
-              Start="0,0"
-              End="21.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="17.5,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5,19"
-                    Point2="21.5,19"
-                    Point3="21.5,23" />
-                  <mssgle:LineSegment
-                    End="21.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Artikal"
-          TopLeft="363,168" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 3]"
-          TopLeft="320.666666666667,139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="112.333333333333,29"
-              Start="0,0"
-              End="112.333333333333,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.82894736842106" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.82894736842106"
-                    Point2="0,11.8289473684211"
-                    Point3="4,11.8289473684211" />
-                  <mssgle:LineSegment
-                    End="108.333333333333,11.8289473684211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.333333333333,11.8289473684211"
-                    Point2="112.333333333333,11.8289473684211"
-                    Point3="112.333333333333,15.8289473684211" />
-                  <mssgle:LineSegment
-                    End="112.333333333333,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedArtikal]"
-          TopLeft="433,210">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="234,34"
-              Start="0,0"
-              End="234,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="4,17" />
-                  <mssgle:LineSegment
-                    End="230,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="230,17"
-                    Point2="234,17"
-                    Point3="234,21" />
-                  <mssgle:LineSegment
-                    End="234,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="75.35787109375,22,83.2842578125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2"
-          TopLeft="621,532" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
-          TopLeft="667,286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.3333333333334,246"
-              Start="0,0"
-              End="39.3333333333334,238.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,141.80547112462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,141.80547112462"
-                    Point2="0,145.80547112462"
-                    Point3="4,145.80547112462" />
-                  <mssgle:LineSegment
-                    End="35.3333333333334,145.80547112462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.3333333333334,145.80547112462"
-                    Point2="39.3333333333334,145.80547112462"
-                    Point3="39.3333333333334,149.80547112462" />
-                  <mssgle:LineSegment
-                    End="39.3333333333334,238.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-28.5247200520833,150.80547112462,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="524,496">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="141.666666666667,36"
-              Start="0,0"
-              End="141.666666666667,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3373860182371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3373860182371"
-                    Point2="0,21.3373860182371"
-                    Point3="4,21.3373860182371" />
-                  <mssgle:LineSegment
-                    End="137.666666666667,21.3373860182371" />
-                  <mssgle:CubicBezierSegment
-                    Point1="137.666666666667,21.3373860182371"
-                    Point2="141.666666666667,21.3373860182371"
-                    Point3="141.666666666667,25.3373860182371" />
-                  <mssgle:LineSegment
-                    End="141.666666666667,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.6419466145833,26.3373860182371,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Supervizor"
-          TopLeft="5,493" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output1]"
-          TopLeft="92.75,443">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup"
-          TopLeft="103,560" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output1]"
-          TopLeft="91.5,535">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="68,25"
-              Start="0,0"
-              End="68,17.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.5"
-                    Point2="0,12.5"
-                    Point3="4,12.5" />
-                  <mssgle:LineSegment
-                    End="64,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="64,12.5"
-                    Point2="68,12.5"
-                    Point3="68,16.5" />
-                  <mssgle:LineSegment
-                    End="68,17.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination"
-          TopLeft="231,362" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Error]"
           TopLeft="294,338">
@@ -6188,72 +6310,20 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3"
-          TopLeft="297,640" />
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="159.5,602">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output1]"
+          TopLeft="92.75,443">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="172,38"
+              EndConnector="0,50"
               Start="0,0"
-              End="172,30.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.8241206030151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.8241206030151"
-                    Point2="0,24.8241206030151"
-                    Point3="4,24.8241206030151" />
-                  <mssgle:LineSegment
-                    End="168,24.8241206030151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168,24.8241206030151"
-                    Point2="172,24.8241206030151"
-                    Point3="172,28.8241206030151" />
-                  <mssgle:LineSegment
-                    End="172,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="37.80861328125,29.8241206030151,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
-          TopLeft="686,574">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-324,66"
-              Start="0,0"
-              End="-324,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29"
-                    Point2="0,33"
-                    Point3="-4,33" />
-                  <mssgle:LineSegment
-                    End="-320,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-320,33"
-                    Point2="-324,33"
-                    Point3="-324,37" />
-                  <mssgle:LineSegment
-                    End="-324,58.5" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6262,76 +6332,32 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination"
-          TopLeft="503,734" />
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
-          TopLeft="1065,577">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
+          TopLeft="520.4,345">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-462,157"
+              EndConnector="-17.9,29"
               Start="0,0"
-              End="-462,149.5">
+              End="-17.9,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,74.5" />
+                    End="0,10.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,74.5"
-                    Point2="0,78.5"
-                    Point3="-4,78.5" />
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="-4,14.5" />
                   <mssgle:LineSegment
-                    End="-458,78.5" />
+                    End="-13.9,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-458,78.5"
-                    Point2="-462,78.5"
-                    Point3="-462,82.5" />
+                    Point1="-13.9,14.5"
+                    Point2="-17.9,14.5"
+                    Point3="-17.9,18.5" />
                   <mssgle:LineSegment
-                    End="-462,149.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-279.19138671875,83.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Aggregate"
-          TopLeft="833,552" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
-          TopLeft="392.5,640">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="504,-46"
-              Start="0,0"
-              End="504,-38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-11.9497487437186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-11.9497487437186"
-                    Point2="0,-15.9497487437186"
-                    Point3="4,-15.9497487437186" />
-                  <mssgle:LineSegment
-                    End="500,-15.9497487437186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="500,-15.9497487437186"
-                    Point2="504,-15.9497487437186"
-                    Point3="504,-19.9497487437186" />
-                  <mssgle:LineSegment
-                    End="504,-38.5" />
+                    End="-17.9,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6378,10 +6404,15 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6391,7 +6422,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6401,7 +6432,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6414,7 +6445,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6424,7 +6455,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6432,84 +6463,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimSupervizor]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6527,28 +6484,71 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\OLE DB Destination">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimSupervizor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
