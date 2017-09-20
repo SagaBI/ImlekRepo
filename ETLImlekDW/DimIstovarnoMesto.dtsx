@@ -12,8 +12,8 @@
   DTS:ObjectName="DimIstovarnoMesto"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{DFFC0726-1510-48F1-8D47-2F0978D440E7}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{5A6A4FFA-16BB-47C3-9F3F-39F0BCF48049}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\IstovarnoMestoSource_2017-09-18.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\IstovarnoMestoSource_2017-09-20.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -161,14 +161,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -557,35 +578,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -10022,7 +10022,6 @@ c.HashSCD1 as currHashSCD1
           DTS:refId="Package\Transform And Load\Update  NazivKupca"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{058e4350-e155-466a-9101-d3fcb6e2ce32}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -10203,7 +10202,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimIstovarnoMesto"
-              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      9/18/2017 4:44:58 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      9/20/2017 4:15:37 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -10955,13 +10954,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
-          TopLeft="175.2,55.2" />
-        <NodeLayout
           Size="191,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto"
           TopLeft="403.2,290.4" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
+          TopLeft="175.2,55.2" />
         <NodeLayout
           Size="176,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\Add InferredMember"
@@ -11056,14 +11055,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="142,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Deleted Rows"
-          TopLeft="57.6,232.8" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows or SCD2"
-          TopLeft="226.4,337.6" />
-        <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - NR"
           TopLeft="314.4,412.8" />
@@ -11080,45 +11071,213 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto"
           TopLeft="822.4,453.6" />
         <NodeLayout
-          Size="239,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - IM"
-          TopLeft="709.6,92.8" />
-        <NodeLayout
-          Size="253,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD2"
-          TopLeft="551.2,360.8" />
-        <NodeLayout
           Size="177,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows and SCD2"
           TopLeft="255.2,224" />
-        <NodeLayout
-          Size="125,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfNR"
-          TopLeft="336,280" />
         <NodeLayout
           Size="126,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfDR"
           TopLeft="93.6,360.8" />
         <NodeLayout
+          Size="253,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD2"
+          TopLeft="551.2,360.8" />
+        <NodeLayout
           Size="120,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Multicast"
           TopLeft="272.8,163.2" />
         <NodeLayout
-          Size="146,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage"
-          TopLeft="268,10.4" />
+          Size="125,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfNR"
+          TopLeft="336,280" />
         <NodeLayout
           Size="104,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\SCD1"
           TopLeft="501.6,169.6" />
         <NodeLayout
+          Size="146,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage"
+          TopLeft="268,10.4" />
+        <NodeLayout
           Size="253,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD1"
           TopLeft="441.6,252.8" />
         <NodeLayout
+          Size="142,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Deleted Rows"
+          TopLeft="57.6,232.8" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows or SCD2"
+          TopLeft="226.4,337.6" />
+        <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - DR"
           TopLeft="156.8,468.8" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - IM"
+          TopLeft="709.6,92.8" />
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output3]"
+          TopLeft="555.2,433.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.8,52"
+              Start="0,0"
+              End="85.3,52">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.6177777777778,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.6177777777778,0"
+                    Point2="53.6177777777778,0"
+                    Point3="53.6177777777778,4" />
+                  <mssgle:LineSegment
+                    End="53.6177777777778,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.6177777777778,48"
+                    Point2="53.6177777777778,52"
+                    Point3="57.6177777777778,52" />
+                  <mssgle:LineSegment
+                    End="85.3,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output2]"
+          TopLeft="397.6,490.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250.4,0"
+              Start="0,0"
+              End="242.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="242.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output1]"
+          TopLeft="677.6,402.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.4,67.9999999999999"
+              Start="0,0"
+              End="30.4,60.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="26.4,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.4,34"
+                    Point2="30.4,34"
+                    Point3="30.4,38" />
+                  <mssgle:LineSegment
+                    End="30.4,60.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output]"
+          TopLeft="829.2,134.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.533333333333,336"
+              Start="0,0"
+              End="-102.533333333333,328.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,194.947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,194.947368421053"
+                    Point2="0,198.947368421053"
+                    Point3="-4,198.947368421053" />
+                  <mssgle:LineSegment
+                    End="-98.5333333333334,198.947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.5333333333334,198.947368421053"
+                    Point2="-102.533333333333,198.947368421053"
+                    Point3="-102.533333333333,202.947368421053" />
+                  <mssgle:LineSegment
+                    End="-102.533333333333,328.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[DeletedRows]"
+          TopLeft="128.8,274.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.6,86.4"
+              Start="0,0"
+              End="27.6,78.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2"
+                    Point2="0,43.2"
+                    Point3="4,43.2" />
+                  <mssgle:LineSegment
+                    End="23.6,43.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.6,43.2"
+                    Point2="27.6,43.2"
+                    Point3="27.6,47.2" />
+                  <mssgle:LineSegment
+                    End="27.6,78.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Union All Output 1]"
           TopLeft="768,491.2">
@@ -11516,166 +11675,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="96.94970703125,5,73.0005859375,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output3]"
-          TopLeft="555.2,433.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.8,52"
-              Start="0,0"
-              End="85.3,52">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="49.6177777777778,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="49.6177777777778,0"
-                    Point2="53.6177777777778,0"
-                    Point3="53.6177777777778,4" />
-                  <mssgle:LineSegment
-                    End="53.6177777777778,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.6177777777778,48"
-                    Point2="53.6177777777778,52"
-                    Point3="57.6177777777778,52" />
-                  <mssgle:LineSegment
-                    End="85.3,52" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output2]"
-          TopLeft="397.6,490.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="250.4,0"
-              Start="0,0"
-              End="242.9,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="242.9,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output1]"
-          TopLeft="677.6,402.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30.4,67.9999999999999"
-              Start="0,0"
-              End="30.4,60.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="26.4,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.4,34"
-                    Point2="30.4,34"
-                    Point3="30.4,38" />
-                  <mssgle:LineSegment
-                    End="30.4,60.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output]"
-          TopLeft="829.2,134.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.533333333333,336"
-              Start="0,0"
-              End="-102.533333333333,328.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,194.947368421053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,194.947368421053"
-                    Point2="0,198.947368421053"
-                    Point3="-4,198.947368421053" />
-                  <mssgle:LineSegment
-                    End="-98.5333333333334,198.947368421053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.5333333333334,198.947368421053"
-                    Point2="-102.533333333333,198.947368421053"
-                    Point3="-102.533333333333,202.947368421053" />
-                  <mssgle:LineSegment
-                    End="-102.533333333333,328.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[DeletedRows]"
-          TopLeft="128.8,274.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.6,86.4"
-              Start="0,0"
-              End="27.6,78.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.2"
-                    Point2="0,43.2"
-                    Point3="4,43.2" />
-                  <mssgle:LineSegment
-                    End="23.6,43.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.6,43.2"
-                    Point2="27.6,43.2"
-                    Point3="27.6,47.2" />
-                  <mssgle:LineSegment
-                    End="27.6,78.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

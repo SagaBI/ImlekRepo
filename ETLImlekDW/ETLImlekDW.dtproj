@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">INF-SAGASUP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="MzXwjqKQzA==" SSIS:IV="xVW6zp26KOc=">eIDL+Ljxp/wXOWbduTtYqDDkY6jA8g/s8KrcEtxKVwJEKtFYNy/A+qaky8cssDj1iv/76k57nNLH0BzUX0CjtYTPH9IVg24d4PDUoi6k2sbWmUfCoTJ2wVStijl0QrPksLOlUp7U9n7zvjHxskAJ6CsuLdmhEY7YR9GljXUyvs4IKA7wrikJCg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="PwfBezcbvg==" SSIS:IV="FEpoJfgXSKQ=">6Lly2qf3J51KloABjiqONCR0CILZwBVZuUWVyq/McBGt+iglTjkjEOZIy0UEzt69PRZADKGNR5nmWQ4CyTcXvXoZ2ahfykoywfKmHRi5HXWB8DEqrbUGXcrb2Zlk/fSkVgMCez4u7dcM7Xm+BEFxVG6XhsaApk52TZgHnm9mMTj8YDs1sU3Hjg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -48,6 +48,7 @@
           <SSIS:Package SSIS:Name="DimRegion.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="fctBudzetKA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimTipDokumenta.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="fctNumerickaDistribucija.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SourceConnMng.conmgr" />
@@ -404,10 +405,10 @@
                 <SSIS:Property SSIS:Name="Name">DimArtikal</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">33</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6A443C56-0784-4247-A9BC-1463F8951343}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B6CD25B9-3145-47E8-96E5-89D8557D6A75}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -500,10 +501,10 @@
                 <SSIS:Property SSIS:Name="Name">fctProdaja</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">107</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">108</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8B563E2D-F5BD-4C78-9456-FF4BA103A439}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5B7777AA-6CB8-4C05-AF1F-4A4BF02ACDA2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1531,6 +1532,52 @@
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">2017-06-01T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="fctNumerickaDistribucija.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{91305650-6398-40C2-863A-3AE0A847224E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">fctNumerickaDistribucija</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">211</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5EB14DA3-8BC9-4BE1-A969-AD8DC3ABEEAB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="ExtractDateFrom">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{EDAC8BD8-7049-4CAF-9915-D6C431BC1072}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-07-01T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="ExtractDateTo">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{5FD18DDD-9A41-464A-952B-423640FB9A13}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-08-31T20:32:22</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
