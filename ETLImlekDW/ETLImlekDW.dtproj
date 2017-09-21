@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">INF-SAGASUP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="PwfBezcbvg==" SSIS:IV="FEpoJfgXSKQ=">6Lly2qf3J51KloABjiqONCR0CILZwBVZuUWVyq/McBGt+iglTjkjEOZIy0UEzt69PRZADKGNR5nmWQ4CyTcXvXoZ2ahfykoywfKmHRi5HXWB8DEqrbUGXcrb2Zlk/fSkVgMCez4u7dcM7Xm+BEFxVG6XhsaApk52TZgHnm9mMTj8YDs1sU3Hjg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="rmNzstc7Xw==" SSIS:IV="dJVI4cvnPxY=">folZXpnAsUiapQEwPAxHyCLoLxBALv/dXSfc4x53ksh08mrGyDvgjHhKWt/+3nKnofD7UAU98mNWt8dt24XvfynEVkP42qZOqgW2weO/NJriN33UbWBvf9tSlXkJ7oK9ziuG0EaZ5JTKW2FjTeCYYU6FMAkeplKUFuoLj+fdBLqTZMtOnPbCOg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -48,6 +48,8 @@
           <SSIS:Package SSIS:Name="DimRegion.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="fctBudzetKA.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimTipDokumenta.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DimOprema.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="fctPracenjeOpreme.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="fctNumerickaDistribucija.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
@@ -437,10 +439,10 @@
                 <SSIS:Property SSIS:Name="Name">DimIstovarnoMesto</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DFFC0726-1510-48F1-8D47-2F0978D440E7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5A6A4FFA-16BB-47C3-9F3F-39F0BCF48049}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -501,10 +503,10 @@
                 <SSIS:Property SSIS:Name="Name">fctProdaja</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">108</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">109</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5B7777AA-6CB8-4C05-AF1F-4A4BF02ACDA2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{77B719B8-E435-4609-B678-CFF3AAECA4B1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -717,10 +719,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadGroupFact</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">67</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FF229AF3-CEED-499F-983A-5BD1816DEDB3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{50A0FFE0-D811-4797-9226-A3E5C19B0603}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -737,7 +739,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-08-30T15:13:31</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-08-01T00:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -751,7 +753,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-08-31T20:32:22</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-09-01T00:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -809,10 +811,10 @@
                 <SSIS:Property SSIS:Name="Name">fctDelhaizeRaspodela</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">140</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">141</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7820FE8F-9207-487A-BDFF-CC9D8A15F131}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AA6D9A08-A7E7-480B-A08E-63755050DEA8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -855,10 +857,10 @@
                 <SSIS:Property SSIS:Name="Name">fctDelhaizePovrat</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">190</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">191</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{64F554A9-ED31-4519-A7FF-A44650E2B6F3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F726579D-162B-4E46-A130-E0F2BD8B588B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1035,10 +1037,10 @@
                 <SSIS:Property SSIS:Name="Name">fctBudzetSupervizor</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">84</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">93</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3B202B70-EB24-4337-AD3E-4D33B63E3706}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D867324B-DB3D-4AA0-B894-CE140022ED33}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1084,7 +1086,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt SEP17.xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1157,7 +1159,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Saga\Budzeti\SPV _ bgt SEP17.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Saga\Budzeti\SPV _ bgt_ 9_2017.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1183,10 +1185,10 @@
                 <SSIS:Property SSIS:Name="Name">fctBudzetTotalDomestic</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">97</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">103</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{708B46E3-B612-464E-8A68-CF738B6083C1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{51183726-2CD8-434C-B3E8-7D72A08C06F3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1363,10 +1365,10 @@
                 <SSIS:Property SSIS:Name="Name">fctBudzetKA</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">94</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">95</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{42C2ECA9-9694-477F-99AB-C513F6B0803E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5B186387-6F61-403A-933B-6C59A7D4956C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1537,16 +1539,48 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="fctNumerickaDistribucija.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DimOprema.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{91305650-6398-40C2-863A-3AE0A847224E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">fctNumerickaDistribucija</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{43BC8762-5E8F-41C6-A7F6-DF230C24838D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DimOprema</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">211</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5EB14DA3-8BC9-4BE1-A969-AD8DC3ABEEAB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2BF566FD-0AB9-4819-84E6-E16C8AA32432}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="ExtractDate">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{77BA658A-A72A-49D9-B923-62580011F95D}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-06-01T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="fctPracenjeOpreme.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{E31C6C7E-1A07-49F8-AA17-4DDD79A30425}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">fctPracenjeOpreme</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">219</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{80E1FCF6-4B91-4FB0-8D40-E7DE1C835A33}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1570,6 +1604,52 @@
                 <SSIS:Parameter SSIS:Name="ExtractDateTo">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">{5FD18DDD-9A41-464A-952B-423640FB9A13}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-08-31T20:32:22</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="fctNumerickaDistribucija.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{1ABD0686-8CED-4DAB-969D-F40BEA272B3E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">fctNumerickaDistribucija</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">216</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{551FDF25-9A1B-4D32-81EF-3884FCFC1E2A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="ExtractDateFrom">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{1E33E843-B153-4A85-9F49-B542792CA553}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-07-01T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="ExtractDateTo">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{65939A1F-8708-43C2-82BD-DCCF62230234}</SSIS:Property>
                     <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="Description">
