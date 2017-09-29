@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetKA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{A31F11AC-558C-45BC-B7ED-17E61C8FB28D}">
+  DTS:VersionBuild="125"
+  DTS:VersionGUID="{4FEFF873-5C46-4E78-B088-EA6D946909F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\Bgt_KA_Source_2017-09-28.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\Bgt_KA_Source_2017-09-29.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -406,6 +406,36 @@
                     SQLTask:DtsVariableName="$Package::ExtractDateFrom"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\insert into fctBudzetTT"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{7950c7cf-aed4-4f85-a131-18d289e8e2a8}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="insert into fctBudzetTT"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="exec dbo.insFctBudzetTT_Insert ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pMonth"
+                    SQLTask:DtsVariableName="User::Mesec"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pYear"
+                    SQLTask:DtsVariableName="User::Godina"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -3182,6 +3212,16 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 8"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Load To Fct" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+              DTS:CreationName=""
+              DTS:DTSID="{1BAED4EE-8942-4252-AF99-E625634FA729}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded] == True"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Archive file"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 9"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\insert into fctBudzetTT" />
           </DTS:PrecedenceConstraints>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
@@ -3243,7 +3283,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetKA"
-              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      9/28/2017 1:14:26 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      9/29/2017 9:43:49 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3634,18 +3674,58 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Load To Fct\Foreach Loop Container\insert into fctBudzetTT"
+          TopLeft="371,348" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          TopLeft="276.200003746578,425.117652067264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187.799996253422,-35.117652067264"
+              Start="0,0"
+              End="187.799996253422,-27.617652067264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10.2902999754234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10.2902999754234"
+                    Point2="0,-14.2902999754234"
+                    Point3="4,-14.2902999754234" />
+                  <mssgle:LineSegment
+                    End="183.799996253422,-14.2902999754234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.799996253422,-14.2902999754234"
+                    Point2="187.799996253422,-14.2902999754234"
+                    Point3="187.799996253422,-18.2902999754234" />
+                  <mssgle:LineSegment
+                    End="187.799996253422,-27.617652067264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="85.899998126711,-9.29029997542344,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="520,522"
-          Size="520,565"
+          PanelSize="583,522"
+          Size="583,565"
           Id="Package\Load To Fct\Foreach Loop Container"
           TopLeft="31,42" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="556,662"
-          Size="556,705"
+          PanelSize="619,662"
+          Size="619,705"
           Id="Package\Load To Fct"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>
