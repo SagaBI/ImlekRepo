@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{A5B2B929-F674-4BFC-A5C2-EF4C757F6150}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{717C4EFB-E7AD-4C3B-ADBA-B256AF94C411}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-09-27.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-09-29.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -447,7 +447,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">'LE SPV _ SEP 2017$'</property>
+                          name="OpenRowset">'LE SPV$'</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3237,7 +3237,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      9/27/2017 6:23:04 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      9/29/2017 1:12:13 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3325,6 +3325,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Delete Fct"
           TopLeft="211.771435188761,66.2379100315573" />
         <NodeLayout
+          Size="161,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet"
+          TopLeft="44,207" />
+        <NodeLayout
           Size="199,42"
           Id="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
           TopLeft="46.6285746034313,349.117650973343" />
@@ -3340,6 +3344,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="150,42"
           Id="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
           TopLeft="5.73809524215,58.1960782097285" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load To Fct\Foreach Loop Container\update stg BudzetSPV"
+          TopLeft="271,211" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="96.9460362035402,26.3">
@@ -3360,6 +3368,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="-16.0079409613902,4" />
                   <mssgle:LineSegment
                     End="-16.0079409613902,24.3960782097285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="263.922226943289,175.215687890366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139.422226943289,31.784312109634"
+              Start="0,0"
+              End="-139.422226943289,24.284312109634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.892156054817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.892156054817"
+                    Point2="0,15.892156054817"
+                    Point3="-4,15.892156054817" />
+                  <mssgle:LineSegment
+                    End="-135.422226943289,15.892156054817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135.422226943289,15.892156054817"
+                    Point2="-139.422226943289,15.892156054817"
+                    Point3="-139.422226943289,19.892156054817" />
+                  <mssgle:LineSegment
+                    End="-139.422226943289,24.284312109634" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3536,48 +3578,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet"
-          TopLeft="44,207" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="263.922226943289,175.215687890366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-139.422226943289,31.784312109634"
-              Start="0,0"
-              End="-139.422226943289,24.284312109634">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.892156054817" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.892156054817"
-                    Point2="0,15.892156054817"
-                    Point3="-4,15.892156054817" />
-                  <mssgle:LineSegment
-                    End="-135.422226943289,15.892156054817" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-135.422226943289,15.892156054817"
-                    Point2="-139.422226943289,15.892156054817"
-                    Point3="-139.422226943289,19.892156054817" />
-                  <mssgle:LineSegment
-                    End="-139.422226943289,24.284312109634" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Load To Fct\Foreach Loop Container\update stg BudzetSPV"
-          TopLeft="271,211" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
           TopLeft="205,230">
@@ -3709,13 +3709,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source"
-          TopLeft="413,107" />
-        <NodeLayout
           Size="178,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stg SupervizorBudzet"
           TopLeft="434,329" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source"
+          TopLeft="413,107" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable.Paths[Excel Source Output]"
           TopLeft="482.5,149">
@@ -3755,6 +3755,19 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stg SupervizorBudzet">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4263,73 +4276,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimBudzet]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimMonth]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup">
     <Properties>
       <Property>
@@ -4353,7 +4299,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stg SupervizorBudzet">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetSPV Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4362,6 +4308,60 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimBudzet]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimMonth]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
