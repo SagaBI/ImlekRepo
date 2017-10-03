@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTotalBudzetPoDanima"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{0155BB15-3668-4F7D-828D-B73647DCAF4F}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{AD5D2D86-C28F-40A0-B60A-ABE74AEC7BB4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_092017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_082017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -94,7 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\LE_po danima_092017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Budzeti\LE_po danima_082017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -134,7 +134,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8">09</DTS:VariableValue>
+        DTS:DataType="8">08</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -963,7 +963,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTotalBudzetPoDanima"
-              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      9/29/2017 1:12:45 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      9/29/2017 2:03:07 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

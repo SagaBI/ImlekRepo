@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">INF-SAGASUP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="gp0VBt6IZw==" SSIS:IV="huTmVFk4bqs=">tnJpymodvnO6GI6fvRoDAMIi7wIddOa6KpPS6YPCCj7l2Q9HMiBtK1He8ohAIFdnjLo0mrJ/+MNT8BzBVY1+J2wCX1CTGkisDLWzcSz4KoA1P2zBQS0WCzK0qhdeIMqpJzFdg4brDS/NFxpx8mZlQvQlPUGTwVtr/Z+YrAZwFQ1Cr1XOWnNr8Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="odR5Kly6OQ==" SSIS:IV="25MTIAbB6Ys=">iS0TFmQczUW9f0m16yo6UFpxRg5VwOeSn7pprn+btmKrNHoNsEbLM179hixvEOL/pbZuF7JN/yJG4ph5AqlCs1aFBlKyaY3zOTjx2EYvdc+ERy7H+J1AbvrasMeC43W1HhEZLD2t2a5RUFBwEfrqw1nLNEnCfV/ipyhlqOE38LMsnxlhTRO0Bw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -55,6 +55,7 @@
           <SSIS:Package SSIS:Name="DimTeren.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimKanal.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="fctBudzetTT.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="fctRKDokument.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SourceConnMng.conmgr" />
@@ -1189,10 +1190,10 @@
                 <SSIS:Property SSIS:Name="Name">fctBudzetTotalDomestic</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">123</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">127</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CA3AFC4A-A349-4A79-B760-F4B9B46D83ED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5E97556D-84A6-4639-9261-068CA0270D5E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1369,10 +1370,10 @@
                 <SSIS:Property SSIS:Name="Name">fctBudzetKA</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">127</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">129</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9CB0BBA8-3D39-4E15-B7E0-96AAEB1DA60F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{824E2781-6734-4BD8-910E-D36F977D937C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1673,10 +1674,10 @@
                 <SSIS:Property SSIS:Name="Name">fctTotalBudzetPoDanima</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">127</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">128</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0155BB15-3668-4F7D-828D-B73647DCAF4F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AD5D2D86-C28F-40A0-B60A-ABE74AEC7BB4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1722,7 +1723,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_092017.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_082017.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1795,7 +1796,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Saga\Budzeti\LE_po danima_092017.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Saga\Budzeti\LE_po danima_082017.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1906,6 +1907,52 @@
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">2015-01-01T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="fctRKDokument.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{8F34CECD-559E-492A-A060-CC7B4DEC8692}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">fctRKDokument</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">241</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D6C88CF4-B3C8-4953-8EDE-E855E2B156C2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="ExtractDateFrom">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{118104A7-D3E7-4A93-909B-E5588307EF61}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-09-29T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="ExtractDateTo">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{E91469F7-349D-4F01-A8F9-265C1F0F708C}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-09-30T20:32:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
