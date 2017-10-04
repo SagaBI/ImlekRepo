@@ -12,8 +12,8 @@
   DTS:ObjectName="fctProdaja"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="109"
-  DTS:VersionGUID="{77B719B8-E435-4609-B678-CFF3AAECA4B1}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{5504D9EC-46BE-4942-967B-0A172AA5B30E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">8/1/2016</DTS:Property>
+        DTS:Name="ParameterValue">6/1/2017</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2016</DTS:Property>
+        DTS:Name="ParameterValue">7/1/2017</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\ProdajaSource_2017-09-20.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\ProdajaSource_2017-10-04.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -138,7 +138,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctProdaja '20160801','20160901'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctProdaja '20170601','20170701'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -239,26 +239,6 @@
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
-                          length="25"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
-                          name="Sifra_Artikla"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Vreme_Eksporta]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Vreme_Eksporta]"
-                          length="15"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Vreme_Eksporta]"
-                          name="Vreme_Eksporta"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Broj_Dokumenta]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -332,6 +312,16 @@
                           externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[ID_Artikla]"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[ID_Artikla]"
                           name="ID_Artikla"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
+                          length="25"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
+                          name="Sifra_Artikla"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Sifra_Rute]"
@@ -457,6 +447,16 @@
                           name="Vreme_Azuriranja"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Vreme_Eksporta]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Vreme_Eksporta]"
+                          length="15"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Vreme_Eksporta]"
+                          name="Vreme_Eksporta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[Broj_Isporuke]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -522,6 +522,28 @@
                           length="1"
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[PriceOverrideCode]"
                           name="PriceOverrideCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDV]"
@@ -594,41 +616,9 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[BrutoIznosUValuti]"
                           name="BrutoIznosUValuti"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaSec]"
-                          name="KolicinaSec"
-                          precision="34"
-                          scale="12"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].Columns[KolicinaCenovna]"
-                          name="KolicinaCenovna"
-                          precision="34"
-                          scale="12"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
-                          dataType="wstr"
-                          length="25"
-                          name="Sifra_Artikla" />
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Vreme_Eksporta]"
-                          dataType="wstr"
-                          length="15"
-                          name="Vreme_Eksporta" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Dokumenta]"
                           dataType="i4"
@@ -664,6 +654,11 @@
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[ID_Artikla]"
                           dataType="i4"
                           name="ID_Artikla" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
+                          dataType="wstr"
+                          length="25"
+                          name="Sifra_Artikla" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Rute]"
                           dataType="wstr"
@@ -728,6 +723,11 @@
                           length="15"
                           name="Vreme_Azuriranja" />
                         <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Vreme_Eksporta]"
+                          dataType="wstr"
+                          length="15"
+                          name="Vreme_Eksporta" />
+                        <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Isporuke]"
                           dataType="i4"
                           name="Broj_Isporuke" />
@@ -759,6 +759,18 @@
                           dataType="wstr"
                           length="1"
                           name="PriceOverrideCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
+                          dataType="numeric"
+                          name="KolicinaSec"
+                          precision="34"
+                          scale="12" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
+                          dataType="numeric"
+                          name="KolicinaCenovna"
+                          precision="34"
+                          scale="12" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosSaPDV]"
                           dataType="numeric"
@@ -795,18 +807,6 @@
                           refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosUValuti]"
                           dataType="i4"
                           name="BrutoIznosUValuti" />
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSec]"
-                          dataType="numeric"
-                          name="KolicinaSec"
-                          precision="34"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Prodaja Source.Outputs[OLE DB Source Output].ExternalColumns[KolicinaCenovna]"
-                          dataType="numeric"
-                          name="KolicinaCenovna"
-                          precision="34"
-                          scale="12" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2501,8 +2501,8 @@
                           refId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].Columns[NetoIznosSaPDVDin]"
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
+                          cachedPrecision="18"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]" />
                         <inputColumn
@@ -2718,8 +2718,8 @@
                           refId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
                           dataType="numeric"
                           name="NetoIznosSaPDVDin"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
@@ -2730,8 +2730,8 @@
                           refId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           name="BrutoIznosSaPDVDin"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\FctProdaja.Inputs[OLE DB Destination Input].ExternalColumns[PDVIznosDIN]"
                           dataType="numeric"
@@ -7266,8 +7266,8 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
-                          precision="10"
-                          scale="2"
+                          precision="18"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]"
@@ -7476,8 +7476,8 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           refId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosSaPDVDin]"
                           dataType="numeric"
                           name="NetoIznosSaPDVDin"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
@@ -7686,8 +7686,8 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Error Output].Columns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
@@ -7955,8 +7955,8 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           refId="Package\Load To Fct\Load To Fct\Prodaja Stage Error.Inputs[OLE DB Destination Input].Columns[NetoIznosSaPDVDin]"
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
+                          cachedPrecision="18"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Prodaja Stage Error.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]" />
                         <inputColumn
@@ -8383,21 +8383,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[PDVIznosDIN]"
                           cachedDataType="numeric"
                           cachedName="PDVIznosDIN"
@@ -8626,6 +8611,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8823,21 +8823,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9069,6 +9054,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9162,13 +9162,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -9272,6 +9265,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -9478,21 +9478,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -9724,6 +9709,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9921,21 +9921,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -10167,6 +10152,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Prodaja Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10260,13 +10260,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -10370,6 +10363,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -10576,21 +10576,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -10835,6 +10820,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -11032,21 +11032,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -11291,6 +11276,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -11384,13 +11384,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -11499,6 +11492,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -11706,21 +11706,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -11978,6 +11963,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -12175,21 +12175,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 3].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -12447,6 +12432,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 3].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -12540,13 +12540,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -12660,6 +12653,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -12867,21 +12867,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 3].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -13152,6 +13137,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 3].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -13349,21 +13349,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -13634,6 +13619,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -13727,13 +13727,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -13852,6 +13845,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -14058,21 +14058,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -14356,6 +14341,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -14553,21 +14553,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -14851,6 +14836,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -14944,13 +14944,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -15074,6 +15067,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -15280,21 +15280,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -15591,6 +15576,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -15788,21 +15788,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -16099,6 +16084,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 5.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -16192,13 +16192,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -16327,6 +16320,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -16533,21 +16533,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -16857,6 +16842,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -17054,21 +17054,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -17378,6 +17363,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 6.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -17471,13 +17471,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -17611,6 +17604,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -17817,21 +17817,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -18193,6 +18178,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -18390,21 +18390,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -18766,6 +18751,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 7.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -18859,13 +18859,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -19019,6 +19012,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -19225,21 +19225,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -19614,6 +19599,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -19811,21 +19811,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[IznosDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="10"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -20200,6 +20185,21 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[BrutoznosUValuti]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 8.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -20293,13 +20293,6 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[IznosDin]"
                           name="IznosDin"
-                          precision="10"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
-                          name="NetoIznosSaPDVDin"
                           precision="10"
                           scale="2" />
                         <outputColumn
@@ -20458,6 +20451,13 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                           name="BrutoznosUValuti"
                           precision="30"
                           scale="9" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 9.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -20532,144 +20532,144 @@ synTblImlekDWFctPopust pp on (pp.tipdokumentaid = td.TipDokumentaID and pp.brojd
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output19]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum Zahtevani.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output17]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Ruta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output16]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup DatumFakture.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup TipOrderaID.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Zahtevani.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output14]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Magacin.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output10]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM JM.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output18]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Razlog Povrata.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Magacin.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM TipNaloga.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Ruta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM TipOrdera.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup TipOrderaID.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Razlog Povrata.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
                   endId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup TipNaloga.Outputs[Lookup Match Output]" />
                 <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output17]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup TipOrderaID.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output16]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 3]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output14]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 8.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM TipOrdera.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Ruta.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 9.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM TipNaloga.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 3]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Magacin.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output10]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output18]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Razlog Povrata.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM JM.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 6.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Razlog Povrata.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 7.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Ruta.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumFakture.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup TipOrderaID.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Zahtevani.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum Zahtevani.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 4.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Magacin.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 5.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output7]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Ruta.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Ruta.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Magacin.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Magacin.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipOrdera.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup TipOrderaID.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output4]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipNaloga.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup TipNaloga.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output4]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output5]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Razlog Povrata.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Razlog Povrata.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output5]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output6]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output6]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate Ruta.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Ruta.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[MatchedIstovarnoMesto]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
@@ -21832,7 +21832,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctProdaja"
-              SendMailTask:MessageSource="Package:                              fctProdaja.&#xA;Time:                                      9/20/2017 6:46:10 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctProdaja.&#xA;Time:                                      10/4/2017 4:45:02 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -22117,7 +22117,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="174,42"
           Id="Package\Load To Fct\Extract To Raw File\Raw File Destination"
@@ -22157,9 +22157,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22396,37 +22394,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           TopLeft="646.857142857143,483.428571428571" />
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="833.942857142857,441.6">
+          TopLeft="855,1368.71428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.5714285714283,46.4"
+              EndConnector="-173.571428571429,-29.8571428571502"
               Start="0,0"
-              End="52.5714285714283,38.9">
+              End="-173.571428571429,-22.3571428571502">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.2" />
+                    End="0,-13.7699611566725" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.2"
-                    Point2="0,23.2"
-                    Point3="4,23.2" />
+                    Point1="0,-13.7699611566725"
+                    Point2="0,-17.7699611566725"
+                    Point3="-4,-17.7699611566725" />
                   <mssgle:LineSegment
-                    End="48.5714285714283,23.2" />
+                    End="-169.571428571429,-17.7699611566725" />
                   <mssgle:CubicBezierSegment
-                    Point1="48.5714285714283,23.2"
-                    Point2="52.5714285714283,23.2"
-                    Point3="52.5714285714283,27.2" />
+                    Point1="-169.571428571429,-17.7699611566725"
+                    Point2="-173.571428571429,-17.7699611566725"
+                    Point3="-173.571428571429,-21.7699611566725" />
                   <mssgle:LineSegment
-                    End="52.5714285714283,38.9" />
+                    End="-173.571428571429,-22.3571428571502" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-21.9056724330359,28.2,96.3827734375,11.609375"
+              BoundingBox="-134.977101004465,-12.7699611566725,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23550,42 +23548,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output7]"
-          TopLeft="845.857142857143,569.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-187.857142857143,-15.857142857142"
-              Start="0,0"
-              End="-180.357142857143,-15.857142857142">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-89.9285714285715,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-89.9285714285715,0"
-                    Point2="-93.9285714285715,0"
-                    Point3="-93.9285714285715,-4" />
-                  <mssgle:LineSegment
-                    End="-93.9285714285715,-11.857142857142" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-93.9285714285715,-11.857142857142"
-                    Point2="-93.9285714285715,-15.857142857142"
-                    Point3="-97.9285714285715,-15.857142857142" />
-                  <mssgle:LineSegment
-                    End="-180.357142857143,-15.857142857142" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-149.734958147321,1,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output6]"
           TopLeft="923.428571428572,1157.94285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23621,7 +23583,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output5]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output6]"
           TopLeft="712,200.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23651,7 +23613,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output4]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output5]"
           TopLeft="926.857142857143,959.808403211199">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23675,7 +23637,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output4]"
           TopLeft="249,1650">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23705,7 +23667,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
           TopLeft="413.5,1364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23741,7 +23703,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
           TopLeft="761.142857142857,423.085714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23765,7 +23727,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
           TopLeft="776,763.085714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23789,547 +23751,43 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="845.857142857143,569.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.857142857143,-15.857142857142"
+              Start="0,0"
+              End="-180.357142857143,-15.857142857142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-89.9285714285715,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89.9285714285715,0"
+                    Point2="-93.9285714285715,0"
+                    Point3="-93.9285714285715,-4" />
+                  <mssgle:LineSegment
+                    End="-93.9285714285715,-11.857142857142" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.9285714285715,-11.857142857142"
+                    Point2="-93.9285714285715,-15.857142857142"
+                    Point3="-97.9285714285715,-15.857142857142" />
+                  <mssgle:LineSegment
+                    End="-180.357142857143,-15.857142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.734958147321,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output19]"
-          TopLeft="855,1368.71428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-173.571428571429,-29.8571428571502"
-              Start="0,0"
-              End="-173.571428571429,-22.3571428571502">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-13.7699611566725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-13.7699611566725"
-                    Point2="0,-17.7699611566725"
-                    Point3="-4,-17.7699611566725" />
-                  <mssgle:LineSegment
-                    End="-169.571428571429,-17.7699611566725" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-169.571428571429,-17.7699611566725"
-                    Point2="-173.571428571429,-17.7699611566725"
-                    Point3="-173.571428571429,-21.7699611566725" />
-                  <mssgle:LineSegment
-                    End="-173.571428571429,-22.3571428571502" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-134.977101004465,-12.7699611566725,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output18]"
-          TopLeft="973.028570260807,1085.65378157266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.257144521207,-28.4571427112837"
-              Start="0,0"
-              End="33.757144521207,-28.4571427112837">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="16.6285722606035,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.6285722606035,0"
-                    Point2="20.6285722606035,0"
-                    Point3="20.6285722606035,-4" />
-                  <mssgle:LineSegment
-                    End="20.6285722606035,-24.4571427112837" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.6285722606035,-24.4571427112837"
-                    Point2="20.6285722606035,-28.4571427112837"
-                    Point3="24.6285722606035,-28.4571427112837" />
-                  <mssgle:LineSegment
-                    End="33.757144521207,-28.4571427112837" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.5628144581465,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output17]"
-          TopLeft="949.028571428571,1284.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.6857142857143,-52.5714285714287"
-              Start="0,0"
-              End="17.1857142857143,-52.5714285714287">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="8.34285714285716,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.34285714285716,0"
-                    Point2="12.3428571428572,0"
-                    Point3="12.3428571428572,-4" />
-                  <mssgle:LineSegment
-                    End="12.3428571428572,-48.5714285714287" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.3428571428572,-48.5714285714287"
-                    Point2="12.3428571428572,-52.5714285714287"
-                    Point3="16.3428571428572,-52.5714285714287" />
-                  <mssgle:LineSegment
-                    End="17.1857142857143,-52.5714285714287" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.8485295758928,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output16]"
-          TopLeft="982.857142857143,1358.14285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-45.8571428571431,31.57142857143"
-              Start="0,0"
-              End="-38.3571428571431,31.57142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.9285714285716,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.9285714285716,0"
-                    Point2="-22.9285714285716,0"
-                    Point3="-22.9285714285716,4" />
-                  <mssgle:LineSegment
-                    End="-22.9285714285716,27.57142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.9285714285716,27.57142857143"
-                    Point2="-22.9285714285716,31.57142857143"
-                    Point3="-26.9285714285716,31.57142857143" />
-                  <mssgle:LineSegment
-                    End="-38.3571428571431,31.57142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-71.1199581473216,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
-          TopLeft="618.428571428571,1338.85714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-177.095238095238,25.1428571428601"
-              Start="0,0"
-              End="-177.095238095238,17.6428571428601">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.55572276328264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.55572276328264"
-                    Point2="0,12.5557227632826"
-                    Point3="-4,12.5557227632826" />
-                  <mssgle:LineSegment
-                    End="-173.095238095238,12.5557227632826" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-173.095238095238,12.5557227632826"
-                    Point2="-177.095238095238,12.5557227632826"
-                    Point3="-177.095238095238,16.5557227632826" />
-                  <mssgle:LineSegment
-                    End="-177.095238095238,17.6428571428601" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-136.739005766369,17.5557227632826,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output14]"
-          TopLeft="840.4,786.742857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="192.4,29.2571428571429"
-              Start="0,0"
-              End="192.4,21.7571428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.6285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.6285714285714"
-                    Point2="0,14.6285714285714"
-                    Point3="4,14.6285714285714" />
-                  <mssgle:LineSegment
-                    End="188.4,14.6285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="188.4,14.6285714285714"
-                    Point2="192.4,14.6285714285714"
-                    Point3="192.4,18.6285714285714" />
-                  <mssgle:LineSegment
-                    End="192.4,21.7571428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="48.00861328125,19.6285714285714,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
-          TopLeft="785,222.571428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.428571428571,59.714285714285"
-              Start="0,0"
-              End="75.428571428571,52.214285714285">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.8571428571425" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.8571428571425"
-                    Point2="0,29.8571428571425"
-                    Point3="4,29.8571428571425" />
-                  <mssgle:LineSegment
-                    End="71.428571428571,29.8571428571425" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.428571428571,29.8571428571425"
-                    Point2="75.428571428571,29.8571428571425"
-                    Point3="75.428571428571,33.8571428571425" />
-                  <mssgle:LineSegment
-                    End="75.428571428571,52.214285714285" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.4771010044645,34.8571428571425,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
-          TopLeft="217.809523809524,403.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="472.571428571429,-265.428571428571"
-              Start="0,0"
-              End="472.571428571429,-257.928571428571">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-127.786730402205" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-127.786730402205"
-                    Point2="0,-131.786730402205"
-                    Point3="4,-131.786730402205" />
-                  <mssgle:LineSegment
-                    End="468.571428571429,-131.786730402205" />
-                  <mssgle:CubicBezierSegment
-                    Point1="468.571428571429,-131.786730402205"
-                    Point2="472.571428571429,-131.786730402205"
-                    Point3="472.571428571429,-135.786730402205" />
-                  <mssgle:LineSegment
-                    End="472.571428571429,-257.928571428571" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="188.094327566964,-126.786730402205,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
-          TopLeft="922.857142857143,590.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="44.857142857143,35.571428571429"
-              Start="0,0"
-              End="44.857142857143,28.071428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.7857142857145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.7857142857145"
-                    Point2="0,17.7857142857145"
-                    Point3="4,17.7857142857145" />
-                  <mssgle:LineSegment
-                    End="40.857142857143,17.7857142857145" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40.857142857143,17.7857142857145"
-                    Point2="44.857142857143,17.7857142857145"
-                    Point3="44.857142857143,21.7857142857145" />
-                  <mssgle:LineSegment
-                    End="44.857142857143,28.071428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.7628152901785,22.7857142857145,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output10]"
-          TopLeft="936,888.228571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31.9999999999999,-51.4285714285714"
-              Start="0,0"
-              End="24.4999999999999,-51.4285714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="11.9999999999999,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.9999999999999,0"
-                    Point2="15.9999999999999,0"
-                    Point3="15.9999999999999,-4" />
-                  <mssgle:LineSegment
-                    End="15.9999999999999,-47.4285714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.9999999999999,-47.4285714285714"
-                    Point2="15.9999999999999,-51.4285714285714"
-                    Point3="19.9999999999999,-51.4285714285714" />
-                  <mssgle:LineSegment
-                    End="24.4999999999999,-51.4285714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.1913867187501,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
-          TopLeft="822.142857142857,688.857142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.238095238096,-20.857142857143"
-              Start="0,0"
-              End="125.238095238096,-13.357142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="121.238095238096,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.238095238096,22.5"
-                    Point2="125.238095238096,22.5"
-                    Point3="125.238095238096,18.5" />
-                  <mssgle:LineSegment
-                    End="125.238095238096,-13.357142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="14.4276609002978,27.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
-          TopLeft="770.285714285714,356.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.1428571428571,-53.7142857142857"
-              Start="0,0"
-              End="17.6428571428571,-53.7142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="8.57142857142856,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.57142857142856,0"
-                    Point2="12.5714285714286,0"
-                    Point3="12.5714285714286,-4" />
-                  <mssgle:LineSegment
-                    End="12.5714285714286,-49.7142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.5714285714286,-49.7142857142857"
-                    Point2="12.5714285714286,-53.7142857142857"
-                    Point3="16.5714285714286,-53.7142857142857" />
-                  <mssgle:LineSegment
-                    End="17.6428571428571,-53.7142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.6199581473214,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
-          TopLeft="1019.65714285714,983.314285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.4285719248711,53.082353147095"
-              Start="0,0"
-              End="59.4285719248711,45.582353147095">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5411765735475" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5411765735475"
-                    Point2="0,26.5411765735475"
-                    Point3="4,26.5411765735475" />
-                  <mssgle:LineSegment
-                    End="55.4285719248711,26.5411765735475" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.4285719248711,26.5411765735475"
-                    Point2="59.4285719248711,26.5411765735475"
-                    Point3="59.4285719248711,30.5411765735475" />
-                  <mssgle:LineSegment
-                    End="59.4285719248711,45.582353147095" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-18.4771007563145,31.5411765735475,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
-          TopLeft="413.5,1406">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-149.166666666667,104"
-              Start="0,0"
-              End="-149.166666666667,96.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.6413373860182" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,57.6413373860182"
-                    Point2="0,61.6413373860182"
-                    Point3="-4,61.6413373860182" />
-                  <mssgle:LineSegment
-                    End="-145.166666666667,61.6413373860182" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-145.166666666667,61.6413373860182"
-                    Point2="-149.166666666667,61.6413373860182"
-                    Point3="-149.166666666667,65.6413373860182" />
-                  <mssgle:LineSegment
-                    End="-149.166666666667,96.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.774720052083,66.6413373860182,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
-          TopLeft="727.257142857143,483.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="138.990476190476,4.57142857142856"
-              Start="0,0"
-              End="138.990476190476,-2.92857142857144">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-18.5"
-                    Point2="0,-22.5"
-                    Point3="4,-22.5" />
-                  <mssgle:LineSegment
-                    End="134.990476190476,-22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134.990476190476,-22.5"
-                    Point2="138.990476190476,-22.5"
-                    Point3="138.990476190476,-18.5" />
-                  <mssgle:LineSegment
-                    End="138.990476190476,-2.92857142857144" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="21.303851376488,-17.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="330.5,1671">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24365,7 +23823,151 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output18]"
+          TopLeft="1019.65714285714,983.314285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.4285719248711,53.082353147095"
+              Start="0,0"
+              End="59.4285719248711,45.582353147095">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5411765735475" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5411765735475"
+                    Point2="0,26.5411765735475"
+                    Point3="4,26.5411765735475" />
+                  <mssgle:LineSegment
+                    End="55.4285719248711,26.5411765735475" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.4285719248711,26.5411765735475"
+                    Point2="59.4285719248711,26.5411765735475"
+                    Point3="59.4285719248711,30.5411765735475" />
+                  <mssgle:LineSegment
+                    End="59.4285719248711,45.582353147095" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-18.4771007563145,31.5411765735475,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output17]"
+          TopLeft="413.5,1406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-149.166666666667,104"
+              Start="0,0"
+              End="-149.166666666667,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.6413373860182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.6413373860182"
+                    Point2="0,61.6413373860182"
+                    Point3="-4,61.6413373860182" />
+                  <mssgle:LineSegment
+                    End="-145.166666666667,61.6413373860182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-145.166666666667,61.6413373860182"
+                    Point2="-149.166666666667,61.6413373860182"
+                    Point3="-149.166666666667,65.6413373860182" />
+                  <mssgle:LineSegment
+                    End="-149.166666666667,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.774720052083,66.6413373860182,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output16]"
+          TopLeft="727.257142857143,483.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.990476190476,4.57142857142856"
+              Start="0,0"
+              End="138.990476190476,-2.92857142857144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="134.990476190476,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.990476190476,-22.5"
+                    Point2="138.990476190476,-22.5"
+                    Point3="138.990476190476,-18.5" />
+                  <mssgle:LineSegment
+                    End="138.990476190476,-2.92857142857144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.303851376488,-17.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output15]"
+          TopLeft="833.942857142857,441.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.5714285714283,46.4"
+              Start="0,0"
+              End="52.5714285714283,38.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2"
+                    Point2="0,23.2"
+                    Point3="4,23.2" />
+                  <mssgle:LineSegment
+                    End="48.5714285714283,23.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.5714285714283,23.2"
+                    Point2="52.5714285714283,23.2"
+                    Point3="52.5714285714283,27.2" />
+                  <mssgle:LineSegment
+                    End="52.5714285714283,38.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.9056724330359,28.2,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output14]"
           TopLeft="183,1437">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24401,7 +24003,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output13]"
           TopLeft="984.228571428572,1178.74285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24437,7 +24039,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output12]"
           TopLeft="293,1837">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24469,6 +24071,402 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="19.80861328125,-12.8338870431894,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output11]"
+          TopLeft="822.142857142857,688.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.238095238096,-20.857142857143"
+              Start="0,0"
+              End="125.238095238096,-13.357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="121.238095238096,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.238095238096,22.5"
+                    Point2="125.238095238096,22.5"
+                    Point3="125.238095238096,18.5" />
+                  <mssgle:LineSegment
+                    End="125.238095238096,-13.357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.4276609002978,27.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output10]"
+          TopLeft="770.285714285714,356.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.1428571428571,-53.7142857142857"
+              Start="0,0"
+              End="17.6428571428571,-53.7142857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="8.57142857142856,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.57142857142856,0"
+                    Point2="12.5714285714286,0"
+                    Point3="12.5714285714286,-4" />
+                  <mssgle:LineSegment
+                    End="12.5714285714286,-49.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.5714285714286,-49.7142857142857"
+                    Point2="12.5714285714286,-53.7142857142857"
+                    Point3="16.5714285714286,-53.7142857142857" />
+                  <mssgle:LineSegment
+                    End="17.6428571428571,-53.7142857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.6199581473214,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output9]"
+          TopLeft="973.028570260807,1085.65378157266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.257144521207,-28.4571427112837"
+              Start="0,0"
+              End="33.757144521207,-28.4571427112837">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.6285722606035,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.6285722606035,0"
+                    Point2="20.6285722606035,0"
+                    Point3="20.6285722606035,-4" />
+                  <mssgle:LineSegment
+                    End="20.6285722606035,-24.4571427112837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.6285722606035,-24.4571427112837"
+                    Point2="20.6285722606035,-28.4571427112837"
+                    Point3="24.6285722606035,-28.4571427112837" />
+                  <mssgle:LineSegment
+                    End="33.757144521207,-28.4571427112837" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.5628144581465,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+          TopLeft="936,888.228571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.9999999999999,-51.4285714285714"
+              Start="0,0"
+              End="24.4999999999999,-51.4285714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="11.9999999999999,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.9999999999999,0"
+                    Point2="15.9999999999999,0"
+                    Point3="15.9999999999999,-4" />
+                  <mssgle:LineSegment
+                    End="15.9999999999999,-47.4285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9999999999999,-47.4285714285714"
+                    Point2="15.9999999999999,-51.4285714285714"
+                    Point3="19.9999999999999,-51.4285714285714" />
+                  <mssgle:LineSegment
+                    End="24.4999999999999,-51.4285714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.1913867187501,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
+          TopLeft="922.857142857143,590.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.857142857143,35.571428571429"
+              Start="0,0"
+              End="44.857142857143,28.071428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7857142857145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7857142857145"
+                    Point2="0,17.7857142857145"
+                    Point3="4,17.7857142857145" />
+                  <mssgle:LineSegment
+                    End="40.857142857143,17.7857142857145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.857142857143,17.7857142857145"
+                    Point2="44.857142857143,17.7857142857145"
+                    Point3="44.857142857143,21.7857142857145" />
+                  <mssgle:LineSegment
+                    End="44.857142857143,28.071428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.7628152901785,22.7857142857145,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
+          TopLeft="217.809523809524,403.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="472.571428571429,-265.428571428571"
+              Start="0,0"
+              End="472.571428571429,-257.928571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-127.786730402205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-127.786730402205"
+                    Point2="0,-131.786730402205"
+                    Point3="4,-131.786730402205" />
+                  <mssgle:LineSegment
+                    End="468.571428571429,-131.786730402205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="468.571428571429,-131.786730402205"
+                    Point2="472.571428571429,-131.786730402205"
+                    Point3="472.571428571429,-135.786730402205" />
+                  <mssgle:LineSegment
+                    End="472.571428571429,-257.928571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="188.094327566964,-126.786730402205,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+          TopLeft="785,222.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.428571428571,59.714285714285"
+              Start="0,0"
+              End="75.428571428571,52.214285714285">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8571428571425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.8571428571425"
+                    Point2="0,29.8571428571425"
+                    Point3="4,29.8571428571425" />
+                  <mssgle:LineSegment
+                    End="71.428571428571,29.8571428571425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.428571428571,29.8571428571425"
+                    Point2="75.428571428571,29.8571428571425"
+                    Point3="75.428571428571,33.8571428571425" />
+                  <mssgle:LineSegment
+                    End="75.428571428571,52.214285714285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.4771010044645,34.8571428571425,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="840.4,786.742857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192.4,29.2571428571429"
+              Start="0,0"
+              End="192.4,21.7571428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.6285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6285714285714"
+                    Point2="0,14.6285714285714"
+                    Point3="4,14.6285714285714" />
+                  <mssgle:LineSegment
+                    End="188.4,14.6285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188.4,14.6285714285714"
+                    Point2="192.4,14.6285714285714"
+                    Point3="192.4,18.6285714285714" />
+                  <mssgle:LineSegment
+                    End="192.4,21.7571428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="48.00861328125,19.6285714285714,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          TopLeft="618.428571428571,1338.85714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-177.095238095238,25.1428571428601"
+              Start="0,0"
+              End="-177.095238095238,17.6428571428601">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.55572276328264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.55572276328264"
+                    Point2="0,12.5557227632826"
+                    Point3="-4,12.5557227632826" />
+                  <mssgle:LineSegment
+                    End="-173.095238095238,12.5557227632826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-173.095238095238,12.5557227632826"
+                    Point2="-177.095238095238,12.5557227632826"
+                    Point3="-177.095238095238,16.5557227632826" />
+                  <mssgle:LineSegment
+                    End="-177.095238095238,17.6428571428601" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.739005766369,17.5557227632826,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="982.857142857143,1358.14285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.8571428571431,31.57142857143"
+              Start="0,0"
+              End="-38.3571428571431,31.57142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.9285714285716,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.9285714285716,0"
+                    Point2="-22.9285714285716,0"
+                    Point3="-22.9285714285716,4" />
+                  <mssgle:LineSegment
+                    End="-22.9285714285716,27.57142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.9285714285716,27.57142857143"
+                    Point2="-22.9285714285716,31.57142857143"
+                    Point3="-26.9285714285716,31.57142857143" />
+                  <mssgle:LineSegment
+                    End="-38.3571428571431,31.57142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.1199581473216,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="949.028571428571,1284.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.6857142857143,-52.5714285714287"
+              Start="0,0"
+              End="17.1857142857143,-52.5714285714287">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="8.34285714285716,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.34285714285716,0"
+                    Point2="12.3428571428572,0"
+                    Point3="12.3428571428572,-4" />
+                  <mssgle:LineSegment
+                    End="12.3428571428572,-48.5714285714287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.3428571428572,-48.5714285714287"
+                    Point2="12.3428571428572,-52.5714285714287"
+                    Point3="16.3428571428572,-52.5714285714287" />
+                  <mssgle:LineSegment
+                    End="17.1857142857143,-52.5714285714287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.8485295758928,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -24978,7 +24976,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Load To Fct\Load To Staging From Raw File\Raw File Source"
@@ -25018,9 +25016,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
