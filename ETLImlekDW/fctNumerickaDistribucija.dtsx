@@ -12,8 +12,8 @@
   DTS:ObjectName="fctNumerickaDistribucija"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="217"
-  DTS:VersionGUID="{280DC6B2-6961-4C8E-A814-F1D355DA449A}">
+  DTS:VersionBuild="225"
+  DTS:VersionGUID="{A5B0FFBB-4C68-4C71-AF95-6A80DDC69A7A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/30/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/30/2017 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\NumerickaDistribucijaSource_2017-09-29.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\NumerickaDistribucijaSource_2017-10-25.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctNumerickaDistribucija '20170901','20170930'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctNumerickaDistribucija '20171001','20171030'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -285,6 +285,16 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].Columns[Vrednost]"
                           name="Vrednost"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].Columns[Ruta]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].ExternalColumns[Ruta]"
+                          length="10"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].Columns[Ruta]"
+                          name="Ruta"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -305,6 +315,11 @@
                           refId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].ExternalColumns[Vrednost]"
                           dataType="i2"
                           name="Vrednost" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].ExternalColumns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          name="Ruta" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -333,6 +348,12 @@
                           dataType="i2"
                           lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Error Output].Columns[Vrednost]"
                           name="Vrednost" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Error Output].Columns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Error Output].Columns[Ruta]"
+                          name="Ruta" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -405,6 +426,12 @@
                           cachedDataType="i2"
                           cachedName="Vrednost"
                           lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].Columns[Vrednost]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source.Outputs[OLE DB Source Output].Columns[Ruta]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -533,6 +560,13 @@
                           cachedName="Sifra_Artikla"
                           externalMetadataColumnId="Package\Load To Fct\Load Data From Source To Stage\Numericka Distribucija Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
                           lineageId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].Columns[Sifra_Artikla]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load Data From Source To Stage\Numericka Distribucija Stage.Inputs[OLE DB Destination Input].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          externalMetadataColumnId="Package\Load To Fct\Load Data From Source To Stage\Numericka Distribucija Stage.Inputs[OLE DB Destination Input].ExternalColumns[Ruta]"
+                          lineageId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].Columns[Ruta]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -553,6 +587,11 @@
                           refId="Package\Load To Fct\Load Data From Source To Stage\Numericka Distribucija Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vrednost]"
                           dataType="i2"
                           name="Vrednost" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load Data From Source To Stage\Numericka Distribucija Stage.Inputs[OLE DB Destination Input].ExternalColumns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          name="Ruta" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -634,6 +673,13 @@
                           externalMetadataColumnId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Vrednost]"
                           lineageId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].Columns[Vrednost]"
                           name="Vrednost" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].Columns[Ruta]"
+                          dataType="wstr"
+                          externalMetadataColumnId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Ruta]"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].Columns[Ruta]"
+                          name="Ruta" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -654,6 +700,11 @@
                           refId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Vrednost]"
                           dataType="i2"
                           name="Vrednost" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load Data From Source To Stage\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          name="Ruta" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -1259,6 +1310,13 @@
                           cachedName="DateID"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input].ExternalColumns[DatumID]"
                           lineageId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output].Columns[DateID]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input].ExternalColumns[Ruta]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[Ruta]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1282,6 +1340,11 @@
                           refId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input].ExternalColumns[Vrednost]"
                           dataType="i2"
                           name="Vrednost" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input].ExternalColumns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          name="Ruta" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1550,13 +1613,13 @@
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -1588,12 +1651,12 @@ where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\1022:invalid};</property>
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1606,8 +1669,8 @@ where [refTable].[SifraArtikla] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Connections[OleDbConnection]"
-                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1866,13 +1929,13 @@ where [refTable].[Date] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -1904,7 +1967,7 @@ where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -1922,8 +1985,8 @@ where [refTable].[SifraArtikla] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Connections[OleDbConnection]"
-                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2194,12 +2257,12 @@ where [refTable].[IstovarnoMestoSifra] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  sifraartikla,datum,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  case when sifraartikla is null then N'Unknown' else sifraartikla end as sifraartikla,datum,
 	   p.SifraIstovarnogMesta, im.IstovarnoMestoID, im.startdate, im.enddate,
 	   (select max(OU2.StartDate)
  from  synTblImlekDWIstovarnoMesto OU2 
 	   where OU2.IstovarnoMestoSifra = p.SifraIstovarnogMesta ) as MaxIMStartDate,
- Vrednost
+ Vrednost, Ruta
 from [stg].[NumerickaDistribucijaStage] p left join
 synTblImlekDWIstovarnoMesto im on (p.SifraIstovarnogMesta = im.IstovarnoMestoSifra 
 and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
@@ -2275,16 +2338,6 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           name="MaxIMStartDate"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[sifraartikla]"
-                          length="30"
-                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]"
-                          name="sifraartikla"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[datum]"
                           dataType="dbDate"
                           errorOrTruncationOperation="Conversion"
@@ -2311,6 +2364,26 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Vrednost]"
                           name="Vrednost"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Ruta]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[Ruta]"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Ruta]"
+                          name="Ruta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[sifraartikla]"
+                          length="25"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]"
+                          name="sifraartikla"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2331,11 +2404,6 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="dbDate"
                           name="MaxIMStartDate" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[sifraartikla]"
-                          dataType="wstr"
-                          length="25"
-                          name="sifraartikla" />
-                        <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[datum]"
                           dataType="dbTimeStamp"
                           name="datum" />
@@ -2347,6 +2415,16 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[Vrednost]"
                           dataType="i2"
                           name="Vrednost" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          name="Ruta" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].ExternalColumns[sifraartikla]"
+                          dataType="wstr"
+                          length="25"
+                          name="sifraartikla" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2395,6 +2473,12 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="i2"
                           lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Error Output].Columns[Vrednost]"
                           name="Vrednost" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Error Output].Columns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Error Output].Columns[Ruta]"
+                          name="Ruta" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2480,7 +2564,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[sifraartikla]"
                           cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedLength="25"
                           cachedName="sifraartikla"
                           lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]">
                           <properties>
@@ -2528,6 +2612,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Vrednost]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Ruta]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2593,7 +2691,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[sifraartikla]"
                           cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedLength="25"
                           cachedName="sifraartikla"
                           lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]">
                           <properties>
@@ -2641,6 +2739,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Vrednost]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Ruta]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2700,6 +2812,12 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="i2"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Vrednost]"
                           name="Vrednost" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Ruta]"
+                          name="Ruta" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2822,6 +2940,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IstovarnoMestoID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2885,7 +3017,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[sifraartikla]"
                           cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedLength="25"
                           cachedName="sifraartikla"
                           lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]">
                           <properties>
@@ -2933,6 +3065,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Vrednost]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2992,6 +3138,12 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="i2"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Vrednost]"
                           name="Vrednost" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]"
+                          name="Ruta" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3127,6 +3279,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[Ruta]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3253,6 +3419,20 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[Ruta]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Ruta"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[Ruta]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[Ruta]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3315,6 +3495,12 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]"
                           name="ArtikalID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[Ruta]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[Ruta]"
+                          name="Ruta" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3349,24 +3535,24 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM Istovarno Mesto.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3399,14 +3585,14 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
@@ -3511,7 +3697,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctNumerickaDistribucija"
-              SendMailTask:MessageSource="Package:                              fctNumerickaDistribucija.&#xA;Time:                                      9/29/2017 11:46:34 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctNumerickaDistribucija.&#xA;Time:                                      10/25/2017 6:23:39 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3899,7 +4085,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="238,42"
           Id="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto"
-          TopLeft="191,81" />
+          TopLeft="143,56" />
         <NodeLayout
           Size="236,42"
           Id="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage"
@@ -4048,33 +4234,33 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-36.6,34.8285714285714"
+              EndConnector="-84.6,9.82857142857139"
               Start="0,0"
-              End="-29.1,34.8285714285714">
+              End="-77.1,9.82857142857139">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-14.3,0" />
+                    End="-38.3,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-14.3,0"
-                    Point2="-18.3,0"
-                    Point3="-18.3,4" />
+                    Point1="-38.3,0"
+                    Point2="-42.3,0"
+                    Point3="-42.3,4" />
                   <mssgle:LineSegment
-                    End="-18.3,30.8285714285714" />
+                    End="-42.3,5.82857142857139" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.3,30.8285714285714"
-                    Point2="-18.3,34.8285714285714"
-                    Point3="-22.3,34.8285714285714" />
+                    Point1="-42.3,5.82857142857139"
+                    Point2="-42.3,9.82857142857139"
+                    Point3="-46.3,9.82857142857139" />
                   <mssgle:LineSegment
-                    End="-29.1,34.8285714285714" />
+                    End="-77.1,9.82857142857139" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-88.91390625,-17.658203125,141.2278125,11.658203125"
+              BoundingBox="-112.91390625,-17.658203125,141.2278125,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4113,7 +4299,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="239.5,222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4147,7 +4333,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="1001.33333333333,453">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4284,37 +4470,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[NonMatchedIstovarnoMesto]"
-          TopLeft="348.333333333333,123">
+          TopLeft="300.333333333333,98">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="120.666666666667,34"
+              EndConnector="168.666666666667,59"
               Start="0,0"
-              End="120.666666666667,26.5">
+              End="168.666666666667,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.73622704507513" />
+                    End="0,19.8363939899833" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.73622704507513"
-                    Point2="0,13.7362270450751"
-                    Point3="4,13.7362270450751" />
+                    Point1="0,19.8363939899833"
+                    Point2="0,23.8363939899833"
+                    Point3="4,23.8363939899833" />
                   <mssgle:LineSegment
-                    End="116.666666666667,13.7362270450751" />
+                    End="164.666666666667,23.8363939899833" />
                   <mssgle:CubicBezierSegment
-                    Point1="116.666666666667,13.7362270450751"
-                    Point2="120.666666666667,13.7362270450751"
-                    Point3="120.666666666667,17.7362270450751" />
+                    Point1="164.666666666667,23.8363939899833"
+                    Point2="168.666666666667,23.8363939899833"
+                    Point3="168.666666666667,27.8363939899833" />
                   <mssgle:LineSegment
-                    End="120.666666666667,26.5" />
+                    End="168.666666666667,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-1.63869791666666,18.7362270450751,123.9440625,9.7490234375"
+              BoundingBox="22.3613020833333,28.8363939899833,123.9440625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4386,12 +4572,12 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-141.90638671875,36.3821138211382,111.6127734375,11.609375"
+              BoundingBox="-150.7750390625,36.3821138211382,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="945.6,340.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4427,7 +4613,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="337.333333333333,480">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4463,7 +4649,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="850,676">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4499,7 +4685,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="798,494">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4536,37 +4722,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[InferredMemberIstovarnoMesto]"
-          TopLeft="310,123">
+          TopLeft="223.666666666667,98">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-70.5,57"
+              EndConnector="15.8333333333333,82"
               Start="0,0"
-              End="-70.5,49.5">
+              End="15.8333333333333,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,29.1285475792988" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
+                    Point1="0,29.1285475792988"
+                    Point2="0,33.1285475792988"
+                    Point3="4,33.1285475792988" />
                   <mssgle:LineSegment
-                    End="-66.5,28.5" />
+                    End="11.8333333333333,33.1285475792988" />
                   <mssgle:CubicBezierSegment
-                    Point1="-66.5,28.5"
-                    Point2="-70.5,28.5"
-                    Point3="-70.5,32.5" />
+                    Point1="11.8333333333333,33.1285475792988"
+                    Point2="15.8333333333333,33.1285475792988"
+                    Point3="15.8333333333333,37.1285475792988" />
                   <mssgle:LineSegment
-                    End="-70.5,49.5" />
+                    End="15.8333333333333,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-105.6336328125,33.5,140.767265625,9.7978515625"
+              BoundingBox="-62.4669661458333,38.1285475792988,140.767265625,9.7978515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4592,17 +4778,17 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
+          type="q3:string">[dim].[DimArtikal]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4634,6 +4820,29 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Artikal">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimArtikal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

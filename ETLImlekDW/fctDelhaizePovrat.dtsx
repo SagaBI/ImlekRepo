@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizePovrat"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="193"
-  DTS:VersionGUID="{F182D3DE-5800-4E47-BF41-0167A3A4AFDF}">
+  DTS:VersionBuild="208"
+  DTS:VersionGUID="{7497BC20-D497-4049-AEA5-904752FA6668}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Povrat\Delhaize ulistavanje _ 7 2017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Povrat\Delhaize ulistavanje _ 072017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Povrat\Delhaize ulistavanje _ 7 2017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Povrat\Delhaize ulistavanje _ 072017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Povrat\C:\Saga\Povrat\Delhaize ulistavanje _ 7 2017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Povrat\C:\Saga\Povrat\Delhaize ulistavanje _ 072017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -146,7 +146,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8">7 </DTS:VariableValue>
+        DTS:DataType="8">07</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -193,7 +193,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\DelhaizePovratSource_2017-09-27.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\DelhaizePovratSource_2017-10-26.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -222,7 +222,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctDelhaizePovrat '7 ','2017'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctDelhaizePovrat '07','2017'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -404,11 +404,11 @@
                   version="1">
                   <components>
                     <component
-                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat"
                       componentClassID="Microsoft.OLEDBDestination"
                       contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                       description="OLE DB Destination"
-                      name="Delhaize Povrat source"
+                      name="Delhaize Povrat"
                       usesDispositions="true"
                       version="4">
                       <properties>
@@ -461,7 +461,7 @@
                       </properties>
                       <connections>
                         <connection
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Connections[OleDbConnection]"
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Connections[OleDbConnection]"
                           connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
                           connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
                           description="The OLE DB runtime connection used to access the database."
@@ -469,79 +469,73 @@
                       </connections>
                       <inputs>
                         <input
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input]"
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input]"
                           errorOrTruncationOperation="Insert"
                           errorRowDisposition="FailComponent"
                           hasSideEffects="true"
                           name="OLE DB Destination Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[Šifra artikla]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].Columns[Šifra artikla]"
                               cachedDataType="wstr"
                               cachedLength="255"
                               cachedName="Šifra artikla"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[Šifra artikla]" />
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[RAZLOG]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].Columns[RAZLOG]"
                               cachedDataType="wstr"
                               cachedLength="255"
                               cachedName="RAZLOG"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[RAZLOG]" />
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[KOLIČINA]"
-                              cachedDataType="r8"
-                              cachedName="KOLIČINA"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[KOLIČINA]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[Šifra MP]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].Columns[Šifra MP]"
                               cachedDataType="r8"
                               cachedName="Šifra MP"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[Šifra MP]" />
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[VREDNOST POVRATA]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].Columns[KOLIČINA]"
+                              cachedDataType="r8"
+                              cachedName="KOLIČINA"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[KOLIČINA]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].Columns[VREDNOST POVRATA]"
                               cachedDataType="r8"
                               cachedName="VREDNOST POVRATA"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[VREDNOST POVRATA]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].Columns[Datum]"
-                              cachedDataType="date"
-                              cachedName="Datum"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[Datum]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
                               dataType="wstr"
                               length="30"
                               name="SifraArtikla" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
                               dataType="dbDate"
                               name="Datum" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
                               dataType="wstr"
                               length="30"
                               name="RazlogPovrataSifra" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
                               dataType="i4"
                               name="IstovarnoMestoSifra" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
                               dataType="numeric"
                               name="VolumenSecJM"
                               precision="18"
                               scale="5" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
                               dataType="numeric"
                               name="NetoIznosBezPDVDin"
                               precision="18"
@@ -551,22 +545,22 @@
                       </inputs>
                       <outputs>
                         <output
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Outputs[OLE DB Destination Error Output]"
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Outputs[OLE DB Destination Error Output]"
                           exclusionGroup="1"
                           isErrorOut="true"
                           name="OLE DB Destination Error Output"
-                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input]">
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input]">
                           <outputColumns>
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                               name="ErrorCode"
                               specialFlags="1" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -590,7 +584,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset"></property>
+                          name="OpenRowset">'JUL 2017$'</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -684,15 +678,6 @@
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[BRUTO VREDNOST PRODAJE]"
                               name="BRUTO VREDNOST PRODAJE"
                               truncationRowDisposition="RedirectRow" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[Datum]"
-                              dataType="date"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="RedirectRow"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].ExternalColumns[Datum]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].Columns[Datum]"
-                              name="Datum"
-                              truncationRowDisposition="RedirectRow" />
                           </outputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -723,10 +708,6 @@
                               dataType="wstr"
                               length="255"
                               name="BRUTO VREDNOST PRODAJE" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output].ExternalColumns[Datum]"
-                              dataType="date"
-                              name="Datum" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -734,11 +715,6 @@
                           isErrorOut="true"
                           name="Excel Source Error Output">
                           <outputColumns>
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Error Output].Columns[Datum]"
-                              dataType="date"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Error Output].Columns[Datum]"
-                              name="Datum" />
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Error Output].Columns[Šifra MP]"
                               dataType="r8"
@@ -793,7 +769,7 @@
                   <paths>
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table.Paths[Excel Source Output]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source.Inputs[OLE DB Destination Input]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat.Inputs[OLE DB Destination Input]"
                       name="Excel Source Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source.Outputs[Excel Source Output]" />
                   </paths>
@@ -814,6 +790,181 @@
                 <pipeline
                   version="1">
                   <components>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLE DB Destination"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[stg].[DelhaizePovratStage]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Connections[OleDbConnection]"
+                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SifraArtikla]"
+                              cachedDataType="wstr"
+                              cachedLength="30"
+                              cachedName="SifraArtikla"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[SifraArtikla]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IstovarnoMestoSifra]"
+                              cachedDataType="i4"
+                              cachedName="IstovarnoMestoSifra"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[datum]"
+                              cachedDataType="dbDate"
+                              cachedName="datum"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[datum]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RazlogPovrataSifra]"
+                              cachedDataType="wstr"
+                              cachedLength="30"
+                              cachedName="RazlogPovrataSifra"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[RazlogPovrataSifra]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NetoIznosBezPDVDin]"
+                              cachedDataType="numeric"
+                              cachedName="NetoIznosBezPDVDin"
+                              cachedPrecision="18"
+                              cachedScale="2"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[sekjmulaz iz magacina]"
+                              cachedDataType="numeric"
+                              cachedName="sekjmulaz iz magacina"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[sekjmulaz iz magacina]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
+                              dataType="wstr"
+                              length="30"
+                              name="SifraArtikla" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                              dataType="dbDate"
+                              name="Datum" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
+                              dataType="wstr"
+                              length="30"
+                              name="RazlogPovrataSifra" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
+                              dataType="i4"
+                              name="IstovarnoMestoSifra" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
+                              dataType="numeric"
+                              name="VolumenSecJM"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
+                              dataType="numeric"
+                              name="NetoIznosBezPDVDin"
+                              precision="18"
+                              scale="2" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
                     <component
                       refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source"
                       componentClassID="Microsoft.OLEDBSource"
@@ -904,28 +1055,6 @@
                               name="datum"
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[SEKJMulaz iz magacina]"
-                              dataType="numeric"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[SEKJMulaz iz magacina]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[SEKJMulaz iz magacina]"
-                              name="SEKJMulaz iz magacina"
-                              precision="18"
-                              scale="5"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDV]"
-                              dataType="numeric"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDV]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDV]"
-                              name="NetoIznosBezPDV"
-                              precision="10"
-                              scale="2"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[RazlogPovrataSifra]"
                               dataType="wstr"
                               errorOrTruncationOperation="Conversion"
@@ -934,6 +1063,28 @@
                               length="30"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[RazlogPovrataSifra]"
                               name="RazlogPovrataSifra"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[sekjmulaz iz magacina]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[sekjmulaz iz magacina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[sekjmulaz iz magacina]"
+                              name="sekjmulaz iz magacina"
+                              precision="18"
+                              scale="5"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDVDin]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]"
+                              name="NetoIznosBezPDVDin"
+                              precision="18"
+                              scale="2"
                               truncationRowDisposition="FailComponent" />
                           </outputColumns>
                           <externalMetadataColumns
@@ -952,22 +1103,22 @@
                               dataType="dbDate"
                               name="datum" />
                             <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[SEKJMulaz iz magacina]"
-                              dataType="numeric"
-                              name="SEKJMulaz iz magacina"
-                              precision="18"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDV]"
-                              dataType="numeric"
-                              name="NetoIznosBezPDV"
-                              precision="10"
-                              scale="2" />
-                            <externalMetadataColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[RazlogPovrataSifra]"
                               dataType="wstr"
                               length="30"
                               name="RazlogPovrataSifra" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[sekjmulaz iz magacina]"
+                              dataType="numeric"
+                              name="sekjmulaz iz magacina"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDVDin]"
+                              dataType="numeric"
+                              name="NetoIznosBezPDVDin"
+                              precision="18"
+                              scale="2" />
                           </externalMetadataColumns>
                         </output>
                         <output
@@ -992,10 +1143,10 @@
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[datum]"
                               name="datum" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[SEKJMulaz iz magacina]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[sekjmulaz iz magacina]"
                               dataType="numeric"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[SEKJMulaz iz magacina]"
-                              name="SEKJMulaz iz magacina"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[sekjmulaz iz magacina]"
+                              name="sekjmulaz iz magacina"
                               precision="18"
                               scale="5" />
                             <outputColumn
@@ -1005,11 +1156,11 @@
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[RazlogPovrataSifra]"
                               name="RazlogPovrataSifra" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDV]"
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDVDin]"
                               dataType="numeric"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDV]"
-                              name="NetoIznosBezPDV"
-                              precision="10"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDVDin]"
+                              name="NetoIznosBezPDVDin"
+                              precision="18"
                               scale="2" />
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -1028,186 +1179,11 @@
                         </output>
                       </outputs>
                     </component>
-                    <component
-                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage"
-                      componentClassID="Microsoft.OLEDBDestination"
-                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                      description="OLE DB Destination"
-                      name="Povrat Stage"
-                      usesDispositions="true"
-                      version="4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                          name="CommandTimeout">0</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">[stg].[DelhaizePovratStage]</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the variable that contains the name of the database object used to open a rowset."
-                          name="OpenRowsetVariable"></property>
-                        <property
-                          dataType="System.String"
-                          description="The SQL command to be executed."
-                          name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the column code page to use when code page information is unavailable from the data source."
-                          name="DefaultCodePage">1252</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Forces the use of the DefaultCodePage property value when describing character data."
-                          name="AlwaysUseDefaultCodePage">false</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the mode used to access the database."
-                          name="AccessMode"
-                          typeConverter="AccessMode">3</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                          name="FastLoadKeepIdentity">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                          name="FastLoadKeepNulls">false</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                          name="FastLoadMaxInsertCommitSize">2147483647</property>
-                      </properties>
-                      <connections>
-                        <connection
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Connections[OleDbConnection]"
-                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
-                          description="The OLE DB runtime connection used to access the database."
-                          name="OleDbConnection" />
-                      </connections>
-                      <inputs>
-                        <input
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input]"
-                          errorOrTruncationOperation="Insert"
-                          errorRowDisposition="FailComponent"
-                          hasSideEffects="true"
-                          name="OLE DB Destination Input">
-                          <inputColumns>
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[SifraArtikla]"
-                              cachedDataType="wstr"
-                              cachedLength="30"
-                              cachedName="SifraArtikla"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[SifraArtikla]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[IstovarnoMestoSifra]"
-                              cachedDataType="i4"
-                              cachedName="IstovarnoMestoSifra"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[datum]"
-                              cachedDataType="dbDate"
-                              cachedName="datum"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[datum]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[RazlogPovrataSifra]"
-                              cachedDataType="wstr"
-                              cachedLength="30"
-                              cachedName="RazlogPovrataSifra"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[RazlogPovrataSifra]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[SEKJMulaz iz magacina]"
-                              cachedDataType="numeric"
-                              cachedName="SEKJMulaz iz magacina"
-                              cachedPrecision="18"
-                              cachedScale="5"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[SEKJMulaz iz magacina]" />
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].Columns[NetoIznosBezPDV]"
-                              cachedDataType="numeric"
-                              cachedName="NetoIznosBezPDV"
-                              cachedPrecision="10"
-                              cachedScale="2"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDV]" />
-                          </inputColumns>
-                          <externalMetadataColumns
-                            isUsed="True">
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[SifraArtikla]"
-                              dataType="wstr"
-                              length="30"
-                              name="SifraArtikla" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
-                              dataType="dbDate"
-                              name="Datum" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[RazlogPovrataSifra]"
-                              dataType="wstr"
-                              length="30"
-                              name="RazlogPovrataSifra" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoSifra]"
-                              dataType="i4"
-                              name="IstovarnoMestoSifra" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
-                              dataType="numeric"
-                              name="VolumenSecJM"
-                              precision="18"
-                              scale="5" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
-                              dataType="numeric"
-                              name="NetoIznosBezPDVDin"
-                              precision="18"
-                              scale="2" />
-                          </externalMetadataColumns>
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Outputs[OLE DB Destination Error Output]"
-                          exclusionGroup="1"
-                          isErrorOut="true"
-                          name="OLE DB Destination Error Output"
-                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input]">
-                          <outputColumns>
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                              name="ErrorCode"
-                              specialFlags="1" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                              name="ErrorColumn"
-                              specialFlags="2" />
-                          </outputColumns>
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
                   </components>
                   <paths>
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage.Paths[OLE DB Source Output]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage.Inputs[OLE DB Destination Input]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       name="OLE DB Source Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source.Outputs[OLE DB Source Output]" />
                   </paths>
@@ -2312,13 +2288,13 @@
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                         <property
                           dataType="System.String"
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -2350,12 +2326,12 @@ where [refTable].[SifraArtikla] = ?</property>
                         <property
                           dataType="System.String"
                           description="Indicates whether to reference metadata in an XML format."
-                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\938:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2368,8 +2344,8 @@ where [refTable].[SifraArtikla] = ?</property>
                       <connections>
                         <connection
                           refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Connections[OleDbConnection]"
-                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                           description="Connection manager used to access lookup data."
                           name="OleDbConnection" />
                       </connections>
@@ -2628,13 +2604,13 @@ where [refTable].[Date] = ?</property>
                           description="Specifies the SQL statement that generates the lookup table."
                           expressionType="Notify"
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                         <property
                           dataType="System.String"
                           description="Specifies a SQL statement that uses parameters to generate the lookup table."
                           expressionType="Notify"
                           name="SqlCommandParam"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                         <property
                           dataType="System.Int32"
@@ -2666,7 +2642,7 @@ where [refTable].[SifraArtikla] = ?</property>
                         <property
                           dataType="System.String"
                           description="Indicates whether to reference metadata in an XML format."
-                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -2684,8 +2660,8 @@ where [refTable].[SifraArtikla] = ?</property>
                       <connections>
                         <connection
                           refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Connections[OleDbConnection]"
-                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                           description="Connection manager used to access lookup data."
                           name="OleDbConnection" />
                       </connections>
@@ -3273,12 +3249,12 @@ where [refTable].[RazlogPovrataSifra] = ?</property>
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  sifraartikla,datum,
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  ltrim(rtrim(sifraartikla)) as sifraartikla,datum,
 	   p.[IstovarnoMestoSifra], p.RazlogPovrataSifra, im.IstovarnoMestoID, im.startdate, im.enddate,
 	   (select max(OU2.StartDate)
  from synTblImlekDWIstovarnoMesto OU2 
 	   where OU2.IstovarnoMestoSifra = p.IstovarnoMestoSifra ) as MaxIMStartDate,
-   [VolumenSecJM],  [NetoIznosBezPDVDin]
+  case when  [VolumenSecJM] is null then 0 else VolumenSecJM end as VolumenSecJM,  [NetoIznosBezPDVDin]
 from [stg].[DelhaizePovratStage] p left join
 synTblImlekDWIstovarnoMesto im on (p.IstovarnoMestoSifra = im.IstovarnoMestoSifra 
 and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
@@ -5237,19 +5213,19 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Povrat Stage.Outputs[OLE DB Source Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
-                      name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
+                      name="Union All Output 1"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
@@ -5274,7 +5250,37 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-                  SQLTask:SqlStatementSource="truncate table stg.DelhaizePovratStage;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="truncate table stg.DelhaizePovratStage;&#xA;truncate table stg.DelhaizePovratSource;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\update date"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{717F0053-160E-4D7D-99CB-FFB9EA9E63CE}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update date"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="exec dbo.updCurrDelhaizePovratStage_UpdateDatum ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pmonth"
+                    SQLTask:DtsVariableName="User::Mesec"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pyear"
+                    SQLTask:DtsVariableName="User::Godina"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -5291,11 +5297,11 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{5E42BB7E-0749-494C-920F-E59A25D307A7}"
+              DTS:DTSID="{47A534D3-38A6-43EA-BC82-76C0BED01194}"
               DTS:From="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
-              DTS:To="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage" />
+              DTS:To="Package\Load To Fct\Foreach Loop Container\update date" />
             <DTS:PrecedenceConstraint
               DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
               DTS:CreationName=""
@@ -5345,6 +5351,14 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 7"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Load To Fct" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+              DTS:CreationName=""
+              DTS:DTSID="{97A22745-F03D-4CAB-B5FC-755384FD060B}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\update date"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 8"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage" />
           </DTS:PrecedenceConstraints>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
@@ -5406,7 +5420,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizePovrat"
-              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      9/27/2017 12:03:21 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      10/26/2017 12:52:54 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5484,7 +5498,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="137,42"
           Id="Package\Load To Fct\Foreach Loop Container\Archive file"
-          TopLeft="43.2000037465778,385.117652067264" />
+          TopLeft="84.2000037465778,411.117652067264" />
         <NodeLayout
           Size="170,42"
           Id="Package\Load To Fct\Foreach Loop Container\Check Loaded Data"
@@ -5496,7 +5510,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="199,42"
           Id="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
-          TopLeft="21.6285746034313,314.117650973343" />
+          TopLeft="37.6285746034313,342.117650973343" />
         <NodeLayout
           Size="262,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table"
@@ -5504,11 +5518,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="235,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage"
-          TopLeft="14.0444473962936,204.167323721945" />
+          TopLeft="77.0444473962936,257.167323721945" />
         <NodeLayout
           Size="134,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct"
-          TopLeft="217.96191148466,260.590854747183" />
+          TopLeft="239.96191148466,306.590854747183" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
@@ -5542,59 +5556,31 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="100.422226943289,164.215687890366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31.1222204530046,39.951635831579"
-              Start="0,0"
-              End="31.1222204530046,32.451635831579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="27.1222204530046,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.1222204530046,0"
-                    Point2="31.1222204530046,0"
-                    Point3="31.1222204530046,4" />
-                  <mssgle:LineSegment
-                    End="31.1222204530046,32.451635831579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="121.228574603431,355.717650973343">
+          TopLeft="137.128574603431,384.117650973343">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.62857085685357,29.4000010939204"
+              EndConnector="15.5714291431465,27.000001093921"
               Start="0,0"
-              End="-9.62857085685357,21.9000010939204">
+              End="15.5714291431465,19.500001093921">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.7000005469602" />
+                    End="0,9.50000054696051" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.7000005469602"
-                    Point2="0,14.7000005469602"
-                    Point3="-4,14.7000005469602" />
+                    Point1="0,9.50000054696051"
+                    Point2="0,13.5000005469605"
+                    Point3="4,13.5000005469605" />
                   <mssgle:LineSegment
-                    End="-5.62857085685357,14.7000005469602" />
+                    End="11.5714291431465,13.5000005469605" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.62857085685357,14.7000005469602"
-                    Point2="-9.62857085685357,14.7000005469602"
-                    Point3="-9.62857085685357,18.7000005469602" />
+                    Point1="11.5714291431465,13.5000005469605"
+                    Point2="15.5714291431465,13.5000005469605"
+                    Point3="15.5714291431465,17.5000005469605" />
                   <mssgle:LineSegment
-                    End="-9.62857085685357,21.9000010939204" />
+                    End="15.5714291431465,19.500001093921" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5641,18 +5627,18 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="274.030164399358,107.837910031557">
+          TopLeft="274.263497732692,108.237910031557">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.3777778588091"
+              EndConnector="0,34.9777778588087"
               Start="0,0"
-              End="0,27.8777778588091">
+              End="0,27.4777778588087">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.8777778588091" />
+                    End="0,27.4777778588087" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5663,24 +5649,24 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="217.96191148466,281.390854747183">
+          TopLeft="239.96191148466,319.617650973343">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.7333368812286,32.7267962261603"
+              EndConnector="-102.833336881229,22.5"
               Start="0,0"
-              End="-96.7333368812286,25.2267962261603">
+              End="-102.833336881229,15">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-92.7333368812286,0" />
+                    End="-98.8333368812287,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-92.7333368812286,0"
-                    Point2="-96.7333368812286,0"
-                    Point3="-96.7333368812286,4" />
+                    Point1="-98.8333368812287,0"
+                    Point2="-102.833336881229,0"
+                    Point3="-102.833336881229,4" />
                   <mssgle:LineSegment
-                    End="-96.7333368812286,25.2267962261603" />
+                    End="-102.833336881229,15" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5691,60 +5677,120 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
-          TopLeft="80.93809524215,99.7960782097284">
+          TopLeft="80.73809524215,100.196078209728">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.017465034472,43.4196096806379"
+              EndConnector="108.350798367806,43.0196096806375"
               Start="0,0"
-              End="108.017465034472,35.9196096806379">
+              End="108.350798367806,35.5196096806375">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.8933964113713" />
+                    End="0,21.6550934817762" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.8933964113713"
-                    Point2="0,25.8933964113713"
-                    Point3="4,25.8933964113713" />
+                    Point1="0,21.6550934817762"
+                    Point2="0,25.6550934817762"
+                    Point3="4,25.6550934817762" />
                   <mssgle:LineSegment
-                    End="104.017465034472,25.8933964113713" />
+                    End="104.350798367806,25.6550934817762" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.017465034472,25.8933964113713"
-                    Point2="108.017465034472,25.8933964113713"
-                    Point3="108.017465034472,29.8933964113713" />
+                    Point1="104.350798367806,25.6550934817762"
+                    Point2="108.350798367806,25.6550934817762"
+                    Point3="108.350798367806,29.6550934817762" />
                   <mssgle:LineSegment
-                    End="108.017465034472,35.9196096806379" />
+                    End="108.350798367806,35.5196096806375" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.008732517236,30.8933964113713,16,16"
+              BoundingBox="46.1753991839028,30.6550934817762,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
-          TopLeft="249.044447396294,225.167323721945">
+          TopLeft="312.044447396294,278.167323721945">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.9174640883664,35.423531025238"
+              EndConnector="-5.08253591163361,28.423531025238"
               Start="0,0"
-              End="35.9174640883664,27.923531025238">
+              End="-5.08253591163361,20.923531025238">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.9174640883664,0" />
+                    End="-1.08253591163361,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.9174640883664,0"
-                    Point2="35.9174640883664,0"
-                    Point3="35.9174640883664,4" />
+                    Point1="-1.08253591163361,0"
+                    Point2="-5.08253591163361,0"
+                    Point3="-5.08253591163361,4" />
                   <mssgle:LineSegment
-                    End="35.9174640883664,27.923531025238" />
+                    End="-5.08253591163361,20.923531025238" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Load To Fct\Foreach Loop Container\update date"
+          TopLeft="229,199" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="231.422226943289,185.215687890366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-2.42222694328899,29.1176454429673"
+              Start="0,0"
+              End="-9.92222694328899,29.1176454429673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1176454429673" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.1176454429673"
+                    Point2="0,29.1176454429673"
+                    Point3="-4,29.1176454429673" />
+                  <mssgle:LineSegment
+                    End="-9.92222694328899,29.1176454429673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+          TopLeft="229,225.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.4555526037064,31.5006570552783"
+              Start="0,0"
+              End="-34.4555526037064,24.0006570552783">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-30.4555526037064,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.4555526037064,0"
+                    Point2="-34.4555526037064,0"
+                    Point3="-34.4555526037064,4" />
+                  <mssgle:LineSegment
+                    End="-34.4555526037064,24.0006570552783" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5756,8 +5802,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="406,482"
-          Size="406,525"
+          PanelSize="406,508"
+          Size="406,551"
           Id="Package\Load To Fct\Foreach Loop Container"
           TopLeft="62.4285742628334,145.647061483258" />
         <ContainerLayout
@@ -5832,35 +5878,35 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source"
           TopLeft="340,80" />
         <NodeLayout
-          Size="186,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source"
-          TopLeft="355,227" />
+          Size="152,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat"
+          TopLeft="550,207" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table.Paths[Excel Source Output]"
           TopLeft="409.5,122">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.5,105"
+              EndConnector="216.5,85"
               Start="0,0"
-              End="38.5,97.5">
+              End="216.5,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,38.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.5"
-                    Point2="0,52.5"
-                    Point3="4,52.5" />
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="4,42.5" />
                   <mssgle:LineSegment
-                    End="34.5,52.5" />
+                    End="212.5,42.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="34.5,52.5"
-                    Point2="38.5,52.5"
-                    Point3="38.5,56.5" />
+                    Point1="212.5,42.5"
+                    Point2="216.5,42.5"
+                    Point3="216.5,46.5" />
                   <mssgle:LineSegment
-                    End="38.5,97.5" />
+                    End="216.5,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5872,19 +5918,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Excel Source">
     <Properties>
@@ -5908,35 +5941,35 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Source"
           TopLeft="184.8,65.6" />
         <NodeLayout
-          Size="138,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage"
-          TopLeft="482.4,212.8" />
+          Size="171,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination"
+          TopLeft="526,244" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage.Paths[OLE DB Source Output]"
-          TopLeft="256.8,107.2">
+          TopLeft="256.8,107.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="294.8,105.6"
+              EndConnector="354.7,136.4"
               Start="0,0"
-              End="294.8,98.1">
+              End="354.7,128.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.8" />
+                    End="0,64.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.8"
-                    Point2="0,52.8"
-                    Point3="4,52.8" />
+                    Point1="0,64.2"
+                    Point2="0,68.2"
+                    Point3="4,68.2" />
                   <mssgle:LineSegment
-                    End="290.8,52.8" />
+                    End="350.7,68.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="290.8,52.8"
-                    Point2="294.8,52.8"
-                    Point3="294.8,56.8" />
+                    Point1="350.7,68.2"
+                    Point2="354.7,68.2"
+                    Point3="354.7,72.2" />
                   <mssgle:LineSegment
-                    End="294.8,98.1" />
+                    End="354.7,128.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5953,19 +5986,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\Povrat Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6285,7 +6305,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
           TopLeft="1026.66666666667,479.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6319,7 +6339,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
           TopLeft="867.733333333333,181.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6353,7 +6373,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
           TopLeft="1131.2,689.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6655,114 +6675,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="782.8,508.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="223.6,-29.5999999999999"
-              Start="0,0"
-              End="223.6,-22.0999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-10.7999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-10.7999999999999"
-                    Point2="0,-14.7999999999999"
-                    Point3="4,-14.7999999999999" />
-                  <mssgle:LineSegment
-                    End="219.6,-14.7999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="219.6,-14.7999999999999"
-                    Point2="223.6,-14.7999999999999"
-                    Point3="223.6,-18.7999999999999" />
-                  <mssgle:LineSegment
-                    End="223.6,-22.0999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="63.60861328125,-9.7999999999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="1025.6,653.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="40.8000000000002,15.1999999999999"
-              Start="0,0"
-              End="33.3000000000002,15.1999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="16.4000000000001,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.4000000000001,0"
-                    Point2="20.4000000000001,0"
-                    Point3="20.4000000000001,4" />
-                  <mssgle:LineSegment
-                    End="20.4000000000001,11.1999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.4000000000001,11.1999999999999"
-                    Point2="20.4000000000001,15.1999999999999"
-                    Point3="24.4000000000001,15.1999999999999" />
-                  <mssgle:LineSegment
-                    End="33.3000000000002,15.1999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.7913867187499,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
-          TopLeft="1055.2,610.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76,37.5999999999999"
-              Start="0,0"
-              End="76,30.0999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.8"
-                    Point2="0,18.8"
-                    Point3="4,18.8" />
-                  <mssgle:LineSegment
-                    End="72,18.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="72,18.8"
-                    Point2="76,18.8"
-                    Point3="76,22.8" />
-                  <mssgle:LineSegment
-                    End="76,30.0999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.19138671875,23.8,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output5]"
           TopLeft="785.6,752">
           <EdgeLayout.Curve>
@@ -6795,6 +6707,42 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-178.19138671875,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="397.333333333333,544">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="429.733333333333,-362.8"
+              Start="0,0"
+              End="429.733333333333,-355.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-176.378986866792" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-176.378986866792"
+                    Point2="0,-180.378986866792"
+                    Point3="4,-180.378986866792" />
+                  <mssgle:LineSegment
+                    End="425.733333333333,-180.378986866792" />
+                  <mssgle:CubicBezierSegment
+                    Point1="425.733333333333,-180.378986866792"
+                    Point2="429.733333333333,-180.378986866792"
+                    Point3="429.733333333333,-184.378986866792" />
+                  <mssgle:LineSegment
+                    End="429.733333333333,-355.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="166.675279947916,-175.378986866792,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6835,38 +6783,110 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
-          TopLeft="397.333333333333,544">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="782.8,508.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="429.733333333333,-362.8"
+              EndConnector="223.6,-29.5999999999999"
               Start="0,0"
-              End="429.733333333333,-355.3">
+              End="223.6,-22.0999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-176.378986866792" />
+                    End="0,-10.7999999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-176.378986866792"
-                    Point2="0,-180.378986866792"
-                    Point3="4,-180.378986866792" />
+                    Point1="0,-10.7999999999999"
+                    Point2="0,-14.7999999999999"
+                    Point3="4,-14.7999999999999" />
                   <mssgle:LineSegment
-                    End="425.733333333333,-180.378986866792" />
+                    End="219.6,-14.7999999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="425.733333333333,-180.378986866792"
-                    Point2="429.733333333333,-180.378986866792"
-                    Point3="429.733333333333,-184.378986866792" />
+                    Point1="219.6,-14.7999999999999"
+                    Point2="223.6,-14.7999999999999"
+                    Point3="223.6,-18.7999999999999" />
                   <mssgle:LineSegment
-                    End="429.733333333333,-355.3" />
+                    End="223.6,-22.0999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="166.675279947916,-175.378986866792,96.3827734375,11.609375"
+              BoundingBox="63.60861328125,-9.7999999999999,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="1055.2,610.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76,37.5999999999999"
+              Start="0,0"
+              End="76,30.0999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.8"
+                    Point2="0,18.8"
+                    Point3="4,18.8" />
+                  <mssgle:LineSegment
+                    End="72,18.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72,18.8"
+                    Point2="76,18.8"
+                    Point3="76,22.8" />
+                  <mssgle:LineSegment
+                    End="76,30.0999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.19138671875,23.8,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="1025.6,653.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.8000000000002,15.1999999999999"
+              Start="0,0"
+              End="33.3000000000002,15.1999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.4000000000001,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.4000000000001,0"
+                    Point2="20.4000000000001,0"
+                    Point3="20.4000000000001,4" />
+                  <mssgle:LineSegment
+                    End="20.4000000000001,11.1999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.4000000000001,11.1999999999999"
+                    Point2="20.4000000000001,15.1999999999999"
+                    Point3="24.4000000000001,15.1999999999999" />
+                  <mssgle:LineSegment
+                    End="33.3000000000002,15.1999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.7913867187499,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6948,17 +6968,17 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
+          type="q3:string">[dim].[DimArtikal]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6997,7 +7017,56 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimArtikal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctDelhaizePovrat">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To Source Table\Delhaize Povrat">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Source To Stage\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

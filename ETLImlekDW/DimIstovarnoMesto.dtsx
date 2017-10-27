@@ -12,8 +12,8 @@
   DTS:ObjectName="DimIstovarnoMesto"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{C96EDC0B-9BA5-4E0F-9CED-60509DEC4CF0}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{A7A957BE-D9B8-4C92-9E5C-618B37D33824}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\IstovarnoMestoSource_2017-10-09.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\IstovarnoMestoSource_2017-10-25.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -161,14 +161,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -557,35 +578,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -817,7 +817,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.IstovarnoMesto;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].IstovarnoMesto;&#xA;&#xA;&#xA;&#xA;CREATE TABLE [current].[IstovarnoMesto](&#xA;&#x9;[IstovarnoMestoSifra] [int] NULL,&#xA;&#x9;[IstovarnoMestoSifraNadredjenog] [int] NULL,&#xA;&#x9;[IstovarnoMestoNaziv] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPIB] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoVrstaKomitenta] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoGeoX] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoGeoY] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoVrstaTransporta] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoRegionSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoRegionNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAreaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoAreaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTerenSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTerenNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKategorija] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoFormatSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoFormatNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAdresa] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPostanskiBroj] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMesto] [nvarchar](25) NULL,&#xA;&#x9;[IstovarnoMestoSifraMagacina] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMagacinOpis] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoSifraRute] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoNazivRute] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifra] int NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifraNaziv] [nvarchar](40) NULL,&#xA;&#x9;[KeyAccount] [nvarchar](7) NULL,&#xA;&#x9;[DTL] [nvarchar](7) NULL,&#xA;&#x9;[TT] [nvarchar](7) NULL,&#xA;&#x9;[IdeaRodaVP] [nvarchar](50) NULL,&#xA;&#x9;[DaniObilaska] [nvarchar](200) NULL,&#xA;&#x9;[POCStatus] [nvarchar](20) NULL,&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL)&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.IstovarnoMesto;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].IstovarnoMesto;&#xA;&#xA;&#xA;&#xA;CREATE TABLE [current].[IstovarnoMesto](&#xA;&#x9;[IstovarnoMestoSifra] [int] NULL,&#xA;&#x9;[IstovarnoMestoSifraNadredjenog] [int] NULL,&#xA;&#x9;[IstovarnoMestoNaziv] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPIB] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoVrstaKomitenta] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoGeoX] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoGeoY] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoVrstaTransporta] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoRegionSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoRegionNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAreaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoAreaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTerenSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTerenNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKategorija] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoFormatSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoFormatNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAdresa] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPostanskiBroj] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMesto] [nvarchar](25) NULL,&#xA;&#x9;[IstovarnoMestoSifraMagacina] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMagacinOpis] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoSifraRute] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoNazivRute] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifra] int NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifraNaziv] [nvarchar](40) NULL,&#xA;&#x9;[KeyAccount] [nvarchar](7) NULL,&#xA;&#x9;[DTL] [nvarchar](7) NULL,&#xA;&#x9;[TT] [nvarchar](7) NULL,&#xA;&#x9;[IdeaRodaVP] [nvarchar](50) NULL,&#xA;&#x9;[DaniObilaska] [nvarchar](200) NULL,&#xA;&#x9;[POCStatus] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoPriceListTypeSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPriceListType] [nvarchar](50) NULL,&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL)&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1329,7 +1329,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[idearodavp]"
-                          length="7"
+                          length="6"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[idearodavp]"
                           name="idearodavp"
                           truncationRowDisposition="FailComponent" />
@@ -1339,7 +1339,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[Dani_obilaska]"
-                          length="200"
+                          length="4000"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[Dani_obilaska]"
                           name="Dani_obilaska"
                           truncationRowDisposition="FailComponent" />
@@ -1349,9 +1349,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[POC_status]"
-                          length="20"
+                          length="4000"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[POC_status]"
                           name="POC_status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListTypeSifra]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[PriceListTypeSifra]"
+                          length="3"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListTypeSifra]"
+                          name="PriceListTypeSifra"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[PriceListType]"
+                          length="30"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListType]"
+                          name="PriceListType"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1571,18 +1591,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[idearodavp]"
                           dataType="wstr"
-                          length="7"
+                          length="6"
                           name="idearodavp" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[Dani_obilaska]"
                           dataType="wstr"
-                          length="200"
+                          length="4000"
                           name="Dani_obilaska" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[POC_status]"
                           dataType="wstr"
-                          length="20"
+                          length="4000"
                           name="POC_status" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[PriceListTypeSifra]"
+                          dataType="wstr"
+                          length="3"
+                          name="PriceListTypeSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[PriceListType]"
+                          dataType="wstr"
+                          length="30"
+                          name="PriceListType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1848,21 +1878,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[idearodavp]"
                           dataType="wstr"
-                          length="7"
+                          length="6"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[idearodavp]"
                           name="idearodavp" />
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[Dani_obilaska]"
                           dataType="wstr"
-                          length="200"
+                          length="4000"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[Dani_obilaska]"
                           name="Dani_obilaska" />
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[POC_status]"
                           dataType="wstr"
-                          length="20"
+                          length="4000"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[POC_status]"
                           name="POC_status" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[PriceListTypeSifra]"
+                          dataType="wstr"
+                          length="3"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[PriceListTypeSifra]"
+                          name="PriceListTypeSifra" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[PriceListType]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[PriceListType]"
+                          name="PriceListType" />
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2172,21 +2214,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <inputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[idearodavp]"
                           cachedDataType="wstr"
-                          cachedLength="7"
+                          cachedLength="6"
                           cachedName="idearodavp"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[idearodavp]" />
                         <inputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Dani_obilaska]"
                           cachedDataType="wstr"
-                          cachedLength="200"
+                          cachedLength="4000"
                           cachedName="Dani_obilaska"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[Dani_obilaska]" />
                         <inputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[POC_status]"
                           cachedDataType="wstr"
-                          cachedLength="20"
+                          cachedLength="4000"
                           cachedName="POC_status"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[POC_status]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[PriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="PriceListTypeSifra"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListTypeSifra]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[PriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="PriceListType"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListType]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2656,24 +2710,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <inputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[idearodavp]"
                           cachedDataType="wstr"
-                          cachedLength="7"
+                          cachedLength="6"
                           cachedName="idearodavp"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IdeaRodaVP]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[idearodavp]" />
                         <inputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[Dani_obilaska]"
                           cachedDataType="wstr"
-                          cachedLength="200"
+                          cachedLength="4000"
                           cachedName="Dani_obilaska"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[DaniObilaska]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Dani_obilaska]" />
                         <inputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[POC_status]"
                           cachedDataType="wstr"
-                          cachedLength="20"
+                          cachedLength="4000"
                           cachedName="POC_status"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[POCStatus]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[POC_status]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[PriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="PriceListTypeSifra"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListTypeSifra]"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListTypeSifra]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[PriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="PriceListType"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2910,6 +2978,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="20"
                           name="POCStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          length="7"
+                          name="IstovarnoMestoPriceListTypeSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          length="50"
+                          name="IstovarnoMestoPriceListType" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3268,23 +3346,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[idearodavp]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[idearodavp]"
-                          length="7"
+                          length="6"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[idearodavp]"
                           name="idearodavp" />
                         <outputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Dani_obilaska]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Dani_obilaska]"
-                          length="200"
+                          length="4000"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Dani_obilaska]"
                           name="Dani_obilaska" />
                         <outputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[POC_status]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[POC_status]"
-                          length="20"
+                          length="4000"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[POC_status]"
                           name="POC_status" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListTypeSifra]"
+                          dataType="wstr"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[PriceListTypeSifra]"
+                          length="3"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListTypeSifra]"
+                          name="PriceListTypeSifra" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListType]"
+                          dataType="wstr"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[PriceListType]"
+                          length="30"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListType]"
+                          name="PriceListType" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3503,18 +3595,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[idearodavp]"
                           dataType="wstr"
-                          length="7"
+                          length="6"
                           name="idearodavp" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Dani_obilaska]"
                           dataType="wstr"
-                          length="200"
+                          length="4000"
                           name="Dani_obilaska" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[POC_status]"
                           dataType="wstr"
-                          length="20"
+                          length="4000"
                           name="POC_status" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[PriceListTypeSifra]"
+                          dataType="wstr"
+                          length="3"
+                          name="PriceListTypeSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[PriceListType]"
+                          dataType="wstr"
+                          length="30"
+                          name="PriceListType" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -4525,6 +4627,8 @@ c.TT as currTT,
 c.IdeaRodaVP as currIdeaRodaVP,
 c.DaniObilaska as currDaniObilaska,
 c.Pocstatus as currPocStatus,
+c.IstovarnoMestoPriceListTypeSifra as currIstovarnoMestoPriceListTypeSifra,
+c.IstovarnoMestoPriceListType as currIstovarnoMestoPriceListType,
 c.InferredMember as currInferredMember ,
 c.HashSCD2 as currHashSCD2 ,
 c.HashSCD1 as currHashSCD1 
@@ -5421,6 +5525,26 @@ c.HashSCD1 as currHashSCD1
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currPocStatus]"
                           name="currPocStatus"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoPriceListTypeSifra]"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          name="currIstovarnoMestoPriceListTypeSifra"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoPriceListType]"
+                          length="50"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]"
+                          name="currIstovarnoMestoPriceListType"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5851,6 +5975,16 @@ c.HashSCD1 as currHashSCD1
                           dataType="wstr"
                           length="20"
                           name="currPocStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          length="7"
+                          name="currIstovarnoMestoPriceListTypeSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          length="50"
+                          name="currIstovarnoMestoPriceListType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6352,6 +6486,18 @@ c.HashSCD1 as currHashSCD1
                           length="20"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currPocStatus]"
                           name="currPocStatus" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          name="currIstovarnoMestoPriceListTypeSifra" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoPriceListType]"
+                          name="currIstovarnoMestoPriceListType" />
                         <outputColumn
                           refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currInferredMember]"
                           dataType="bool"
@@ -7212,6 +7358,20 @@ c.HashSCD1 as currHashSCD1
                           cachedName="currPocStatus"
                           externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[POCStatus]"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoPriceListTypeSifra"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListTypeSifra]"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[currIstovarnoMestoPriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currIstovarnoMestoPriceListType"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -7444,6 +7604,16 @@ c.HashSCD1 as currHashSCD1
                           dataType="wstr"
                           length="20"
                           name="POCStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          length="7"
+                          name="IstovarnoMestoPriceListTypeSifra" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          length="50"
+                          name="IstovarnoMestoPriceListType" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -8308,6 +8478,34 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 1].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoPriceListTypeSifra"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 1].Columns[currIstovarnoMestoPriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currIstovarnoMestoPriceListType"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9030,6 +9228,34 @@ c.HashSCD1 as currHashSCD1
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 2].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoPriceListTypeSifra"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 2].Columns[currIstovarnoMestoPriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currIstovarnoMestoPriceListType"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -9756,6 +9982,34 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 3].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoPriceListTypeSifra"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 3].Columns[currIstovarnoMestoPriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currIstovarnoMestoPriceListType"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10480,6 +10734,34 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 4].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoPriceListTypeSifra"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListTypeSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 4].Columns[currIstovarnoMestoPriceListType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currIstovarnoMestoPriceListType"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10804,6 +11086,18 @@ c.HashSCD1 as currHashSCD1
                           length="20"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currPocStatus]"
                           name="currPocStatus" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListTypeSifra]"
+                          name="currIstovarnoMestoPriceListTypeSifra" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]"
+                          name="currIstovarnoMestoPriceListType" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -11089,7 +11383,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimIstovarnoMesto"
-              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      10/9/2017 12:51:44 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      10/25/2017 6:46:02 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -11254,30 +11548,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Stage.PrecedenceConstraints[Constraint 2]"
-          TopLeft="101.352383080308,142.823531470909">
+          TopLeft="101.152383080308,143.223531470909">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.2666677338736,29.772550020581"
+              EndConnector="86.6666677338736,29.372550020581"
               Start="0,0"
-              End="86.2666677338736,22.272550020581">
+              End="86.6666677338736,21.872550020581">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8862750102905" />
+                    End="0,10.6862750102905" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.8862750102905"
-                    Point2="0,14.8862750102905"
-                    Point3="4,14.8862750102905" />
+                    Point1="0,10.6862750102905"
+                    Point2="0,14.6862750102905"
+                    Point3="4,14.6862750102905" />
                   <mssgle:LineSegment
-                    End="82.2666677338736,14.8862750102905" />
+                    End="82.6666677338736,14.6862750102905" />
                   <mssgle:CubicBezierSegment
-                    Point1="82.2666677338736,14.8862750102905"
-                    Point2="86.2666677338736,14.8862750102905"
-                    Point3="86.2666677338736,18.8862750102905" />
+                    Point1="82.6666677338736,14.6862750102905"
+                    Point2="86.6666677338736,14.6862750102905"
+                    Point3="86.6666677338736,18.6862750102905" />
                   <mssgle:LineSegment
-                    End="86.2666677338736,22.272550020581" />
+                    End="86.6666677338736,21.872550020581" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11288,30 +11582,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Stage.PrecedenceConstraints[Constraint 3]"
-          TopLeft="187.619050814181,214.19608149149">
+          TopLeft="187.819050814181,214.59608149149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.2095231932041,31.811765735455"
+              EndConnector="-10.3095231932041,31.411765735455"
               Start="0,0"
-              End="-10.2095231932041,24.311765735455">
+              End="-10.3095231932041,23.911765735455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.9058828677275" />
+                    End="0,11.7058828677275" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.9058828677275"
-                    Point2="0,15.9058828677275"
-                    Point3="-4,15.9058828677275" />
+                    Point1="0,11.7058828677275"
+                    Point2="0,15.7058828677275"
+                    Point3="-4,15.7058828677275" />
                   <mssgle:LineSegment
-                    End="-6.20952319320409,15.9058828677275" />
+                    End="-6.30952319320409,15.7058828677275" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.20952319320409,15.9058828677275"
-                    Point2="-10.2095231932041,15.9058828677275"
-                    Point3="-10.2095231932041,19.9058828677275" />
+                    Point1="-6.30952319320409,15.7058828677275"
+                    Point2="-10.3095231932041,15.7058828677275"
+                    Point3="-10.3095231932041,19.7058828677275" />
                   <mssgle:LineSegment
-                    End="-10.2095231932041,24.311765735455" />
+                    End="-10.3095231932041,23.911765735455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11845,13 +12139,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto"
           TopLeft="403.2,290.4" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
-          TopLeft="175.2,55.2" />
-        <NodeLayout
           Size="176,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\Add InferredMember"
           TopLeft="535.2,104.8" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
+          TopLeft="175.2,55.2" />
         <EdgeLayout
           Id="Package\Extract Stage\Load To Staging From Raw File.Paths[Raw File Source Output]"
           TopLeft="328.8,76">
@@ -11942,6 +12236,14 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="126,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfDR"
+          TopLeft="93.6,360.8" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Multicast"
+          TopLeft="272.8,163.2" />
+        <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - NR"
           TopLeft="314.4,412.8" />
@@ -11950,221 +12252,53 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Check InferredMember"
           TopLeft="248.8,87.2" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All"
-          TopLeft="648,470.4" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto"
-          TopLeft="822.4,453.6" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows and SCD2"
-          TopLeft="255.2,224" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfDR"
-          TopLeft="93.6,360.8" />
-        <NodeLayout
-          Size="253,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD2"
-          TopLeft="551.2,360.8" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Multicast"
-          TopLeft="272.8,163.2" />
-        <NodeLayout
-          Size="125,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfNR"
-          TopLeft="336,280" />
-        <NodeLayout
-          Size="104,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\SCD1"
-          TopLeft="501.6,169.6" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage"
-          TopLeft="268,10.4" />
-        <NodeLayout
-          Size="253,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD1"
-          TopLeft="441.6,252.8" />
+          Size="169,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows or SCD2"
+          TopLeft="226.4,337.6" />
         <NodeLayout
           Size="142,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Deleted Rows"
           TopLeft="57.6,232.8" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows or SCD2"
-          TopLeft="226.4,337.6" />
-        <NodeLayout
-          Size="241,42"
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - DR"
-          TopLeft="156.8,468.8" />
+          Size="120,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All"
+          TopLeft="648,470.4" />
         <NodeLayout
           Size="239,42"
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - IM"
           TopLeft="709.6,92.8" />
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output3]"
-          TopLeft="555.2,433.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.8,52"
-              Start="0,0"
-              End="85.3,52">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="49.6177777777778,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="49.6177777777778,0"
-                    Point2="53.6177777777778,0"
-                    Point3="53.6177777777778,4" />
-                  <mssgle:LineSegment
-                    End="53.6177777777778,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.6177777777778,48"
-                    Point2="53.6177777777778,52"
-                    Point3="57.6177777777778,52" />
-                  <mssgle:LineSegment
-                    End="85.3,52" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output2]"
-          TopLeft="397.6,490.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="250.4,0"
-              Start="0,0"
-              End="242.9,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="242.9,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output1]"
-          TopLeft="677.6,402.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30.4,67.9999999999999"
-              Start="0,0"
-              End="30.4,60.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="26.4,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.4,34"
-                    Point2="30.4,34"
-                    Point3="30.4,38" />
-                  <mssgle:LineSegment
-                    End="30.4,60.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output]"
-          TopLeft="829.2,134.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.533333333333,336"
-              Start="0,0"
-              End="-102.533333333333,328.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,194.947368421053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,194.947368421053"
-                    Point2="0,198.947368421053"
-                    Point3="-4,198.947368421053" />
-                  <mssgle:LineSegment
-                    End="-98.5333333333334,198.947368421053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.5333333333334,198.947368421053"
-                    Point2="-102.533333333333,198.947368421053"
-                    Point3="-102.533333333333,202.947368421053" />
-                  <mssgle:LineSegment
-                    End="-102.533333333333,328.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[DeletedRows]"
-          TopLeft="128.8,274.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.6,86.4"
-              Start="0,0"
-              End="27.6,78.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.2"
-                    Point2="0,43.2"
-                    Point3="4,43.2" />
-                  <mssgle:LineSegment
-                    End="23.6,43.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.6,43.2"
-                    Point2="27.6,43.2"
-                    Point3="27.6,47.2" />
-                  <mssgle:LineSegment
-                    End="27.6,78.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD2"
+          TopLeft="551.2,360.8" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\NumOfNR"
+          TopLeft="336,280" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage"
+          TopLeft="268,10.4" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto"
+          TopLeft="822.4,453.6" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - SCD1"
+          TopLeft="441.6,252.8" />
+        <NodeLayout
+          Size="104,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\SCD1"
+          TopLeft="501.6,169.6" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\New Rows and SCD2"
+          TopLeft="255.2,224" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD\Add Action and ActionReason - DR"
+          TopLeft="156.8,468.8" />
         <EdgeLayout
           Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Union All Output 1]"
           TopLeft="768,491.2">
@@ -12562,6 +12696,166 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="96.94970703125,5,73.0005859375,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output3]"
+          TopLeft="555.2,433.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.8,52"
+              Start="0,0"
+              End="85.3,52">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.6177777777778,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.6177777777778,0"
+                    Point2="53.6177777777778,0"
+                    Point3="53.6177777777778,4" />
+                  <mssgle:LineSegment
+                    End="53.6177777777778,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.6177777777778,48"
+                    Point2="53.6177777777778,52"
+                    Point3="57.6177777777778,52" />
+                  <mssgle:LineSegment
+                    End="85.3,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output2]"
+          TopLeft="397.6,490.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250.4,0"
+              Start="0,0"
+              End="242.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="242.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output1]"
+          TopLeft="677.6,402.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.4,67.9999999999999"
+              Start="0,0"
+              End="30.4,60.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="26.4,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.4,34"
+                    Point2="30.4,34"
+                    Point3="30.4,38" />
+                  <mssgle:LineSegment
+                    End="30.4,60.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[Derived Column Output]"
+          TopLeft="829.2,134.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.533333333333,336"
+              Start="0,0"
+              End="-102.533333333333,328.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,194.947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,194.947368421053"
+                    Point2="0,198.947368421053"
+                    Point3="-4,198.947368421053" />
+                  <mssgle:LineSegment
+                    End="-98.5333333333334,198.947368421053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.5333333333334,198.947368421053"
+                    Point2="-102.533333333333,198.947368421053"
+                    Point3="-102.533333333333,202.947368421053" />
+                  <mssgle:LineSegment
+                    End="-102.533333333333,328.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transform And Load\Load To IstovarnoMestoSCD.Paths[DeletedRows]"
+          TopLeft="128.8,274.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.6,86.4"
+              Start="0,0"
+              End="27.6,78.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2"
+                    Point2="0,43.2"
+                    Point3="4,43.2" />
+                  <mssgle:LineSegment
+                    End="23.6,43.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.6,43.2"
+                    Point2="27.6,43.2"
+                    Point3="27.6,47.2" />
+                  <mssgle:LineSegment
+                    End="27.6,78.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.357578125,48.2,58.31515625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

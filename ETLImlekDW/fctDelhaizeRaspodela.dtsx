@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizeRaspodela"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="141"
-  DTS:VersionGUID="{AA6D9A08-A7E7-480B-A08E-63755050DEA8}">
+  DTS:VersionBuild="179"
+  DTS:VersionGUID="{56F89FA2-9EA7-4FB8-8A95-F02798ADA159}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">8/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">8/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">9/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\DelhaizeRaspodelaSource_2017-09-20.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\DelhaizeRaspodelaSource_2017-10-27.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -312,8 +312,8 @@
                           externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDV]"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDV]"
                           name="NetoIznosBezPDV"
-                          precision="10"
-                          scale="2"
+                          precision="18"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDV]"
@@ -324,7 +324,7 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDV]"
                           name="NetoIznosSaPDV"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoBezPDV]"
@@ -335,7 +335,7 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoBezPDV]"
                           name="BrutoBezPDV"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoSaPDV]"
@@ -346,7 +346,7 @@
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoSaPDV]"
                           name="BrutoSaPDV"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -374,26 +374,26 @@
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosBezPDV]"
                           dataType="numeric"
                           name="NetoIznosBezPDV"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].ExternalColumns[NetoIznosSaPDV]"
                           dataType="numeric"
                           name="NetoIznosSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoBezPDV]"
                           dataType="numeric"
                           name="BrutoBezPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].ExternalColumns[BrutoSaPDV]"
                           dataType="numeric"
                           name="BrutoSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -429,29 +429,29 @@
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDV]"
                           name="NetoIznosBezPDV"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDV]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDV]"
                           name="NetoIznosSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[BrutoBezPDV]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[BrutoBezPDV]"
                           name="BrutoBezPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[BrutoSaPDV]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[BrutoSaPDV]"
                           name="BrutoSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -530,29 +530,29 @@
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[NetoIznosBezPDV]"
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDV"
-                          cachedPrecision="10"
-                          cachedScale="2"
+                          cachedPrecision="18"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDV]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[NetoIznosSaPDV]"
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDV]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[BrutoBezPDV]"
                           cachedDataType="numeric"
                           cachedName="BrutoBezPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoBezPDV]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[BrutoSaPDV]"
                           cachedDataType="numeric"
                           cachedName="BrutoSaPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Extract To Raw File\DelHaizeRaspodela Source.Outputs[OLE DB Source Output].Columns[BrutoSaPDV]" />
                       </inputColumns>
                       <externalMetadataColumns />
@@ -1149,7 +1149,7 @@
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]" />
                         <inputColumn
@@ -1157,7 +1157,7 @@
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]" />
                         <inputColumn
@@ -1165,7 +1165,7 @@
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]" />
                         <inputColumn
@@ -1173,7 +1173,7 @@
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]" />
                         <inputColumn
@@ -1669,13 +1669,13 @@ where [refTable].[IstovarnoMestoSifra] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -1707,7 +1707,7 @@ where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -1725,8 +1725,8 @@ where [refTable].[SifraArtikla] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Connections[OleDbConnection]"
-                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1985,13 +1985,13 @@ where [refTable].[Date] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
 where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -2023,7 +2023,7 @@ where [refTable].[SifraArtikla] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -2041,8 +2041,8 @@ where [refTable].[SifraArtikla] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Connections[OleDbConnection]"
-                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2155,7 +2155,7 @@ where [refTable].[SifraArtikla] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  sifraartikla,datum,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  ltrim(rtrim(sifraartikla)) as sifraartikla,datum,
 	   p.[IstovarnoMestoSifra], im.IstovarnoMestoID, im.startdate, im.enddate,
 	   (select max(OU2.StartDate)
  from  synTblImlekDWIstovarnoMesto OU2 
@@ -2229,7 +2229,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]"
@@ -2240,7 +2240,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]"
@@ -2251,7 +2251,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoID]"
@@ -2317,7 +2317,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2"
+                          scale="5"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -2337,19 +2337,19 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="numeric"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].ExternalColumns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].ExternalColumns[IstovarnoMestoID]"
                           dataType="i4"
@@ -2380,7 +2380,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="numeric"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2437,28 +2437,28 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[NetoIznosBezPDVDin]"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[BrutoIznosBezPDVDin]"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[BrutoIznosSaPDVDin]"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -2600,7 +2600,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -2611,26 +2611,11 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[NetoIznosBezPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosBezPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[BrutoIznosBezPDVDin]"
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -2645,7 +2630,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -2653,6 +2638,21 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[NetoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2775,7 +2775,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -2786,26 +2786,11 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[NetoIznosBezPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosBezPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[BrutoIznosBezPDVDin]"
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -2820,7 +2805,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -2828,6 +2813,21 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[NetoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -2895,28 +2895,28 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
-                          name="NetoIznosBezPDVDin"
-                          precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
+                          name="NetoIznosBezPDVDin"
+                          precision="18"
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3046,7 +3046,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3061,7 +3061,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3076,7 +3076,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3091,7 +3091,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3221,7 +3221,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3236,7 +3236,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3251,7 +3251,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3266,7 +3266,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3341,28 +3341,28 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3505,7 +3505,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3520,7 +3520,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3535,7 +3535,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3550,7 +3550,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3693,7 +3693,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3708,7 +3708,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3723,7 +3723,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosBezPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
                           <properties>
                             <property
@@ -3738,7 +3738,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoIznosSaPDVDin"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
                           <properties>
                             <property
@@ -3818,28 +3818,28 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3874,24 +3874,24 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3924,14 +3924,14 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
@@ -4060,15 +4060,15 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="NetoIznosSaPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]" />
                         <inputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].Columns[NetoIznosBezPDV]"
                           cachedDataType="numeric"
                           cachedName="NetoIznosBezPDV"
-                          cachedPrecision="10"
-                          cachedScale="2"
+                          cachedPrecision="18"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosBezPDV]" />
                         <inputColumn
@@ -4076,7 +4076,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoBezPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoBezPDV]" />
                         <inputColumn
@@ -4084,7 +4084,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="numeric"
                           cachedName="BrutoSaPDV"
                           cachedPrecision="18"
-                          cachedScale="2"
+                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoSaPDV]" />
                       </inputColumns>
@@ -4114,25 +4114,25 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           dataType="numeric"
                           name="NetoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[NetoIznosBezPDVDin]"
                           dataType="numeric"
                           name="NetoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosBezPDVDin]"
                           dataType="numeric"
                           name="BrutoIznosBezPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raspodela Stage.Inputs[OLE DB Destination Input].ExternalColumns[BrutoIznosSaPDVDin]"
                           dataType="numeric"
                           name="BrutoIznosSaPDVDin"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4222,8 +4222,8 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           externalMetadataColumnId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[NetoIznosBezPDV]"
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosBezPDV]"
                           name="NetoIznosBezPDV"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]"
                           dataType="numeric"
@@ -4231,7 +4231,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[NetoIznosSaPDV]"
                           name="NetoIznosSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoBezPDV]"
                           dataType="numeric"
@@ -4239,7 +4239,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoBezPDV]"
                           name="BrutoBezPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoSaPDV]"
                           dataType="numeric"
@@ -4247,7 +4247,7 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           lineageId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[BrutoSaPDV]"
                           name="BrutoSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4274,26 +4274,26 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[NetoIznosBezPDV]"
                           dataType="numeric"
                           name="NetoIznosBezPDV"
-                          precision="10"
-                          scale="2" />
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[NetoIznosSaPDV]"
                           dataType="numeric"
                           name="NetoIznosSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[BrutoBezPDV]"
                           dataType="numeric"
                           name="BrutoBezPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[BrutoSaPDV]"
                           dataType="numeric"
                           name="BrutoSaPDV"
                           precision="18"
-                          scale="2" />
+                          scale="5" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -4412,7 +4412,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizeRaspodela"
-              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      9/20/2017 7:41:16 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      10/27/2017 6:24:41 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4867,7 +4867,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="331.2,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4895,7 +4895,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="796.266666666667,229.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5133,7 +5133,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="934.4,622.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5169,7 +5169,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="945.333333333333,340">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5205,7 +5205,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="880.533333333333,542.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5241,7 +5241,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="319.466666666667,484.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5496,7 +5496,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
+          type="q3:string">[dim].[DimArtikal]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -5550,7 +5550,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[map].[ArtikalMappingBussinesKeyToCurrentSurrogateKey]</Value>
+          type="q3:string">[dim].[DimArtikal]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

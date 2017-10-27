@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTotalBudzetPoDanima"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="128"
-  DTS:VersionGUID="{AD5D2D86-C28F-40A0-B60A-ABE74AEC7BB4}">
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{2B35F5FF-5F2A-4C2C-A187-0F016A24CBF8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/30/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/31/2017 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -181,7 +181,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\TotalBudzetPoDanima_Source_2017-09-29.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\TotalBudzetPoDanima_Source_2017-10-23.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20170901'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20171001'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -906,8 +906,8 @@
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{22A6039C-1FDF-415F-B0CD-29FA83308A8D}"
-              DTS:ObjectName="{22A6039C-1FDF-415F-B0CD-29FA83308A8D}"
+              DTS:DTSID="{2A26387B-8926-44A0-8C9D-4779B8ED048A}"
+              DTS:ObjectName="{2A26387B-8926-44A0-8C9D-4779B8ED048A}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -963,7 +963,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTotalBudzetPoDanima"
-              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      9/29/2017 2:03:07 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      10/23/2017 6:05:53 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
