@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetKA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="132"
-  DTS:VersionGUID="{34B53307-6F25-4C37-A6C9-B0D1E4150D10}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{1D0189B0-9623-46B5-8255-B5CBAD835779}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">9/1/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/31/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/1/2017 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\Bgt_KA_Source_2017-10-26.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\Bgt_KA_Source_2017-10-30.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -239,7 +239,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20171001'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20170901'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -307,6 +307,7 @@
               <DTS:ObjectData>
                 <FileSystemData
                   TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
                   TaskSourcePath="User::FileName"
                   TaskIsSourceVariable="True"
                   TaskDestinationPath="User::Arhiva"
@@ -852,6 +853,79 @@
                   version="1">
                   <components>
                     <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal"
+                      componentClassID="Microsoft.DerivedColumn"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Add StartDate Artikal"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]"
+                              dataType="date"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]"
+                              name="ArtikalStartDate"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[$Package::ExtractDateFrom]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[$Package::ExtractDateFrom]</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Kupac"
                       componentClassID="Microsoft.DerivedColumn"
                       contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -949,14 +1023,13 @@
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  ltrim(rtrim(SifraArtikal)) as SifraArtikal,p.[KupacSifra], mesec, godina, p.BudzetVerzija,p.BudzetTip, a.ArtikalID,
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  ltrim(rtrim(SifraArtikal)) as SifraArtikal,p.[KupacSifra], mesec, godina, p.BudzetVerzija,p.BudzetTip, 
 	s.KupacID, s.startdate, s.enddate,
 	(select max(OU2.StartDate) from  synTblImlekDWKupac OU2 where OU2.KupacSifra = p.KupacSifra ) as MaxKupacStartDate,
 	
    [VolumenSecJM]
 from [stg].[BudzetKAStage] p left join
-synTblImlekDWZamenskiArtikal a on a.[SifraArtikla] = p.SifraArtikal left join
-synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
+synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra and mesec&gt;=month(s.StartDate) and mesec &lt;month(s.enddate) and godina &gt;=year(s.startdate) and godina &lt; year (s.enddate))</property>
                         <property
                           dataType="System.String"
                           description="The variable that contains the SQL command to be executed."
@@ -1042,15 +1115,6 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               name="BudzetTip"
                               truncationRowDisposition="FailComponent" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]"
-                              dataType="i4"
-                              errorOrTruncationOperation="Conversion"
-                              errorRowDisposition="FailComponent"
-                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].ExternalColumns[ArtikalID]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]"
-                              name="ArtikalID"
-                              truncationRowDisposition="FailComponent" />
-                            <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacSifra]"
                               dataType="i4"
                               errorOrTruncationOperation="Conversion"
@@ -1134,10 +1198,6 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               dataType="wstr"
                               length="50"
                               name="BudzetTip" />
-                            <externalMetadataColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].ExternalColumns[ArtikalID]"
-                              dataType="i4"
-                              name="ArtikalID" />
                             <externalMetadataColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].ExternalColumns[KupacSifra]"
                               dataType="i4"
@@ -1228,11 +1288,6 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Error Output].Columns[MaxKupacStartDate]"
                               name="MaxKupacStartDate" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Error Output].Columns[ArtikalID]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Error Output].Columns[ArtikalID]"
-                              name="ArtikalID" />
-                            <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Error Output].Columns[VolumenSecJM]"
                               dataType="numeric"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Error Output].Columns[VolumenSecJM]"
@@ -1274,13 +1329,13 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="godina"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[godina]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[godina]" />
                             <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input].Columns[mesec]"
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="mesec"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[mesec]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[mesec]" />
                           </inputColumns>
                           <externalMetadataColumns />
                         </input>
@@ -1306,7 +1361,7 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_I4)#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[godina]}</property>
+                                  name="Expression">(DT_I4)#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[godina]}</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
@@ -1328,7 +1383,7 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                                   containsID="true"
                                   dataType="System.String"
                                   description="Derived Column Expression"
-                                  name="Expression">(DT_I4)(#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[mesec]})</property>
+                                  name="Expression">(DT_I4)(#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[mesec]})</property>
                                 <property
                                   containsID="true"
                                   dataType="System.String"
@@ -1501,11 +1556,6 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                           name="Conditional Split Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Dimensions.Inputs[Conditional Split Input].Columns[ArtikalID]"
-                              cachedDataType="i4"
-                              cachedName="ArtikalID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]" />
-                            <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Dimensions.Inputs[Conditional Split Input].Columns[KupacID]"
                               cachedDataType="i4"
                               cachedName="KupacID"
@@ -1529,13 +1579,13 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                              name="Expression">[ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacID]}) ==  FALSE  &amp;&amp; [ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]}) ==  FALSE </property>
+                              name="Expression">[ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacID]}) ==  FALSE </property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the friendly version of the expression. This expression version uses column names."
                               expressionType="Notify"
-                              name="FriendlyExpression">ISNULL(KupacID) ==  FALSE  &amp;&amp; ISNULL(ArtikalID) ==  FALSE </property>
+                              name="FriendlyExpression">ISNULL(KupacID) ==  FALSE </property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1660,7 +1710,7 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               cachedPrecision="18"
                               cachedScale="5"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].ExternalColumns[VolumenSecJM]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[VolumenSecJM]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[VolumenSecJM]" />
                             <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].Columns[BudzetID]"
                               cachedDataType="i4"
@@ -1672,13 +1722,13 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               cachedDataType="i4"
                               cachedName="ArtikalID"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArtikalID]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]" />
                             <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].Columns[KupacID]"
                               cachedDataType="i4"
                               cachedName="KupacID"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].ExternalColumns[KupacID]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[KupacID]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacID]" />
                             <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input].Columns[MonthID]"
                               cachedDataType="i4"
@@ -1743,6 +1793,120 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                       </outputs>
                     </component>
                     <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal"
+                      componentClassID="Microsoft.OLEDBCommand"
+                      contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                      description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                      name="Insert IM Artikal"
+                      usesDispositions="true"
+                      version="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec insDimArtikal_InsertInferredMember ?,?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1250</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Connections[OleDbConnection]"
+                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]"
+                          errorOrTruncationOperation="Command Execution"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Command Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].Columns[SifraArtikal]"
+                              cachedDataType="wstr"
+                              cachedLength="25"
+                              cachedName="SifraArtikal"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pArtikalSifra]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].Columns[ArtikalStartDate]"
+                              cachedDataType="date"
+                              cachedName="ArtikalStartDate"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                              dataType="dbDate"
+                              name="@pExtractDate">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pArtikalSifra]"
+                              dataType="wstr"
+                              length="30"
+                              name="@pArtikalSifra">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Output]"
+                          exclusionGroup="1"
+                          name="OLE DB Command Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Command Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Kupac"
                       componentClassID="Microsoft.OLEDBCommand"
                       contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1793,7 +1957,7 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               cachedDataType="i4"
                               cachedName="KupacSifra"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Kupac.Inputs[OLE DB Command Input].ExternalColumns[@pKupacSifra]"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]" />
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacSifra]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -1847,6 +2011,164 @@ synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra )</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Kupac.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                               dataType="i4"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Kupac.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal"
+                      componentClassID="Microsoft.Lookup"
+                      contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                      description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                      name="Lookup Artikal"
+                      usesDispositions="true"
+                      version="6">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the SQL statement that generates the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[vwDimZamenskiArtikli]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommandParam"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[vwDimZamenskiArtikli]) [refTable]
+where [refTable].[SifraArtikla] = ?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of connection used to access the reference dataset."
+                          name="ConnectionType"
+                          typeConverter="LookupConnectionType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the cache type of the lookup table."
+                          name="CacheType"
+                          typeConverter="CacheType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                          name="NoMatchBehavior"
+                          typeConverter="LookupNoMatchBehavior">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                          name="NoMatchCachePercentage">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                          name="MaxMemoryUsage">25</property>
+                        <property
+                          dataType="System.Int64"
+                          description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                          name="MaxMemoryUsage64">25</property>
+                        <property
+                          dataType="System.String"
+                          description="Indicates whether to reference metadata in an XML format."
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\424:invalid};</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                          name="TreatDuplicateKeysAsError">false</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Connections[OleDbConnection]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                          description="Connection manager used to access lookup data."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
+                          name="Lookup Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input].Columns[SifraArtikal]"
+                              cachedDataType="wstr"
+                              cachedLength="25"
+                              cachedName="SifraArtikal"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">SifraArtikla</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]"
+                          errorOrTruncationOperation="Lookup"
+                          exclusionGroup="1"
+                          name="Lookup Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Copy Column"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]"
+                              name="ArtikalID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn">ArtikalID</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]"
+                          description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                          exclusionGroup="1"
+                          name="Lookup No Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Lookup Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                               name="ErrorColumn"
                               specialFlags="2" />
                           </outputColumns>
@@ -1939,7 +2261,7 @@ where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="BudzetTip"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetTip]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]">
                               <properties>
                                 <property
                                   dataType="System.String"
@@ -1956,7 +2278,7 @@ where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="10"
                               cachedName="BudzetVerzija"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetVerzija]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]">
                               <properties>
                                 <property
                                   dataType="System.String"
@@ -2030,6 +2352,165 @@ where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
                       </outputs>
                     </component>
                     <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal"
+                      componentClassID="Microsoft.Lookup"
+                      contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                      description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                      name="Lookup IM Artikal"
+                      usesDispositions="true"
+                      version="6">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the SQL statement that generates the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommandParam"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
+where [refTable].[SifraArtikla] = ?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of connection used to access the reference dataset."
+                          name="ConnectionType"
+                          typeConverter="LookupConnectionType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the cache type of the lookup table."
+                          name="CacheType"
+                          typeConverter="CacheType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                          name="NoMatchBehavior"
+                          typeConverter="LookupNoMatchBehavior">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                          name="NoMatchCachePercentage">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                          name="MaxMemoryUsage">25</property>
+                        <property
+                          dataType="System.Int64"
+                          description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                          name="MaxMemoryUsage64">25</property>
+                        <property
+                          dataType="System.String"
+                          description="Indicates whether to reference metadata in an XML format."
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]};</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                          name="TreatDuplicateKeysAsError">false</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Connections[OleDbConnection]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                          description="Connection manager used to access lookup data."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
+                          name="Lookup Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input].Columns[SifraArtikal]"
+                              cachedDataType="wstr"
+                              cachedLength="25"
+                              cachedName="SifraArtikal"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">SifraArtikla</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]"
+                          errorOrTruncationOperation="Lookup"
+                          errorRowDisposition="FailComponent"
+                          exclusionGroup="1"
+                          name="Lookup Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Copy Column"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]"
+                              name="IM_ArtikalID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn">ArtikalID</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup No Match Output]"
+                          description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                          exclusionGroup="1"
+                          name="Lookup No Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Lookup Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac"
                       componentClassID="Microsoft.Lookup"
                       contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -2086,7 +2567,7 @@ where [refTable].[KupacSifra] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacSifra]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2113,7 +2594,7 @@ where [refTable].[KupacSifra] = ?</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Inputs[Lookup Input].Columns[KupacSifra]"
                               cachedDataType="i4"
                               cachedName="KupacSifra"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacSifra]">
                               <properties>
                                 <property
                                   dataType="System.String"
@@ -2362,37 +2843,6 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       </outputs>
                     </component>
                     <component
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast"
-                      componentClassID="Microsoft.Multicast"
-                      contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                      description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-                      name="Multicast">
-                      <inputs>
-                        <input
-                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Inputs[Multicast Input 1]"
-                          name="Multicast Input 1">
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Outputs[Multicast Output 1]"
-                          deleteOutputOnPathDetached="true"
-                          name="Multicast Output 1"
-                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Inputs[Multicast Input 1]">
-                          <externalMetadataColumns />
-                        </output>
-                        <output
-                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Outputs[Multicast Output 2]"
-                          dangling="true"
-                          deleteOutputOnPathDetached="true"
-                          name="Multicast Output 2"
-                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Inputs[Multicast Input 1]">
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
-                    <component
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All"
                       componentClassID="Microsoft.UnionAll"
                       contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2457,19 +2907,6 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                                   dataType="System.Int32"
                                   description="Output column lineage ID"
                                   name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ArtikalID]"
-                              cachedDataType="i4"
-                              cachedName="ArtikalID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
@@ -2555,7 +2992,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedName="VolumenSecJM"
                               cachedPrecision="18"
                               cachedScale="5"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[VolumenSecJM]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[VolumenSecJM]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2568,7 +3005,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3].Columns[startdate]"
                               cachedDataType="dbDate"
                               cachedName="startdate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[startdate]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[startdate]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2581,7 +3018,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3].Columns[enddate]"
                               cachedDataType="dbDate"
                               cachedName="enddate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[enddate]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[enddate]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2595,7 +3032,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="25"
                               cachedName="SifraArtikal"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[SifraArtikal]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[SifraArtikal]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2605,23 +3042,10 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3].Columns[ArtikalID]"
-                              cachedDataType="i4"
-                              cachedName="ArtikalID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3].Columns[KupacID]"
                               cachedDataType="i4"
                               cachedName="KupacID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacID]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacID]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2635,7 +3059,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="10"
                               cachedName="BudzetVerzija"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[BudzetVerzija]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2649,7 +3073,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="mesec"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[mesec]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[mesec]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2663,7 +3087,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="godina"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[godina]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[godina]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2677,7 +3101,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="BudzetTip"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[BudzetTip]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2725,11 +3149,6 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               length="25"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]"
                               name="SifraArtikal" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
-                              name="ArtikalID" />
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[KupacID]"
                               dataType="i4"
@@ -2782,7 +3201,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedName="VolumenSecJM"
                               cachedPrecision="18"
                               cachedScale="5"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[VolumenSecJM]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[VolumenSecJM]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2795,7 +3214,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[startdate]"
                               cachedDataType="dbDate"
                               cachedName="startdate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[startdate]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[startdate]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2808,7 +3227,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[enddate]"
                               cachedDataType="dbDate"
                               cachedName="enddate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[enddate]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[enddate]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2822,7 +3241,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="25"
                               cachedName="SifraArtikal"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[SifraArtikal]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2832,23 +3251,10 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ArtikalID]"
-                              cachedDataType="i4"
-                              cachedName="ArtikalID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[ArtikalID]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[KupacID]"
                               cachedDataType="i4"
                               cachedName="KupacID"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacID]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[KupacID]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2858,38 +3264,11 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[MaxKupacStartDate]"
-                              cachedDataType="dbDate"
-                              cachedName="MaxKupacStartDate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[MaxKupacStartDate]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[MaxKupacStartDate]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[BudzetVerzija]"
-                              cachedDataType="wstr"
-                              cachedLength="10"
-                              cachedName="BudzetVerzija"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[BudzetVerzija]">
-                              <properties>
-                                <property
-                                  containsID="true"
-                                  dataType="System.Int32"
-                                  description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]}</property>
-                              </properties>
-                            </inputColumn>
-                            <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[mesec]"
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="mesec"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[mesec]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[mesec]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2903,7 +3282,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="godina"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[godina]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[godina]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2913,16 +3292,17 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[KupacSifra]"
-                              cachedDataType="i4"
-                              cachedName="KupacSifra"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[KupacSifra]">
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[BudzetVerzija]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="BudzetVerzija"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetVerzija]">
                               <properties>
                                 <property
                                   containsID="true"
                                   dataType="System.Int32"
                                   description="Output column lineage ID"
-                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]}</property>
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]}</property>
                               </properties>
                             </inputColumn>
                             <inputColumn
@@ -2930,7 +3310,7 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               cachedDataType="wstr"
                               cachedLength="50"
                               cachedName="BudzetTip"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage.Outputs[OLE DB Source Output].Columns[BudzetTip]">
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetTip]">
                               <properties>
                                 <property
                                   containsID="true"
@@ -2939,14 +3319,172 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                                   name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]}</property>
                               </properties>
                             </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ArtikalID]"
+                              cachedDataType="i4"
+                              cachedName="ArtikalID"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                              </properties>
+                            </inputColumn>
                           </inputColumns>
                           <externalMetadataColumns />
                         </input>
                         <input
                           refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3]"
-                          dangling="true"
                           hasSideEffects="true"
                           name="Union All Input 3">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[VolumenSecJM]"
+                              cachedDataType="numeric"
+                              cachedName="VolumenSecJM"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[VolumenSecJM]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[startdate]"
+                              cachedDataType="dbDate"
+                              cachedName="startdate"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[startdate]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[startdate]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[enddate]"
+                              cachedDataType="dbDate"
+                              cachedName="enddate"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[enddate]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[enddate]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[SifraArtikal]"
+                              cachedDataType="wstr"
+                              cachedLength="25"
+                              cachedName="SifraArtikal"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[SifraArtikal]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[SifraArtikal]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[KupacID]"
+                              cachedDataType="i4"
+                              cachedName="KupacID"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[KupacID]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacID]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[mesec]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="mesec"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[mesec]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[mesec]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[godina]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="godina"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[godina]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[godina]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[BudzetVerzija]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="BudzetVerzija"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetVerzija]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[BudzetTip]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="BudzetTip"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BudzetTip]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]}</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[IM_ArtikalID]"
+                              cachedDataType="i4"
+                              cachedName="IM_ArtikalID"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Output column lineage ID"
+                                  name="OutputColumnLineageID">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                              </properties>
+                            </inputColumn>
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 2]"
+                          dangling="true"
+                          hasSideEffects="true"
+                          name="Union All Input 2">
                           <externalMetadataColumns />
                         </input>
                       </inputs>
@@ -2979,26 +3517,10 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[SifraArtikal]"
                               name="SifraArtikal" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
-                              name="ArtikalID" />
-                            <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacID]"
                               dataType="i4"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacID]"
                               name="KupacID" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[MaxKupacStartDate]"
-                              dataType="dbDate"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[MaxKupacStartDate]"
-                              name="MaxKupacStartDate" />
-                            <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]"
-                              dataType="wstr"
-                              length="10"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]"
-                              name="BudzetVerzija" />
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[mesec]"
                               dataType="wstr"
@@ -3012,16 +3534,22 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[godina]"
                               name="godina" />
                             <outputColumn
-                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]"
-                              dataType="i4"
-                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[KupacSifra]"
-                              name="KupacSifra" />
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]"
+                              dataType="wstr"
+                              length="10"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetVerzija]"
+                              name="BudzetVerzija" />
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]"
                               dataType="wstr"
                               length="50"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BudzetTip]"
                               name="BudzetTip" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
+                              name="ArtikalID" />
                           </outputColumns>
                           <externalMetadataColumns />
                         </output>
@@ -3040,45 +3568,65 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       name="Derived Column Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[InferredSupervizor]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                      name="InferredSupervizor"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output2]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]"
+                      name="Derived Column Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[InferredKupac]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Kupac.Inputs[Derived Column Input]"
+                      name="InferredKupac"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Kupac.Outputs[InferredKupac]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Outputs[Lookup Match Output]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
+                      name="Lookup No Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[MatchedDimensions]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 1]"
                       name="MatchedDimensions"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Dimensions.Outputs[MatchedDimensions]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedKA]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Kupac.Inputs[Conditional Split Input]"
-                      name="Multicast Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Outputs[Multicast Output 1]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast.Inputs[Multicast Input 1]"
-                      name="NonMatchedSupervizor"
+                      name="NonMatchedKA"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Dimensions.Outputs[NonMatchedKA]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Inputs[Lookup Input]"
                       name="OLE DB Command Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\insert IM Kupac.Outputs[OLE DB Command Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
+                      name="OLE DB Command Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Source Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Matched Dimensions.Inputs[Conditional Split Input]"
@@ -3088,12 +3636,12 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]"
                       name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Kupac.Inputs[Derived Column Input]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                       name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Outputs[Union All Output 1]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -3287,7 +3835,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetKA"
-              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      10/26/2017 1:23:14 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      10/30/2017 4:22:13 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3869,21 +4417,17 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet"
-          TopLeft="1017,420" />
+          TopLeft="1028,437" />
         <NodeLayout
           Size="194,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination"
           TopLeft="688,753" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1"
-          TopLeft="67,273" />
-        <NodeLayout
-          Size="113,42"
+          Size="200,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac"
           TopLeft="154,555" />
         <NodeLayout
@@ -3905,15 +4449,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="121,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All"
-          TopLeft="936,290" />
+          TopLeft="809,188" />
         <NodeLayout
           Size="139,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Kupac"
           TopLeft="41,168" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Multicast"
-          TopLeft="242,97" />
         <NodeLayout
           Size="157,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage"
@@ -3921,43 +4461,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="177,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Kupac"
-          TopLeft="56,371" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[InferredSupervizor]"
-          TopLeft="110.5,210">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21.5,63"
-              Start="0,0"
-              End="21.5,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="4,31.5" />
-                  <mssgle:LineSegment
-                    End="17.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5,31.5"
-                    Point2="21.5,31.5"
-                    Point3="21.5,35.5" />
-                  <mssgle:LineSegment
-                    End="21.5,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.23462890625,36.5,63.9692578125,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="55,287" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output1]"
           TopLeft="1054,569">
@@ -3994,98 +4498,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
-          TopLeft="144.5,413">
+          TopLeft="143.5,329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63,80"
+              EndConnector="-62,164"
               Start="0,0"
-              End="-63,72.5">
+              End="-62,156.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
+                    End="0,78" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36"
-                    Point2="0,40"
-                    Point3="-4,40" />
+                    Point1="0,78"
+                    Point2="0,82"
+                    Point3="-4,82" />
                   <mssgle:LineSegment
-                    End="-59,40" />
+                    End="-58,82" />
                   <mssgle:CubicBezierSegment
-                    Point1="-59,40"
-                    Point2="-63,40"
-                    Point3="-63,44" />
+                    Point1="-58,82"
+                    Point2="-62,82"
+                    Point3="-62,86" />
                   <mssgle:LineSegment
-                    End="-63,72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
-          TopLeft="132,315">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.5,56"
-              Start="0,0"
-              End="12.5,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="8.5,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.5,28"
-                    Point2="12.5,28"
-                    Point3="12.5,32" />
-                  <mssgle:LineSegment
-                    End="12.5,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
-          TopLeft="1015.33333333333,332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.6666666666666,88"
-              Start="0,0"
-              End="75.6666666666666,80.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.8890701468189" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.8890701468189"
-                    Point2="0,35.8890701468189"
-                    Point3="4,35.8890701468189" />
-                  <mssgle:LineSegment
-                    End="71.6666666666666,35.8890701468189" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.6666666666666,35.8890701468189"
-                    Point2="75.6666666666666,35.8890701468189"
-                    Point3="75.6666666666666,39.8890701468189" />
-                  <mssgle:LineSegment
-                    End="75.6666666666666,80.5" />
+                    End="-62,156.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4134,78 +4570,20 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.5,41"
+              EndConnector="64,41"
               Start="0,0"
-              End="52.5,33.5">
+              End="64,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="48.5,0" />
+                    End="60,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="48.5,0"
-                    Point2="52.5,0"
-                    Point3="52.5,4" />
+                    Point1="60,0"
+                    Point2="64,0"
+                    Point3="64,4" />
                   <mssgle:LineSegment
-                    End="52.5,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedSupervizor]"
-          TopLeft="608,118.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-246,0"
-              Start="0,0"
-              End="-238.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-238.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-153.32380859375,5,68.1476171875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Multicast Output 1]"
-          TopLeft="283.333333333333,139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-172.833333333333,29"
-              Start="0,0"
-              End="-172.833333333333,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.82894736842105" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.82894736842105"
-                    Point2="0,11.828947368421"
-                    Point3="-4,11.828947368421" />
-                  <mssgle:LineSegment
-                    End="-168.833333333333,11.828947368421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-168.833333333333,11.828947368421"
-                    Point2="-172.833333333333,11.828947368421"
-                    Point3="-172.833333333333,15.828947368421" />
-                  <mssgle:LineSegment
-                    End="-172.833333333333,21.5" />
+                    End="64,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4216,85 +4594,269 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[MatchedDimensions]"
-          TopLeft="712,140">
+          TopLeft="745.333333333333,140">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="284.5,150"
+              EndConnector="124.166666666667,48"
               Start="0,0"
-              End="284.5,142.5">
+              End="124.166666666667,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71" />
+                    End="0,15.4198473282443" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,71"
-                    Point2="0,75"
-                    Point3="4,75" />
+                    Point1="0,15.4198473282443"
+                    Point2="0,19.4198473282443"
+                    Point3="4,19.4198473282443" />
                   <mssgle:LineSegment
-                    End="280.5,75" />
+                    End="120.166666666667,19.4198473282443" />
                   <mssgle:CubicBezierSegment
-                    Point1="280.5,75"
-                    Point2="284.5,75"
-                    Point3="284.5,79" />
+                    Point1="120.166666666667,19.4198473282443"
+                    Point2="124.166666666667,19.4198473282443"
+                    Point3="124.166666666667,23.4198473282443" />
                   <mssgle:LineSegment
-                    End="284.5,142.5" />
+                    End="124.166666666667,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="97.807421875,80,88.88515625,9.7490234375"
+              BoundingBox="17.6407552083334,24.4198473282443,88.88515625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="228,555">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+          TopLeft="286,555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="749.666666666667,-223"
+              EndConnector="370,-325"
               Start="0,0"
-              End="749.666666666667,-215.5">
+              End="370,-317.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-107.626157980341" />
+                    End="0,-157.466468078255" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-107.626157980341"
-                    Point2="0,-111.626157980341"
-                    Point3="4,-111.626157980341" />
+                    Point1="0,-157.466468078255"
+                    Point2="0,-161.466468078255"
+                    Point3="4,-161.466468078255" />
                   <mssgle:LineSegment
-                    End="745.666666666667,-111.626157980341" />
+                    End="366,-161.466468078255" />
                   <mssgle:CubicBezierSegment
-                    Point1="745.666666666667,-111.626157980341"
-                    Point2="749.666666666667,-111.626157980341"
-                    Point3="749.666666666667,-115.626157980341" />
+                    Point1="366,-161.466468078255"
+                    Point2="370,-161.466468078255"
+                    Point3="370,-165.466468078255" />
                   <mssgle:LineSegment
-                    End="749.666666666667,-215.5" />
+                    End="370,-317.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="326.641946614584,-106.626157980341,96.3827734375,11.609375"
+              BoundingBox="136.80861328125,-156.466468078255,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
-          TopLeft="1091,462">
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="1102,479">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-37,65"
+              EndConnector="-58,48"
               Start="0,0"
-              End="-37,57.5">
+              End="-58,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="-4,24" />
+                  <mssgle:LineSegment
+                    End="-54,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54,24"
+                    Point2="-58,24"
+                    Point3="-58,28" />
+                  <mssgle:LineSegment
+                    End="-58,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.0600390625,29,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[NonMatchedKA]"
+          TopLeft="678.666666666667,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-568.166666666667,28"
+              Start="0,0"
+              End="-568.166666666667,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.32824427480916" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.32824427480916"
+                    Point2="0,11.3282442748092"
+                    Point3="-4,11.3282442748092" />
+                  <mssgle:LineSegment
+                    End="-564.166666666667,11.3282442748092" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-564.166666666667,11.3282442748092"
+                    Point2="-568.166666666667,11.3282442748092"
+                    Point3="-568.166666666667,15.3282442748092" />
+                  <mssgle:LineSegment
+                    End="-568.166666666667,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-318.157141927083,16.3282442748092,68.1476171875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[InferredKupac]"
+          TopLeft="110.5,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,77"
+              Start="0,0"
+              End="33,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="29,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,38.5"
+                    Point2="33,38.5"
+                    Point3="33,42.5" />
+                  <mssgle:LineSegment
+                    End="33,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.48462890625,43.5,63.9692578125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal"
+          TopLeft="934,265" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+          TopLeft="888.333333333333,230">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.666666666667,35"
+              Start="0,0"
+              End="118.666666666667,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.2740619902121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.2740619902121"
+                    Point2="0,14.2740619902121"
+                    Point3="4,14.2740619902121" />
+                  <mssgle:LineSegment
+                    End="114.666666666667,14.2740619902121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.666666666667,14.2740619902121"
+                    Point2="118.666666666667,14.2740619902121"
+                    Point3="118.666666666667,18.2740619902121" />
+                  <mssgle:LineSegment
+                    End="118.666666666667,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal"
+          TopLeft="758,308" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="934,285.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,22.5"
+              Start="0,0"
+              End="-87,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-83,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,0"
+                    Point2="-87,0"
+                    Point3="-87,4" />
+                  <mssgle:LineSegment
+                    End="-87,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-142.80638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Insert IM Artikal"
+          TopLeft="656,415" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output2]"
+          TopLeft="847,350">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-108.5,65"
+              Start="0,0"
+              End="-108.5,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4305,25 +4867,173 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point2="0,32.5"
                     Point3="-4,32.5" />
                   <mssgle:LineSegment
-                    End="-33,32.5" />
+                    End="-104.5,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-33,32.5"
-                    Point2="-37,32.5"
-                    Point3="-37,36.5" />
+                    Point1="-104.5,32.5"
+                    Point2="-108.5,32.5"
+                    Point3="-108.5,36.5" />
                   <mssgle:LineSegment
-                    End="-37,57.5" />
+                    End="-108.5,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1"
+          TopLeft="1060,342" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="1007,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118,35"
+              Start="0,0"
+              End="118,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
+                  <mssgle:LineSegment
+                    End="114,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114,17.5"
+                    Point2="118,17.5"
+                    Point3="118,21.5" />
+                  <mssgle:LineSegment
+                    End="118,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-66.69138671875,37.5,96.3827734375,11.609375"
+              BoundingBox="10.80861328125,22.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal"
+          TopLeft="872,397" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Command Output1]"
+          TopLeft="821,436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51,-18"
+              Start="0,0"
+              End="43.5,-18">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.5,0"
+                    Point2="25.5,0"
+                    Point3="25.5,-4" />
+                  <mssgle:LineSegment
+                    End="25.5,-14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.5,-14"
+                    Point2="25.5,-18"
+                    Point3="29.5,-18" />
+                  <mssgle:LineSegment
+                    End="43.5,-18" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="985,418">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75,-55"
+              Start="0,0"
+              End="67.5,-55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.5,0"
+                    Point2="37.5,0"
+                    Point3="37.5,-4" />
+                  <mssgle:LineSegment
+                    End="37.5,-51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.5,-51"
+                    Point2="37.5,-55"
+                    Point3="41.5,-55" />
+                  <mssgle:LineSegment
+                    End="67.5,-55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.69138671875,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="1125,384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23,53"
+              Start="0,0"
+              End="-23,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-19,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19,26.5"
+                    Point2="-23,26.5"
+                    Point3="-23,30.5" />
+                  <mssgle:LineSegment
+                    End="-23,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.5,31.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="1009,656">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4362,7 +5072,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -4372,7 +5082,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dim].[DimBudzet]</Value>
+          type="q3:string">[dim].[DimKupac]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -4385,20 +5095,15 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -4408,7 +5113,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dim].[DimKupac]</Value>
+          type="q3:string">[dim].[DimArtikal]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -4444,10 +5149,38 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet KA Stage">
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimBudzet]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

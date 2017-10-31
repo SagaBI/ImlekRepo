@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTemplate"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{196F24FD-E961-4A1F-A376-BB283000DFB7}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{A3540B3C-D403-4C42-BA1E-B771E096A02E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-08-31.raw</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-10-30.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -300,9 +300,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="sanja.vukovic@saga.rs"
-              SendMailTask:To="sanja.vukovic@saga.rs"
+              SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTemplate"
-              SendMailTask:MessageSource="Package:                              fctTemplate.&#xA;Time:                                      8/31/2017 10:09:50 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTemplate.&#xA;Time:                                      10/30/2017 4:39:42 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -378,19 +378,19 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Load To Fct\Extract To Raw File"
           TopLeft="103.580957837008,115.617648603182" />
         <NodeLayout
-          Size="133.6,41.6"
+          Size="134,42"
           Id="Package\Load To Fct\Load To Fct"
           TopLeft="150.285718616174,363.843142974748" />
         <NodeLayout
-          Size="225.6,41.6"
+          Size="226,42"
           Id="Package\Load To Fct\Load To Staging From Raw File"
           TopLeft="80.5333366257806,242.949023654634" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Load To Fct\Truncate Stage"
           TopLeft="84.1523860775698,34.5725511874294" />
         <EdgeLayout
@@ -486,8 +486,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="424.8,505.6"
-          Size="424.8,548.8"
+          PanelSize="425,506"
+          Size="425,549"
           Id="Package\Load To Fct"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>

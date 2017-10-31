@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{A1BB0EB9-5B18-468B-90F6-DEDFB1D7B7D3}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{1132BAF8-6454-458F-90EE-6D09E1FC41BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -156,6 +156,44 @@
               Language="VisualBasic"
               ReadOnlyVariables="User::Path,User::UserId">
               <ProjectItem
+                Name="My Project\AssemblyInfo.vb"
+                Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_6856b6a53e1847029681a09a4a951a22")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_6856b6a53e1847029681a09a4a951a22")> 
+<Assembly: AssemblyCopyright("Copyright @  2017")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("f65a4db2-873a-4b16-b800-5852862a4ccb")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+              <ProjectItem
                 Name="ScriptMain.vb"
                 Encoding="UTF8"><![CDATA[Imports System
 Imports System.Data
@@ -211,44 +249,6 @@ End Class]]></ProjectItem>
   </Profiles>
   <Settings />
 </SettingsFile>]]></ProjectItem>
-              <ProjectItem
-                Name="My Project\AssemblyInfo.vb"
-                Encoding="UTF8"><![CDATA[Imports System
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-
-' General Information about an assembly is controlled through the following 
-' set of attributes. Change these attribute values to modify the information
-' associated with an assembly.
-
-' Review the values of the assembly attributes
-
-<Assembly: AssemblyTitle("ST_6856b6a53e1847029681a09a4a951a22")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("ST_6856b6a53e1847029681a09a4a951a22")> 
-<Assembly: AssemblyCopyright("Copyright @  2017")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: CLSCompliant(True)> 
-
-<Assembly: ComVisible(False)> 
-
-'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("f65a4db2-873a-4b16-b800-5852862a4ccb")> 
-
-' Version information for an assembly consists of the following four values:
-'
-'      Major Version
-'      Minor Version 
-'      Build Number
-'      Revision
-'
-' You can specify all the values or you can default the Build and Revision Numbers 
-' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")>
-
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
               <ProjectItem
                 Name="My Project\Settings.Designer.vb"
                 Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
@@ -807,9 +807,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               SendMailTask:SMTPServer="{5659D081-7ED0-43DF-B90A-496BD57582C4}"
               SendMailTask:From="saga.support@imlek.rs"
               SendMailTask:To="miljan.danilovic@saga.rs"
-              SendMailTask:Subject="Komercijalisti mail" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
+              SendMailTask:Subject="MTD prodaja izveštaj na dan 31-10-2017"
+              SendMailTask:MessageSource="Poštovani, U prilogu je izveštaj o prodaji." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
               <SendMailTask:Attachments
-                SendMailTask:FileName="C:\Folder_Destination\Report_311_20171018.xls" />
+                SendMailTask:FileName="C:\Folder_Destination\Report_311_20171031.xls" />
             </SendMailTask:SendMailTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
