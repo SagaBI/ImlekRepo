@@ -12,8 +12,8 @@
   DTS:ObjectName="fctNumerickaDistribucija"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="225"
-  DTS:VersionGUID="{A5B0FFBB-4C68-4C71-AF95-6A80DDC69A7A}">
+  DTS:VersionBuild="226"
+  DTS:VersionGUID="{7B8247D0-0324-434D-B8A1-E8DF411F1690}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/27/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/30/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/13/2017 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\NumerickaDistribucijaSource_2017-10-25.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\NumerickaDistribucijaSource_2017-11-13.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctNumerickaDistribucija '20171001','20171030'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctNumerickaDistribucija '20171027','20171113'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3535,24 +3535,24 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Istovarno Mesto.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Fct Numericka Distribucija.Inputs[OLE DB Destination Input]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Istovarno Mesto.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3585,14 +3585,14 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
@@ -3697,7 +3697,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctNumerickaDistribucija"
-              SendMailTask:MessageSource="Package:                              fctNumerickaDistribucija.&#xA;Time:                                      10/25/2017 6:23:39 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctNumerickaDistribucija.&#xA;Time:                                      11/13/2017 9:59:32 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3946,13 +3946,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="236,42"
-          Id="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source"
-          TopLeft="158.857145562464,34.870588724341" />
-        <NodeLayout
           Size="175,42"
           Id="Package\Load To Fct\Extract To Raw File\Raw File Destination"
           TopLeft="431,260" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Load To Fct\Extract To Raw File\Numericka Distribucija Source"
+          TopLeft="158.857145562464,34.870588724341" />
         <EdgeLayout
           Id="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
           TopLeft="276.857145562464,76.870588724341">
@@ -4299,7 +4299,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="239.5,222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4333,7 +4333,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="1001.33333333333,453">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4577,7 +4577,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="945.6,340.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4613,7 +4613,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="337.333333333333,480">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4649,7 +4649,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="850,676">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4685,7 +4685,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="798,494">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4778,7 +4778,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4788,16 +4788,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -4832,7 +4824,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4842,8 +4834,16 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Numericka Distribucija Stage">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

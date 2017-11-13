@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTotalBudzetPoDanima"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="133"
-  DTS:VersionGUID="{BEDB7A39-057D-405C-B671-B68D3A590261}">
+  DTS:VersionBuild="135"
+  DTS:VersionGUID="{F3A2B226-EA17-4BF6-B222-27BD6EA180B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_082017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_po danima_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -94,7 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\LE_po danima_082017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">C:\Saga\Budzeti\LE_po danima_112017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -134,7 +134,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8">08</DTS:VariableValue>
+        DTS:DataType="8">11</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -181,7 +181,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\TotalBudzetPoDanima_Source_2017-10-30.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\TotalBudzetPoDanima_Source_2017-11-13.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -634,7 +634,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">LEPoDanima$</property>
+                          name="OpenRowset">Sheet1$</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -964,7 +964,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTotalBudzetPoDanima"
-              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      10/30/2017 4:22:42 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      11/13/2017 1:04:49 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
