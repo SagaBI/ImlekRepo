@@ -12,8 +12,8 @@
   DTS:ObjectName="DimArtikal"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{38667091-6A56-4207-B6A1-1F1B81AB489D}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{615D994A-6849-4B32-B63B-600C5EDE5189}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\ArtikalSource_2017-10-26.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\ArtikalSource_2017-11-13.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -138,7 +138,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="StartSurrKey">
       <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
+        DTS:DataType="3">1548</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -161,14 +161,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -557,35 +578,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -5889,6 +5889,27 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           cachedName="ActionReason"
                           externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ActionReason]"
                           lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[ActionReason]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].Columns[currGroupArt]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currGroupArt"
+                          externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[GroupArt]"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currGroupArt]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].Columns[currIndArtikal]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIndArtikal"
+                          externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[IndustrijskiArtikal]"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currIndArtikal]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].Columns[currPL]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="currPL"
+                          externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ImlekNisPL]"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6044,6 +6065,21 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           dataType="str"
                           length="100"
                           name="ActionReason" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[GroupArt]"
+                          dataType="wstr"
+                          length="50"
+                          name="GroupArt" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[IndustrijskiArtikal]"
+                          dataType="wstr"
+                          length="7"
+                          name="IndustrijskiArtikal" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ImlekNisPL]"
+                          dataType="wstr"
+                          length="50"
+                          name="ImlekNisPL" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -8985,7 +9021,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimArtikal"
-              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      10/26/2017 5:19:24 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      11/13/2017 5:42:01 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -9703,7 +9739,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Extract Stage\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\current Artikal"
@@ -9747,7 +9783,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9781,7 +9819,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

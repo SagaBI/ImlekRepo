@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPopust"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="110"
-  DTS:VersionGUID="{B0FADECD-2134-4AF8-B12A-757FE8E7797C}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{575DC135-7D45-4C3A-B88A-66E2B927A53F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/12/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\PopustSource_2017-11-01.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\PopustSource_2017-11-13.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -138,7 +138,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPopust '20170901','20171001'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPopust '20171101','20171112'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4912,24 +4912,24 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipDokumenta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM Tip dokumenta.Inputs[Lookup Input]"
@@ -4957,19 +4957,19 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   startId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup JM.Inputs[Lookup Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
                   endId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup JM.Inputs[Lookup Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
                   endId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input]"
@@ -5628,7 +5628,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctPopust"
-              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      11/1/2017 4:07:10 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      11/13/2017 6:13:35 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -6024,28 +6024,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           TopLeft="858.4,997.2" />
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
-          TopLeft="916.05,769.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76.8"
-              Start="0,0"
-              End="0,69.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="776.266666666667,236">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6079,7 +6057,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="981.066666666667,519.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6104,6 +6082,28 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="-61.4095238095238,47.4781881533113" />
                   <mssgle:LineSegment
                     End="-61.4095238095238,99.2428571428601" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="916.05,769.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.8"
+              Start="0,0"
+              End="0,69.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6284,78 +6284,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
-          TopLeft="646.666666666667,125.371428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-214.895238095238,31.885714285714"
-              Start="0,0"
-              End="-214.895238095238,24.385714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.96223602484462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.96223602484462"
-                    Point2="0,12.9622360248446"
-                    Point3="-4,12.9622360248446" />
-                  <mssgle:LineSegment
-                    End="-210.895238095238,12.9622360248446" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-210.895238095238,12.9622360248446"
-                    Point2="-214.895238095238,12.9622360248446"
-                    Point3="-214.895238095238,16.9622360248446" />
-                  <mssgle:LineSegment
-                    End="-214.895238095238,24.385714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-163.254005766369,17.9622360248446,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
-          TopLeft="828.457142857143,646.74285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-61.257142857143,14.05714285714"
-              Start="0,0"
-              End="-53.757142857143,14.05714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-26.6285714285715,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.6285714285715,0"
-                    Point2="-30.6285714285715,0"
-                    Point3="-30.6285714285715,4" />
-                  <mssgle:LineSegment
-                    End="-30.6285714285715,10.05714285714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-30.6285714285715,10.05714285714"
-                    Point2="-30.6285714285715,14.05714285714"
-                    Point3="-34.6285714285715,14.05714285714" />
-                  <mssgle:LineSegment
-                    End="-53.757142857143,14.05714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-86.4349581473215,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
           TopLeft="856.266666666667,401.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6391,7 +6319,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
           TopLeft="857,867">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6423,6 +6351,78 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-107.30638671875,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          TopLeft="828.457142857143,646.74285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61.257142857143,14.05714285714"
+              Start="0,0"
+              End="-53.757142857143,14.05714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-26.6285714285715,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.6285714285715,0"
+                    Point2="-30.6285714285715,0"
+                    Point3="-30.6285714285715,4" />
+                  <mssgle:LineSegment
+                    End="-30.6285714285715,10.05714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.6285714285715,10.05714285714"
+                    Point2="-30.6285714285715,14.05714285714"
+                    Point3="-34.6285714285715,14.05714285714" />
+                  <mssgle:LineSegment
+                    End="-53.757142857143,14.05714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.4349581473215,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="646.666666666667,125.371428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-214.895238095238,31.885714285714"
+              Start="0,0"
+              End="-214.895238095238,24.385714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.96223602484462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.96223602484462"
+                    Point2="0,12.9622360248446"
+                    Point3="-4,12.9622360248446" />
+                  <mssgle:LineSegment
+                    End="-210.895238095238,12.9622360248446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-210.895238095238,12.9622360248446"
+                    Point2="-214.895238095238,12.9622360248446"
+                    Point3="-214.895238095238,16.9622360248446" />
+                  <mssgle:LineSegment
+                    End="-214.895238095238,24.385714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-163.254005766369,17.9622360248446,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7071,7 +7071,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116,42"
           Id="Package\Load To Fct\Load To Staging From Raw File\Trim JM"
@@ -7115,7 +7115,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7149,7 +7151,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
