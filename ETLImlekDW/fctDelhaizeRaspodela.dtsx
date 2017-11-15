@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizeRaspodela"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="190"
-  DTS:VersionGUID="{2388A91E-B602-47A2-A7A2-C8D76110C41A}">
+  DTS:VersionBuild="198"
+  DTS:VersionGUID="{FB744E7A-D5C8-4170-9905-9E0BE502D178}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">5/1/2016 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\DelhaizeRaspodelaSource_2017-11-13.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\DelhaizeRaspodelaSource_2017-11-14.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -138,7 +138,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctDelhaizeRaspodela '20160501'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctDelhaizeRaspodela '20171101'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3874,24 +3874,24 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3924,14 +3924,14 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
@@ -4412,7 +4412,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizeRaspodela"
-              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      11/13/2017 7:15:00 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      11/14/2017 9:53:43 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4867,7 +4867,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="331.2,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4895,7 +4895,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="796.266666666667,229.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5133,7 +5133,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="934.4,622.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5169,7 +5169,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="945.333333333333,340">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5205,7 +5205,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="880.533333333333,542.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5241,7 +5241,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="319.466666666667,484.8">
           <EdgeLayout.Curve>
             <mssgle:Curve

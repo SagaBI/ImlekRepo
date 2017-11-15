@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">INF-SAGASUP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="u1uNcrL1wg==" SSIS:IV="fbi0/eGDq4Y=">XyQMiTjIlmt4zYhNMx8RwtEAlRwHutXYDmxP5y6LRqyw340DuRkrgJPrLZagUb7rA3v0n+5bFdGWoWAXV2gsAPVaXfIHhdFgY8YQJY5+lXxL35ineIY52Oocg2NfZ3ds2mZxqsGFDxUg962TxcQGaxvsEJYyU2/2HowTtwO0Yfs2/jgg9jgyEg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="8ECDdzKVHw==" SSIS:IV="OgKEUN6CaAg=">5I3H0N+WhjseCXq4EiadmI1S8o7qkpBTPc8A873QQb3FfaKKTBBgNguRom8PGw0KwK+rCY8wp8QjA/Kc2L/yZO3o/azZCAqhERB8YPTnI/ittaj9QwNnBfVzBoxd2TP0TJNyrJNdeSszH0vT9ph2EPr5j/J2qmmEjJmNRWuUD2nBPFuNCYeQqQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -61,6 +61,7 @@
           <SSIS:Package SSIS:Name="KomercijalistiSendSalesReport.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="fctRKDokument2016.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="LoadGroupFactTest.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="SupervizoriSendSalesReport.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SourceConnMng.conmgr" />
@@ -345,7 +346,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">SmtpServer=imlek.rs;UseWindowsAuthentication=True;EnableSsl=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">SmtpServer=webmail.imlek.rs;UseWindowsAuthentication=True;EnableSsl=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -375,7 +376,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">imlek.rs</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">webmail.imlek.rs</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -513,10 +514,10 @@
                 <SSIS:Property SSIS:Name="Name">fctProdaja</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">176</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">183</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{45079542-3A28-4939-971C-2229A38A9D45}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{05188721-CCEA-488B-A888-12B33DC888B5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -533,7 +534,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-01T00:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-09-28T00:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -547,7 +548,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-11T00:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-09-29T00:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -559,10 +560,10 @@
                 <SSIS:Property SSIS:Name="Name">fctPopust</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">114</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">116</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{575DC135-7D45-4C3A-B88A-66E2B927A53F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9B3980FF-3A80-4B48-89AE-B931DA4F8155}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -579,7 +580,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-01T12:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-14T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -593,7 +594,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-12T12:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-16T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -683,10 +684,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadGroupDimension</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">51</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6E7E4983-699D-4BE9-AB8B-797C2B0F95D5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1CF7FA4B-2090-4030-8C3B-E53BA56C4106}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -729,10 +730,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadGroupFact</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">76</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">77</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CC5B3CEC-AF5D-4D84-9C55-87BDE070E993}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6746E174-53D6-40A0-B19C-1847EC5BDF1F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -821,10 +822,10 @@
                 <SSIS:Property SSIS:Name="Name">fctDelhaizeRaspodela</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">190</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">198</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2388A91E-B602-47A2-A7A2-C8D76110C41A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FB744E7A-D5C8-4170-9905-9E0BE502D178}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -841,7 +842,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2016-05-01T12:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-01T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1633,10 +1634,10 @@
                 <SSIS:Property SSIS:Name="Name">fctNumerickaDistribucija</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">226</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">229</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7B8247D0-0324-434D-B8A1-E8DF411F1690}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4465DF26-83EC-4A5E-968B-3DE63CDDB3E1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1653,7 +1654,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-10-27T15:13:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-01T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1667,7 +1668,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-13T20:32:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-15T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1969,10 +1970,10 @@
                 <SSIS:Property SSIS:Name="Name">fctPracenjeCena</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">91</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">92</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3FFEDADB-C0B8-4772-8041-F5EAEB73F16C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CD0E478A-3183-4D8D-8745-D0CFCC4DEA24}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1989,7 +1990,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-10-08T12:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-13T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2003,7 +2004,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">2017-11-12T12:00:00</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">2017-11-14T12:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2061,20 +2062,19 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">96</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6EF50844-B476-40C5-B5C6-AC859A396F03}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{533FA5AD-F79A-4325-85AB-D08A0E20A72D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.Imlek SMTP Connection Manager.ConnectionString">
+                <SSIS:Parameter SSIS:Name="FolderPath">
                   <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="ID">{23A8C8C7-1EE2-455F-9EB0-95F8C237596B}</SSIS:Property>
                     <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="Description">
@@ -2082,155 +2082,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">SmtpServer=webmail.imlek.rs;UseWindowsAuthentication=True;EnableSsl=False;</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Imlek SMTP Connection Manager.EnableSsl">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Imlek SMTP Connection Manager.SmtpServer">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">webmail.imlek.rs</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Imlek SMTP Connection Manager.TargetServerVersion">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">130</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Imlek SMTP Connection Manager.UseWindowsAuthentication">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">true</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=INF-SQL051\DATAWAREHOUSE;Initial Catalog=ImlekDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.InitialCatalog">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">ImlekDW</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.Password">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.RetainSameConnection">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.ServerName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">INF-SQL051\DATAWAREHOUSE</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.INF-SQL051\DATAWAREHOUSE.ImlekDW.UserName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\tabprod\Izveštaji komercijalisti</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -2441,6 +2293,38 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">2017-02-01T00:00:00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">16</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="SupervizoriSendSalesReport.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{DC4065C9-494C-487B-AA77-102D74B2DAD6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">SupervizoriSendSalesReport</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">94</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E2BDC763-5A7B-4B7E-9B54-DCE597F0A617}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="FolderPath">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{EEBB599B-E66C-45FE-8BC5-BCCE390ACD76}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\tabprod\Izvestaji supervizori</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
