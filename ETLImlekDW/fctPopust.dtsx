@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPopust"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="116"
-  DTS:VersionGUID="{9B3980FF-3A80-4B48-89AE-B931DA4F8155}">
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{FAF18872-50CC-49E4-A25A-F7B8A1A06A96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/14/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/13/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/16/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/14/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -138,7 +138,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPopust '20171114','20171116'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPopust '20171113','20171114'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -5875,7 +5875,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="146,42"
           Id="Package\Load To Fct\Extract To Raw File\Popust Source"
@@ -5915,7 +5915,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
