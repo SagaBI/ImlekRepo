@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPracenjeOpreme"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="242"
-  DTS:VersionGUID="{387DC8A0-F4D9-41C9-A430-E66A3281AFDE}">
+  DTS:VersionBuild="247"
+  DTS:VersionGUID="{0B5C0DA3-E024-4D2A-A775-814B816042D9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">7/1/2016 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/16/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/17/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -93,6 +93,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{2040FD8D-759B-41D1-B3FE-87ED06DDC9DD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{A56E378F-6849-4534-8F49-C332D6A655BD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -118,7 +127,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\PracenjeOpremeSource_2017-10-30.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\PracenjeOpremeSource_2017-11-16.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +156,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPracenjeOpreme '20160701','20171001'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPracenjeOpreme '20171116','20171117'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -205,11 +214,11 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source"
+                  refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="Pracenje Cena Source"
+                  name="Pracenje Opreme Source"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -254,7 +263,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Connections[OleDbConnection]"
+                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Connections[OleDbConnection]"
                       connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
                       connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
                       description="The OLE DB runtime connection used to access the database."
@@ -262,185 +271,185 @@
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output]"
+                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_OS]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_OS]"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]"
                           name="Sifra_OS"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Objekta]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Objekta]"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]"
                           name="Sifra_Objekta"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Inventarni_Broj]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Inventarni_Broj]"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]"
                           name="Inventarni_Broj"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Ugovor]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Ugovor]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]"
                           name="Ima_Ugovor"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Ugovora]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Ugovora]"
                           length="100"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]"
                           name="Broj_Ugovora"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Predato_u_Finansije]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Predato_u_Finansije]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]"
                           name="Predato_u_Finansije"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Revers]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Revers]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]"
                           name="Ima_Revers"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Datum_Reversa]"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]"
+                          externalMetadataColumnId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Datum_Reversa]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]"
                           name="Datum_Reversa"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_OS]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_OS]"
                           dataType="wstr"
                           length="50"
                           name="Sifra_OS" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Objekta]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Objekta]"
                           dataType="wstr"
                           length="50"
                           name="Sifra_Objekta" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Inventarni_Broj]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Inventarni_Broj]"
                           dataType="wstr"
                           length="50"
                           name="Inventarni_Broj" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Ugovor]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Ugovor]"
                           dataType="i4"
                           name="Ima_Ugovor" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Ugovora]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Broj_Ugovora]"
                           dataType="wstr"
                           length="100"
                           name="Broj_Ugovora" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Predato_u_Finansije]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Predato_u_Finansije]"
                           dataType="dbTimeStamp"
                           name="Predato_u_Finansije" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Revers]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Ima_Revers]"
                           dataType="i4"
                           name="Ima_Revers" />
                         <externalMetadataColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].ExternalColumns[Datum_Reversa]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].ExternalColumns[Datum_Reversa]"
                           dataType="dbTimeStamp"
                           name="Datum_Reversa" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Sifra_OS]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Sifra_OS]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Sifra_OS]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Sifra_OS]"
                           name="Sifra_OS" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Sifra_Objekta]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Sifra_Objekta]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Sifra_Objekta]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Sifra_Objekta]"
                           name="Sifra_Objekta" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Inventarni_Broj]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Inventarni_Broj]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Inventarni_Broj]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Inventarni_Broj]"
                           name="Inventarni_Broj" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Ima_Ugovor]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Ima_Ugovor]"
                           dataType="i4"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Ima_Ugovor]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Ima_Ugovor]"
                           name="Ima_Ugovor" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Broj_Ugovora]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Broj_Ugovora]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Broj_Ugovora]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Broj_Ugovora]"
                           name="Broj_Ugovora" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Predato_u_Finansije]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Predato_u_Finansije]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Predato_u_Finansije]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Predato_u_Finansije]"
                           name="Predato_u_Finansije" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Ima_Revers]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Ima_Revers]"
                           dataType="i4"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Ima_Revers]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Ima_Revers]"
                           name="Ima_Revers" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Datum_Reversa]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Datum_Reversa]"
                           dataType="dbTimeStamp"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[Datum_Reversa]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[Datum_Reversa]"
                           name="Datum_Reversa" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -487,57 +496,91 @@
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Sifra_OS"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_OS]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Sifra_Objekta]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Sifra_Objekta"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Sifra_Objekta]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Inventarni_Broj]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Inventarni_Broj"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Inventarni_Broj]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Ima_Ugovor]"
                           cachedDataType="i4"
                           cachedName="Ima_Ugovor"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Ugovor]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Broj_Ugovora]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Broj_Ugovora"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Broj_Ugovora]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Predato_u_Finansije]"
                           cachedDataType="dbTimeStamp"
                           cachedName="Predato_u_Finansije"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Predato_u_Finansije]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Ima_Revers]"
                           cachedDataType="i4"
                           cachedName="Ima_Revers"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Ima_Revers]" />
                         <inputColumn
                           refId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Datum_Reversa]"
                           cachedDataType="dbTimeStamp"
                           cachedName="Datum_Reversa"
-                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]" />
+                          lineageId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output].Columns[Datum_Reversa]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                 </component>
+                <component
+                  refId="Package\Load To Fct\Extract To Raw File\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::NR</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Extract To Raw File\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
-                  endId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  endId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Source Output"
-                  startId="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load To Fct\Extract To Raw File.Paths[Row Count Output 1]"
+                  endId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Load To Fct\Extract To Raw File\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -3512,16 +3555,17 @@ and im.CurrentFlag= 1)</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{4D993F87-EA40-4765-8D90-BA13E7C1990A}"
-          DTS:From="Package\Load To Fct\Truncate Stage"
+          DTS:DTSID="{EA923ABA-254A-4D4A-B3F2-BDF98EB60D4A}"
+          DTS:Expression="@[User::NR]&gt;0"
+          DTS:From="Package\Load To Fct\Extract To Raw File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Load To Fct\Extract To Raw File" />
+          DTS:To="Package\Load To Fct\Truncate Stage" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{83CC2216-1A42-44AA-A551-0EAD5F0A92AD}"
-          DTS:From="Package\Load To Fct\Extract To Raw File"
+          DTS:DTSID="{8C0D6063-8D2A-452E-8FED-1187FB5F0B41}"
+          DTS:From="Package\Load To Fct\Truncate Stage"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Load To Fct\Load Data From Source To Stage" />
@@ -3592,7 +3636,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctPracenjeOpreme"
-              SendMailTask:MessageSource="Package:                              fctPracenjeOpreme.&#xA;Time:                                      10/30/2017 12:17:42 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctPracenjeOpreme.&#xA;Time:                                      11/16/2017 12:53:17 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3674,7 +3718,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="170,42"
           Id="Package\Load To Fct\Extract To Raw File"
-          TopLeft="317,117" />
+          TopLeft="336,30" />
         <NodeLayout
           Size="235,42"
           Id="Package\Load To Fct\Load Data From Source To Stage"
@@ -3686,75 +3730,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="150,42"
           Id="Package\Load To Fct\Truncate Stage"
-          TopLeft="117,31" />
-        <EdgeLayout
-          Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
-          TopLeft="192,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="210,44"
-              Start="0,0"
-              End="210,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
-                  <mssgle:LineSegment
-                    End="206,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="206,22"
-                    Point2="210,22"
-                    Point3="210,26" />
-                  <mssgle:LineSegment
-                    End="210,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
-          TopLeft="402,159">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114.193647845856,47.971245512217"
-              Start="0,0"
-              End="-114.193647845856,40.471245512217">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9856227561085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.9856227561085"
-                    Point2="0,23.9856227561085"
-                    Point3="-4,23.9856227561085" />
-                  <mssgle:LineSegment
-                    End="-110.193647845856,23.9856227561085" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-110.193647845856,23.9856227561085"
-                    Point2="-114.193647845856,23.9856227561085"
-                    Point3="-114.193647845856,27.9856227561085" />
-                  <mssgle:LineSegment
-                    End="-114.193647845856,40.471245512217" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="129,65" />
         <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint 2]"
           TopLeft="287.806352154144,248.971245512217">
@@ -3803,6 +3779,74 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,61.894776537455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
+          TopLeft="336,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57,35"
+              Start="0,0"
+              End="-49.5,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.5,0"
+                    Point2="-28.5,0"
+                    Point3="-28.5,4" />
+                  <mssgle:LineSegment
+                    End="-28.5,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.5,31"
+                    Point2="-28.5,35"
+                    Point3="-32.5,35" />
+                  <mssgle:LineSegment
+                    End="-49.5,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
+          TopLeft="204,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.806352154144,99.971245512217"
+              Start="0,0"
+              End="83.806352154144,92.471245512217">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.9856227561085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.9856227561085"
+                    Point2="0,49.9856227561085"
+                    Point3="4,49.9856227561085" />
+                  <mssgle:LineSegment
+                    End="79.806352154144,49.9856227561085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.806352154144,49.9856227561085"
+                    Point2="83.806352154144,49.9856227561085"
+                    Point3="83.806352154144,53.9856227561085" />
+                  <mssgle:LineSegment
+                    End="83.806352154144,92.471245512217" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3877,41 +3921,79 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source"
-          TopLeft="251,54" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,42"
           Id="Package\Load To Fct\Extract To Raw File\Raw File Destination"
           TopLeft="403,281" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source"
+          TopLeft="251,54" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Extract To Raw File\Row Count"
+          TopLeft="628,135" />
         <EdgeLayout
           Id="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
-          TopLeft="326,96">
+          TopLeft="349,96">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="164.5,185"
+              EndConnector="344,39"
               Start="0,0"
-              End="164.5,177.5">
+              End="344,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.5" />
+                    End="0,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,88.5"
-                    Point2="0,92.5"
-                    Point3="4,92.5" />
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
                   <mssgle:LineSegment
-                    End="160.5,92.5" />
+                    End="340,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="160.5,92.5"
-                    Point2="164.5,92.5"
-                    Point3="164.5,96.5" />
+                    Point1="340,19.5"
+                    Point2="344,19.5"
+                    Point3="344,23.5" />
                   <mssgle:LineSegment
-                    End="164.5,177.5" />
+                    End="344,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Extract To Raw File.Paths[Row Count Output 1]"
+          TopLeft="693,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-202.5,104"
+              Start="0,0"
+              End="-202.5,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48"
+                    Point2="0,52"
+                    Point3="-4,52" />
+                  <mssgle:LineSegment
+                    End="-198.5,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-198.5,52"
+                    Point2="-202.5,52"
+                    Point3="-202.5,56" />
+                  <mssgle:LineSegment
+                    End="-202.5,96.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3923,19 +4005,27 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Extract To Raw File\Pracenje Opreme Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load To Fct\Load Data From Source To Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Load To Fct\Load Data From Source To Stage\Raw File Source"
-          TopLeft="195,99" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="165,42"
           Id="Package\Load To Fct\Load Data From Source To Stage\Pracenje Cena Stg"
           TopLeft="445,333" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load To Fct\Load Data From Source To Stage\Raw File Source"
+          TopLeft="195,99" />
         <EdgeLayout
           Id="Package\Load To Fct\Load Data From Source To Stage.Paths[Raw File Source Output]"
           TopLeft="272,141">
@@ -3967,29 +4057,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load Data From Source To Stage\Pracenje Cena Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load To Fct\Load To Fct">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Load To Fct\Load To Fct\FctPracenjeOpreme"
-          TopLeft="718,599" />
+          Size="162,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IM Oprema"
+          TopLeft="681,499" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Load To Fct\Load To Fct\Insert IM Oprema"
-          TopLeft="472,467.2" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup Oprema"
-          TopLeft="864.6,279.4" />
+          Size="231,42"
+          Id="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember"
+          TopLeft="92,367" />
         <NodeLayout
           Size="238,42"
           Id="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto"
@@ -3999,9 +4100,25 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Union All 1"
           TopLeft="745,156" />
         <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Oprema"
+          TopLeft="864.6,279.4" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load To Fct\Load To Fct\FctPracenjeOpreme"
+          TopLeft="718,599" />
+        <NodeLayout
           Size="178,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate Oprema"
           TopLeft="593.4,388.6" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Load To Fct\Union All 2"
+          TopLeft="883,396" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load To Fct\Load To Fct\Insert IM Oprema"
+          TopLeft="472,467.2" />
         <NodeLayout
           Size="236,42"
           Id="Package\Load To Fct\Load To Fct\Pracenje Opreme Stage"
@@ -4011,14 +4128,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Lookup IM Istovarno Mesto"
           TopLeft="200,480" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Load To Fct\Union All 2"
-          TopLeft="883,396" />
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember"
-          TopLeft="92,367" />
-        <NodeLayout
           Size="226,42"
           Id="Package\Load To Fct\Load To Fct\Check Matched IstovarnoMesto"
           TopLeft="465.6,46.1714285714286" />
@@ -4026,10 +4135,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="145,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate"
           TopLeft="270.2,258.8" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup IM Oprema"
-          TopLeft="681,499" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          TopLeft="968.333333333333,438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.833333333333,161"
+              Start="0,0"
+              End="-164.833333333333,153.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5744680851063" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.5744680851063"
+                    Point2="0,65.5744680851063"
+                    Point3="-4,65.5744680851063" />
+                  <mssgle:LineSegment
+                    End="-160.833333333333,65.5744680851063" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.833333333333,65.5744680851063"
+                    Point2="-164.833333333333,65.5744680851063"
+                    Point3="-164.833333333333,69.5744680851063" />
+                  <mssgle:LineSegment
+                    End="-164.833333333333,153.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="830.333333333333,198">
@@ -4347,6 +4486,42 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[InferredMemberIstovarnoMesto]"
+          TopLeft="198,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.7,154.8"
+              Start="0,0"
+              End="144.7,147.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73.4"
+                    Point2="0,77.4"
+                    Point3="4,77.4" />
+                  <mssgle:LineSegment
+                    End="140.7,77.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="140.7,77.4"
+                    Point2="144.7,77.4"
+                    Point3="144.7,81.4" />
+                  <mssgle:LineSegment
+                    End="144.7,147.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.96636718749998,82.4,140.767265625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
           TopLeft="342.7,300.8">
           <EdgeLayout.Curve>
@@ -4450,79 +4625,55 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[InferredMemberIstovarnoMesto]"
-          TopLeft="198,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="144.7,154.8"
-              Start="0,0"
-              End="144.7,147.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,73.4"
-                    Point2="0,77.4"
-                    Point3="4,77.4" />
-                  <mssgle:LineSegment
-                    End="140.7,77.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="140.7,77.4"
-                    Point2="144.7,77.4"
-                    Point3="144.7,81.4" />
-                  <mssgle:LineSegment
-                    End="144.7,147.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="1.96636718749998,82.4,140.767265625,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-          TopLeft="968.333333333333,438">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-164.833333333333,161"
-              Start="0,0"
-              End="-164.833333333333,153.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.5744680851063" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,61.5744680851063"
-                    Point2="0,65.5744680851063"
-                    Point3="-4,65.5744680851063" />
-                  <mssgle:LineSegment
-                    End="-160.833333333333,65.5744680851063" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-160.833333333333,65.5744680851063"
-                    Point2="-164.833333333333,65.5744680851063"
-                    Point3="-164.833333333333,69.5744680851063" />
-                  <mssgle:LineSegment
-                    End="-164.833333333333,153.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM Oprema">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimOprema]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Oprema">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimOprema]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Load To Fct\FctPracenjeOpreme">
     <Properties>
@@ -4533,29 +4684,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup Oprema">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimOprema]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4573,7 +4701,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4583,54 +4711,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM Oprema">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimOprema]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Extract To Raw File\Pracenje Cena Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load Data From Source To Stage\Pracenje Cena Stg">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
