@@ -1,0 +1,3104 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/30/2017 2:48:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INF-SAGASUP"
+  DTS:CreatorName="IMLEK\saga_support"
+  DTS:DTSID="{F1F68B17-1F67-48A7-B569-AA969BBD33A1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="fctKonverzijaJM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="104"
+  DTS:VersionGUID="{F90C57D1-629F-40CA-B1B6-56DD9C043795}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{6DAF0833-1A08-4EAA-AC9A-F5A4ECA4C17C}"
+      DTS:ObjectName="ExtractDateFrom">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">11/17/2017 12:00:00 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{651FFB9B-35B8-479C-9396-C3B490DA8174}"
+      DTS:ObjectName="ExtractDateTo">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">11/18/2017 12:00:00 PM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F8E165B6-ED35-4C94-9579-3A9DC3A74E58}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C7032A4-FE5A-4A42-9FE9-4A77D98E32BD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35333C7E-683A-4A42-9ACB-431A1199D271}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndBatchAudit">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{65952FE0-A6FF-4F8B-A27C-89A44109BEB6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrKeyCopy">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C86E2E0-706D-434A-8A28-78E4EA107827}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E923265-0ECF-40AF-BDE3-8263652D5D35}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D89CFC72-EBC1-4BCB-A456-65455670DDA3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumOfDeletedRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02A4CC3D-9277-419E-B00C-6EB4E87F4AF0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{14495C85-5DF2-48E4-A69F-A7AF2103BF44}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RawFilePath]  +&quot;\\PracenjeCenaSource_&quot;+REPLACE((DT_STR, 20, 1252)(DT_DBDATE)@[System::StartTime], &quot;:&quot;, &quot;&quot;)+&quot;.raw&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RawfilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\tabtest\RawFiles\PracenjeCenaSource_2017-11-17.raw</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{79E61E9D-C8FE-44B7-83A6-CFBE6E0B6AD4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SCD_2_6_Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC07B7D8-AD4B-47FF-A8C7-B0CD27D15B9E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SetSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6D2BC262-76FB-41B4-925E-A11460CC9208}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;exec dbo.selKonverzijaJM &quot; +&quot;'&quot;  +(DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , @[$Package::ExtractDateFrom]) +  RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , @[$Package::ExtractDateFrom]), 2) + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , @[$Package::ExtractDateFrom]), 2)  + &quot;'&quot; + &quot;,&quot; +&quot;'&quot;  +(DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , @[$Package::ExtractDateTo]) +  RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , @[$Package::ExtractDateTo]), 2) + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , @[$Package::ExtractDateTo]), 2)  + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLCommand">
+      <DTS:VariableValue
+        DTS:DataType="8">exec dbo.selKonverzijaJM '20171117','20171118'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0DC64A31-7069-4C64-9A06-34EA238127F0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartSurrKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load To Fct"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9126D6C5-AD73-420D-A8C3-CB21DCD8F421}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load To Fct">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load To Fct\Load To Fct"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2E740047-1908-4843-A135-33F6396D31DE}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load To Fct"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add StartDate Artikal"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]"
+                          name="ArtikalStartDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::ExtractDateFrom]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::ExtractDateFrom]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add StartDate Artikal 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Output].Columns[DatumUnosa]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Output].Columns[DatumUnosa]"
+                          name="DatumUnosa"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::ExtractDateFrom]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::ExtractDateFrom]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\CastDatumUnosa"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="CastDatumUnosa"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Inputs[Derived Column Input].Columns[DatumUnosa]"
+                          cachedDataType="date"
+                          cachedName="DatumUnosa"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output].Columns[DatumUnosaCast]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output].Columns[DatumUnosaCast]"
+                          name="DatumUnosaCast"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)DatumUnosa</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="FctKonverzijaJM"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[fct].[fctKonverzijaJM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[ArtikalID]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[Id_Artikla]"
+                          cachedDataType="i4"
+                          cachedName="Id_Artikla"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Id_Artikla]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Id_Artikla]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[JM_od]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_od"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[JM_od]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_od]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[JM_u]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_u"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[JM_u]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_u]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[Faktor_Konverzije]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[Faktor_Konverzije_PJM]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije_PJM"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije_PJM]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije_PJM]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[DatumUnosaCast]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumUnosaCast"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[DatumUnosa]"
+                          lineageId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output].Columns[DatumUnosaCast]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].Columns[DateID]"
+                          cachedDataType="i4"
+                          cachedName="DateID"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[DatumUnosaId]"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output].Columns[DateID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[ArtikalID]"
+                          dataType="i4"
+                          name="ArtikalID" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[fctKonverzijaJMID]"
+                          dataType="i4"
+                          name="fctKonverzijaJMID" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Id_Artikla]"
+                          dataType="i4"
+                          name="Id_Artikla" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_od" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_u" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[DatumUnosa]"
+                          dataType="dbDate"
+                          name="DatumUnosa" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input].ExternalColumns[DatumUnosaId]"
+                          dataType="i4"
+                          name="DatumUnosaId" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Insert IM Artikal"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert IM Artikal"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec insDimArtikal_InsertInferredMember ?,?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Connections[OleDbConnection]"
+                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].Columns[ArtikalStartDate]"
+                          cachedDataType="date"
+                          cachedName="ArtikalStartDate"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].Columns[Sifra_Artikla]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="Sifra_Artikla"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pArtikalSifra]"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pArtikalSifra]"
+                          dataType="wstr"
+                          length="30"
+                          name="@pArtikalSifra">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                          dataType="dbDate"
+                          name="@pExtractDate">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Konverzija JM Stage"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Konverzija_JM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select k.[Id_Artikla], ltrim(rtrim(a.Sifra_Artikla)) as Sifra_Artikla, [JM_od], [JM_u], [Faktor_Konverzije], [Faktor_Konverzije_PJM]
+from stg.Konverzija_JM k inner join
+dbo.Artikal a on k.Id_Artikla = a.Id_Artikla</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Connections[OleDbConnection]"
+                      connectionManagerID="{EF5ED7FF-E2BD-4A77-A91A-761B1BFEDD47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SourceConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Id_Artikla]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Id_Artikla]"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Id_Artikla]"
+                          name="Id_Artikla"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_od]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[JM_od]"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_od]"
+                          name="JM_od"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_u]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[JM_u]"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_u]"
+                          name="JM_u"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije]"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije_PJM]"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
+                          length="25"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]"
+                          name="Sifra_Artikla"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Id_Artikla]"
+                          dataType="i4"
+                          name="Id_Artikla" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_od" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_u" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].ExternalColumns[Sifra_Artikla]"
+                          dataType="wstr"
+                          length="25"
+                          name="Sifra_Artikla" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Id_Artikla]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Id_Artikla]"
+                          name="Id_Artikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Sifra_Artikla]"
+                          dataType="wstr"
+                          length="25"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Sifra_Artikla]"
+                          name="Sifra_Artikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[JM_od]"
+                          name="JM_od" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[JM_u]"
+                          name="JM_u" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije]"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije_PJM]"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup Artikal"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Artikal"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
+where [refTable].[SifraArtikla] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKlasaGK" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input].Columns[Sifra_Artikla]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="Sifra_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">SifraArtikla</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]"
+                          name="ArtikalID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ArtikalID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup Datum"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Datum"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateDescription" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNameInWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInWeekIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInMonthIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekEndingDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberInYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearAndMonth" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearQuarter" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="HolidayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WorkDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WeekDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ShortDay" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output].Columns[DatumUnosaCast]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup Datum.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input].Columns[DatumUnosaCast]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumUnosaCast"
+                          lineageId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output].Columns[DatumUnosaCast]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Date</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output].Columns[DateID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output].Columns[DateID]"
+                          name="DateID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup IM Artikal"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimArtikal]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimArtikal]) [refTable]
+where [refTable].[SifraArtikla] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ArtikalID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazivArtikla" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GrupaArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraI" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivI" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaSifraII" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PodgrupaArtiklaNazivII" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskaSifraArtikla" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZamenskiArtikalNaziv" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaSifra2" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrandArtiklaNaziv2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProcenatMlecneMastiArtikla" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VelicinaPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipPakovanjaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumerickaDistribucijaArtikla" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalPrimarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalSekundarnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalCenovnaJedinicaMere" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaNabavku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaIsporuku" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaProizvodnju" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaKomponente" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaTezinu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalJedinicaMereZaZapreminu" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalGroupArt" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalIndustrijskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalImlekNisPL" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalTopArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKonkurentskiArtikal" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ArtikalKlasaGK" dataType="DT_WSTR" length="7" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input].Columns[Sifra_Artikla]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="Sifra_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">SifraArtikla</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]"
+                          name="IM_ArtikalID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ArtikalID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[Id_Artikla]"
+                          cachedDataType="i4"
+                          cachedName="Id_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Id_Artikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Id_Artikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[JM_od]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_od"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_od]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_od]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[JM_u]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_u"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_u]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_u]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[Faktor_Konverzije]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[Faktor_Konverzije_PJM]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije_PJM"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije_PJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[Sifra_Artikla]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="Sifra_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Sifra_Artikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[ArtikalStartDate]"
+                          cachedDataType="date"
+                          cachedName="ArtikalStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output].Columns[ArtikalStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[IM_ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="IM_ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output].Columns[IM_ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[Id_Artikla]"
+                          cachedDataType="i4"
+                          cachedName="Id_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Id_Artikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Id_Artikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[JM_od]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_od"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_od]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_od]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[JM_u]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_u"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[JM_u]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_u]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[Faktor_Konverzije]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[Faktor_Konverzije_PJM]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije_PJM"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije_PJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[Sifra_Artikla]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="Sifra_Artikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output].Columns[Sifra_Artikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Sifra_Artikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output].Columns[ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3].Columns[DatumUnosa]"
+                          cachedDataType="date"
+                          cachedName="DatumUnosa"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Output].Columns[DatumUnosa]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Id_Artikla]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Id_Artikla]"
+                          name="Id_Artikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_od]"
+                          name="JM_od" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JM_u]"
+                          name="JM_u" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije]"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Faktor_Konverzije_PJM]"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Sifra_Artikla]"
+                          dataType="wstr"
+                          length="25"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[Sifra_Artikla]"
+                          name="Sifra_Artikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          name="ArtikalID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]"
+                          dataType="date"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumUnosa]"
+                          name="DatumUnosa" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
+                  endId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3]"
+                  name="Derived Column Output"
+                  startId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\FctKonverzijaJM.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Source Output]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load To Fct\Load To Fct\Konverzija JM Stage.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  endId="Package\Load To Fct\Load To Fct\CastDatumUnosa.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load To Fct\LoadToStage"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4A50F97F-C7CB-423E-95BD-CAF354961AE5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadToStage"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load To Fct\LoadToStage\Konverzija Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Konverzija Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable">User::SQLCommand</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\LoadToStage\Konverzija Source.Connections[OleDbConnection]"
+                      connectionManagerID="{EF5ED7FF-E2BD-4A77-A91A-761B1BFEDD47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SourceConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Id_Artikla]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Id_Artikla]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Id_Artikla]"
+                          name="Id_Artikla"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_od]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[JM_od]"
+                          length="2"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_od]"
+                          name="JM_od"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_u]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[JM_u]"
+                          length="2"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_u]"
+                          name="JM_u"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije_PJM]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Id_Artikla]"
+                          dataType="i4"
+                          name="Id_Artikla" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_od" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_u" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].ExternalColumns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Id_Artikla]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Id_Artikla]"
+                          name="Id_Artikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[JM_od]"
+                          name="JM_od" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[JM_u]"
+                          name="JM_u" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije]"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[Faktor_Konverzije_PJM]"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\LoadToStage\KonverzijaSTg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="KonverzijaSTg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[Konverzija_JM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Connections[OleDbConnection]"
+                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].Columns[Id_Artikla]"
+                          cachedDataType="i4"
+                          cachedName="Id_Artikla"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Id_Artikla]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Id_Artikla]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].Columns[JM_od]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_od"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[JM_od]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_od]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].Columns[JM_u]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="JM_u"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[JM_u]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[JM_u]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].Columns[Faktor_Konverzije]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].Columns[Faktor_Konverzije_PJM]"
+                          cachedDataType="numeric"
+                          cachedName="Faktor_Konverzije_PJM"
+                          cachedPrecision="15"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije_PJM]"
+                          lineageId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output].Columns[Faktor_Konverzije_PJM]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Id_Artikla]"
+                          dataType="i4"
+                          name="Id_Artikla" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[JM_od]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_od" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[JM_u]"
+                          dataType="wstr"
+                          length="2"
+                          name="JM_u" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije"
+                          precision="15"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input].ExternalColumns[Faktor_Konverzije_PJM]"
+                          dataType="numeric"
+                          name="Faktor_Konverzije_PJM"
+                          precision="15"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\LoadToStage\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::NR</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\LoadToStage\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\LoadToStage\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Load To Fct\LoadToStage\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load To Fct\LoadToStage.Paths[OLE DB Source Output]"
+                  endId="Package\Load To Fct\LoadToStage\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load To Fct\LoadToStage\Konverzija Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load To Fct\LoadToStage.Paths[Row Count Output 1]"
+                  endId="Package\Load To Fct\LoadToStage\KonverzijaSTg.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Load To Fct\LoadToStage\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load To Fct\Truncate Stage"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{45003279-85fb-4445-b575-7015ebe00f8d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Stage"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="truncate table stg.Konverzija_JM;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1173969D-AC6E-4EF9-B069-8C212D8C37AE}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::NR]&gt;0"
+          DTS:From="Package\Load To Fct\LoadToStage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load To Fct\Load To Fct" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{0113A8F8-D065-4F83-B4E6-B5143AD24F52}"
+          DTS:From="Package\Load To Fct\Truncate Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load To Fct\LoadToStage" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{BF9FA304-C252-4FB3-954B-C3329F06B113}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{182BA449-A536-4EE2-B93D-1FE10E8F2112}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send email if Task Fails"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{17F71594-E85B-4CFC-86B0-E29899934CE7}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send email if Task Fails"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::From]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Package:                              "+ (DT_WSTR, 50)  @[System::PackageName] +".
+Time:                                      " + (DT_WSTR, 50) @[System::StartTime]  +".
+Task:                                       "+  (DT_WSTR, 50) @[System::TaskName]  +".
+Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"SSIS Error: " +  (DT_STR, 50,1252)  @[System::PackageName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::To]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
+              SendMailTask:From="sanja.vukovic@saga.rs"
+              SendMailTask:To="ana.kovacevic@saga.rs"
+              SendMailTask:Subject="SSIS Error: fctKonverzijaJM"
+              SendMailTask:MessageSource="Package:                              fctKonverzijaJM.&#xA;Time:                                      11/17/2017 8:33:02 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{507D9A2B-45EA-4691-82F5-CCA2C952113B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL LogPackageError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="exec dbo.insLogPackageError_Insert&#xA;@pPackageName = ?&#xA;,@pSourceName = ?&#xA;,@pSourceID = ?&#xA;,@pErrorCode = ?&#xA;,@pErrorDescription = ?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{822BF253-FF78-4903-BA48-BDAEC090B8F4}"
+          DTS:From="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Send email if Task Fails" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load To Fct\Load To Fct"
+          TopLeft="125.285718616174,255.843142974748" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load To Fct\LoadToStage"
+          TopLeft="139,121" />
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
+          TopLeft="209,163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.714281383826,92.843142974748"
+              Start="0,0"
+              End="-16.714281383826,85.343142974748">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.421571487374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.421571487374"
+                    Point2="0,46.421571487374"
+                    Point3="-4,46.421571487374" />
+                  <mssgle:LineSegment
+                    End="-12.714281383826,46.421571487374" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.714281383826,46.421571487374"
+                    Point2="-16.714281383826,46.421571487374"
+                    Point3="-16.714281383826,50.421571487374" />
+                  <mssgle:LineSegment
+                    End="-16.714281383826,85.343142974748" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.357140691913,51.421571487374,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load To Fct\Truncate Stage"
+          TopLeft="105,7" />
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
+          TopLeft="180,49">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,72"
+              Start="0,0"
+              End="29,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="25,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,36"
+                    Point2="29,36"
+                    Point3="29,40" />
+                  <mssgle:LineSegment
+                    End="29,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="425,506"
+          Size="425,549"
+          Id="Package\Load To Fct"
+          TopLeft="103.61904938367,0.407843142974798" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package.EventHandlers[OnError]\Send email if Task Fails"
+          TopLeft="493.6,292.8" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package.EventHandlers[OnError]\SQL LogPackageError"
+          TopLeft="417.6,116" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="507.6,157.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.4,135.2"
+              Start="0,0"
+              End="60.4,127.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.6"
+                    Point2="0,67.6"
+                    Point3="4,67.6" />
+                  <mssgle:LineSegment
+                    End="56.4,67.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.4,67.6"
+                    Point2="60.4,67.6"
+                    Point3="60.4,71.6" />
+                  <mssgle:LineSegment
+                    End="60.4,127.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Load To Fct\Load To Fct">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load To Fct\Load To Fct\Insert IM Artikal"
+          TopLeft="561.8,213.6" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load To Fct\Load To Fct\Konverzija JM Stage"
+          TopLeft="272.657142857143,20" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Load To Fct\Add StartDate Artikal 1"
+          TopLeft="877,90" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IM Artikal"
+          TopLeft="597,328" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load To Fct\Load To Fct\CastDatumUnosa"
+          TopLeft="861,420" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Datum"
+          TopLeft="637,430" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load To Fct\Load To Fct\FctKonverzijaJM"
+          TopLeft="609.4,634.4" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Load To Fct\Add StartDate Artikal"
+          TopLeft="347.2,169" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load To Fct\Load To Fct\Union All"
+          TopLeft="900,218" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Artikal"
+          TopLeft="638,80" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="703.666666666667,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238,-68"
+              Start="0,0"
+              End="238,-60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-29.8617612058707" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-29.8617612058707"
+                    Point2="0,-33.8617612058707"
+                    Point3="4,-33.8617612058707" />
+                  <mssgle:LineSegment
+                    End="234,-33.8617612058707" />
+                  <mssgle:CubicBezierSegment
+                    Point1="234,-33.8617612058707"
+                    Point2="238,-33.8617612058707"
+                    Point3="238,-37.8617612058707" />
+                  <mssgle:LineSegment
+                    End="238,-60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.80861328125,-28.8617612058707,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="711,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.6,162.4"
+              Start="0,0"
+              End="-24.6,154.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,77.2"
+                    Point2="0,81.2"
+                    Point3="-4,81.2" />
+                  <mssgle:LineSegment
+                    End="-20.6,81.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.6,81.2"
+                    Point2="-24.6,81.2"
+                    Point3="-24.6,85.2" />
+                  <mssgle:LineSegment
+                    End="-24.6,154.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-60.49138671875,86.2,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+          TopLeft="861,441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-76,10"
+              Start="0,0"
+              End="-68.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-34,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34,0"
+                    Point2="-38,0"
+                    Point3="-38,4" />
+                  <mssgle:LineSegment
+                    End="-38,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,6"
+                    Point2="-38,10"
+                    Point3="-42,10" />
+                  <mssgle:LineSegment
+                    End="-68.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
+          TopLeft="963.25,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
+          TopLeft="525.2,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.5999999999999,44.6"
+              Start="0,0"
+              End="29.0999999999999,44.6">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="14.3,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.3,0"
+                    Point2="18.3,0"
+                    Point3="18.3,4" />
+                  <mssgle:LineSegment
+                    End="18.3,40.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.3,40.6"
+                    Point2="18.3,44.6"
+                    Point3="22.3,44.6" />
+                  <mssgle:LineSegment
+                    End="29.0999999999999,44.6" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="979.333333333333,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.3333333333334,160"
+              Start="0,0"
+              End="-38.3333333333334,152.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.252854812398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.252854812398"
+                    Point2="0,65.252854812398"
+                    Point3="-4,65.252854812398" />
+                  <mssgle:LineSegment
+                    End="-34.3333333333334,65.252854812398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.3333333333334,65.252854812398"
+                    Point2="-38.3333333333334,65.252854812398"
+                    Point3="-38.3333333333334,69.252854812398" />
+                  <mssgle:LineSegment
+                    End="-38.3333333333334,152.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Source Output]"
+          TopLeft="446.657142857143,41">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.342857142857,60"
+              Start="0,0"
+              End="183.842857142857,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.6714285714285,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.6714285714285,0"
+                    Point2="95.6714285714285,0"
+                    Point3="95.6714285714285,4" />
+                  <mssgle:LineSegment
+                    End="95.6714285714285,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6714285714285,56"
+                    Point2="95.6714285714285,60"
+                    Point3="99.6714285714285,60" />
+                  <mssgle:LineSegment
+                    End="183.842857142857,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+          TopLeft="644.3,255.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.03333333333342,72.4"
+              Start="0,0"
+              End="8.03333333333342,64.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.0151589242054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.0151589242054"
+                    Point2="0,43.0151589242054"
+                    Point3="4,43.0151589242054" />
+                  <mssgle:LineSegment
+                    End="4.03333333333342,43.0151589242054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.03333333333342,43.0151589242054"
+                    Point2="8.03333333333342,43.0151589242054"
+                    Point3="8.03333333333342,47.0151589242054" />
+                  <mssgle:LineSegment
+                    End="8.03333333333342,64.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="711,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-274.8,47"
+              Start="0,0"
+              End="-274.8,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-270.8,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-270.8,23.5"
+                    Point2="-274.8,23.5"
+                    Point3="-274.8,27.5" />
+                  <mssgle:LineSegment
+                    End="-274.8,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-193.20638671875,28.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="784,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93,10"
+              Start="0,0"
+              End="85.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5,0"
+                    Point2="46.5,0"
+                    Point3="46.5,4" />
+                  <mssgle:LineSegment
+                    End="46.5,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5,6"
+                    Point2="46.5,10"
+                    Point3="50.5,10" />
+                  <mssgle:LineSegment
+                    End="85.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Konverzija JM Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM Artikal">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimArtikal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\FctKonverzijaJM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Artikal">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimArtikal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load To Fct\LoadToStage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load To Fct\LoadToStage\Konverzija Source"
+          TopLeft="368,82" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\LoadToStage\KonverzijaSTg"
+          TopLeft="484,311" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\LoadToStage\Row Count"
+          TopLeft="675,169" />
+        <EdgeLayout
+          Id="Package\Load To Fct\LoadToStage.Paths[OLE DB Source Output]"
+          TopLeft="449.5,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="290.5,45"
+              Start="0,0"
+              End="290.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="286.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="286.5,22.5"
+                    Point2="290.5,22.5"
+                    Point3="290.5,26.5" />
+                  <mssgle:LineSegment
+                    End="290.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\LoadToStage.Paths[Row Count Output 1]"
+          TopLeft="740,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183,100"
+              Start="0,0"
+              End="-183,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46"
+                    Point2="0,50"
+                    Point3="-4,50" />
+                  <mssgle:LineSegment
+                    End="-179,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179,50"
+                    Point2="-183,50"
+                    Point3="-183,54" />
+                  <mssgle:LineSegment
+                    End="-183,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\LoadToStage\Konverzija Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\LoadToStage\KonverzijaSTg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

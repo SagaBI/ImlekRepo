@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadGroupFact"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="83"
-  DTS:VersionGUID="{C0DF784F-0EA0-4571-B626-5A781DBC55A7}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{C3201EFF-E951-4762-8889-461E8E0554B6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -206,6 +206,27 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>fctBudzetTT.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDateFrom</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load to Fct\FctKonverzijaJM"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{95472b6f-938c-4185-8860-0920b287aeee}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FctKonverzijaJM"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>fctKonverzijaJM.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>ExtractDateFrom</ParameterName>
                 <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
@@ -491,11 +512,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{BADF1676-9A8B-4673-87EF-CDAFF7D4DADB}"
+          DTS:DTSID="{FF9D411A-10CB-4A0C-8748-03B9627CC8AF}"
           DTS:From="Package\Load to Fct\FctPopust"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Load to Fct\FctProdaja" />
+          DTS:To="Package\Load to Fct\FctKonverzijaJM" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
@@ -523,7 +544,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
           DTS:CreationName=""
-          DTS:DTSID="{2CB6EDBF-6862-4B2B-A340-EC13D5EF0A0C}"
+          DTS:DTSID="{6E1531C9-E0BD-4283-AC8C-1DCFE2BDB334}"
           DTS:From="Package\Load to Fct\FctArtikliInovacije"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 13"
@@ -536,6 +557,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 14"
           DTS:To="Package\Load to Fct\FctArtikliInovacije" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 15]"
+          DTS:CreationName=""
+          DTS:DTSID="{E8780109-8909-419B-B333-D1347D68E978}"
+          DTS:From="Package\Load to Fct\FctKonverzijaJM"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 15"
+          DTS:To="Package\Load to Fct\FctProdaja" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -653,7 +682,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: LoadGroupFact"
-              SendMailTask:MessageSource="Package:                              LoadGroupFact.&#xA;Time:                                      11/15/2017 6:13:09 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              LoadGroupFact.&#xA;Time:                                      11/17/2017 6:47:31 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -727,7 +756,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182,42"
           Id="Package\Load to Fct\FctArtikliInovacije"
@@ -755,11 +784,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="125,42"
           Id="Package\Load to Fct\FctPopust"
-          TopLeft="336.357146107421,54.870589307765" />
+          TopLeft="340.357146107421,12.870589307765" />
         <NodeLayout
           Size="182,42"
           Id="Package\Load to Fct\FctPovratDelhaize"
-          TopLeft="211.214292691679,844.417650645167" />
+          TopLeft="132.214292691679,788.417650645167" />
         <NodeLayout
           Size="182,42"
           Id="Package\Load to Fct\FctPracenjeCena"
@@ -777,6 +806,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load to Fct\FctRaspodelaDelhaize"
           TopLeft="243.142861726333,229.4352980815" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Load to Fct\FctRKDokument"
+          TopLeft="661,749" />
+        <NodeLayout
           Size="226,42"
           Id="Package\Load to Fct\FctTotalBudzetPoDanima"
           TopLeft="582,610" />
@@ -787,69 +820,41 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="190,42"
           Id="Package\Load to Fct\Set Last Suceeded Date"
-          TopLeft="216.714288740742,934.79412282066" />
+          TopLeft="162.714288740742,947.79412282066" />
         <EdgeLayout
           Id="Package\Load to Fct.PrecedenceConstraints[Constraint]"
           TopLeft="299.15238607757,21.5725511874294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.204760029851,48.6313714536689"
+              EndConnector="41.204760029851,12.2980381203356"
               Start="0,0"
-              End="29.704760029851,48.6313714536689">
+              End="33.704760029851,12.2980381203356">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="17.5036686411065,0" />
+                    End="16.6023800149255,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.5036686411065,0"
-                    Point2="21.5036686411065,0"
-                    Point3="21.5036686411065,4" />
+                    Point1="16.6023800149255,0"
+                    Point2="20.6023800149255,0"
+                    Point3="20.6023800149255,4" />
                   <mssgle:LineSegment
-                    End="21.5036686411065,44.6313714536689" />
+                    End="20.6023800149255,8.2980381203356" />
                   <mssgle:CubicBezierSegment
-                    Point1="21.5036686411065,44.6313714536689"
-                    Point2="21.5036686411065,48.6313714536689"
-                    Point3="25.5036686411065,48.6313714536689" />
+                    Point1="20.6023800149255,8.2980381203356"
+                    Point2="20.6023800149255,12.2980381203356"
+                    Point3="24.6023800149255,12.2980381203356" />
                   <mssgle:LineSegment
-                    End="29.704760029851,48.6313714536689" />
+                    End="33.704760029851,12.2980381203356" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="13.5036686411065,-22,16,16"
+              BoundingBox="12.6023800149255,-22,16,16"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 1]"
-          TopLeft="336.357146107421,81.5372559744317">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-80.642857366679,29.1745106361593"
-              Start="0,0"
-              End="-80.642857366679,21.6745106361593">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-76.642857366679,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-76.642857366679,0"
-                    Point2="-80.642857366679,0"
-                    Point3="-80.642857366679,4" />
-                  <mssgle:LineSegment
-                    End="-80.642857366679,21.6745106361593" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -915,19 +920,65 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
-          TopLeft="558,863.208825322583">
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 12]"
+          TopLeft="526,761">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-164.785707308321,0"
+              EndConnector="135,9"
               Start="0,0"
-              End="-157.285707308321,0">
+              End="127.5,9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-157.285707308321,0" />
+                    End="63.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.5,0"
+                    Point2="67.5,0"
+                    Point3="67.5,4" />
+                  <mssgle:LineSegment
+                    End="67.5,5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,5"
+                    Point2="67.5,9"
+                    Point3="71.5,9" />
+                  <mssgle:LineSegment
+                    End="127.5,9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 14]"
+          TopLeft="738,791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89,49"
+              Start="0,0"
+              End="-89,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="-4,24.5" />
+                  <mssgle:LineSegment
+                    End="-85,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85,24.5"
+                    Point2="-89,24.5"
+                    Point3="-89,28.5" />
+                  <mssgle:LineSegment
+                    End="-89,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1006,37 +1057,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load to Fct.PrecedenceConstraints[Constraint 4]"
-          TopLeft="302.214292691679,886.417650645167">
+          TopLeft="223.214292691679,830.417650645167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.49999604906299,48.3764721754931"
+              EndConnector="34.499996049063,117.376472175493"
               Start="0,0"
-              End="9.49999604906299,40.8764721754931">
+              End="34.499996049063,109.876472175493">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1882360877465" />
+                    End="0,54.6882360877465" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1882360877465"
-                    Point2="0,24.1882360877465"
-                    Point3="4,24.1882360877465" />
+                    Point1="0,54.6882360877465"
+                    Point2="0,58.6882360877465"
+                    Point3="4,58.6882360877465" />
                   <mssgle:LineSegment
-                    End="5.49999604906299,24.1882360877465" />
+                    End="30.499996049063,58.6882360877465" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.49999604906299,24.1882360877465"
-                    Point2="9.49999604906299,24.1882360877465"
-                    Point3="9.49999604906299,28.1882360877465" />
+                    Point1="30.499996049063,58.6882360877465"
+                    Point2="34.499996049063,58.6882360877465"
+                    Point3="34.499996049063,62.6882360877465" />
                   <mssgle:LineSegment
-                    End="9.49999604906299,40.8764721754931" />
+                    End="34.499996049063,109.876472175493" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-3.25000197546851,29.1882360877465,16,16"
+              BoundingBox="9.24999802453149,63.6882360877465,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1198,36 +1249,70 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Load to Fct\FctRKDokument"
-          TopLeft="661,749" />
         <EdgeLayout
-          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 12]"
-          TopLeft="526,761">
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
+          TopLeft="558,861">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135,9"
+              EndConnector="-243.785707308321,-51.582349354833"
               Start="0,0"
-              End="127.5,9">
+              End="-236.285707308321,-51.582349354833">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.5,0" />
+                    End="-117.89285365416,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="63.5,0"
-                    Point2="67.5,0"
-                    Point3="67.5,4" />
+                    Point1="-117.89285365416,0"
+                    Point2="-121.89285365416,0"
+                    Point3="-121.89285365416,-4" />
                   <mssgle:LineSegment
-                    End="67.5,5" />
+                    End="-121.89285365416,-47.582349354833" />
                   <mssgle:CubicBezierSegment
-                    Point1="67.5,5"
-                    Point2="67.5,9"
-                    Point3="71.5,9" />
+                    Point1="-121.89285365416,-47.582349354833"
+                    Point2="-121.89285365416,-51.582349354833"
+                    Point3="-125.89285365416,-51.582349354833" />
                   <mssgle:LineSegment
-                    End="127.5,9" />
+                    End="-236.285707308321,-51.582349354833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load to Fct\FctKonverzijaJM"
+          TopLeft="533,65" />
+        <EdgeLayout
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 1]"
+          TopLeft="465.357146107421,33.870589307765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.642853892579,46.4627440255683"
+              Start="0,0"
+              End="60.142853892579,46.4627440255683">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.0963283966282,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.0963283966282,0"
+                    Point2="39.0963283966282,0"
+                    Point3="39.0963283966282,4" />
+                  <mssgle:LineSegment
+                    End="39.0963283966282,42.4627440255683" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.0963283966282,42.4627440255683"
+                    Point2="39.0963283966282,46.4627440255683"
+                    Point3="43.0963283966282,46.4627440255683" />
+                  <mssgle:LineSegment
+                    End="60.142853892579,46.4627440255683" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1237,31 +1322,31 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 14]"
-          TopLeft="738,791">
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 15]"
+          TopLeft="533,91.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-89,49"
+              EndConnector="-186.285711259258,40.0450999439243"
               Start="0,0"
-              End="-89,41.5">
+              End="-178.785711259258,40.0450999439243">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="-74.615988237852,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="-4,24.5" />
+                    Point1="-74.615988237852,0"
+                    Point2="-78.615988237852,0"
+                    Point3="-78.615988237852,4" />
                   <mssgle:LineSegment
-                    End="-85,24.5" />
+                    End="-78.615988237852,36.0450999439243" />
                   <mssgle:CubicBezierSegment
-                    Point1="-85,24.5"
-                    Point2="-89,24.5"
-                    Point3="-89,28.5" />
+                    Point1="-78.615988237852,36.0450999439243"
+                    Point2="-78.615988237852,40.0450999439243"
+                    Point3="-82.615988237852,40.0450999439243" />
                   <mssgle:LineSegment
-                    End="-89,41.5" />
+                    End="-178.785711259258,40.0450999439243" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1273,8 +1358,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="866,1032"
-          Size="866,1075"
+          PanelSize="866,1045"
+          Size="866,1088"
           Id="Package\Load to Fct"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>

@@ -12,8 +12,8 @@
   DTS:ObjectName="DimArtikal"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{615D994A-6849-4B32-B63B-600C5EDE5189}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{546B617D-A053-482D-A6D9-5CA76B474535}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -75,6 +75,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{0E71BDD1-E808-43B3-9567-B8DF26D8198B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{4E3B9BAD-EAE0-4D37-B336-5AA3BBB6EF0D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -100,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\ArtikalSource_2017-11-13.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\ArtikalSource_2017-11-17.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -161,35 +170,14 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -578,14 +566,35 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -817,7 +826,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.Artikal;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].Artikal;&#xA;&#xA;&#xA;CREATE TABLE [current].[Artikal](&#xA;&#x9;[SifraArtikla] [nvarchar](25) NULL,&#xA;&#x9;[NazivArtikla] [nvarchar](30) NULL,&#xA;&#x9;[GrupaArtiklaSifra] [nvarchar](7) NULL,&#xA;&#x9;[GrupaArtiklaNaziv] [nvarchar](50) NULL,&#xA;&#x9;[PodgrupaArtiklaSifraI] [nvarchar](7) NULL,&#xA;&#x9;[PodgrupaArtiklaNazivI] [nvarchar](50) NULL,&#xA;&#x9;[PodgrupaArtiklaSifraII] [nvarchar](7) NULL,&#xA;&#x9;[PodgrupaArtiklaNazivII] [nvarchar](50) NULL,&#xA;&#x9;[ZamenskaSifraArtikla] [nvarchar](25) NULL,&#xA;&#x9;[ZamenskiArtikalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[BrandArtiklaSifra] [nvarchar](7) NULL,&#xA;&#x9;[BrandArtiklaNaziv] [nvarchar](50) NULL,&#xA;&#x9;[BrandArtiklaSifra2] [nvarchar](7) NULL,&#xA;&#x9;[BrandArtiklaNaziv2] [nvarchar](50) NULL,&#xA;&#x9;[StatusArtikla] [nvarchar](30) NULL,&#xA;&#x9;[ProcenatMlecneMastiArtikla] nvarchar(30) NULL,&#xA;&#x9;[VelicinaPakovanjaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[TipPakovanjaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[NumerickaDistribucijaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[ArtikalPrimarnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalSekundarnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalCenovnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaNabavku] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaIsporuku] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaProizvodnju] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaKomponente] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaTezinu] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaZapreminu] [nvarchar](7) NULL,&#xA;&#x9;[GroupArt] [nvarchar](50) NULL,&#xA;&#x9;[IndustrijskiArtikal] [nvarchar](7) NULL,&#xA;&#x9;[ImlekNisPL] [nvarchar](50) NULL,&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL&#xA;) ;&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.Artikal;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].Artikal;&#xA;&#xA;&#xA;CREATE TABLE [current].[Artikal](&#xA;&#x9;[SifraArtikla] [nvarchar](25) NULL,&#xA;&#x9;[NazivArtikla] [nvarchar](30) NULL,&#xA;&#x9;[GrupaArtiklaSifra] [nvarchar](7) NULL,&#xA;&#x9;[GrupaArtiklaNaziv] [nvarchar](50) NULL,&#xA;&#x9;[PodgrupaArtiklaSifraI] [nvarchar](7) NULL,&#xA;&#x9;[PodgrupaArtiklaNazivI] [nvarchar](50) NULL,&#xA;&#x9;[PodgrupaArtiklaSifraII] [nvarchar](7) NULL,&#xA;&#x9;[PodgrupaArtiklaNazivII] [nvarchar](50) NULL,&#xA;&#x9;[ZamenskaSifraArtikla] [nvarchar](25) NULL,&#xA;&#x9;[ZamenskiArtikalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[BrandArtiklaSifra] [nvarchar](7) NULL,&#xA;&#x9;[BrandArtiklaNaziv] [nvarchar](50) NULL,&#xA;&#x9;[BrandArtiklaSifra2] [nvarchar](7) NULL,&#xA;&#x9;[BrandArtiklaNaziv2] [nvarchar](50) NULL,&#xA;&#x9;[StatusArtikla] [nvarchar](30) NULL,&#xA;&#x9;[ProcenatMlecneMastiArtikla] nvarchar(30) NULL,&#xA;&#x9;[VelicinaPakovanjaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[TipPakovanjaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[NumerickaDistribucijaArtikla] [nvarchar](30) NULL,&#xA;&#x9;[ArtikalPrimarnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalSekundarnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalCenovnaJedinicaMere] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaNabavku] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaIsporuku] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaProizvodnju] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaKomponente] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaTezinu] [nvarchar](7) NULL,&#xA;&#x9;[ArtikalJedinicaMereZaZapreminu] [nvarchar](7) NULL,&#xA;&#x9;[GroupArt] [nvarchar](50) NULL,&#xA;&#x9;[IndustrijskiArtikal] [nvarchar](7) NULL,&#xA;&#x9;[ImlekNisPL] [nvarchar](50) NULL,&#xA;                KlasaGK nvarchar(7),&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL&#xA;) ;&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1256,6 +1265,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[ImlekNisPL]"
                           name="ImlekNisPL"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[Klasa_GK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].ExternalColumns[Klasa_GK]"
+                          length="7"
+                          lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[Klasa_GK]"
+                          name="Klasa_GK"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1439,6 +1458,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="7"
                           name="ImlekNisPL" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].ExternalColumns[Klasa_GK]"
+                          dataType="wstr"
+                          length="7"
+                          name="Klasa_GK" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1662,6 +1686,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="7"
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[ImlekNisPL]"
                           name="ImlekNisPL" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[Klasa_GK]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[Klasa_GK]"
+                          name="Klasa_GK" />
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1929,18 +1959,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           cachedLength="7"
                           cachedName="ImlekNisPL"
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[ImlekNisPL]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[Klasa_GK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="Klasa_GK"
+                          lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[Klasa_GK]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                 </component>
+                <component
+                  refId="Package\Extract Stage\Extract To Raw File\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::NR</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extract Stage\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extract Stage\Extract To Raw File\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Extract Stage\Extract To Raw File\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Extract Stage\Extract To Raw File.Paths[OLE DB Source Output]"
-                  endId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  endId="Package\Extract Stage\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Source Output"
                   startId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Extract Stage\Extract To Raw File.Paths[Row Count Output 1]"
+                  endId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Extract Stage\Extract To Raw File\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2328,6 +2398,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           cachedName="ImlekNisPL"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ImlekNisPL]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[ImlekNisPL]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].Columns[Klasa_GK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="Klasa_GK"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].ExternalColumns[KlasaGK]"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Klasa_GK]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2502,6 +2579,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="50"
                           name="ImlekNisPL" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].ExternalColumns[KlasaGK]"
+                          dataType="wstr"
+                          length="7"
+                          name="KlasaGK" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2810,6 +2892,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="7"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[ImlekNisPL]"
                           name="ImlekNisPL" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Klasa_GK]"
+                          dataType="wstr"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Klasa_GK]"
+                          length="7"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[Klasa_GK]"
+                          name="Klasa_GK" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2993,6 +3082,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="7"
                           name="ImlekNisPL" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[Klasa_GK]"
+                          dataType="wstr"
+                          length="7"
+                          name="Klasa_GK" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -3070,6 +3164,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Extract Stage.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{71779E96-23E0-4CEA-9455-78AD6E452545}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::NR]&gt;0"
           DTS:From="Package\Extract Stage\Extract To Raw File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -3887,7 +3983,8 @@ c.ArtikalJedinicaMereZaProizvodnju as currArtikalJedinicaMereZaProizvodnju ,
 c.ArtikalJedinicaMereZaNabavku as currArtikalJedinicaMereZaNabavku ,
 c.ArtikalJedinicaMereZaKomponente as currArtikalJedinicaMereZaKomponente ,
 c.ArtikalJedinicaMereZaIsporuku as currArtikalJedinicaMereZaIsporuku ,
-c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere 
+c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere ,
+c.KlasaGK as currKlasaGK
  from [current].artikal c full outer join previous.artikal p on c.SifraArtikla = p.sifraartikla</property>
                     <property
                       dataType="System.String"
@@ -4576,6 +4673,16 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currPL]"
                           name="currPL"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currKlasaGK]"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]"
+                          name="currKlasaGK"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4906,6 +5013,11 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           dataType="wstr"
                           length="50"
                           name="currPL" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currKlasaGK]"
+                          dataType="wstr"
+                          length="7"
+                          name="currKlasaGK" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5305,6 +5417,12 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           length="7"
                           lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currArtikalCenovnaJedinicaMere]"
                           name="currArtikalCenovnaJedinicaMere" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currKlasaGK]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currKlasaGK]"
+                          name="currKlasaGK" />
                         <outputColumn
                           refId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -5910,6 +6028,13 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           cachedName="currPL"
                           externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ImlekNisPL]"
                           lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].Columns[currKlasaGK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currKlasaGK"
+                          externalMetadataColumnId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[KlasaGK]"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6080,6 +6205,11 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           dataType="wstr"
                           length="50"
                           name="ImlekNisPL" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\scd Artikal.Inputs[OLE DB Destination Input].ExternalColumns[KlasaGK]"
+                          dataType="wstr"
+                          length="7"
+                          name="KlasaGK" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6795,6 +6925,20 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\Union All.Inputs[Union All Input 4].Columns[currKlasaGK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currKlasaGK"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -7365,6 +7509,20 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\Union All.Inputs[Union All Input 5].Columns[currKlasaGK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currKlasaGK"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -7939,6 +8097,20 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\Union All.Inputs[Union All Input 1].Columns[currKlasaGK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currKlasaGK"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8511,6 +8683,20 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\Union All.Inputs[Union All Input 2].Columns[currKlasaGK]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currKlasaGK"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currKlasaGK]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8771,6 +8957,12 @@ c.ArtikalCenovnaJedinicaMere as currArtikalCenovnaJedinicaMere
                           length="50"
                           lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currPL]"
                           name="currPL" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To ArtikalSCD\Union All.Outputs[Union All Output 1].Columns[currKlasaGK]"
+                          name="currKlasaGK" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -9021,7 +9213,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimArtikal"
-              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      11/13/2017 5:42:01 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      11/17/2017 8:56:31 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -9153,7 +9345,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="57.5714313059439,-22,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9681,41 +9875,67 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Extract Stage\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,42"
           Id="Package\Extract Stage\Extract To Raw File\Raw File Destination"
-          TopLeft="365,229" />
+          TopLeft="363,267" />
         <NodeLayout
           Size="143,42"
           Id="Package\Extract Stage\Extract To Raw File\Artikal Source"
           TopLeft="158.857145562464,34.870588724341" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Extract Stage\Extract To Raw File\Row Count"
+          TopLeft="391,94" />
         <EdgeLayout
           Id="Package\Extract Stage\Extract To Raw File.Paths[OLE DB Source Output]"
-          TopLeft="230.357145562464,76.870588724341">
+          TopLeft="301.857145562464,55.870588724341">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="222.142854437536,152.129411275659"
+              EndConnector="89.142854437536,59.129411275659"
               Start="0,0"
-              End="222.142854437536,144.629411275659">
+              End="81.642854437536,59.129411275659">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.0647056378295" />
+                    End="40.571427218768,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,72.0647056378295"
-                    Point2="0,76.0647056378295"
-                    Point3="4,76.0647056378295" />
+                    Point1="40.571427218768,0"
+                    Point2="44.571427218768,0"
+                    Point3="44.571427218768,4" />
                   <mssgle:LineSegment
-                    End="218.142854437536,76.0647056378295" />
+                    End="44.571427218768,55.129411275659" />
                   <mssgle:CubicBezierSegment
-                    Point1="218.142854437536,76.0647056378295"
-                    Point2="222.142854437536,76.0647056378295"
-                    Point3="222.142854437536,80.0647056378295" />
+                    Point1="44.571427218768,55.129411275659"
+                    Point2="44.571427218768,59.129411275659"
+                    Point3="48.571427218768,59.129411275659" />
                   <mssgle:LineSegment
-                    End="222.142854437536,144.629411275659" />
+                    End="81.642854437536,59.129411275659" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Stage\Extract To Raw File.Paths[Row Count Output 1]"
+          TopLeft="453.25,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,131"
+              Start="0,0"
+              End="0,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9739,7 +9959,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Extract Stage\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="145,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\current Artikal"
@@ -9783,9 +10003,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9819,9 +10037,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9854,13 +10070,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage"
           TopLeft="268,10.4" />
         <NodeLayout
-          Size="241,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - NR"
-          TopLeft="283.2,387.2" />
-        <NodeLayout
           Size="104,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\SCD1"
           TopLeft="501.6,169.6" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - NR"
+          TopLeft="283.2,387.2" />
         <NodeLayout
           Size="127,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\scd Artikal"
@@ -9886,6 +10102,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To ArtikalSCD\NumOfDR"
           TopLeft="93.6,360.8" />
         <NodeLayout
+          Size="120,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Union All"
+          TopLeft="583.2,403.2" />
+        <NodeLayout
           Size="127,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\New Rows"
           TopLeft="292.8,256.8" />
@@ -9893,10 +10113,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="120,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Multicast"
           TopLeft="272.8,163.2" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Union All"
-          TopLeft="583.2,403.2" />
         <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - DR"

@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizePovrat"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="213"
-  DTS:VersionGUID="{7B04AB78-1AFD-42E4-B883-DB99BA50E912}">
+  DTS:VersionBuild="218"
+  DTS:VersionGUID="{46CBF40B-BB15-465A-BE59-E71D051C1839}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">7/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/1/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -48,7 +48,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">8/31/2017 8:32:22 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/1/2017 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -59,7 +59,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Arhiva">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Arhiva</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\Arhiva\Povrati</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Povrat\C:\Saga\Povrat\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Povrati\C:\Saga\Povrat\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -115,7 +115,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FolderName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Povrat</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Povrati</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -193,7 +193,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\DelhaizePovratSource_2017-11-16.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\DelhaizePovratSource_2017-11-17.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -264,7 +264,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Saga\Povrat" />
+                  Folder="\\tabprod\BI_Razmena\IN\Povrati" />
                 <FEFEProperty
                   FileSpec="*.xlsx" />
                 <FEFEProperty
@@ -5214,19 +5214,19 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Povrat Stage.Outputs[OLE DB Source Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Inputs[Lookup Input]"
-                      name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Inputs[Lookup Input]"
+                      name="Union All Output 1"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
@@ -5364,8 +5364,8 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{ADA3AE67-5B45-4959-A9D1-6DA6E3D6FDE8}"
-              DTS:ObjectName="{ADA3AE67-5B45-4959-A9D1-6DA6E3D6FDE8}"
+              DTS:DTSID="{C6598E8D-A697-453E-B7E4-29BA9619E043}"
+              DTS:ObjectName="{C6598E8D-A697-453E-B7E4-29BA9619E043}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -5421,7 +5421,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizePovrat"
-              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      11/16/2017 1:56:21 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      11/17/2017 7:47:50 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -6332,7 +6332,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
           TopLeft="1026.66666666667,479.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6366,7 +6366,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
           TopLeft="867.733333333333,181.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6400,7 +6400,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
           TopLeft="1131.2,689.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
