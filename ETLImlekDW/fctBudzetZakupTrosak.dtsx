@@ -1,0 +1,2661 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/30/2017 2:48:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INF-SAGASUP"
+  DTS:CreatorName="IMLEK\saga_support"
+  DTS:DTSID="{D209017F-AA8E-4EA4-9F8C-20A9FDBCCB88}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="fctBudzetZakupTrosak"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{95C9714A-A220-4C19-BF6F-484BAF52BE25}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{0AEA3D35-B9DA-4B9E-88D4-D53EB1FFD556}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\BudzetLogistika\BU_Zakup-Trosak_2017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{01B946D6-D5F1-4409-A636-A18B37CE74C8}"
+      DTS:ObjectName="ExtractDateFrom">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{5D6D0636-3C74-4273-B17F-3CFD450A9627}"
+      DTS:ObjectName="ExtractDateTo">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">11/1/2017 8:32:00 PM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A3EFE4C-21D5-4609-ABCA-CF3A2538BD58}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Arhiva">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Saga\Arhiva</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0EB3EAD-40D3-4ECF-896E-D0C92387D567}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DD4F2CEB-353C-47E6-9CF1-AA44123A865E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BudzetTip">
+      <DTS:VariableValue
+        DTS:DataType="8">KA</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0686DA5-1D7E-467A-8554-2E7D29ACA6A8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BudzetVerzija">
+      <DTS:VariableValue
+        DTS:DataType="8">LE</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6B4650F7-AF59-4E58-BF74-D7CB14CC019E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A8CE0A8-3B5E-4EDC-80C0-8559A9E1EDB6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndBatchAudit">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F0255821-106D-4B50-BA02-05E7813CDF32}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Saga\BudzetLogistika\BU_Zakup-Trosak_2017.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D1215521-CBC7-49D4-BB3F-E61E1EFB190E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FolderName] +  &quot;\\&quot; +  @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNamePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Saga\BudzetLogistika\C:\Saga\BudzetLogistika\BU_Zakup-Trosak_2017.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17742A4E-EF77-4BC0-B0A3-DEBCC91FD42F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Saga\BudzetLogistika</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF2BADBD-0824-4272-86A1-0C4933386FAA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="RIGHT((LEFT((RIGHT( @[User::FileName] , 11 )),6)),4)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Godina">
+      <DTS:VariableValue
+        DTS:DataType="8">2017</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2369005D-A7E3-47C8-A535-FE111EF94962}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Loaded">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F4648516-506D-4410-AE24-30FD183B82AF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(LEFT((RIGHT( @[User::FileName] , 11 )),2))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Mesec">
+      <DTS:VariableValue
+        DTS:DataType="8">k_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FA49AAAF-6613-4F90-BB55-2F72D31784AC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrKeyCopy">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3FB0CB9B-30EB-4501-91FC-31B72D419E48}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{229392AF-C125-4EBD-9510-009DE692076F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumOfDeletedRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{295A189D-0894-4D71-888D-7A4230560E2F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AAB5239E-03AA-41F1-ACD2-663B612415C9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RawFilePath]  +&quot;\\BUPrimarni_Source_&quot;+REPLACE((DT_STR, 20, 1252)(DT_DBDATE)@[System::StartTime], &quot;:&quot;, &quot;&quot;)+&quot;.raw&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RawfilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\tabtest\RawFiles\BUPrimarni_Source_2017-11-19.raw</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CEB4256F-43BF-4327-B3D3-F388817F788B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SCD_2_6_Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DFED37B4-1880-40E1-9135-9B93C2E5D332}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SetSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F3CDFBCB-3F91-4234-869B-D7858BE03016}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;exec dbo.selFct &quot; +&quot;'&quot;  +(DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , @[$Package::ExtractDateFrom]) +  RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , @[$Package::ExtractDateFrom]), 2) + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , @[$Package::ExtractDateFrom]), 2)  + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLCommand">
+      <DTS:VariableValue
+        DTS:DataType="8">exec dbo.selFct '20171001'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E528E12F-5364-4A09-BA79-811342360BEC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartSurrKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load To Fct"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B27810EF-92CA-439D-B0C3-8053F36DE3D4}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load To Fct">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load To Fct\Foreach Loop Container"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{B8B7E4B7-626E-4E75-A144-138AEF1A98DB}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach Loop Container">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachFileEnumerator"
+            DTS:DTSID="{23C2526D-38D9-49B4-BCCB-79DF0AB30CAD}"
+            DTS:ObjectName="{606555E7-AAF9-4005-933C-3DF0914EF147}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[User::FolderName]</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="C:\Saga\BudzetLogistika" />
+                <FEFEProperty
+                  FileSpec="*Zakup-Trosak*.xlsx" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Archive file"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:DelayValidation="True"
+              DTS:Description="File System Task"
+              DTS:DTSID="{91D6365C-6A24-4336-B96B-C3D8F87BD183}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Archive file"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskOverwriteDestFile="True"
+                  TaskSourcePath="User::FileName"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::Arhiva"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Check Loaded Data"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{BEBD4A96-BEF7-4EEF-BCED-419E8896CBEE}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Check Loaded Data"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="Exec ? = [dbo].[CheckLoadSourceData] ?, ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::Loaded"
+                    SQLTask:ParameterDirection="Output"
+                    SQLTask:DataType="11"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::Count"
+                    SQLTask:ParameterDirection="ReturnValue"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Delete Fct"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B205EA89-2610-4F03-ABB6-80B43B9144FF}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Delete Fct"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1A283484-7B52-44E5-9378-EBF93319CDA5}"
+                  SQLTask:SqlStatementSource="exec fct.delFctBudzetZakupTrosakByYear ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pYear"
+                    SQLTask:DtsVariableName="User::Godina"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1B9B0544-A65A-4D50-A32B-373676B93944}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Insert DimBudzet"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="exec [dbo].[insDimBudzet_Insert]  ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pFileName"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pExtractDate"
+                    SQLTask:DtsVariableName="$Package::ExtractDateFrom"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{5D2B88D4-A876-4CE8-AE3E-F72E5E203FCB}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="InsertSourceLoadData"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="exec [dbo].[insLoadedData_Insert]  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pFileName"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{8FE1918C-B1F1-4745-B819-A05B8AA1F37E}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Load Data From Excel To StageTable"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source"
+                      componentClassID="Microsoft.ExcelSource"
+                      contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                      description="Excel Source"
+                      name="Excel Source"
+                      usesDispositions="true"
+                      version="1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">Sheet1$</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.String"
+                          description="The variable that contains the SQL command to be executed."
+                          name="SqlCommandVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">0</property>
+                        <property
+                          dataType="System.String"
+                          description="The mapping from parameters in the SQL command to variables."
+                          name="ParameterMapping"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Connections[OleDbConnection]"
+                          connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                          connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output]"
+                          name="Excel Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Godina]"
+                              dataType="r8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Godina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Godina]"
+                              name="Godina"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Mesec]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Mesec]"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Mesec]"
+                              name="Mesec"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Kolicina]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Kolicina]"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Kolicina]"
+                              name="Kolicina"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Cena]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cena]"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Cena]"
+                              name="Cena"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Trosak]"
+                              dataType="r8"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Trosak]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Trosak]"
+                              name="Trosak"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Godina]"
+                              dataType="r8"
+                              name="Godina" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Mesec]"
+                              dataType="wstr"
+                              length="255"
+                              name="Mesec" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Kolicina]"
+                              dataType="wstr"
+                              length="255"
+                              name="Kolicina" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cena]"
+                              dataType="wstr"
+                              length="255"
+                              name="Cena" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[Trosak]"
+                              dataType="r8"
+                              name="Trosak" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output]"
+                          isErrorOut="true"
+                          name="Excel Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Godina]"
+                              dataType="r8"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Godina]"
+                              name="Godina" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Mesec]"
+                              dataType="wstr"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Mesec]"
+                              name="Mesec" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Kolicina]"
+                              dataType="wstr"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Kolicina]"
+                              name="Kolicina" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Cena]"
+                              dataType="wstr"
+                              length="255"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Cena]"
+                              name="Cena" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Trosak]"
+                              dataType="r8"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[Trosak]"
+                              name="Trosak" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="stgBudzetCrnaGoraPrimar"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[stg].[BudzetZakupTrosakStage]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Connections[OleDbConnection]"
+                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].Columns[Godina]"
+                              cachedDataType="r8"
+                              cachedName="Godina"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Godina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Godina]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].Columns[Mesec]"
+                              cachedDataType="wstr"
+                              cachedLength="255"
+                              cachedName="Mesec"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Mesec]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Mesec]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].Columns[Kolicina]"
+                              cachedDataType="wstr"
+                              cachedLength="255"
+                              cachedName="Kolicina"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Kolicina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Kolicina]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].Columns[Cena]"
+                              cachedDataType="wstr"
+                              cachedLength="255"
+                              cachedName="Cena"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Cena]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Cena]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].Columns[Trosak]"
+                              cachedDataType="r8"
+                              cachedName="Trosak"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Trosak]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[Trosak]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Mesec]"
+                              dataType="wstr"
+                              length="50"
+                              name="Mesec" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Godina]"
+                              dataType="wstr"
+                              length="50"
+                              name="Godina" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Kolicina]"
+                              dataType="numeric"
+                              name="Kolicina"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Cena]"
+                              dataType="numeric"
+                              name="Cena"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[Trosak]"
+                              dataType="numeric"
+                              name="Trosak"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[BudzetTip]"
+                              dataType="wstr"
+                              length="50"
+                              name="BudzetTip" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input].ExternalColumns[BudzetVerzija]"
+                              dataType="wstr"
+                              length="50"
+                              name="BudzetVerzija" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable.Paths[Excel Source Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar.Inputs[OLE DB Destination Input]"
+                      name="Excel Source Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Load To Fct"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{8B847FDA-BAFE-4FFF-B24E-8BE2D864F1E7}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Load To Fct"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage"
+                      componentClassID="Microsoft.OLEDBSource"
+                      contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                      description="OLE DB Source"
+                      name="Budzet Zakup-Trosak Stage"
+                      usesDispositions="true"
+                      version="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[stg].[BudzetZakupTrosakStage]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  ltrim(rtrim(SifraArtikal)) as SifraArtikal,p.[KupacSifra], mesec, godina, p.BudzetVerzija,p.BudzetTip, 
+	s.KupacID, s.startdate, s.enddate,
+	(select max(OU2.StartDate) from  synTblImlekDWKupac OU2 where OU2.KupacSifra = p.KupacSifra ) as MaxKupacStartDate,
+	
+   [VolumenSecJM]
+from [stg].[BudzetKAStage] p left join
+synTblImlekDWKupac s on (p.KupacSifra = s.KupacSifra and mesec&gt;=month(s.StartDate) and mesec &lt;month(s.enddate) and godina &gt;=year(s.startdate) and godina &lt; year (s.enddate))</property>
+                        <property
+                          dataType="System.String"
+                          description="The variable that contains the SQL command to be executed."
+                          name="SqlCommandVariable"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">0</property>
+                        <property
+                          dataType="System.String"
+                          description="The mappings between the parameters in the SQL command and variables."
+                          name="ParameterMapping"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Connections[OleDbConnection]"
+                          connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output]"
+                          name="OLE DB Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetTip]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[BudzetTip]"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetTip]"
+                              name="BudzetTip"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetVerzija]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[BudzetVerzija]"
+                              length="10"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetVerzija]"
+                              name="BudzetVerzija"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Mesec]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Mesec]"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Mesec]"
+                              name="Mesec"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Godina]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Godina]"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Godina]"
+                              name="Godina"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Kolicina]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Kolicina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Kolicina]"
+                              name="Kolicina"
+                              precision="18"
+                              scale="5"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Cena]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Cena]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Cena]"
+                              name="Cena"
+                              precision="18"
+                              scale="5"
+                              truncationRowDisposition="FailComponent" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Trosak]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Trosak]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Trosak]"
+                              name="Trosak"
+                              precision="18"
+                              scale="5"
+                              truncationRowDisposition="FailComponent" />
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[BudzetTip]"
+                              dataType="wstr"
+                              length="50"
+                              name="BudzetTip" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[BudzetVerzija]"
+                              dataType="wstr"
+                              length="50"
+                              name="BudzetVerzija" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Mesec]"
+                              dataType="wstr"
+                              length="50"
+                              name="Mesec" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Godina]"
+                              dataType="wstr"
+                              length="50"
+                              name="Godina" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Kolicina]"
+                              dataType="numeric"
+                              name="Kolicina"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Cena]"
+                              dataType="numeric"
+                              name="Cena"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].ExternalColumns[Trosak]"
+                              dataType="numeric"
+                              name="Trosak"
+                              precision="18"
+                              scale="5" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output]"
+                          isErrorOut="true"
+                          name="OLE DB Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Mesec]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Mesec]"
+                              name="Mesec" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Godina]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Godina]"
+                              name="Godina" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Kolicina]"
+                              dataType="numeric"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Kolicina]"
+                              name="Kolicina"
+                              precision="18"
+                              scale="5" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Cena]"
+                              dataType="numeric"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Cena]"
+                              name="Cena"
+                              precision="18"
+                              scale="5" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Trosak]"
+                              dataType="numeric"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[Trosak]"
+                              name="Trosak"
+                              precision="18"
+                              scale="5" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[BudzetTip]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[BudzetTip]"
+                              name="BudzetTip" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[BudzetVerzija]"
+                              dataType="wstr"
+                              length="50"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[BudzetVerzija]"
+                              name="BudzetVerzija" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina"
+                      componentClassID="Microsoft.DerivedColumn"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Cast godina"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input].Columns[Godina]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Godina"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Godina]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input].Columns[Mesec]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="Mesec"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Mesec]" />
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[godina1]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[godina1]"
+                              name="godina1"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_I4)#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Godina]}</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_I4)godina</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[mesec1]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[mesec1]"
+                              name="mesec1"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_I4)(#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Mesec]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_I4)(mesec)</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="FctBudzetZakupTrosak"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[fct].[FctBudzetZakupTrosak]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Connections[OleDbConnection]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].Columns[Kolicina]"
+                              cachedDataType="numeric"
+                              cachedName="Kolicina"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Kolicina]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Kolicina]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].Columns[Cena]"
+                              cachedDataType="numeric"
+                              cachedName="Cena"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Cena]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Cena]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].Columns[Trosak]"
+                              cachedDataType="numeric"
+                              cachedName="Trosak"
+                              cachedPrecision="18"
+                              cachedScale="5"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Trosak]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[Trosak]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].Columns[BudzetID]"
+                              cachedDataType="i4"
+                              cachedName="BudzetID"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[BudzetID]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output].Columns[BudzetID]" />
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].Columns[MonthID]"
+                              cachedDataType="i4"
+                              cachedName="MonthID"
+                              externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[MonthID]"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output].Columns[MonthID]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[BudzetID]"
+                              dataType="i4"
+                              name="BudzetID" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[MonthID]"
+                              dataType="i4"
+                              name="MonthID" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Kolicina]"
+                              dataType="numeric"
+                              name="Kolicina"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Cena]"
+                              dataType="numeric"
+                              name="Cena"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[Trosak]"
+                              dataType="numeric"
+                              name="Trosak"
+                              precision="18"
+                              scale="5" />
+                            <externalMetadataColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input].ExternalColumns[FctBudzetZakupTrosakID]"
+                              dataType="i8"
+                              name="FctBudzetZakupTrosakID" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet"
+                      componentClassID="Microsoft.Lookup"
+                      contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                      description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                      name="Lookup Budzet"
+                      usesDispositions="true"
+                      version="6">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the SQL statement that generates the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimBudzet]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommandParam"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimBudzet]) [refTable]
+where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of connection used to access the reference dataset."
+                          name="ConnectionType"
+                          typeConverter="LookupConnectionType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the cache type of the lookup table."
+                          name="CacheType"
+                          typeConverter="CacheType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                          name="NoMatchBehavior"
+                          typeConverter="LookupNoMatchBehavior">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                          name="NoMatchCachePercentage">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                          name="MaxMemoryUsage">25</property>
+                        <property
+                          dataType="System.Int64"
+                          description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                          name="MaxMemoryUsage64">25</property>
+                        <property
+                          dataType="System.String"
+                          description="Indicates whether to reference metadata in an XML format."
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="BudzetID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BudzetVerzija" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BudzetTip" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EndDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrentFlag" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="InferredMember" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\174:invalid};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\175:invalid};</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                          name="TreatDuplicateKeysAsError">false</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Connections[OleDbConnection]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                          description="Connection manager used to access lookup data."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]"
+                          name="Lookup Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input].Columns[BudzetTip]"
+                              cachedDataType="wstr"
+                              cachedLength="50"
+                              cachedName="BudzetTip"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetTip]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">BudzetTip</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input].Columns[BudzetVerzija]"
+                              cachedDataType="wstr"
+                              cachedLength="10"
+                              cachedName="BudzetVerzija"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output].Columns[BudzetVerzija]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">BudzetVerzija</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]"
+                          errorOrTruncationOperation="Lookup"
+                          exclusionGroup="1"
+                          name="Lookup Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output].Columns[BudzetID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Copy Column"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output].Columns[BudzetID]"
+                              name="BudzetID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn">BudzetID</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup No Match Output]"
+                          description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                          exclusionGroup="1"
+                          name="Lookup No Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Lookup Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month"
+                      componentClassID="Microsoft.Lookup"
+                      contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                      description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                      name="Lookup Month"
+                      usesDispositions="true"
+                      version="6">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the SQL statement that generates the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimMonth]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                          expressionType="Notify"
+                          name="SqlCommandParam"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimMonth]) [refTable]
+where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of connection used to access the reference dataset."
+                          name="ConnectionType"
+                          typeConverter="LookupConnectionType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the cache type of the lookup table."
+                          name="CacheType"
+                          typeConverter="CacheType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                          name="NoMatchBehavior"
+                          typeConverter="LookupNoMatchBehavior">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                          name="NoMatchCachePercentage">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                          name="MaxMemoryUsage">25</property>
+                        <property
+                          dataType="System.Int64"
+                          description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                          name="MaxMemoryUsage64">25</property>
+                        <property
+                          dataType="System.String"
+                          description="Indicates whether to reference metadata in an XML format."
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MonthID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberInYear" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearAndMonth" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearQuarter" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[godina1]};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[mesec1]};</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                          name="TreatDuplicateKeysAsError">false</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Connections[OleDbConnection]"
+                          connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                          connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                          description="Connection manager used to access lookup data."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input]"
+                          name="Lookup Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input].Columns[godina1]"
+                              cachedDataType="i4"
+                              cachedName="godina1"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[godina1]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">Year</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input].Columns[mesec1]"
+                              cachedDataType="i4"
+                              cachedName="mesec1"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output].Columns[mesec1]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">MonthNumberInYear</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output]"
+                          errorOrTruncationOperation="Lookup"
+                          errorRowDisposition="FailComponent"
+                          exclusionGroup="1"
+                          name="Lookup Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output].Columns[MonthID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Copy Column"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output].Columns[MonthID]"
+                              name="MonthID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn">MonthID</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup No Match Output]"
+                          description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                          exclusionGroup="1"
+                          name="Lookup No Match Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input]">
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Lookup Error Output"
+                          synchronousInputId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Inputs[Lookup Input]"
+                      name="Derived Column Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak.Inputs[OLE DB Destination Input]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Source Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Inputs[Lookup Input]"
+                      name="OLE DB Source Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage.Outputs[OLE DB Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:DelayValidation="True"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{D224C25A-065D-4440-874D-BBEB29243FE0}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate Stage"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="truncate table stg.BudzetZakupTrosakStage;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load To Fct\Foreach Loop Container\update stg BudzetCrnaGoraPrimar"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B321EC1D-10EE-4450-AE27-DF81D00F064C}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="update stg BudzetCrnaGoraPrimar"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+                  SQLTask:SqlStatementSource="exec [dbo].[updStgZakupTrosakBudzet_UpdateBudzetTip]  ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pFileName"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{DCA1E4ED-8F36-41CB-998E-64B829074F0E}"
+              DTS:Expression="@[User::Loaded] == False"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Check Loaded Data"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Truncate Stage" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{D0BB93E9-9645-4711-859A-CDA780300E50}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{B6FB41FF-18FB-4226-8417-5B428F18B2B1}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Archive file" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{F5ACB82F-4989-409F-B441-FBAD88A77769}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded] == True"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Delete Fct" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+              DTS:CreationName=""
+              DTS:DTSID="{8853B853-96C7-4A7C-AB98-9869E44CF562}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Delete Fct"
+              DTS:ObjectName="Constraint 4"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+              DTS:CreationName=""
+              DTS:DTSID="{AABF0BAD-5D00-4738-A851-962A9D359CFA}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Load To Fct"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 5"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+              DTS:CreationName=""
+              DTS:DTSID="{1E57D1B6-0727-4AD7-80A6-C256D51ADF64}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded] == False"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
+              DTS:ObjectName="Constraint 6"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+              DTS:CreationName=""
+              DTS:DTSID="{9F6D2071-1FFE-450E-B01D-7020C1F0624B}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 7"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\update stg BudzetCrnaGoraPrimar" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+              DTS:CreationName=""
+              DTS:DTSID="{25302EE1-640D-4A96-8960-FBDCBB7564EE}"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\update stg BudzetCrnaGoraPrimar"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 8"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Load To Fct" />
+          </DTS:PrecedenceConstraints>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{B4F5D7A6-4268-4B28-994C-747EC5E8D65E}"
+              DTS:ObjectName="{B4F5D7A6-4268-4B28-994C-747EC5E8D65E}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::FileName" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{622BB3C8-C000-4C31-B742-1F1F11374D13}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{00D55F44-9ADA-4C7C-9B25-E54B64A5BEE5}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send email if Task Fails"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{4C5CBA89-CAE1-493E-B53C-297FA93B1BB6}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send email if Task Fails"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::From]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Package:                              "+ (DT_WSTR, 50)  @[System::PackageName] +".
+Time:                                      " + (DT_WSTR, 50) @[System::StartTime]  +".
+Task:                                       "+  (DT_WSTR, 50) @[System::TaskName]  +".
+Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"SSIS Error: " +  (DT_STR, 50,1252)  @[System::PackageName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::To]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
+              SendMailTask:From="sanja.vukovic@saga.rs"
+              SendMailTask:To="ana.kovacevic@saga.rs"
+              SendMailTask:Subject="SSIS Error: fctBudzetZakupTrosak"
+              SendMailTask:MessageSource="Package:                              fctBudzetZakupTrosak.&#xA;Time:                                      11/19/2017 7:19:19 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FB67DC9A-E82C-4149-988D-A9E6364DD50B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL LogPackageError"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="exec dbo.insLogPackageError_Insert&#xA;@pPackageName = ?&#xA;,@pSourceName = ?&#xA;,@pSourceID = ?&#xA;,@pErrorCode = ?&#xA;,@pErrorDescription = ?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{75AE59E7-C00E-4C71-A1D3-6AB6F40DCF9A}"
+          DTS:From="Package.EventHandlers[OnError]\SQL LogPackageError"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Send email if Task Fails" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Archive file"
+          TopLeft="237.200003746578,459.117652067264" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Check Loaded Data"
+          TopLeft="96.9460362035402,5.5" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Delete Fct"
+          TopLeft="211.771435188761,66.2379100315573" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Insert DimBudzet"
+          TopLeft="207,203" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
+          TopLeft="120.628574603431,351.117650973343" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable"
+          TopLeft="100.422226943289,143.215687890366" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct"
+          TopLeft="81.96191148466,295.590854747183" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
+          TopLeft="5.73809524215,58.1960782097285" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\Load To Fct\Foreach Loop Container\update stg BudzetCrnaGoraPrimar"
+          TopLeft="285,268" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="96.9460362035402,26.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.0079409613902,31.8960782097285"
+              Start="0,0"
+              End="-16.0079409613902,24.3960782097285">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-12.0079409613902,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.0079409613902,0"
+                    Point2="-16.0079409613902,0"
+                    Point3="-16.0079409613902,4" />
+                  <mssgle:LineSegment
+                    End="-16.0079409613902,24.3960782097285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="353.422226943289,164.215687890366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.922226943289,38.784312109634"
+              Start="0,0"
+              End="-46.922226943289,31.284312109634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.922226943289,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.922226943289,0"
+                    Point2="-46.922226943289,0"
+                    Point3="-46.922226943289,4" />
+                  <mssgle:LineSegment
+                    End="-46.922226943289,31.284312109634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="220.128574603431,393.117650973343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.071429143147,66.000001093921"
+              Start="0,0"
+              End="64.071429143147,58.500001093921">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1428577916328" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1428577916328"
+                    Point2="0,39.1428577916328"
+                    Point3="4,39.1428577916328" />
+                  <mssgle:LineSegment
+                    End="60.071429143147,39.1428577916328" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.071429143147,39.1428577916328"
+                    Point2="64.071429143147,39.1428577916328"
+                    Point3="64.071429143147,43.1428577916328" />
+                  <mssgle:LineSegment
+                    End="64.071429143147,58.500001093921" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="156.13809524215,78.9960782097285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.6333399466107,8.04183182182885"
+              Start="0,0"
+              End="48.1333399466107,8.04183182182885">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.8166699733054,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.8166699733054,0"
+                    Point2="27.8166699733054,0"
+                    Point3="27.8166699733054,4" />
+                  <mssgle:LineSegment
+                    End="27.8166699733054,4.04183182182885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.8166699733054,4.04183182182885"
+                    Point2="27.8166699733054,8.04183182182885"
+                    Point3="31.8166699733054,8.04183182182885" />
+                  <mssgle:LineSegment
+                    End="48.1333399466107,8.04183182182885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.8166699733054,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="271.263497732692,108.237910031557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.9777778588087"
+              Start="0,0"
+              End="0,27.4777778588087">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4777778588087" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="215.96191148466,316.590854747183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="4.16666311877131,34.52679622616"
+              Start="0,0"
+              End="4.16666311877131,27.02679622616">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0.166663118771311,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0.166663118771311,0"
+                    Point2="4.16666311877131,0"
+                    Point3="4.16666311877131,4" />
+                  <mssgle:LineSegment
+                    End="4.16666311877131,27.02679622616" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="80.73809524215,100.196078209728">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.350798367806,43.0196096806375"
+              Start="0,0"
+              End="105.350798367806,35.5196096806375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.649555182721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.649555182721"
+                    Point2="0,25.649555182721"
+                    Point3="4,25.649555182721" />
+                  <mssgle:LineSegment
+                    End="101.350798367806,25.649555182721" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.350798367806,25.649555182721"
+                    Point2="105.350798367806,25.649555182721"
+                    Point3="105.350798367806,29.649555182721" />
+                  <mssgle:LineSegment
+                    End="105.350798367806,35.5196096806375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="44.675399183903,30.649555182721,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+          TopLeft="306.5,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98,23"
+              Start="0,0"
+              End="98,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="4,11.5" />
+                  <mssgle:LineSegment
+                    End="94,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94,11.5"
+                    Point2="98,11.5"
+                    Point3="98,15.5" />
+                  <mssgle:LineSegment
+                    End="98,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 8]"
+          TopLeft="285,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69.03808851534,21.9241880805163"
+              Start="0,0"
+              End="-61.53808851534,21.9241880805163">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-35.9027484079488,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.9027484079488,0"
+                    Point2="-39.9027484079488,0"
+                    Point3="-39.9027484079488,4" />
+                  <mssgle:LineSegment
+                    End="-39.9027484079488,17.9241880805163" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.9027484079488,17.9241880805163"
+                    Point2="-39.9027484079488,21.9241880805163"
+                    Point3="-43.9027484079488,21.9241880805163" />
+                  <mssgle:LineSegment
+                    End="-61.53808851534,21.9241880805163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="583,556"
+          Size="583,599"
+          Id="Package\Load To Fct\Foreach Loop Container"
+          TopLeft="31,42" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="619,696"
+          Size="619,739"
+          Id="Package\Load To Fct"
+          TopLeft="103.61904938367,0.407843142974798" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package.EventHandlers[OnError]\Send email if Task Fails"
+          TopLeft="493.6,292.8" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package.EventHandlers[OnError]\SQL LogPackageError"
+          TopLeft="417.6,116" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="507.6,157.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.4,135.2"
+              Start="0,0"
+              End="60.4,127.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.6"
+                    Point2="0,67.6"
+                    Point3="4,67.6" />
+                  <mssgle:LineSegment
+                    End="56.4,67.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.4,67.6"
+                    Point2="60.4,67.6"
+                    Point3="60.4,71.6" />
+                  <mssgle:LineSegment
+                    End="60.4,127.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar"
+          TopLeft="475,358" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source"
+          TopLeft="413,107" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable.Paths[Excel Source Output]"
+          TopLeft="482.5,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.5,209"
+              Start="0,0"
+              End="92.5,201.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,100.5"
+                    Point2="0,104.5"
+                    Point3="4,104.5" />
+                  <mssgle:LineSegment
+                    End="88.5,104.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5,104.5"
+                    Point2="92.5,104.5"
+                    Point3="92.5,108.5" />
+                  <mssgle:LineSegment
+                    End="92.5,201.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stgBudzetCrnaGoraPrimar">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet"
+          TopLeft="642,117" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month"
+          TopLeft="625,392" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina"
+          TopLeft="645,255" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage"
+          TopLeft="453.857142857143,15.6" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak"
+          TopLeft="598,548" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[OLE DB Source Output]"
+          TopLeft="557.857142857143,57.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158.142857142857,59.4"
+              Start="0,0"
+              End="158.142857142857,51.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.7"
+                    Point2="0,29.7"
+                    Point3="4,29.7" />
+                  <mssgle:LineSegment
+                    End="154.142857142857,29.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154.142857142857,29.7"
+                    Point2="158.142857142857,29.7"
+                    Point3="158.142857142857,33.7" />
+                  <mssgle:LineSegment
+                    End="158.142857142857,51.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="694.25,434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,114"
+              Start="0,0"
+              End="0,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,106.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,47.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="714,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,38.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Derived Column Output]"
+          TopLeft="712,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,95"
+              Start="0,0"
+              End="-14,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-10,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10,47.5"
+                    Point2="-14,47.5"
+                    Point3="-14,51.5" />
+                  <mssgle:LineSegment
+                    End="-14,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetZakupTrosak">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimMonth]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Zakup-Trosak Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimBudzet]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
