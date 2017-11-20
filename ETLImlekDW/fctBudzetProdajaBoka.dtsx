@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetProdajaBoka"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="155"
-  DTS:VersionGUID="{8F591AE7-96AA-4391-A79A-936FE99D5070}">
+  DTS:VersionBuild="156"
+  DTS:VersionGUID="{D76BCC1B-99E6-4503-912C-1AB70281957B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\BUPrimarni_Source_2017-11-19.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\BUPrimarni_Source_2017-11-20.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -365,12 +365,18 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{1A283484-7B52-44E5-9378-EBF93319CDA5}"
-                  SQLTask:SqlStatementSource="exec fct.delFctBudzetProdajaBokaByYear ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="exec fct.delFctBudzetProdajaBokaByYear ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="@pYear"
                     SQLTask:DtsVariableName="User::Godina"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pfilename"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -1264,7 +1270,7 @@ where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\144:invalid};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\145:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2956:invalid};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2957:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1770,7 +1776,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetProdajaBoka"
-              SendMailTask:MessageSource="Package:                              fctBudzetProdajaBoka.&#xA;Time:                                      11/19/2017 7:36:45 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetProdajaBoka.&#xA;Time:                                      11/20/2017 3:39:27 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

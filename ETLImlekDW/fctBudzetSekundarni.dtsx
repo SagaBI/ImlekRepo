@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSekundarni"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{1BEDB8FE-0119-40B4-9A1D-B9A829FD40C3}">
+  DTS:VersionBuild="156"
+  DTS:VersionGUID="{C1D746E6-9257-4BC7-83BB-B975D437D632}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\BUPrimarni_Source_2017-11-19.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\BUPrimarni_Source_2017-11-20.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -302,7 +302,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Archive file"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <FileSystemData
@@ -365,12 +365,18 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{1A283484-7B52-44E5-9378-EBF93319CDA5}"
-                  SQLTask:SqlStatementSource="exec fct.delFctBudzetSekundarniByYear ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="exec fct.delFctBudzetSekundarniByYear ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="@pYear"
                     SQLTask:DtsVariableName="User::Godina"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pfilename"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -1400,7 +1406,7 @@ where [refTable].[BudzetVerzija] = ? and [refTable].[BudzetTip] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\146:invalid};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\147:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2962:invalid};#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2963:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1784,7 +1790,6 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
               DTS:CreationName=""
               DTS:DTSID="{8A750236-BEAA-49BA-851E-848A13CEB68F}"
               DTS:From="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
-              DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Archive file" />
             <DTS:PrecedenceConstraint
@@ -1807,8 +1812,9 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
               DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
               DTS:DTSID="{31790EEA-B967-4A20-8330-171902814C87}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded]==False"
               DTS:From="Package\Load To Fct\Foreach Loop Container\Load To Fct"
-              DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
               DTS:To="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData" />
             <DTS:PrecedenceConstraint
@@ -1836,6 +1842,15 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 8"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Load To Fct" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+              DTS:CreationName=""
+              DTS:DTSID="{825E8507-9358-48E2-8162-A57DC312BFE0}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded]==True"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Load To Fct"
+              DTS:ObjectName="Constraint 9"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Archive file" />
           </DTS:PrecedenceConstraints>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
@@ -1897,7 +1912,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSekundarni"
-              SendMailTask:MessageSource="Package:                              fctBudzetSekundarni.&#xA;Time:                                      11/19/2017 6:41:40 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSekundarni.&#xA;Time:                                      11/20/2017 3:40:56 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1991,7 +2006,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="199,42"
           Id="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
-          TopLeft="120.628574603431,351.117650973343" />
+          TopLeft="276.628574603431,376.117650973343" />
         <NodeLayout
           Size="253,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable"
@@ -2066,30 +2081,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="220.128574603431,393.117650973343">
+          TopLeft="376.128574603431,418.117650973343">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.071429143147,66.000001093921"
+              EndConnector="-70.428570856853,41.000001093921"
               Start="0,0"
-              End="64.071429143147,58.500001093921">
+              End="-70.428570856853,33.500001093921">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.1428577916328" />
+                    End="0,16.5000005469605" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.1428577916328"
-                    Point2="0,39.1428577916328"
-                    Point3="4,39.1428577916328" />
+                    Point1="0,16.5000005469605"
+                    Point2="0,20.5000005469605"
+                    Point3="-4,20.5000005469605" />
                   <mssgle:LineSegment
-                    End="60.071429143147,39.1428577916328" />
+                    End="-66.428570856853,20.5000005469605" />
                   <mssgle:CubicBezierSegment
-                    Point1="60.071429143147,39.1428577916328"
-                    Point2="64.071429143147,39.1428577916328"
-                    Point3="64.071429143147,43.1428577916328" />
+                    Point1="-66.428570856853,20.5000005469605"
+                    Point2="-70.428570856853,20.5000005469605"
+                    Point3="-70.428570856853,24.5000005469605" />
                   <mssgle:LineSegment
-                    End="64.071429143147,58.500001093921" />
+                    End="-70.428570856853,33.500001093921" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2158,30 +2173,38 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
-          TopLeft="215.96191148466,316.590854747183">
+          TopLeft="148.96191148466,337.590854747183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="4.16666311877131,34.52679622616"
+              EndConnector="227.166663118771,38.52679622616"
               Start="0,0"
-              End="4.16666311877131,27.02679622616">
+              End="227.166663118771,31.02679622616">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0.166663118771311,0" />
+                    End="0,15.26339811308" />
                   <mssgle:CubicBezierSegment
-                    Point1="0.166663118771311,0"
-                    Point2="4.16666311877131,0"
-                    Point3="4.16666311877131,4" />
+                    Point1="0,15.26339811308"
+                    Point2="0,19.26339811308"
+                    Point3="4,19.26339811308" />
                   <mssgle:LineSegment
-                    End="4.16666311877131,27.02679622616" />
+                    End="223.166663118771,19.26339811308" />
+                  <mssgle:CubicBezierSegment
+                    Point1="223.166663118771,19.26339811308"
+                    Point2="227.166663118771,19.26339811308"
+                    Point3="227.166663118771,23.26339811308" />
+                  <mssgle:LineSegment
+                    End="227.166663118771,31.02679622616" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="105.583331559385,24.26339811308,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2286,6 +2309,42 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          TopLeft="127.96191148466,337.590854747183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.238092261918,121.526797320081"
+              Start="0,0"
+              End="156.238092261918,114.026797320081">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.7826886278691" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.7826886278691"
+                    Point2="0,60.7826886278691"
+                    Point3="4,60.7826886278691" />
+                  <mssgle:LineSegment
+                    End="152.238092261918,60.7826886278691" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.238092261918,60.7826886278691"
+                    Point2="156.238092261918,60.7826886278691"
+                    Point3="156.238092261918,64.782688627869" />
+                  <mssgle:LineSegment
+                    End="156.238092261918,114.026797320081" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="70.119046130959,65.782688627869,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout

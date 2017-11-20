@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{3F7F0327-4523-4EEA-AC13-BFFD8D48761A}">
+  DTS:VersionBuild="121"
+  DTS:VersionGUID="{E0FED8CE-3EBD-4794-860A-C2C387462496}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-16.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-20.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -284,7 +284,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Archive file"
               DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <FileSystemData
@@ -347,7 +347,7 @@
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{1A283484-7B52-44E5-9378-EBF93319CDA5}"
-                  SQLTask:SqlStatementSource="exec fct.delFctBudzetSupervizorByMonth ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  SQLTask:SqlStatementSource="exec fct.delFctBudzetSupervizorByMonth ?, ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ParameterBinding
                     SQLTask:ParameterName="@pMonth"
                     SQLTask:DtsVariableName="User::Mesec"
@@ -359,6 +359,12 @@
                     SQLTask:DtsVariableName="User::Godina"
                     SQLTask:ParameterDirection="Input"
                     SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="@pfilename"
+                    SQLTask:DtsVariableName="User::FileName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
                     SQLTask:ParameterSize="-1" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
@@ -4053,7 +4059,6 @@ where [refTable].[SupervizorSifra] = ?</property>
               DTS:CreationName=""
               DTS:DTSID="{ca4ca33f-127a-4065-9184-3dd921ea0fb1}"
               DTS:From="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData"
-              DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 2"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Archive file" />
             <DTS:PrecedenceConstraint
@@ -4076,8 +4081,9 @@ where [refTable].[SupervizorSifra] = ?</property>
               DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
               DTS:DTSID="{d31c0100-8e32-4de6-8779-04f84a03af74}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded]==False"
               DTS:From="Package\Load To Fct\Foreach Loop Container\Load To Fct"
-              DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
               DTS:To="Package\Load To Fct\Foreach Loop Container\InsertSourceLoadData" />
             <DTS:PrecedenceConstraint
@@ -4105,6 +4111,15 @@ where [refTable].[SupervizorSifra] = ?</property>
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 8"
               DTS:To="Package\Load To Fct\Foreach Loop Container\Load To Fct" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+              DTS:CreationName=""
+              DTS:DTSID="{C1CE5BA4-2BFB-4182-9262-B7960C2415CE}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[User::Loaded]==True"
+              DTS:From="Package\Load To Fct\Foreach Loop Container\Load To Fct"
+              DTS:ObjectName="Constraint 9"
+              DTS:To="Package\Load To Fct\Foreach Loop Container\Archive file" />
           </DTS:PrecedenceConstraints>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
@@ -4166,7 +4181,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      11/16/2017 1:54:32 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      11/20/2017 3:41:22 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4468,7 +4483,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-116.833336881229,-22,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4561,6 +4578,42 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 9]"
+          TopLeft="321.96191148466,333.590854747183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-132.761907738082,89.526797320081"
+              Start="0,0"
+              End="-132.761907738082,82.026797320081">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.0959793629917" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.0959793629917"
+                    Point2="0,53.0959793629917"
+                    Point3="-4,53.0959793629917" />
+                  <mssgle:LineSegment
+                    End="-128.761907738082,53.0959793629917" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-128.761907738082,53.0959793629917"
+                    Point2="-132.761907738082,53.0959793629917"
+                    Point3="-132.761907738082,57.0959793629917" />
+                  <mssgle:LineSegment
+                    End="-132.761907738082,82.026797320081" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.3809538690411,58.0959793629917,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout

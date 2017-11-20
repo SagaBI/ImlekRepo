@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadGroupDimension"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{E9877B55-3DED-4920-BE34-A6F2D9D6BFAA}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{0DBCEE1B-DADC-45D9-87B4-ECD03937CC00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -160,6 +160,27 @@
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
               <PackageName>DimKanal.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDate</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extract Dimension\DimKupac"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5d64a75f-d041-4f14-a1cf-5b0d82352cea}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DimKupac"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>DimKupac.dtsx</PackageName>
               <ParameterAssignment>
                 <ParameterName>ExtractDate</ParameterName>
                 <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
@@ -386,6 +407,14 @@
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Extract Dimension\DimIstovarnoMesto" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{FD5BB254-590E-4BC0-91A6-EE911C2098F9}"
+          DTS:From="Package\Extract Dimension\DimKupac"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Extract Dimension\DimTipDokumenta" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{6FE04C2C-7B0B-466A-A5F6-3DD0B8788CDE}"
@@ -438,11 +467,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 8]"
           DTS:CreationName=""
-          DTS:DTSID="{68CAA570-64EA-4BD6-A71E-C26010A0306A}"
+          DTS:DTSID="{235B1D70-B594-4B85-86D2-1CB74BACC381}"
           DTS:From="Package\Extract Dimension\DimKanal"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 8"
-          DTS:To="Package\Extract Dimension\DimTipDokumenta" />
+          DTS:To="Package\Extract Dimension\DimKupac" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Extract Dimension.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
@@ -502,7 +531,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: LoadGroupDimension"
-              SendMailTask:MessageSource="Package:                              LoadGroupDimension.&#xA;Time:                                      11/16/2017 1:33:11 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              LoadGroupDimension.&#xA;Time:                                      11/20/2017 3:55:19 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -588,7 +617,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="182,42"
           Id="Package\Extract Dimension\DimKanal"
-          TopLeft="260.666666666667,378" />
+          TopLeft="172.666666666667,369" />
         <NodeLayout
           Size="182,42"
           Id="Package\Extract Dimension\DimMagacin"
@@ -839,60 +868,26 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.6666666666667,33"
+              EndConnector="-30.333333333333,24"
               Start="0,0"
-              End="57.6666666666667,25.5">
+              End="-30.333333333333,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
+                    End="0,8" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
                   <mssgle:LineSegment
-                    End="53.6666666666667,16.5" />
+                    End="-26.333333333333,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="53.6666666666667,16.5"
-                    Point2="57.6666666666667,16.5"
-                    Point3="57.6666666666667,20.5" />
+                    Point1="-26.333333333333,12"
+                    Point2="-30.333333333333,12"
+                    Point3="-30.333333333333,16" />
                   <mssgle:LineSegment
-                    End="57.6666666666667,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 8]"
-          TopLeft="351.666666666667,420">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.9999999999999,39.6666666666667"
-              Start="0,0"
-              End="14.9999999999999,32.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.8333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.8333333333334"
-                    Point2="0,19.8333333333334"
-                    Point3="4,19.8333333333334" />
-                  <mssgle:LineSegment
-                    End="10.9999999999999,19.8333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.9999999999999,19.8333333333334"
-                    Point2="14.9999999999999,19.8333333333334"
-                    Point3="14.9999999999999,23.8333333333334" />
-                  <mssgle:LineSegment
-                    End="14.9999999999999,32.1666666666667" />
+                    End="-30.333333333333,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -935,11 +930,83 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Extract Dimension\DimKupac"
+          TopLeft="426,349" />
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 8]"
+          TopLeft="354.666666666667,390">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.333333333333,-20"
+              Start="0,0"
+              End="63.833333333333,-20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.6666666666665,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.6666666666665,0"
+                    Point2="35.6666666666665,0"
+                    Point3="35.6666666666665,-4" />
+                  <mssgle:LineSegment
+                    End="35.6666666666665,-16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.6666666666665,-16"
+                    Point2="35.6666666666665,-20"
+                    Point3="39.6666666666665,-20" />
+                  <mssgle:LineSegment
+                    End="63.833333333333,-20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dimension.PrecedenceConstraints[Constraint 10]"
+          TopLeft="517,391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-150.333333333333,68.666666666667"
+              Start="0,0"
+              End="-150.333333333333,61.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.3333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.3333333333335"
+                    Point2="0,34.3333333333335"
+                    Point3="-4,34.3333333333335" />
+                  <mssgle:LineSegment
+                    End="-146.333333333333,34.3333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-146.333333333333,34.3333333333335"
+                    Point2="-150.333333333333,34.3333333333335"
+                    Point3="-150.333333333333,38.3333333333335" />
+                  <mssgle:LineSegment
+                    End="-150.333333333333,61.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="648,778"
-          Size="648,821"
+          PanelSize="672,778"
+          Size="672,821"
           Id="Package\Extract Dimension"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>
