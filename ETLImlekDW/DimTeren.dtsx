@@ -12,8 +12,8 @@
   DTS:ObjectName="DimTeren"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{1B11B8B9-B2C8-49B1-96C9-FC2F07EE155A}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{D945B4DE-7114-47A5-9E2F-4A2E46A441D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDate">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/1/2015 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/3/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\RawFiles\Source_2017-09-27.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-12-03.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -129,7 +129,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selDim '20150101'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selDim '20171203'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -227,7 +227,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimTeren"
-              SendMailTask:MessageSource="Package:                              DimTeren.&#xA;Time:                                      9/27/2017 11:54:47 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimTeren.&#xA;Time:                                      12/3/2017 7:18:19 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

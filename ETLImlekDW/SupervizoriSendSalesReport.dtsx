@@ -12,8 +12,8 @@
   DTS:ObjectName="SupervizoriSendSalesReport"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{CFD126D3-9C25-4C30-9FAD-353D441BADC3}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{0B945875-C1AF-476C-AD27-87F5B283C16E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -115,14 +115,35 @@
           Language="CSharp"
           ReadOnlyVariables="User::Path,User::RetentionNumOfDays">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2bbd87e1b3bd452fa49578f1df058f31")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2bbd87e1b3bd452fa49578f1df058f31")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="ST_2bbd87e1b3bd452fa49578f1df058f31.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -504,35 +525,14 @@ namespace ST_2bbd87e1b3bd452fa49578f1df058f31.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_2bbd87e1b3bd452fa49578f1df058f31")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_2bbd87e1b3bd452fa49578f1df058f31")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1434,7 +1434,7 @@ RIGHT("0" + (DT_STR, 2, 1252) DATEPART("dd" , GETDATE()), 2) + "-" + RIGHT("0" +
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="miljan.danilovic@saga.rs"
-              SendMailTask:Subject="MTD prodaja izveštaj na dan 16-11-2017"
+              SendMailTask:Subject="MTD prodaja izveštaj na dan 22-11-2017"
               SendMailTask:MessageSource="Poštovani, U prilogu je izveštaj o prodaji." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
               <SendMailTask:Attachments
                 SendMailTask:FileName="\\tabprod\Izvestaji supervizori\SPV120.twbx" />
@@ -1540,7 +1540,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: SupervizoriSendSalesReport"
-              SendMailTask:MessageSource="Package:                              SupervizoriSendSalesReport.&#xA;Time:                                      16.11.2017. 22.09.37.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              SupervizoriSendSalesReport.&#xA;Time:                                      22.11.2017. 10.26.19.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

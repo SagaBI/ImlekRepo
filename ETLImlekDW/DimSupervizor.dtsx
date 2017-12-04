@@ -12,8 +12,8 @@
   DTS:ObjectName="DimSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{778B5B2F-D9ED-4F28-BFDC-644160BE1CAF}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{CA48A3B8-A73D-43DD-AB1E-BDB3742EE010}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDate">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/11/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/3/2017 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -100,7 +100,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-13.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-12-03.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -129,7 +129,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selDim '20171111'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selDim '20171203'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -227,7 +227,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimSupervizor"
-              SendMailTask:MessageSource="Package:                              DimSupervizor.&#xA;Time:                                      11/13/2017 6:05:11 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimSupervizor.&#xA;Time:                                      12/3/2017 6:41:11 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

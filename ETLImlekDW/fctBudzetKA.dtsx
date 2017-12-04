@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetKA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="145"
-  DTS:VersionGUID="{DB64B770-F62E-4ECA-94F8-41E30E9F8B34}">
+  DTS:VersionBuild="148"
+  DTS:VersionGUID="{BF9C64FA-617E-4882-985C-992B390A975C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_KEY ACCOUNT_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\LE_KEY ACCOUNT_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -112,7 +112,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\LE_KEY ACCOUNT_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\LE_KEY ACCOUNT_112017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -123,7 +123,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\C:\Saga\Budzeti\LE_KEY ACCOUNT_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\LE_KEY ACCOUNT_112017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -132,7 +132,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FolderName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Bgt_KA_Source_2017-11-20.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Bgt_KA_Source_2017-11-24.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -280,7 +280,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Saga\Budzeti" />
+                  Folder="\\tabprod\BI_Razmena\IN\Budzeti" />
                 <FEFEProperty
                   FileSpec="*Key*.xlsx" />
                 <FEFEProperty
@@ -2081,7 +2081,7 @@ where [refTable].[SifraArtikla] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2951:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\2899:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3585,29 +3585,29 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Kupac.Outputs[InferredKupac]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Month.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3794,8 +3794,8 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{4B4107F5-102E-464C-844C-4313BFF3ADAF}"
-              DTS:ObjectName="{4B4107F5-102E-464C-844C-4313BFF3ADAF}"
+              DTS:DTSID="{84CC4DE1-5677-4C8A-BC86-1AC9CED6CF12}"
+              DTS:ObjectName="{84CC4DE1-5677-4C8A-BC86-1AC9CED6CF12}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -3851,7 +3851,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetKA"
-              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      11/20/2017 3:37:42 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      11/24/2017 11:56:57 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4819,7 +4819,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="1007,307">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4855,7 +4855,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="286,555">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4891,7 +4891,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="1009,656">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4927,7 +4927,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="985,418">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4963,7 +4963,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="1102,479">
           <EdgeLayout.Curve>
             <mssgle:Curve

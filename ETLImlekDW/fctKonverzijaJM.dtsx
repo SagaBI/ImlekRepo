@@ -12,8 +12,8 @@
   DTS:ObjectName="fctKonverzijaJM"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{F90C57D1-629F-40CA-B1B6-56DD9C043795}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{7F628813-CCC1-4980-8345-46245E707C74}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/17/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/29/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/30/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PracenjeCenaSource_2017-11-17.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\PracenjeCenaSource_2017-11-29.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selKonverzijaJM '20171117','20171118'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selKonverzijaJM '20171129','20171130'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2293,7 +2293,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctKonverzijaJM"
-              SendMailTask:MessageSource="Package:                              fctKonverzijaJM.&#xA;Time:                                      11/17/2017 8:33:02 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctKonverzijaJM.&#xA;Time:                                      11/29/2017 9:48:36 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2376,6 +2376,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="140,42"
           Id="Package\Load To Fct\LoadToStage"
           TopLeft="139,121" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load To Fct\Truncate Stage"
+          TopLeft="105,7" />
         <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
           TopLeft="209,163">
@@ -2412,10 +2416,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Load To Fct\Truncate Stage"
-          TopLeft="105,7" />
         <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint 1]"
           TopLeft="180,49">
@@ -2997,10 +2997,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Load To Fct\LoadToStage\Konverzija Source"
-          TopLeft="368,82" />
-        <NodeLayout
           Size="146,42"
           Id="Package\Load To Fct\LoadToStage\KonverzijaSTg"
           TopLeft="484,311" />
@@ -3008,40 +3004,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="130,42"
           Id="Package\Load To Fct\LoadToStage\Row Count"
           TopLeft="675,169" />
-        <EdgeLayout
-          Id="Package\Load To Fct\LoadToStage.Paths[OLE DB Source Output]"
-          TopLeft="449.5,124">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="290.5,45"
-              Start="0,0"
-              End="290.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="286.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="286.5,22.5"
-                    Point2="290.5,22.5"
-                    Point3="290.5,26.5" />
-                  <mssgle:LineSegment
-                    End="290.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Load To Fct\LoadToStage\Konverzija Source"
+          TopLeft="368,82" />
         <EdgeLayout
           Id="Package\Load To Fct\LoadToStage.Paths[Row Count Output 1]"
           TopLeft="740,211">
@@ -3076,17 +3042,43 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\LoadToStage.Paths[OLE DB Source Output]"
+          TopLeft="449.5,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="290.5,45"
+              Start="0,0"
+              End="290.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="286.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="286.5,22.5"
+                    Point2="290.5,22.5"
+                    Point3="290.5,26.5" />
+                  <mssgle:LineSegment
+                    End="290.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\LoadToStage\Konverzija Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\LoadToStage\KonverzijaSTg">
     <Properties>
@@ -3097,6 +3089,14 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\LoadToStage\Konverzija Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

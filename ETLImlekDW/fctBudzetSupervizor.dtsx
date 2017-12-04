@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{E0FED8CE-3EBD-4794-860A-C2C387462496}">
+  DTS:VersionBuild="123"
+  DTS:VersionGUID="{A442F32A-05AC-413E-8FFB-845D0E47E8D9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Budzeti\LE_SPV_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -94,7 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -105,7 +105,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti\C:\Saga\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -114,7 +114,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FolderName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Budzeti</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-20.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-24.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -262,7 +262,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Saga\Budzeti" />
+                  Folder="\\tabprod\BI_Razmena\IN\Budzeti" />
                 <FEFEProperty
                   FileSpec="*SPV*.xlsx" />
                 <FEFEProperty
@@ -4124,8 +4124,8 @@ where [refTable].[SupervizorSifra] = ?</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{CC77AA07-E03B-4A7F-BE2D-466B694DA987}"
-              DTS:ObjectName="{CC77AA07-E03B-4A7F-BE2D-466B694DA987}"
+              DTS:DTSID="{C3FFDB19-DF9C-40BC-9626-09B300BE5D2C}"
+              DTS:ObjectName="{C3FFDB19-DF9C-40BC-9626-09B300BE5D2C}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -4181,7 +4181,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      11/20/2017 3:41:22 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      11/24/2017 11:58:47 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

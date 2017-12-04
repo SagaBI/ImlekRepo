@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizePovrat"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="218"
-  DTS:VersionGUID="{46CBF40B-BB15-465A-BE59-E71D051C1839}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{323A7882-02A0-47E3-8574-F2FB060CFF5A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Saga\Povrat\Delhaize ulistavanje _ 012017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Povrati\Delhaize ulistavanje _ 012017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Povrat\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Povrati\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Povrati\C:\Saga\Povrat\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Povrati\\\tabprod\BI_Razmena\IN\Povrati\Delhaize ulistavanje _ 012017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -193,7 +193,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\DelhaizePovratSource_2017-11-17.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\DelhaizePovratSource_2017-11-24.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -5144,34 +5144,34 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 2]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Razlog Povrata.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 1]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output5]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 3]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                      name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 2]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Istovarno mesto.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output5]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctDelhaizePovrat.Inputs[OLE DB Destination Input]"
                       name="Lookup Match Output"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Razlog Povrata.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Inputs[Union All Input 3]"
+                      name="Lookup Match Output"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup No Match Output]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Razlog Povrata.Inputs[Derived Column Input]"
@@ -5214,19 +5214,19 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Povrat Stage.Outputs[OLE DB Source Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Inputs[Lookup Input]"
+                      name="Union All Output 1"
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
+                    <path
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
                     <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                       name="Union All Output 1"
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
-                    <path
-                      refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Razlog Povrata.Inputs[Lookup Input]"
-                      name="Union All Output 1"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 13]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
@@ -5364,8 +5364,8 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{C6598E8D-A697-453E-B7E4-29BA9619E043}"
-              DTS:ObjectName="{C6598E8D-A697-453E-B7E4-29BA9619E043}"
+              DTS:DTSID="{D1CD01EA-1DFB-4697-9FA2-E695F9C17095}"
+              DTS:ObjectName="{D1CD01EA-1DFB-4697-9FA2-E695F9C17095}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FileName" />
           </DTS:ForEachVariableMappings>
@@ -5421,7 +5421,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizePovrat"
-              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      11/17/2017 7:47:50 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizePovrat.&#xA;Time:                                      11/24/2017 12:00:02 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -6332,7 +6332,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
           TopLeft="1026.66666666667,479.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6366,7 +6366,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 11]"
           TopLeft="867.733333333333,181.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6400,7 +6400,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 12]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Union All Output 1]"
           TopLeft="1131.2,689.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6702,7 +6702,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output5]"
           TopLeft="785.6,752">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6738,7 +6738,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="397.333333333333,544">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6774,7 +6774,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="945.333333333333,340">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6810,7 +6810,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output5]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="782.8,508.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6846,7 +6846,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="1055.2,610.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6882,7 +6882,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output4]"
+          Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
           TopLeft="1025.6,653.6">
           <EdgeLayout.Curve>
             <mssgle:Curve

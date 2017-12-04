@@ -12,8 +12,8 @@
   DTS:ObjectName="DimArtikal"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{546B617D-A053-482D-A6D9-5CA76B474535}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{FB29745A-E006-4462-9CFB-1C20A66CDFE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\ArtikalSource_2017-11-17.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\ArtikalSource_2017-11-24.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -170,14 +170,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -566,35 +587,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1231,7 +1231,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].ExternalColumns[ZamenskiArtikalNaziv]"
-                          length="30"
+                          length="200"
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[ZamenskiArtikalNaziv]"
                           name="ZamenskiArtikalNaziv"
                           truncationRowDisposition="FailComponent" />
@@ -1441,7 +1441,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].ExternalColumns[ZamenskiArtikalNaziv]"
                           dataType="wstr"
-                          length="30"
+                          length="200"
                           name="ZamenskiArtikalNaziv" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].ExternalColumns[GroupArt]"
@@ -1665,7 +1665,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[ZamenskiArtikalNaziv]"
                           dataType="wstr"
-                          length="30"
+                          length="200"
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Error Output].Columns[ZamenskiArtikalNaziv]"
                           name="ZamenskiArtikalNaziv" />
                         <outputColumn
@@ -1938,7 +1938,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <inputColumn
                           refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[ZamenskiArtikalNaziv]"
                           cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedLength="200"
                           cachedName="ZamenskiArtikalNaziv"
                           lineageId="Package\Extract Stage\Extract To Raw File\Artikal Source.Outputs[OLE DB Source Output].Columns[ZamenskiArtikalNaziv]" />
                         <inputColumn
@@ -2185,7 +2185,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <inputColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].Columns[ZamenskiArtikalNaziv]"
                           cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedLength="200"
                           cachedName="ZamenskiArtikalNaziv"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Artikal.Inputs[OLE DB Destination Input].ExternalColumns[ZamenskiArtikalNaziv]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[ZamenskiArtikalNaziv]" />
@@ -2868,7 +2868,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[ZamenskiArtikalNaziv]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[ZamenskiArtikalNaziv]"
-                          length="30"
+                          length="200"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[ZamenskiArtikalNaziv]"
                           name="ZamenskiArtikalNaziv" />
                         <outputColumn
@@ -3065,7 +3065,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[ZamenskiArtikalNaziv]"
                           dataType="wstr"
-                          length="30"
+                          length="200"
                           name="ZamenskiArtikalNaziv" />
                         <externalMetadataColumn
                           refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[GroupArt]"
@@ -9213,7 +9213,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimArtikal"
-              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      11/17/2017 8:56:31 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimArtikal.&#xA;Time:                                      11/24/2017 8:06:46 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -9877,6 +9877,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="130,42"
+          Id="Package\Extract Stage\Extract To Raw File\Row Count"
+          TopLeft="391,94" />
+        <NodeLayout
           Size="175,42"
           Id="Package\Extract Stage\Extract To Raw File\Raw File Destination"
           TopLeft="363,267" />
@@ -9884,10 +9888,28 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="143,42"
           Id="Package\Extract Stage\Extract To Raw File\Artikal Source"
           TopLeft="158.857145562464,34.870588724341" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Extract Stage\Extract To Raw File\Row Count"
-          TopLeft="391,94" />
+        <EdgeLayout
+          Id="Package\Extract Stage\Extract To Raw File.Paths[Row Count Output 1]"
+          TopLeft="453.25,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,131"
+              Start="0,0"
+              End="0,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Extract Stage\Extract To Raw File.Paths[OLE DB Source Output]"
           TopLeft="301.857145562464,55.870588724341">
@@ -9922,28 +9944,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Extract Stage\Extract To Raw File.Paths[Row Count Output 1]"
-          TopLeft="453.25,136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,131"
-              Start="0,0"
-              End="0,123.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,123.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -9961,13 +9961,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Extract Stage\Load To Staging From Raw File\current Artikal"
-          TopLeft="300.8,249.6" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\Raw File Source"
           TopLeft="175.2,55.2" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Extract Stage\Load To Staging From Raw File\current Artikal"
+          TopLeft="300.8,249.6" />
         <NodeLayout
           Size="176,42"
           Id="Package\Extract Stage\Load To Staging From Raw File\Add InferredMember"
@@ -10062,17 +10062,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="253,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - SCD1"
-          TopLeft="440.8,252.8" />
+          Size="120,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Multicast"
+          TopLeft="272.8,163.2" />
         <NodeLayout
           Size="146,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\CurrPrevStage"
           TopLeft="268,10.4" />
-        <NodeLayout
-          Size="104,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\SCD1"
-          TopLeft="501.6,169.6" />
         <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - NR"
@@ -10086,6 +10082,14 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To ArtikalSCD\Deleted Rows"
           TopLeft="57.6,232.8" />
         <NodeLayout
+          Size="126,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfDR"
+          TopLeft="93.6,360.8" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfNR"
+          TopLeft="284.8,331.2" />
+        <NodeLayout
           Size="239,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - IM"
           TopLeft="709.6,92.8" />
@@ -10094,25 +10098,21 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Transform And Load\Load To ArtikalSCD\Check InferredMember"
           TopLeft="248.8,87.2" />
         <NodeLayout
-          Size="125,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfNR"
-          TopLeft="284.8,331.2" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\NumOfDR"
-          TopLeft="93.6,360.8" />
-        <NodeLayout
           Size="120,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Union All"
           TopLeft="583.2,403.2" />
         <NodeLayout
+          Size="104,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\SCD1"
+          TopLeft="501.6,169.6" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - SCD1"
+          TopLeft="440.8,252.8" />
+        <NodeLayout
           Size="127,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\New Rows"
           TopLeft="292.8,256.8" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Transform And Load\Load To ArtikalSCD\Multicast"
-          TopLeft="272.8,163.2" />
         <NodeLayout
           Size="241,42"
           Id="Package\Transform And Load\Load To ArtikalSCD\Add Action and ActionReason - DR"

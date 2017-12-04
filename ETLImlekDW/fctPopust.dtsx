@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPopust"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{DF29FBAB-F6CA-453D-94B2-15419054F6F1}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{399B9E1D-BE41-4D0A-BEB1-64FCBF64F947}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/13/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">11/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/14/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PopustSource_2017-11-17.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\PopustSource_2017-11-28.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPopust '20181113','20181114'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPopust '20171101','20171201'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -791,13 +791,47 @@
                     </input>
                   </inputs>
                 </component>
+                <component
+                  refId="Package\Load To Fct\Extract To Raw File\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::NR</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Extract To Raw File\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
-                  endId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  endId="Package\Load To Fct\Extract To Raw File\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Source Output"
                   startId="Package\Load To Fct\Extract To Raw File\Popust Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load To Fct\Extract To Raw File.Paths[Row Count Output 1]"
+                  endId="Package\Load To Fct\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Load To Fct\Extract To Raw File\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1182,10 +1216,8 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].Columns[RBStavke]"
-                          cachedDataType="numeric"
+                          cachedDataType="i4"
                           cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].ExternalColumns[RBStavke]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]" />
                         <inputColumn
@@ -1199,6 +1231,7 @@
                           cachedDataType="numeric"
                           cachedName="IznosJedinicnogPopustaUValuti"
                           cachedPrecision="10"
+                          cachedScale="4"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].ExternalColumns[IznosJedinicnogPopustaUValuti]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]" />
                         <inputColumn
@@ -1224,6 +1257,7 @@
                           cachedDataType="numeric"
                           cachedName="JedinicniPopustDinUJM"
                           cachedPrecision="10"
+                          cachedScale="4"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].ExternalColumns[JedinicniPopustDinUJMCenovnoj]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]" />
                         <inputColumn
@@ -1275,6 +1309,10 @@
                           refId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].ExternalColumns[TIpDokumentaID]"
                           dataType="i4"
                           name="TIpDokumentaID" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input].ExternalColumns[DatumUnosa]"
+                          dataType="dbTimeStamp"
+                          name="DatumUnosa" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1346,7 +1384,7 @@
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Insert IM JM.Inputs[OLE DB Command Input].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert IM JM.Inputs[OLE DB Command Input].ExternalColumns[@pJedinicaMereSifra]"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]" />
@@ -1688,7 +1726,7 @@
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Insert IM valuta.Inputs[OLE DB Command Input].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert IM valuta.Inputs[OLE DB Command Input].ExternalColumns[@pValutaSifra]"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]" />
@@ -1842,7 +1880,7 @@ where [refTable].[JedinicaMereSifra] = ?</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Lookup IM JM.Inputs[Lookup Input].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
                           <properties>
@@ -2319,7 +2357,7 @@ where [refTable].[ValutaSifra] = ?</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Inputs[Lookup Input].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
                           <properties>
@@ -2452,7 +2490,7 @@ where [refTable].[JedinicaMereSifra] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]};</property>
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\418:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2478,7 +2516,7 @@ where [refTable].[JedinicaMereSifra] = ?</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Lookup JM.Inputs[Lookup Input].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
                           <properties>
@@ -2953,7 +2991,7 @@ where [refTable].[ValutaSifra] = ?</property>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Lookup Valuta.Inputs[Lookup Input].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
                           <properties>
@@ -3106,7 +3144,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].ExternalColumns[ValutaSifra]"
-                          length="3"
+                          length="7"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]"
                           name="ValutaSifra"
                           truncationRowDisposition="FailComponent" />
@@ -3116,20 +3154,18 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].ExternalColumns[JedinicaMereSifra]"
-                          length="2"
+                          length="7"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicaMereSifra]"
                           name="JedinicaMereSifra"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[RBStavke]"
-                          dataType="numeric"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].ExternalColumns[RBStavke]"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[RBStavke]"
                           name="RBStavke"
-                          precision="18"
-                          scale="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[TipPopustaSifra]"
@@ -3169,6 +3205,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicniPopustDinUJM]"
                           name="JedinicniPopustDinUJM"
                           precision="10"
+                          scale="4"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[IznosJedinicnogPopustaUValuti]"
@@ -3179,6 +3216,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[IznosJedinicnogPopustaUValuti]"
                           name="IznosJedinicnogPopustaUValuti"
                           precision="10"
+                          scale="4"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3216,13 +3254,13 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="numeric"
                           name="JedinicniPopustDinUJM"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].ExternalColumns[IznosJedinicnogPopustaUValuti]"
                           dataType="numeric"
                           name="IznosJedinicnogPopustaUValuti"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3270,14 +3308,14 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Error Output].Columns[JedinicniPopustDinUJM]"
                           name="JedinicniPopustDinUJM"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Error Output].Columns[IznosJedinicnogPopustaUValuti]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Error Output].Columns[IznosJedinicnogPopustaUValuti]"
                           name="IznosJedinicnogPopustaUValuti"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3307,49 +3345,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1]"
                       name="Union All Input 1">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ValutaSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="ValutaSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
-                          cachedName="JedinicaMereSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicaMereSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[RBStavke]"
-                          cachedDataType="numeric"
-                          cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[RBStavke]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]}</property>
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -3392,10 +3387,38 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ValutaID]"
+                          cachedDataType="i4"
+                          cachedName="ValutaID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output].Columns[ValutaID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ValutaSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="ValutaSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
                           cachedDataType="numeric"
                           cachedName="JedinicniPopustDinUJM"
                           cachedPrecision="10"
+                          cachedScale="4"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicniPopustDinUJM]">
                           <properties>
                             <property
@@ -3410,6 +3433,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           cachedDataType="numeric"
                           cachedName="IznosJedinicnogPopustaUValuti"
                           cachedPrecision="10"
+                          cachedScale="4"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[IznosJedinicnogPopustaUValuti]">
                           <properties>
                             <property
@@ -3420,44 +3444,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ValutaID]"
-                          cachedDataType="i4"
-                          cachedName="ValutaID"
-                          lineageId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output].Columns[ValutaID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="ValutaSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicaMereSifra]">
                           <properties>
@@ -3469,11 +3458,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[RBStavke]"
-                          cachedDataType="numeric"
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[RBStavke]"
+                          cachedDataType="i4"
                           cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[RBStavke]">
                           <properties>
                             <property
@@ -3483,6 +3470,14 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]}</property>
                           </properties>
                         </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -3525,10 +3520,38 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[IM_ValutaID]"
+                          cachedDataType="i4"
+                          cachedName="IM_ValutaID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output].Columns[IM_ValutaID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="ValutaSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[ValutaSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[JedinicniPopustDinUJM]"
                           cachedDataType="numeric"
                           cachedName="JedinicniPopustDinUJM"
                           cachedPrecision="10"
+                          cachedScale="4"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicniPopustDinUJM]">
                           <properties>
                             <property
@@ -3543,6 +3566,7 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           cachedDataType="numeric"
                           cachedName="IznosJedinicnogPopustaUValuti"
                           cachedPrecision="10"
+                          cachedScale="4"
                           lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[IznosJedinicnogPopustaUValuti]">
                           <properties>
                             <property
@@ -3553,16 +3577,30 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[IM_ValutaID]"
-                          cachedDataType="i4"
-                          cachedName="IM_ValutaID"
-                          lineageId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output].Columns[IM_ValutaID]">
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="JedinicaMereSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[JedinicaMereSifra]">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]}</property>
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[RBStavke]"
+                          cachedDataType="i4"
+                          cachedName="RBStavke"
+                          lineageId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output].Columns[RBStavke]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -3582,25 +3620,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       name="Union All Output 1">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          dataType="wstr"
-                          length="3"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          name="ValutaSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          dataType="wstr"
-                          length="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          name="JedinicaMereSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]"
-                          name="RBStavke"
-                          precision="18"
-                          scale="5" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[TipPopustaSifra]"
                           dataType="wstr"
                           length="20"
@@ -3618,22 +3637,41 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrojDokumenta]"
                           name="BrojDokumenta" />
                         <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]"
+                          name="ValutaID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          name="ValutaSifra" />
+                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
                           name="JedinicniPopustDinUJM"
-                          precision="10" />
+                          precision="10"
+                          scale="4" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
                           dataType="numeric"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
                           name="IznosJedinicnogPopustaUValuti"
-                          precision="10" />
+                          precision="10"
+                          scale="4" />
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]"
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          name="JedinicaMereSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]"
                           dataType="i4"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaID]"
-                          name="ValutaID" />
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]"
+                          name="RBStavke" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3651,49 +3689,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                       name="Union All Input 1">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ValutaSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="ValutaSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
-                          cachedName="JedinicaMereSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[RBStavke]"
-                          cachedDataType="numeric"
-                          cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]}</property>
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -3736,34 +3731,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ValutaID]"
                           cachedDataType="i4"
                           cachedName="ValutaID"
@@ -3789,18 +3756,10 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereID]}</property>
                           </properties>
                         </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3]"
-                      hasSideEffects="true"
-                      name="Union All Input 3">
-                      <inputColumns>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[ValutaSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]">
                           <properties>
@@ -3812,9 +3771,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[JedinicaMereSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
                           <properties>
@@ -3826,11 +3785,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[RBStavke]"
-                          cachedDataType="numeric"
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[RBStavke]"
+                          cachedDataType="i4"
                           cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]">
                           <properties>
                             <property
@@ -3840,6 +3797,44 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -3882,34 +3877,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[ValutaID]"
                           cachedDataType="i4"
                           cachedName="ValutaID"
@@ -3935,6 +3902,77 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[ValutaSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="ValutaSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ValutaSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[JedinicaMereSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="JedinicaMereSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[RBStavke]"
+                          cachedDataType="i4"
+                          cachedName="RBStavke"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[RBStavke]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3951,25 +3989,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]"
                       name="Union All Output 1">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          dataType="wstr"
-                          length="3"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          name="ValutaSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          dataType="wstr"
-                          length="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          name="JedinicaMereSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]"
-                          name="RBStavke"
-                          precision="18"
-                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[TipPopustaSifra]"
                           dataType="wstr"
@@ -3988,18 +4007,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrojDokumenta]"
                           name="BrojDokumenta" />
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          name="JedinicniPopustDinUJM"
-                          precision="10" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          name="IznosJedinicnogPopustaUValuti"
-                          precision="10" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaID]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaID]"
@@ -4009,6 +4016,37 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereID]"
                           name="JedinicaMereID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          name="ValutaSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          name="JedinicaMereSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]"
+                          name="RBStavke" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          name="JedinicniPopustDinUJM"
+                          precision="10"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          name="IznosJedinicnogPopustaUValuti"
+                          precision="10"
+                          scale="4" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -4026,49 +4064,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                       name="Union All Input 1">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[ValutaSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="ValutaSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
-                          cachedName="JedinicaMereSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[RBStavke]"
-                          cachedDataType="numeric"
-                          cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]}</property>
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -4111,34 +4106,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[ValutaID]"
                           cachedDataType="i4"
                           cachedName="ValutaID"
@@ -4177,18 +4144,10 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[TipPopustaID]}</property>
                           </properties>
                         </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]">
                           <properties>
@@ -4200,9 +4159,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
                           <properties>
@@ -4214,11 +4173,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[RBStavke]"
-                          cachedDataType="numeric"
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[RBStavke]"
+                          cachedDataType="i4"
                           cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]">
                           <properties>
                             <property
@@ -4228,6 +4185,44 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -4270,34 +4265,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[ValutaID]"
                           cachedDataType="i4"
                           cachedName="ValutaID"
@@ -4336,6 +4303,77 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[TipPopustaID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="ValutaSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ValutaSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="JedinicaMereSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[RBStavke]"
+                          cachedDataType="i4"
+                          cachedName="RBStavke"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[RBStavke]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -4352,25 +4390,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]"
                       name="Union All Output 1">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          dataType="wstr"
-                          length="3"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          name="ValutaSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          dataType="wstr"
-                          length="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          name="JedinicaMereSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]"
-                          name="RBStavke"
-                          precision="18"
-                          scale="5" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[TipPopustaSifra]"
                           dataType="wstr"
@@ -4389,18 +4408,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[BrojDokumenta]"
                           name="BrojDokumenta" />
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          name="JedinicniPopustDinUJM"
-                          precision="10" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          name="IznosJedinicnogPopustaUValuti"
-                          precision="10" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaID]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaID]"
@@ -4415,6 +4422,37 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[TipPopustaID]"
                           name="TipPopustaID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          name="ValutaSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          name="JedinicaMereSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]"
+                          name="RBStavke" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          name="JedinicniPopustDinUJM"
+                          precision="10"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          name="IznosJedinicnogPopustaUValuti"
+                          precision="10"
+                          scale="4" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -4432,49 +4470,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1]"
                       name="Union All Input 1">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[ValutaSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="3"
-                          cachedName="ValutaSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
-                          cachedName="JedinicaMereSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[RBStavke]"
-                          cachedDataType="numeric"
-                          cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]}</property>
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -4514,34 +4509,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrojDokumenta]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -4596,18 +4563,10 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[TipDokumentaID]}</property>
                           </properties>
                         </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[ValutaSifra]"
                           cachedDataType="wstr"
-                          cachedLength="3"
+                          cachedLength="7"
                           cachedName="ValutaSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]">
                           <properties>
@@ -4619,9 +4578,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[JedinicaMereSifra]"
                           cachedDataType="wstr"
-                          cachedLength="2"
+                          cachedLength="7"
                           cachedName="JedinicaMereSifra"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
                           <properties>
@@ -4633,11 +4592,9 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[RBStavke]"
-                          cachedDataType="numeric"
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[RBStavke]"
+                          cachedDataType="i4"
                           cachedName="RBStavke"
-                          cachedPrecision="18"
-                          cachedScale="5"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]">
                           <properties>
                             <property
@@ -4647,6 +4604,44 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[TipPopustaSifra]"
                           cachedDataType="wstr"
@@ -4686,34 +4681,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrojDokumenta]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[JedinicniPopustDinUJM]"
-                          cachedDataType="numeric"
-                          cachedName="JedinicniPopustDinUJM"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IznosJedinicnogPopustaUValuti]"
-                          cachedDataType="numeric"
-                          cachedName="IznosJedinicnogPopustaUValuti"
-                          cachedPrecision="10"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -4768,6 +4735,77 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                               name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[TipDokumentaID]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[ValutaSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="ValutaSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ValutaSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[JedinicaMereSifra]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="JedinicaMereSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicaMereSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[RBStavke]"
+                          cachedDataType="i4"
+                          cachedName="RBStavke"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[RBStavke]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IznosJedinicnogPopustaUValuti]"
+                          cachedDataType="numeric"
+                          cachedName="IznosJedinicnogPopustaUValuti"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[JedinicniPopustDinUJM]"
+                          cachedDataType="numeric"
+                          cachedName="JedinicniPopustDinUJM"
+                          cachedPrecision="10"
+                          cachedScale="4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -4785,25 +4823,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                       name="Union All Output 1">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          dataType="wstr"
-                          length="3"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]"
-                          name="ValutaSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          dataType="wstr"
-                          length="2"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
-                          name="JedinicaMereSifra" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]"
-                          name="RBStavke"
-                          precision="18"
-                          scale="5" />
-                        <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[TipPopustaSifra]"
                           dataType="wstr"
                           length="20"
@@ -4820,18 +4839,6 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrojDokumenta]"
                           name="BrojDokumenta" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
-                          name="JedinicniPopustDinUJM"
-                          precision="10" />
-                        <outputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          dataType="numeric"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
-                          name="IznosJedinicnogPopustaUValuti"
-                          precision="10" />
                         <outputColumn
                           refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaID]"
                           dataType="i4"
@@ -4852,6 +4859,37 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[TipDokumentaID]"
                           name="TipDokumentaID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[ValutaSifra]"
+                          name="ValutaSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicaMereSifra]"
+                          name="JedinicaMereSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[RBStavke]"
+                          name="RBStavke" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IznosJedinicnogPopustaUValuti]"
+                          name="IznosJedinicnogPopustaUValuti"
+                          precision="10"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[JedinicniPopustDinUJM]"
+                          name="JedinicniPopustDinUJM"
+                          precision="10"
+                          scale="4" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -4921,24 +4959,24 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipDokumenta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM Tip dokumenta.Inputs[Lookup Input]"
@@ -5169,13 +5207,13 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                           dataType="numeric"
                           name="JedinicniPopustDinUJM"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                         <externalMetadataColumn
                           refId="Package\Load To Fct\Load To Staging From Raw File\PopustStage.Inputs[OLE DB Destination Input].ExternalColumns[IznosJedinicnogPopustaUValuti]"
                           dataType="numeric"
                           name="IznosJedinicnogPopustaUValuti"
                           precision="10"
-                          scale="2" />
+                          scale="4" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5639,7 +5677,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctPopust"
-              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      11/17/2017 8:38:06 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      11/28/2017 5:49:50 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -5731,40 +5769,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Truncate Stage"
           TopLeft="90.1523860775698,108.572551187429" />
         <EdgeLayout
-          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 2]"
-          TopLeft="193.533336625781,284.949023654634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.7523819903934,78.894119320114"
-              Start="0,0"
-              End="23.7523819903934,71.394119320114">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.447059660057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.447059660057"
-                    Point2="0,39.447059660057"
-                    Point3="4,39.447059660057" />
-                  <mssgle:LineSegment
-                    End="19.7523819903934,39.447059660057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.7523819903934,39.447059660057"
-                    Point2="23.7523819903934,39.447059660057"
-                    Point3="23.7523819903934,43.447059660057" />
-                  <mssgle:LineSegment
-                    End="23.7523819903934,71.394119320114" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load To Fct.PrecedenceConstraints[Constraint]"
           TopLeft="208.580957837008,48.617648603182">
           <EdgeLayout.Curve>
@@ -5826,6 +5830,40 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="27.8809505482108,50.1882362336023" />
                   <mssgle:LineSegment
                     End="27.8809505482108,84.8764724672046" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct.PrecedenceConstraints[Constraint 2]"
+          TopLeft="193.533336625781,284.949023654634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.7523819903934,78.894119320114"
+              Start="0,0"
+              End="23.7523819903934,71.394119320114">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.447059660057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.447059660057"
+                    Point2="0,39.447059660057"
+                    Point3="4,39.447059660057" />
+                  <mssgle:LineSegment
+                    End="19.7523819903934,39.447059660057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.7523819903934,39.447059660057"
+                    Point2="23.7523819903934,39.447059660057"
+                    Point3="23.7523819903934,43.447059660057" />
+                  <mssgle:LineSegment
+                    End="23.7523819903934,71.394119320114" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5900,7 +5938,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Extract To Raw File\Row Count"
+          TopLeft="408,76" />
         <NodeLayout
           Size="146,42"
           Id="Package\Load To Fct\Extract To Raw File\Popust Source"
@@ -5910,39 +5952,71 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Extract To Raw File\Raw File Destination"
           TopLeft="199.42857482482,147.435296185371" />
         <EdgeLayout
-          Id="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
-          TopLeft="231.657145562464,76.470588724341">
+          Id="Package\Load To Fct\Extract To Raw File.Paths[Row Count Output 1]"
+          TopLeft="473,118">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="54.9714292623558,70.9647074610304"
+              EndConnector="-186.57142517518,29.435296185371"
               Start="0,0"
-              End="54.9714292623558,63.4647074610304">
+              End="-186.57142517518,21.935296185371">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4823537305152" />
+                    End="0,10.7176480926855" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.4823537305152"
-                    Point2="0,35.4823537305152"
-                    Point3="4,35.4823537305152" />
+                    Point1="0,10.7176480926855"
+                    Point2="0,14.7176480926855"
+                    Point3="-4,14.7176480926855" />
                   <mssgle:LineSegment
-                    End="50.9714292623558,35.4823537305152" />
+                    End="-182.57142517518,14.7176480926855" />
                   <mssgle:CubicBezierSegment
-                    Point1="50.9714292623558,35.4823537305152"
-                    Point2="54.9714292623558,35.4823537305152"
-                    Point3="54.9714292623558,39.4823537305152" />
+                    Point1="-182.57142517518,14.7176480926855"
+                    Point2="-186.57142517518,14.7176480926855"
+                    Point3="-186.57142517518,18.7176480926855" />
                   <mssgle:LineSegment
-                    End="54.9714292623558,63.4647074610304" />
+                    End="-186.57142517518,21.935296185371" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Extract To Raw File.Paths[OLE DB Source Output]"
+          TopLeft="304.857145562464,55.870588724341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103.142854437536,41.129411275659"
+              Start="0,0"
+              End="95.642854437536,41.129411275659">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.571427218768,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.571427218768,0"
+                    Point2="51.571427218768,0"
+                    Point3="51.571427218768,4" />
+                  <mssgle:LineSegment
+                    End="51.571427218768,37.129411275659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.571427218768,37.129411275659"
+                    Point2="51.571427218768,41.129411275659"
+                    Point3="55.571427218768,41.129411275659" />
+                  <mssgle:LineSegment
+                    End="95.642854437536,41.129411275659" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5962,17 +6036,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Load To Fct\Union All 2"
-          TopLeft="853.6,727.2" />
-        <NodeLayout
           Size="138,42"
           Id="Package\Load To Fct\Load To Fct\Insert IM JM"
           TopLeft="514.971428571429,520.914285714286" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup IM TipPopusta"
-          TopLeft="564.8,752.8" />
+          Size="121,42"
+          Id="Package\Load To Fct\Load To Fct\Union All"
+          TopLeft="697.6,194.4" />
         <NodeLayout
           Size="177,42"
           Id="Package\Load To Fct\Load To Fct\Insert IM TipPopusta"
@@ -5990,9 +6060,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Lookup IM valuta"
           TopLeft="610.285714285714,336" />
         <NodeLayout
-          Size="144,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup IM JM"
-          TopLeft="690.4,583.428571428571" />
+          Size="183,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IM TipPopusta"
+          TopLeft="564.8,752.8" />
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Load To Fct\Union All 3"
@@ -6001,10 +6071,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="161,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta"
           TopLeft="606.4,640" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup JM"
-          TopLeft="812,359.542857142857" />
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Load To Fct\Union All 1"
@@ -6022,9 +6088,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Lookup IM Tip dokumenta"
           TopLeft="387,967" />
         <NodeLayout
-          Size="188,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta"
-          TopLeft="857,846" />
+          Size="129,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup JM"
+          TopLeft="812,359.542857142857" />
         <NodeLayout
           Size="161,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate TipDokumenta"
@@ -6034,13 +6100,17 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Insert IM valuta"
           TopLeft="278.971428571429,241.028571428572" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\Load To Fct\Load To Fct\Union All"
-          TopLeft="697.6,194.4" />
+          Size="188,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta"
+          TopLeft="857,846" />
         <NodeLayout
           Size="140,42"
           Id="Package\Load To Fct\Load To Fct\Popust Stage"
           TopLeft="305.6,14.6285714285714" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IM JM"
+          TopLeft="690.4,583.428571428571" />
         <NodeLayout
           Size="161,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate JM"
@@ -6049,62 +6119,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="124,42"
           Id="Package\Load To Fct\Load To Fct\FctPopust"
           TopLeft="858.4,997.2" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
-          TopLeft="916.05,769.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76.8"
-              Start="0,0"
-              End="0,69.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
-          TopLeft="776.266666666667,236">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.133333333333,123.542857142857"
-              Start="0,0"
-              End="100.133333333333,116.042857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.3924812030075" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.3924812030075"
-                    Point2="0,50.3924812030075"
-                    Point3="4,50.3924812030075" />
-                  <mssgle:LineSegment
-                    End="96.1333333333333,50.3924812030075" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.1333333333333,50.3924812030075"
-                    Point2="100.133333333333,50.3924812030075"
-                    Point3="100.133333333333,54.3924812030075" />
-                  <mssgle:LineSegment
-                    End="100.133333333333,116.042857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Load To Fct\Union All 2"
+          TopLeft="853.6,727.2" />
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="981.066666666667,519.2">
@@ -6131,6 +6149,28 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="-61.4095238095238,47.4781881533113" />
                   <mssgle:LineSegment
                     End="-61.4095238095238,99.2428571428601" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="916.05,769.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.8"
+              Start="0,0"
+              End="0,69.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6310,7 +6350,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
           TopLeft="857,867">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6346,7 +6386,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
           TopLeft="856.266666666667,401.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6382,7 +6422,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
           TopLeft="646.666666666667,125.371428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6418,7 +6458,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
           TopLeft="828.457142857143,646.74285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6483,33 +6523,33 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.9809523809527,-100"
+              EndConnector="23.6476190476193,-99.6"
               Start="0,0"
-              End="41.9809523809527,-92.5">
+              End="23.6476190476193,-92.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-36.5940594059406" />
+                    End="0,-45.6050195763478" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-36.5940594059406"
-                    Point2="0,-40.5940594059406"
-                    Point3="4,-40.5940594059406" />
+                    Point1="0,-45.6050195763478"
+                    Point2="0,-49.6050195763478"
+                    Point3="4,-49.6050195763478" />
                   <mssgle:LineSegment
-                    End="37.9809523809527,-40.5940594059406" />
+                    End="19.6476190476193,-49.6050195763478" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.9809523809527,-40.5940594059406"
-                    Point2="41.9809523809527,-40.5940594059406"
-                    Point3="41.9809523809527,-44.5940594059406" />
+                    Point1="19.6476190476193,-49.6050195763478"
+                    Point2="23.6476190476193,-49.6050195763478"
+                    Point3="23.6476190476193,-53.6050195763478" />
                   <mssgle:LineSegment
-                    End="41.9809523809527,-92.5" />
+                    End="23.6476190476193,-92.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.2009105282737,-35.5940594059406,96.3827734375,11.609375"
+              BoundingBox="-36.3675771949404,-44.6050195763478,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6551,37 +6591,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
-          TopLeft="692.533333333333,125.371428571429">
+          TopLeft="692.8,125.771428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.0666666666667,69.028571428571"
+              EndConnector="65.3000000000001,68.628571428571"
               Start="0,0"
-              End="65.0666666666667,61.528571428571">
+              End="65.3000000000001,61.128571428571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.0616149068321" />
+                    End="0,23.8977932636468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.0616149068321"
-                    Point2="0,28.0616149068321"
-                    Point3="4,28.0616149068321" />
+                    Point1="0,23.8977932636468"
+                    Point2="0,27.8977932636468"
+                    Point3="4,27.8977932636468" />
                   <mssgle:LineSegment
-                    End="61.0666666666667,28.0616149068321" />
+                    End="61.3000000000001,27.8977932636468" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.0666666666667,28.0616149068321"
-                    Point2="65.0666666666667,28.0616149068321"
-                    Point3="65.0666666666667,32.0616149068321" />
+                    Point1="61.3000000000001,27.8977932636468"
+                    Point2="65.3000000000001,27.8977932636468"
+                    Point3="65.3000000000001,31.8977932636468" />
                   <mssgle:LineSegment
-                    End="65.0666666666667,61.528571428571" />
+                    End="65.3000000000001,61.128571428571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.6580533854167,33.0616149068321,96.3827734375,11.609375"
+              BoundingBox="-15.54138671875,32.8977932636467,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6881,39 +6921,50 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+          TopLeft="776.933333333333,236.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.5666666666666,123.142857142857"
+              Start="0,0"
+              End="99.5666666666666,115.642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.221393614542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.221393614542"
+                    Point2="0,50.221393614542"
+                    Point3="4,50.221393614542" />
+                  <mssgle:LineSegment
+                    End="95.5666666666666,50.221393614542" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.5666666666666,50.221393614542"
+                    Point2="99.5666666666666,50.221393614542"
+                    Point3="99.5666666666666,54.221393614542" />
+                  <mssgle:LineSegment
+                    End="99.5666666666666,115.642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM TipPopusta">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimTipPopusta]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Load To Fct\Lookup TipPopusta">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6954,7 +7005,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM JM">
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM TipPopusta">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -6964,30 +7015,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dim].[DimJedinicaMere]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup JM">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimJedinicaMere]</Value>
+          type="q3:string">[dim].[DimTipPopusta]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -7046,6 +7074,29 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup JM">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimJedinicaMere]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta">
     <Properties>
       <Property>
@@ -7078,6 +7129,29 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM JM">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimJedinicaMere]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -7147,13 +7221,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Staging From Raw File.Paths[Derived Column Output]"
-          TopLeft="420,231">
+          TopLeft="401,231">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.3,79.6"
+              EndConnector="145.3,79.6"
               Start="0,0"
-              End="126.3,72.1">
+              End="145.3,72.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -7164,13 +7238,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point2="0,39.8"
                     Point3="4,39.8" />
                   <mssgle:LineSegment
-                    End="122.3,39.8" />
+                    End="141.3,39.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="122.3,39.8"
-                    Point2="126.3,39.8"
-                    Point3="126.3,43.8" />
+                    Point1="141.3,39.8"
+                    Point2="145.3,39.8"
+                    Point3="145.3,43.8" />
                   <mssgle:LineSegment
-                    End="126.3,72.1" />
+                    End="145.3,72.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
