@@ -12,8 +12,8 @@
   DTS:ObjectName="DimIstovarnoMesto"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{5548BE3F-050F-4B98-9EE0-ED956037DDBB}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{04FFE312-A748-4DA5-A95B-8D453E7AD3E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -109,7 +109,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\IstovarnoMestoSource_2017-12-04.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\IstovarnoMestoSource_2017-12-05.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -170,14 +170,35 @@
           ReadOnlyVariables="User::StartSurrKey"
           ReadWriteVariables="User::NewStartSurrogateKey,User::SetSurrogateKey">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -566,35 +587,14 @@ namespace ST_6cac0e584f7a421e869ff682c429ddf9.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_6cac0e584f7a421e869ff682c429ddf9")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -826,7 +826,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.IstovarnoMesto;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].IstovarnoMesto;&#xA;&#xA;&#xA;&#xA;CREATE TABLE [current].[IstovarnoMesto](&#xA;&#x9;[IstovarnoMestoSifra] [int] NULL,&#xA;&#x9;[IstovarnoMestoSifraNadredjenog] [int] NULL,&#xA;&#x9;[IstovarnoMestoNaziv] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPIB] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoVrstaKomitenta] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoGeoX] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoGeoY] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoVrstaTransporta] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoRegionSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoRegionNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAreaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoAreaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTerenSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTerenNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKategorija] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoFormatSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoFormatNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAdresa] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPostanskiBroj] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMesto] [nvarchar](25) NULL,&#xA;&#x9;[IstovarnoMestoSifraMagacina] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMagacinOpis] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoSifraRute] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoNazivRute] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifra] int NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifraNaziv] [nvarchar](40) NULL,&#xA;&#x9;[KeyAccount] [nvarchar](7) NULL,&#xA;&#x9;[DTL] [nvarchar](7) NULL,&#xA;&#x9;[TT] [nvarchar](7) NULL,&#xA;&#x9;[IdeaRodaVP] [nvarchar](50) NULL,&#xA;&#x9;[DaniObilaska] [nvarchar](200) NULL,&#xA;&#x9;[POCStatus] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoPriceListTypeSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPriceListType] [nvarchar](50) NULL,&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL)&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="begin tran;&#xA;&#xA;drop table previous.IstovarnoMesto;&#xA;&#xA;&#xA;alter schema [previous] transfer [current].IstovarnoMesto;&#xA;&#xA;&#xA;&#xA;CREATE TABLE [current].[IstovarnoMesto](&#xA;&#x9;[IstovarnoMestoSifra] [int] NULL,&#xA;&#x9;[IstovarnoMestoSifraNadredjenog] [int] NULL,&#xA;&#x9;[IstovarnoMestoNaziv] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPIB] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoVrstaKomitenta] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoGeoX] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoGeoY] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoVrstaTransporta] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoRegionSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoRegionNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoSupervizorNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKomercijalistaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAreaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoAreaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoKanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipUgovoraNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTerenSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTerenNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPodkanalNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoKategorija] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoFormatSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoFormatNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoTipAdreseFakturisanjaNaziv] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoAdresa] [nvarchar](40) NULL,&#xA;&#x9;[IstovarnoMestoPostanskiBroj] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMesto] [nvarchar](25) NULL,&#xA;&#x9;[IstovarnoMestoSifraMagacina] [nvarchar](12) NULL,&#xA;&#x9;[IstovarnoMestoMagacinOpis] [nvarchar](100) NULL,&#xA;&#x9;[IstovarnoMestoSifraRute] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoNazivRute] [nvarchar](30) NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifra] int NULL,&#xA;&#x9;[IstovarnoMestoGrupnaSifraNaziv] [nvarchar](40) NULL,&#xA;&#x9;[KeyAccount] [nvarchar](7) NULL,&#xA;&#x9;[DTL] [nvarchar](7) NULL,&#xA;&#x9;[TT] [nvarchar](7) NULL,&#xA;&#x9;[IdeaRodaVP] [nvarchar](50) NULL,&#xA;&#x9;[DaniObilaska] [nvarchar](200) NULL,&#xA;&#x9;[POCStatus] [nvarchar](20) NULL,&#xA;&#x9;[IstovarnoMestoPriceListTypeSifra] [nvarchar](7) NULL,&#xA;&#x9;[IstovarnoMestoPriceListType] [nvarchar](50) NULL,&#xA;&#x9;[IstovarnoMestoJunior] nvarchar(7),&#xA;&#x9;[HashSCD1] [varchar](100) NULL,&#xA;&#x9;[HashSCD2] [varchar](100) NULL,&#xA;&#x9;[InferredMember] [bit] NULL)&#xA;&#xA;commit;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1382,6 +1382,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListType]"
                           name="PriceListType"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[junior]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[junior]"
+                          length="2"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[junior]"
+                          name="junior"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1622,6 +1632,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="30"
                           name="PriceListType" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].ExternalColumns[junior]"
+                          dataType="wstr"
+                          length="2"
+                          name="junior" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1759,6 +1774,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="30"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[komercijalistavrednost]"
                           name="komercijalistavrednost" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[junior]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[junior]"
+                          name="junior" />
                         <outputColumn
                           refId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Error Output].Columns[areavrednost]"
                           dataType="wstr"
@@ -2250,6 +2271,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           cachedLength="30"
                           cachedName="PriceListType"
                           lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[PriceListType]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Extract To Raw File\Raw File Destination.Inputs[Raw File Destination Input].Columns[junior]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="junior"
+                          lineageId="Package\Extract Stage\Extract To Raw File\IstovarnoMesto Source.Outputs[OLE DB Source Output].Columns[junior]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2785,6 +2812,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           cachedName="PriceListType"
                           externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListType]" />
+                        <inputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[junior]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="junior"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoJunior]"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[junior]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3031,6 +3065,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="50"
                           name="IstovarnoMestoPriceListType" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\current Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoJunior]"
+                          dataType="wstr"
+                          length="7"
+                          name="IstovarnoMestoJunior" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3420,6 +3459,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="30"
                           lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[PriceListType]"
                           name="PriceListType" />
+                        <outputColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[junior]"
+                          dataType="wstr"
+                          externalMetadataColumnId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[junior]"
+                          length="2"
+                          lineageId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].Columns[junior]"
+                          name="junior" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3660,6 +3706,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="30"
                           name="PriceListType" />
+                        <externalMetadataColumn
+                          refId="Package\Extract Stage\Load To Staging From Raw File\Raw File Source.Outputs[Raw File Source Output].ExternalColumns[junior]"
+                          dataType="wstr"
+                          length="2"
+                          name="junior" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -4674,6 +4725,7 @@ c.DaniObilaska as currDaniObilaska,
 c.Pocstatus as currPocStatus,
 c.IstovarnoMestoPriceListTypeSifra as currIstovarnoMestoPriceListTypeSifra,
 c.IstovarnoMestoPriceListType as currIstovarnoMestoPriceListType,
+c.IstovarnoMestoJunior as currIstovarnoMestoJunior,
 c.InferredMember as currInferredMember ,
 c.HashSCD2 as currHashSCD2 ,
 c.HashSCD1 as currHashSCD1 
@@ -5590,6 +5642,16 @@ c.HashSCD1 as currHashSCD1
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoPriceListType]"
                           name="currIstovarnoMestoPriceListType"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoJunior]"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]"
+                          name="currIstovarnoMestoJunior"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6030,6 +6092,11 @@ c.HashSCD1 as currHashSCD1
                           dataType="wstr"
                           length="50"
                           name="currIstovarnoMestoPriceListType" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].ExternalColumns[currIstovarnoMestoJunior]"
+                          dataType="wstr"
+                          length="7"
+                          name="currIstovarnoMestoJunior" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6543,6 +6610,12 @@ c.HashSCD1 as currHashSCD1
                           length="50"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoPriceListType]"
                           name="currIstovarnoMestoPriceListType" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoJunior]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currIstovarnoMestoJunior]"
+                          name="currIstovarnoMestoJunior" />
                         <outputColumn
                           refId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Error Output].Columns[currInferredMember]"
                           dataType="bool"
@@ -7417,6 +7490,13 @@ c.HashSCD1 as currHashSCD1
                           cachedName="currIstovarnoMestoPriceListType"
                           externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoPriceListType]"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]" />
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          externalMetadataColumnId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoJunior]"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -7659,6 +7739,11 @@ c.HashSCD1 as currHashSCD1
                           dataType="wstr"
                           length="50"
                           name="IstovarnoMestoPriceListType" />
+                        <externalMetadataColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\scd Istovarno Mesto.Inputs[OLE DB Destination Input].ExternalColumns[IstovarnoMestoJunior]"
+                          dataType="wstr"
+                          length="7"
+                          name="IstovarnoMestoJunior" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -8551,6 +8636,20 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 1].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9301,6 +9400,20 @@ c.HashSCD1 as currHashSCD1
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 2].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -10055,6 +10168,20 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 3].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10805,6 +10932,20 @@ c.HashSCD1 as currHashSCD1
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 4].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -11559,6 +11700,20 @@ c.HashSCD1 as currHashSCD1
                               name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[ActionReason]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Inputs[Union All Input 5].Columns[currIstovarnoMestoJunior]"
+                          cachedDataType="wstr"
+                          cachedLength="7"
+                          cachedName="currIstovarnoMestoJunior"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\CurrPrevStage.Outputs[OLE DB Source Output].Columns[currIstovarnoMestoJunior]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -11895,6 +12050,12 @@ c.HashSCD1 as currHashSCD1
                           length="50"
                           lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoPriceListType]"
                           name="currIstovarnoMestoPriceListType" />
+                        <outputColumn
+                          refId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]"
+                          dataType="wstr"
+                          length="7"
+                          lineageId="Package\Transform And Load\Load To IstovarnoMestoSCD\Union All.Outputs[Union All Output 1].Columns[currIstovarnoMestoJunior]"
+                          name="currIstovarnoMestoJunior" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -12210,7 +12371,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: DimIstovarnoMesto"
-              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      12/4/2017 10:02:29 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              DimIstovarnoMesto.&#xA;Time:                                      12/5/2017 12:29:10 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
