@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="123"
-  DTS:VersionGUID="{A442F32A-05AC-413E-8FFB-845D0E47E8D9}">
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{BB786078-FC62-43B4-A085-C22DAF49A0E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_122017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">9/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/1/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/1/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -94,7 +94,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_122017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -105,7 +105,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_112017.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\LE_SPV_122017.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -145,7 +145,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8">11</DTS:VariableValue>
+        DTS:DataType="8">12</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-11-24.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-12-07.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -221,7 +221,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20170901'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20171201'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -493,10 +493,11 @@
                           <outputColumns>
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[SPV]"
-                              dataType="r8"
+                              dataType="wstr"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[SPV]"
+                              length="255"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[SPV]"
                               name="SPV"
                               truncationRowDisposition="FailComponent" />
@@ -543,7 +544,8 @@
                             isUsed="True">
                             <externalMetadataColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[SPV]"
-                              dataType="r8"
+                              dataType="wstr"
+                              length="255"
                               name="SPV" />
                             <externalMetadataColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].ExternalColumns[ART]"
@@ -572,7 +574,8 @@
                           <outputColumns>
                             <outputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[SPV]"
-                              dataType="r8"
+                              dataType="wstr"
+                              length="255"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Error Output].Columns[SPV]"
                               name="SPV" />
                             <outputColumn
@@ -695,7 +698,8 @@
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[ART]" />
                             <inputColumn
                               refId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stg SupervizorBudzet.Inputs[OLE DB Destination Input].Columns[SPV]"
-                              cachedDataType="r8"
+                              cachedDataType="wstr"
+                              cachedLength="255"
                               cachedName="SPV"
                               externalMetadataColumnId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\stg SupervizorBudzet.Inputs[OLE DB Destination Input].ExternalColumns[SupervizorSifra]"
                               lineageId="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source.Outputs[Excel Source Output].Columns[SPV]" />
@@ -4181,7 +4185,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      11/24/2017 11:58:47 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      12/7/2017 11:44:34 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4697,33 +4701,33 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="139,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable\Excel Source"
-          TopLeft="413,107" />
+          TopLeft="480,126" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load Data From Excel To StageTable.Paths[Excel Source Output]"
-          TopLeft="482.5,149">
+          TopLeft="549.5,168">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5,180"
+              EndConnector="-26.5,161"
               Start="0,0"
-              End="40.5,172.5">
+              End="-26.5,153.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,86" />
+                    End="0,76.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,86"
-                    Point2="0,90"
-                    Point3="4,90" />
+                    Point1="0,76.5"
+                    Point2="0,80.5"
+                    Point3="-4,80.5" />
                   <mssgle:LineSegment
-                    End="36.5,90" />
+                    End="-22.5,80.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.5,90"
-                    Point2="40.5,90"
-                    Point3="40.5,94" />
+                    Point1="-22.5,80.5"
+                    Point2="-26.5,80.5"
+                    Point3="-26.5,84.5" />
                   <mssgle:LineSegment
-                    End="40.5,172.5" />
+                    End="-26.5,153.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4869,9 +4873,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4899,9 +4901,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4935,9 +4935,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4971,9 +4969,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4995,9 +4991,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5055,9 +5049,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5272,7 +5264,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="111.391946614583,-71.3898858075041,96.3827734375,11.609375"
+              BoundingBox="111.391946614584,-71.3898858075041,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5379,9 +5371,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5415,9 +5405,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5451,9 +5439,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5487,9 +5473,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

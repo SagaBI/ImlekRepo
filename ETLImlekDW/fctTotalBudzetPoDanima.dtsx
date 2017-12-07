@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTotalBudzetPoDanima"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="140"
-  DTS:VersionGUID="{9E85CA4A-7508-43E8-B932-5EDB43383626}">
+  DTS:VersionBuild="141"
+  DTS:VersionGUID="{C7C78A91-FA98-43B6-B4F0-F42BE3B77D3C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/1/2017 3:13:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/1/2018 3:13:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/31/2017 8:32:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/1/2018 8:32:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -181,7 +181,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\TotalBudzetPoDanima_Source_2017-11-24.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\TotalBudzetPoDanima_Source_2017-12-07.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20171001'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20181201'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -979,7 +979,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTotalBudzetPoDanima"
-              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      11/24/2017 12:00:16 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTotalBudzetPoDanima.&#xA;Time:                                      12/7/2017 11:48:58 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
