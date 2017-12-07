@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="129"
-  DTS:VersionGUID="{BB786078-FC62-43B4-A085-C22DAF49A0E9}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{E509DC14-E862-4F27-B1A2-5222BFB42490}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -58,7 +58,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Arhiva">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Saga\Arhiva</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\Arhiva\Budzeti</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-12-07.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Source_2017-12-08.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -991,7 +991,7 @@
 	(select max(OU2.StartDate) from  synTblImlekDWSupervizor OU2 where OU2.SupervizorSifra = p.SupervizorSifra ) as MaxSupervizorStartDate,
    [VolumenSecJM]
 from [stg].[BudzetSupervizorStage] p left join
-synTblImlekDWSupervizor s on (p.SupervizorSifra = s.SupervizorSifra and mesec&gt;=month(s.StartDate) and mesec &lt;month(s.enddate) and godina &gt;=year(s.startdate) and godina &lt; year (s.enddate))</property>
+synTblImlekDWSupervizor s on (p.SupervizorSifra = s.SupervizorSifra and mesec&gt;=month(s.StartDate) and mesec &lt;=month(s.enddate) and godina &gt;=year(s.startdate) and godina &lt;= year (s.enddate))</property>
                         <property
                           dataType="System.String"
                           description="The variable that contains the SQL command to be executed."
@@ -4185,7 +4185,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="sanja.vukovic@saga.rs"
               SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      12/7/2017 11:44:34 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      12/8/2017 12:09:53 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
