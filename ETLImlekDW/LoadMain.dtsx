@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadMain"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{CBFD10E0-5B9D-4C72-BBA6-122CEAEA55F0}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{221A7B06-7829-44E1-9F61-B6B8EB24EB89}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -289,9 +289,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="sanja.vukovic@saga.rs"
-              SendMailTask:To="sanja.vukovic@saga.rs"
+              SendMailTask:To="ana.kovacevic@saga.rs"
               SendMailTask:Subject="SSIS Error: LoadMain"
-              SendMailTask:MessageSource="Package:                              LoadMain.&#xA;Time:                                      9/1/2017 11:58:31 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              LoadMain.&#xA;Time:                                      12/18/2017 10:53:44 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -367,19 +367,19 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\Load Main\LoadGroupDimension"
-          TopLeft="95.4285748248198,121.270589453621" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Load Main\LoadGroupFct"
-          TopLeft="121.714289558177,210.588237765091" />
-        <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\Load Main\Get ExtractDate"
           TopLeft="84.1523860775698,34.5725511874294" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="178,42"
+          Id="Package\Load Main\LoadGroupDimension"
+          TopLeft="95.4285748248198,121.270589453621" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Load Main\LoadGroupFct"
+          TopLeft="121.714289558177,210.588237765091" />
+        <NodeLayout
+          Size="190,42"
           Id="Package\Load Main\Set Last Suceeded Date"
           TopLeft="92.5714319190201,359.247063379387" />
         <EdgeLayout
@@ -491,8 +491,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="424.8,505.6"
-          Size="424.8,548.8"
+          PanelSize="425,506"
+          Size="425,549"
           Id="Package\Load Main"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>
@@ -502,13 +502,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package.EventHandlers[OnError]\Send email if Task Fails"
           TopLeft="493.6,292.8" />
         <NodeLayout
-          Size="180,41.6"
+          Size="180,42"
           Id="Package.EventHandlers[OnError]\SQL LogPackageError"
           TopLeft="417.6,116" />
         <EdgeLayout
@@ -542,9 +542,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
