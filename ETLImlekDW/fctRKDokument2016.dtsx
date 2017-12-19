@@ -12,8 +12,8 @@
   DTS:ObjectName="fctRKDokument2016"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="263"
-  DTS:VersionGUID="{BCCDCDE9-FB75-4046-BC9A-9D13E5BB9992}">
+  DTS:VersionBuild="264"
+  DTS:VersionGUID="{6C4D7545-FF2C-4D37-A086-860AD790F3F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -130,7 +130,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\RKDokumentSource_2017-11-26.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\RKDokumentSource_2017-12-18.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6796,22 +6796,22 @@ synTblImlekDWIstovarnoMesto im on ((p.Sifra_Kupca = im.IstovarnoMestoSifra) and 
                   name="Conditional Split Default Output"
                   startId="Package\Load To Fct\Load To Fct\Check Matched IstovarnoMesto.Outputs[Conditional Split Default Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output3]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
                   endId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load To Fct\Load To Fct\Add StartDate.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
                   endId="Package\Load To Fct\Load To Fct\Insert IM Tip Ordera.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load To Fct\Load To Fct\Add StartDate TipOrdera.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
                   endId="Package\Load To Fct\Load To Fct\Insert IM TipNaloga.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load To Fct\Load To Fct\Add StartDate TipNaloga.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output3]"
                   endId="Package\Load To Fct\Load To Fct\Insert IM valuta.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Outputs[Derived Column Output]" />
@@ -6826,50 +6826,50 @@ synTblImlekDWIstovarnoMesto im on ((p.Sifra_Kupca = im.IstovarnoMestoSifra) and 
                   name="InferredMemberIstovarnoMesto"
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
+                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Naloga.Outputs[Lookup Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Tip Ordera.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Fakture.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera.Outputs[Lookup Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Tip Ordera.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Tip Ordera.Inputs[Lookup Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Outputs[Lookup Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
-                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
                   endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM tip Naloga.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Fakture.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Naloga.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipOrdera.Inputs[Derived Column Input]"
@@ -6896,25 +6896,25 @@ synTblImlekDWIstovarnoMesto im on ((p.Sifra_Kupca = im.IstovarnoMestoSifra) and 
                   name="NonMatchedIstovarnoMesto"
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[NonMatchedIstovarnoMesto]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera.Inputs[Lookup Input]"
-                  name="OLE DB Command Output"
-                  startId="Package\Load To Fct\Load To Fct\Insert IM Tip Ordera.Outputs[OLE DB Command Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup IM tip Naloga.Inputs[Lookup Input]"
-                  name="OLE DB Command Output"
-                  startId="Package\Load To Fct\Load To Fct\Insert IM TipNaloga.Outputs[OLE DB Command Output]" />
-                <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output3]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\Insert IM valuta.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
                   endId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup IM valuta.Inputs[Lookup Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
-                  startId="Package\Load To Fct\Load To Fct\Insert IM valuta.Outputs[OLE DB Command Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Insert IM Tip Ordera.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup IM tip Naloga.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\Insert IM TipNaloga.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Source Output]"
                   endId="Package\Load To Fct\Load To Fct\Check Matched IstovarnoMesto.Inputs[Conditional Split Input]"
@@ -6922,6 +6922,11 @@ synTblImlekDWIstovarnoMesto im on ((p.Sifra_Kupca = im.IstovarnoMestoSifra) and 
                   startId="Package\Load To Fct\Load To Fct\RK dokument Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\FctRKDokument.Inputs[OLE DB Destination Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
@@ -6931,17 +6936,12 @@ synTblImlekDWIstovarnoMesto im on ((p.Sifra_Kupca = im.IstovarnoMestoSifra) and 
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Tip Naloga.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 14]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All 4.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Valuta.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
@@ -7057,70 +7057,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <DTS:ObjectData>
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
-              SendMailTask:From="sanja.vukovic@saga.rs"
-              SendMailTask:To="ana.kovacevic@saga.rs"
+              SendMailTask:From="reporting@imlek.rs"
+              SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctRKDokument2016"
-              SendMailTask:MessageSource="Package:                              fctRKDokument2016.&#xA;Time:                                      11/26/2017 5:34:28 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\SQL LogPackageError"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{68B9AD02-3C22-43FA-AE7B-525FCF34229C}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL LogPackageError"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-              SQLTask:SqlStatementSource="exec dbo.insLogPackageError_Insert&#xA;@pPackageName = ?&#xA;,@pSourceName = ?&#xA;,@pSourceID = ?&#xA;,@pErrorCode = ?&#xA;,@pErrorDescription = ?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::SourceName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::SourceID"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="System::ErrorCode"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
+              SendMailTask:MessageSource="Package:                              fctRKDokument2016.&#xA;Time:                                      12/18/2017 2:15:48 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{B13DC44C-6B63-4EE9-930E-71A525D71D00}"
-          DTS:From="Package.EventHandlers[OnError]\SQL LogPackageError"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package.EventHandlers[OnError]\Send email if Task Fails" />
-      </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -7331,51 +7274,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="189,42"
           Id="Package.EventHandlers[OnError]\Send email if Task Fails"
           TopLeft="493.6,292.8" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package.EventHandlers[OnError]\SQL LogPackageError"
-          TopLeft="417.6,116" />
-        <EdgeLayout
-          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="507.6,157.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60.4,135.2"
-              Start="0,0"
-              End="60.4,127.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.6"
-                    Point2="0,67.6"
-                    Point3="4,67.6" />
-                  <mssgle:LineSegment
-                    End="56.4,67.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56.4,67.6"
-                    Point2="60.4,67.6"
-                    Point3="60.4,71.6" />
-                  <mssgle:LineSegment
-                    End="60.4,127.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -7591,7 +7494,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Lookup IM valuta"
           TopLeft="928,350" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="924.333333333333,994">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7625,7 +7528,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 14]"
           TopLeft="925,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7693,7 +7596,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
           TopLeft="936,799">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7727,7 +7630,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
           TopLeft="652.857142857143,694.37142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7761,7 +7664,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output3]"
           TopLeft="965.428571428572,292.800000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7795,7 +7698,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
           TopLeft="554.857142857143,1044.0380952381">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7937,7 +7840,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
           TopLeft="1084,589">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7973,7 +7876,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output6]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
           TopLeft="795,1068">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8225,7 +8128,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output3]"
           TopLeft="1004.42857142857,223.228571428572">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8259,7 +8162,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
           TopLeft="516.357142857143,976.038095238097">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8293,7 +8196,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
           TopLeft="703.857142857143,615.37142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8469,7 +8372,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
           TopLeft="365.928571428572,346.942857142858">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8503,7 +8406,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
           TopLeft="642.666666666667,380">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8571,7 +8474,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 14]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
           TopLeft="343,241">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8605,7 +8508,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output7]"
           TopLeft="686,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8680,29 +8583,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimTipDokumenta]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Load To Fct\FctRKDokument">
     <Properties>
       <Property>
@@ -8712,14 +8592,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\RK dokument Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8770,7 +8642,15 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum Fakture">
+    design-time-name="Package\Load To Fct\Load To Fct\RK dokument Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum GK">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8781,29 +8661,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dim].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup Tip Ordera">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimTipDokumenta]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8839,7 +8696,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum GK">
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Tip Ordera">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8849,7 +8706,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dim].[DimDate]</Value>
+          type="q3:string">[dim].[DimTipDokumenta]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8873,6 +8730,52 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dim].[DimValuta]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum Fakture">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimTipDokumenta]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

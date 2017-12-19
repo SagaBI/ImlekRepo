@@ -12,8 +12,8 @@
   DTS:ObjectName="fctArtikliInovacije"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="108"
-  DTS:VersionGUID="{D905AEE6-2296-4786-96C7-C11B9FCBF03C}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{0E427417-ABDD-4550-8810-1DEDD5489AE1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/17/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/19/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">10/18/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctArtikliInovacije '20171218','20171219'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctArtikliInovacije '20171017','20171018'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -813,19 +813,19 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           cachedDataType="i4"
                           cachedName="ArtikalID"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input].ExternalColumns[ArtikalID]"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]" />
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]" />
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input].Columns[DatumOdID]"
                           cachedDataType="i4"
                           cachedName="DatumOdID"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input].ExternalColumns[DatumOdID]"
-                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output].Columns[DatumOdID]" />
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOdID]" />
                         <inputColumn
                           refId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input].Columns[DatumDoID]"
                           cachedDataType="i4"
                           cachedName="DatumDoID"
                           externalMetadataColumnId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input].ExternalColumns[DatumDoID]"
-                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup Match Output].Columns[DatumDoID]" />
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDoID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -866,6 +866,196 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                           refId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Insert DimDateDo"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert DimDateDo"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec dim.insDimDate_Insert ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input].ExternalColumns[@DateCounter]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input].ExternalColumns[@DateCounter]"
+                          dataType="dbDate"
+                          name="@DateCounter">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Insert DimDateOd"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Insert DimDateOd"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec dim.insDimDate_Insert ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input].ExternalColumns[@DateCounter]"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumOd]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input].ExternalColumns[@DateCounter]"
+                          dataType="dbDate"
+                          name="@DateCounter">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1181,7 +1371,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                       name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">0</property>
+                      typeConverter="LookupNoMatchBehavior">1</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1202,7 +1392,7 @@ where [refTable].[Date] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumDo]};</property>
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1229,7 +1419,7 @@ where [refTable].[Date] = ?</property>
                           refId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Inputs[Lookup Input].Columns[DatumDo]"
                           cachedDataType="dbDate"
                           cachedName="DatumDo"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumDo]">
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1249,7 +1439,6 @@ where [refTable].[Date] = ?</property>
                     <output
                       refId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
-                      errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Inputs[Lookup Input]">
@@ -1304,6 +1493,164 @@ where [refTable].[Date] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup DatumDo_IM"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateDescription" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNameInWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInWeekIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInMonthIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekEndingDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberInYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearAndMonth" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearQuarter" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="HolidayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WorkDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WeekDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ShortDay" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Date</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output].Columns[DatumDoID_IM]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output].Columns[DatumDoID_IM]"
+                          name="DatumDoID_IM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Load To Fct\Load To Fct\Lookup DatumOd"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1339,7 +1686,7 @@ where [refTable].[Date] = ?</property>
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                       name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">0</property>
+                      typeConverter="LookupNoMatchBehavior">1</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1407,7 +1754,6 @@ where [refTable].[Date] = ?</property>
                     <output
                       refId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
-                      errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Inputs[Lookup Input]">
@@ -1454,6 +1800,164 @@ where [refTable].[Date] = ?</property>
                           refId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup DatumOd_IM"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[DimDate]) [refTable]
+where [refTable].[Date] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateDescription" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNameInWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInWeekIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastDayInMonthIndicator" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekEndingDate" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberInYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberInYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearAndMonth" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearQuarter" dataType="DT_STR" length="7" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Year" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="HolidayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WorkDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WeekDayIndicator" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ShortDay" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumOd]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Connections[OleDbConnection]"
+                      connectionManagerID="{1A283484-7B52-44E5-9378-EBF93319CDA5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DestinatinationConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumOd]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Date</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output].Columns[DatumOdID_IM]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output].Columns[DatumOdID_IM]"
+                          name="DatumOdID_IM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1615,6 +2119,435 @@ where [refTable].[SifraArtikla] = ?</property>
                           lineageId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumOd]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumDo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1].Columns[DatumOdID_IM]"
+                          cachedDataType="i4"
+                          cachedName="DatumOdID_IM"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output].Columns[DatumOdID_IM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumOd]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1].Columns[DatumDo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2].Columns[DatumOdID]"
+                          cachedDataType="i4"
+                          cachedName="DatumOdID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output].Columns[DatumOdID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          name="sifraartikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          name="ArtikalID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]"
+                          name="DatumOd" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]"
+                          name="DatumDo" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]"
+                          name="DatumOdID" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Union All 1"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All 1"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOd]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDo]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[DatumOdID]"
+                          cachedDataType="i4"
+                          cachedName="DatumOdID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOdID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[DatumDoID_IM]"
+                          cachedDataType="i4"
+                          cachedName="DatumDoID_IM"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output].Columns[DatumDoID_IM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDoID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[ArtikalID]"
+                          cachedDataType="i4"
+                          cachedName="ArtikalID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[ArtikalID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[DatumOd]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumOd"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOd]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOd]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[DatumDo]"
+                          cachedDataType="dbDate"
+                          cachedName="DatumDo"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumDo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDo]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[DatumOdID]"
+                          cachedDataType="i4"
+                          cachedName="DatumOdID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[DatumOdID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOdID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2].Columns[DatumDoID]"
+                          cachedDataType="i4"
+                          cachedName="DatumDoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup Match Output].Columns[DatumDoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDoID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          name="sifraartikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[ArtikalID]"
+                          name="ArtikalID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOd]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOd]"
+                          name="DatumOd" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDo]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDo]"
+                          name="DatumDo" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOdID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumOdID]"
+                          name="DatumOdID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDoID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[DatumDoID]"
+                          name="DatumDoID" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -1807,20 +2740,50 @@ where [refTable].[SifraArtikla] = ?</property>
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Inputs[Lookup Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
@@ -1836,6 +2799,16 @@ where [refTable].[SifraArtikla] = ?</property>
                   endId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Inputs[Lookup Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+                  endId="Package\Load To Fct\Load To Fct\FctArtikliInovacije.Inputs[OLE DB Destination Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2193,70 +3166,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <DTS:ObjectData>
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
-              SendMailTask:From="sanja.vukovic@saga.rs"
-              SendMailTask:To="ana.kovacevic@saga.rs"
+              SendMailTask:From="reporting@imlek.rs"
+              SendMailTask:To="sanja.vukovic@saga.rs;miljan.danilovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctArtikliInovacije"
-              SendMailTask:MessageSource="Package:                              fctArtikliInovacije.&#xA;Time:                                      12/18/2017 10:41:29 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\SQL LogPackageError"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8A626473-6526-4A7D-B127-4B0E094B5108}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL LogPackageError"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
-              SQLTask:SqlStatementSource="exec dbo.insLogPackageError_Insert&#xA;@pPackageName = ?&#xA;,@pSourceName = ?&#xA;,@pSourceID = ?&#xA;,@pErrorCode = ?&#xA;,@pErrorDescription = ?&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::SourceName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::SourceID"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="System::ErrorCode"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
+              SendMailTask:MessageSource="Package:                              fctArtikliInovacije.&#xA;Time:                                      12/18/2017 2:59:13 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{A81CE06A-50D0-4381-8756-D4E59A54555A}"
-          DTS:From="Package.EventHandlers[OnError]\SQL LogPackageError"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package.EventHandlers[OnError]\Send email if Task Fails" />
-      </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -2425,51 +3341,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package.EventHandlers[OnError]\Send email if Task Fails"
           TopLeft="493.6,292.8" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package.EventHandlers[OnError]\SQL LogPackageError"
-          TopLeft="417.6,116" />
-        <EdgeLayout
-          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="507.6,157.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60.4,135.2"
-              Start="0,0"
-              End="60.4,127.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63.6"
-                    Point2="0,67.6"
-                    Point3="4,67.6" />
-                  <mssgle:LineSegment
-                    End="56.4,67.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56.4,67.6"
-                    Point2="60.4,67.6"
-                    Point3="60.4,71.6" />
-                  <mssgle:LineSegment
-                    End="60.4,127.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -2589,7 +3465,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="161,42"
           Id="Package\Load To Fct\Load To Fct\Lookup DatumOd"
-          TopLeft="874,381" />
+          TopLeft="875,381" />
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Load To Fct\Union All 2"
@@ -2597,11 +3473,11 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="161,42"
           Id="Package\Load To Fct\Load To Fct\Lookup DatumDo"
-          TopLeft="718,522" />
+          TopLeft="813,578" />
         <NodeLayout
           Size="162,42"
           Id="Package\Load To Fct\Load To Fct\FctArtikliInovacije"
-          TopLeft="321.4,568.4" />
+          TopLeft="727.4,780.4" />
         <NodeLayout
           Size="178,42"
           Id="Package\Load To Fct\Load To Fct\Add StartDate Artikal"
@@ -2642,9 +3518,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="79.7666666666665,163"
+              EndConnector="80.7666666666667,163"
               Start="0,0"
-              End="79.7666666666665,155.5">
+              End="80.7666666666667,155.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2655,13 +3531,13 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point2="0,66.3890577507598"
                     Point3="4,66.3890577507598" />
                   <mssgle:LineSegment
-                    End="75.7666666666665,66.3890577507598" />
+                    End="76.7666666666667,66.3890577507598" />
                   <mssgle:CubicBezierSegment
-                    Point1="75.7666666666665,66.3890577507598"
-                    Point2="79.7666666666665,66.3890577507598"
-                    Point3="79.7666666666665,70.3890577507598" />
+                    Point1="76.7666666666667,66.3890577507598"
+                    Point2="80.7666666666667,66.3890577507598"
+                    Point3="80.7666666666667,70.3890577507598" />
                   <mssgle:LineSegment
-                    End="79.7666666666665,155.5" />
+                    End="80.7666666666667,155.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2775,78 +3651,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="718,543">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-234.6,46.4"
-              Start="0,0"
-              End="-227.1,46.4">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-113.3,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-113.3,0"
-                    Point2="-117.3,0"
-                    Point3="-117.3,4" />
-                  <mssgle:LineSegment
-                    End="-117.3,42.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-117.3,42.4"
-                    Point2="-117.3,46.4"
-                    Point3="-121.3,46.4" />
-                  <mssgle:LineSegment
-                    End="-227.1,46.4" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-174.3600390625,-22,114.120078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="954.5,423">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-180,99"
-              Start="0,0"
-              End="-180,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.5"
-                    Point2="0,49.5"
-                    Point3="-4,49.5" />
-                  <mssgle:LineSegment
-                    End="-176,49.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-176,49.5"
-                    Point2="-180,49.5"
-                    Point3="-180,53.5" />
-                  <mssgle:LineSegment
-                    End="-180,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-138.19138671875,54.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
           TopLeft="745,266">
           <EdgeLayout.Curve>
@@ -2918,6 +3722,376 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Load To Fct\Load To Fct\Insert DimDateOd"
+          TopLeft="601,360" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          TopLeft="875,402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110,-21"
+              Start="0,0"
+              End="-102.5,-21">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51,0"
+                    Point2="-55,0"
+                    Point3="-55,-4" />
+                  <mssgle:LineSegment
+                    End="-55,-17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55,-17"
+                    Point2="-55,-21"
+                    Point3="-59,-21" />
+                  <mssgle:LineSegment
+                    End="-102.5,-21" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-110.80638671875,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM"
+          TopLeft="514,448" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+          TopLeft="683,402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.5,46"
+              Start="0,0"
+              End="-79.5,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="-4,23" />
+                  <mssgle:LineSegment
+                    End="-75.5,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.5,23"
+                    Point2="-79.5,23"
+                    Point3="-79.5,27" />
+                  <mssgle:LineSegment
+                    End="-79.5,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load To Fct\Load To Fct\Union All"
+          TopLeft="771,468" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          TopLeft="693,469">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78,20"
+              Start="0,0"
+              End="70.5,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35,0"
+                    Point2="39,0"
+                    Point3="39,4" />
+                  <mssgle:LineSegment
+                    End="39,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39,16"
+                    Point2="39,20"
+                    Point3="43,20" />
+                  <mssgle:LineSegment
+                    End="70.5,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-9.19138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          TopLeft="955.5,423">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124,45"
+              Start="0,0"
+              End="-124,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-120,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-120,22.5"
+                    Point2="-124,22.5"
+                    Point3="-124,26.5" />
+                  <mssgle:LineSegment
+                    End="-124,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-110.19138671875,27.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          TopLeft="831.5,510">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62,68"
+              Start="0,0"
+              End="62,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="58,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58,34"
+                    Point2="62,34"
+                    Point3="62,38" />
+                  <mssgle:LineSegment
+                    End="62,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Load To Fct\Load To Fct\Insert DimDateDo"
+          TopLeft="544,537" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+          TopLeft="813,599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105,-41"
+              Start="0,0"
+              End="-97.5,-41">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,0"
+                    Point2="-52.5,0"
+                    Point3="-52.5,-4" />
+                  <mssgle:LineSegment
+                    End="-52.5,-37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52.5,-37"
+                    Point2="-52.5,-41"
+                    Point3="-56.5,-41" />
+                  <mssgle:LineSegment
+                    End="-97.5,-41" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.30638671875,1,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM"
+          TopLeft="445,621" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+          TopLeft="626,579">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.5,42"
+              Start="0,0"
+              End="-91.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-87.5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-87.5,21"
+                    Point2="-91.5,21"
+                    Point3="-91.5,25" />
+                  <mssgle:LineSegment
+                    End="-91.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Load To Fct\Union All 1"
+          TopLeft="638,681" />
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="624,642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,39"
+              Start="0,0"
+              End="79,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75,0"
+                    Point2="79,0"
+                    Point3="79,4" />
+                  <mssgle:LineSegment
+                    End="79,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="30.80861328125,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+          TopLeft="893.5,620">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-170.166666666667,61"
+              Start="0,0"
+              End="-170.166666666667,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1550151975684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.1550151975684"
+                    Point2="0,36.1550151975684"
+                    Point3="-4,36.1550151975684" />
+                  <mssgle:LineSegment
+                    End="-166.166666666667,36.1550151975684" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-166.166666666667,36.1550151975684"
+                    Point2="-170.166666666667,36.1550151975684"
+                    Point3="-170.166666666667,40.1550151975684" />
+                  <mssgle:LineSegment
+                    End="-170.166666666667,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.274720052083,41.1550151975684,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+          TopLeft="703,723">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.4,57.4"
+              Start="0,0"
+              End="105.4,49.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7"
+                    Point2="0,28.7"
+                    Point3="4,28.7" />
+                  <mssgle:LineSegment
+                    End="101.4,28.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.4,28.7"
+                    Point2="105.4,28.7"
+                    Point3="105.4,32.7" />
+                  <mssgle:LineSegment
+                    End="105.4,49.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2963,7 +4137,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2986,7 +4160,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2996,7 +4170,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3101,6 +4275,52 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
