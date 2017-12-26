@@ -12,8 +12,8 @@
   DTS:ObjectName="fctTroskovnikMagacina"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="182"
-  DTS:VersionGUID="{07B9673D-DD46-4851-B8D8-F9C6322C0434}">
+  DTS:VersionBuild="209"
+  DTS:VersionGUID="{E7BF91AE-43BC-435A-B27A-644CFBD62DE4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">11/11/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">12/26/2017 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\Bgt_KA_Source_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\RawFiles\Bgt_KA_Source_2017-12-25.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -248,7 +248,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20171111'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20171226'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -3194,7 +3194,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctTroskovnikMagacina"
-              SendMailTask:MessageSource="Package:                              fctTroskovnikMagacina.&#xA;Time:                                      12/18/2017 2:16:45 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctTroskovnikMagacina.&#xA;Time:                                      12/25/2017 9:54:43 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
