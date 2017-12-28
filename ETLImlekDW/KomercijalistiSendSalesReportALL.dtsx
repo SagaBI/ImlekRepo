@@ -12,8 +12,8 @@
   DTS:ObjectName="KomercijalistiSendSalesReportALL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="134"
-  DTS:VersionGUID="{D3AEF5CB-C9D9-4E85-80CA-8AFEC908098C}">
+  DTS:VersionBuild="136"
+  DTS:VersionGUID="{D0A599B1-FF0B-4375-BDED-6EF3C745C927}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -115,14 +115,35 @@
           Language="CSharp"
           ReadOnlyVariables="User::Path,User::RetentionNumOfDays">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2bbd87e1b3bd452fa49578f1df058f31")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2bbd87e1b3bd452fa49578f1df058f31")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="ST_2bbd87e1b3bd452fa49578f1df058f31.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -504,35 +525,14 @@ namespace ST_2bbd87e1b3bd452fa49578f1df058f31.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_2bbd87e1b3bd452fa49578f1df058f31")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_2bbd87e1b3bd452fa49578f1df058f31")]
-[assembly: AssemblyCopyright("Copyright @  2017")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1384,11 +1384,11 @@ RIGHT("0" + (DT_STR, 2, 1252) DATEPART("dd" , GETDATE()), 2) + "-" + RIGHT("0" +
         <SendMailTask:SendMailTaskData
           SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
           SendMailTask:From="reporting@imlek.rs"
-          SendMailTask:To="Jelena.Pejovic@imlek.rs;Ana.Avramovic@imlek.rs;Bisa.Cukovic@imlek.rs;Jelena.Savkovic@imlek.rs;Olivera.Radunovic@imlek.rs;Sladjana.Milojevic@imlek.rs;Snezana.Kapuran@imlek.rs;Vera.Lalosevic@imlek.rs;Violeta.Cubanovic@imlek.rs"
-          SendMailTask:Subject="MTD prodaja izvestaj komercijalistiALL na dan 26-12-2017"
+          SendMailTask:To="Jelena.Pejovic@imlek.rs;Snezana.Kapuran@imlek.rs;Jelena.Savkovic@imlek.rs;Olivera.Radunovic@imlek.rs;Sladjana.Milojevic@imlek.rs;Ana.Avramovic@imlek.rs"
+          SendMailTask:Subject="MTD prodaja izvestaj komercijalistiALL na dan 27-12-2017"
           SendMailTask:MessageSource="Postovani, U prilogu je izvestaj o prodaji za sve komercijaliste." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
           <SendMailTask:Attachments
-            SendMailTask:FileName="\\tabprod\Izvestaji komercijalisti\ImlekKomercijalistiSalesReportALL_20171225.xls" />
+            SendMailTask:FileName="\\tabprod\Izvestaji komercijalisti\ImlekKomercijalistiSalesReportALL_20171226.xls" />
         </SendMailTask:SendMailTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1459,7 +1459,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: KomercijalistiSendSalesReportALL"
-              SendMailTask:MessageSource="Package:                              KomercijalistiSendSalesReportALL.&#xA;Time:                                      26.12.2017. 10.27.05.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              KomercijalistiSendSalesReportALL.&#xA;Time:                                      27.12.2017. 16.16.37.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
