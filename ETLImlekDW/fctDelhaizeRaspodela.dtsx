@@ -12,8 +12,8 @@
   DTS:ObjectName="fctDelhaizeRaspodela"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="391"
-  DTS:VersionGUID="{41DC571E-30D1-40CE-9DF4-E762AC7FDADC}">
+  DTS:VersionBuild="395"
+  DTS:VersionGUID="{9CCF04BF-BC20-4F72-B0EA-154F9F9892F2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/1/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/1/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/1/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/2/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\DelhaizeRaspodelaSource_2017-12-23.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\DelhaizeRaspodelaSource_2018-01-15.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctDelhaizeRaspodelaTest '20171201'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctDelhaizeRaspodelaTest '20180101'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -696,6 +696,79 @@
                           refId="Package\Load To Fct\Load To Fct\Add StartDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Add StartDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Add StartDate Acting"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add StartDate Acting"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output].Columns[IstovarnoMestoStartDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output].Columns[IstovarnoMestoStartDate]"
+                          name="IstovarnoMestoStartDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::ExtractDateFrom]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::ExtractDateFrom]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1423,6 +1496,152 @@
                           refId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="InsertIstovarnoMestoActingInfMember"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec dbo.insDimIstovarnoMesto_InsertActingInferredMember ?,?,?,?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Connections[OleDbConnection]"
+                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].Columns[IstovarnoMestoSifra]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoSifra"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pIstovarnoMestoSifra]"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].Columns[IstovarnoMestoStartDate]"
+                          cachedDataType="date"
+                          cachedName="IstovarnoMestoStartDate"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output].Columns[IstovarnoMestoStartDate]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].Columns[MaxIMStartDate]"
+                          cachedDataType="dbDate"
+                          cachedName="MaxIMStartDate"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pMaxIMStartDate]"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[MaxIMStartDate]" />
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].Columns[datum]"
+                          cachedDataType="dbDate"
+                          cachedName="datum"
+                          externalMetadataColumnId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pDate]"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[datum]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pIstovarnoMestoSifra]"
+                          dataType="i4"
+                          name="@pIstovarnoMestoSifra">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pExtractDate]"
+                          dataType="dbDate"
+                          name="@pExtractDate">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pMaxIMStartDate]"
+                          dataType="dbDate"
+                          name="@pMaxIMStartDate">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input].ExternalColumns[@pDate]"
+                          dataType="dbDate"
+                          name="@pDate">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2168,6 +2387,180 @@ where [refTable].[SifraArtikla] = ?</property>
                           refId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Lookup IMAct"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup IMAct"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [map].[IstovarnoMestoMappingInferredMember]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [map].[IstovarnoMestoMappingInferredMember]) [refTable]
+where [refTable].[IstovarnoMestoSifra] = ? and [refTable].[StartDate] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IstovarnoMestoID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IstovarnoMestoSifra" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StartDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]};#{Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[datum]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Connections[OleDbConnection]"
+                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input].Columns[IstovarnoMestoSifra]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">IstovarnoMestoSifra</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input].Columns[datum]"
+                          cachedDataType="dbDate"
+                          cachedName="datum"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[datum]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">StartDate</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Match Output].Columns[IMAct_IstovarnoMestoID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Match Output].Columns[IMAct_IstovarnoMestoID]"
+                          name="IMAct_IstovarnoMestoID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">IstovarnoMestoID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2976,180 +3369,6 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   version="1">
                   <inputs>
                     <input
-                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                      name="Union All Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[IstovarnoMestoSifra]"
-                          cachedDataType="i4"
-                          cachedName="IstovarnoMestoSifra"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[VolumenSecJM]"
-                          cachedDataType="numeric"
-                          cachedName="VolumenSecJM"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[VolumenSecJM]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[startdate]"
-                          cachedDataType="dbDate"
-                          cachedName="startdate"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[startdate]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[startdate]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[enddate]"
-                          cachedDataType="dbDate"
-                          cachedName="enddate"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[enddate]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[enddate]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[MaxIMStartDate]"
-                          cachedDataType="dbDate"
-                          cachedName="MaxIMStartDate"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[MaxIMStartDate]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[MaxIMStartDate]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[sifraartikla]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="sifraartikla"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[datum]"
-                          cachedDataType="dbDate"
-                          cachedName="datum"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[datum]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[datum]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[IM_IstovarnoMestoID]"
-                          cachedDataType="i4"
-                          cachedName="IM_IstovarnoMestoID"
-                          lineageId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output].Columns[IM_IstovarnoMestoID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IstovarnoMestoID]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosSaPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[NetoIznosBezPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="NetoIznosBezPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[BrutoIznosBezPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="BrutoIznosBezPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1].Columns[BrutoIznosSaPDVDin]"
-                          cachedDataType="numeric"
-                          cachedName="BrutoIznosSaPDVDin"
-                          cachedPrecision="18"
-                          cachedScale="5"
-                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
                       refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
                       hasSideEffects="true"
                       name="Union All Input 2">
@@ -3326,9 +3545,184 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                     </input>
                     <input
                       refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3]"
-                      dangling="true"
                       hasSideEffects="true"
                       name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[IstovarnoMestoSifra]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[VolumenSecJM]"
+                          cachedDataType="numeric"
+                          cachedName="VolumenSecJM"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[BrutoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[BrutoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[startdate]"
+                          cachedDataType="dbDate"
+                          cachedName="startdate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[startdate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[enddate]"
+                          cachedDataType="dbDate"
+                          cachedName="enddate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[enddate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[MaxIMStartDate]"
+                          cachedDataType="dbDate"
+                          cachedName="MaxIMStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[MaxIMStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[MaxIMStartDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[datum]"
+                          cachedDataType="dbDate"
+                          cachedName="datum"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[datum]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[NetoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3].Columns[IM_IstovarnoMestoID]"
+                          cachedDataType="i4"
+                          cachedName="IM_IstovarnoMestoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IM_IstovarnoMestoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1].Columns[IstovarnoMestoID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 1">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -3890,6 +4284,514 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Load To Fct\Load To Fct\Union All 3"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All 3"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IstovarnoMestoSifra]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[VolumenSecJM]"
+                          cachedDataType="numeric"
+                          cachedName="VolumenSecJM"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[VolumenSecJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[BrutoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[BrutoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[BrutoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IstovarnoMestoID]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[IstovarnoMestoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[startdate]"
+                          cachedDataType="dbDate"
+                          cachedName="startdate"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[startdate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[enddate]"
+                          cachedDataType="dbDate"
+                          cachedName="enddate"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[enddate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[MaxIMStartDate]"
+                          cachedDataType="dbDate"
+                          cachedName="MaxIMStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[MaxIMStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[MaxIMStartDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[datum]"
+                          cachedDataType="dbDate"
+                          cachedName="datum"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[datum]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[NetoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output].Columns[NetoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IstovarnoMestoStartDate]"
+                          cachedDataType="date"
+                          cachedName="IstovarnoMestoStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output].Columns[IstovarnoMestoStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoStartDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1].Columns[IMAct_IstovarnoMestoID]"
+                          cachedDataType="i4"
+                          cachedName="IMAct_IstovarnoMestoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Match Output].Columns[IMAct_IstovarnoMestoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IM_IstovarnoMestoID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IstovarnoMestoSifra]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoSifra"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[VolumenSecJM]"
+                          cachedDataType="numeric"
+                          cachedName="VolumenSecJM"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[VolumenSecJM]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IstovarnoMestoID]"
+                          cachedDataType="i4"
+                          cachedName="IstovarnoMestoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[IstovarnoMestoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[startdate]"
+                          cachedDataType="dbDate"
+                          cachedName="startdate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[startdate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[enddate]"
+                          cachedDataType="dbDate"
+                          cachedName="enddate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[enddate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[MaxIMStartDate]"
+                          cachedDataType="dbDate"
+                          cachedName="MaxIMStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[MaxIMStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[MaxIMStartDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[sifraartikla]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="sifraartikla"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[sifraartikla]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[sifraartikla]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[datum]"
+                          cachedDataType="dbDate"
+                          cachedName="datum"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[datum]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[NetoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[BrutoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[BrutoIznosSaPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="BrutoIznosSaPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[NetoIznosBezPDVDin]"
+                          cachedDataType="numeric"
+                          cachedName="NetoIznosBezPDVDin"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IstovarnoMestoStartDate]"
+                          cachedDataType="date"
+                          cachedName="IstovarnoMestoStartDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Add StartDate.Outputs[Derived Column Output].Columns[IstovarnoMestoStartDate]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoStartDate]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2].Columns[IM_IstovarnoMestoID]"
+                          cachedDataType="i4"
+                          cachedName="IM_IstovarnoMestoID"
+                          lineageId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output].Columns[IM_IstovarnoMestoID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IM_IstovarnoMestoID]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoSifra]"
+                          name="IstovarnoMestoSifra" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[VolumenSecJM]"
+                          name="VolumenSecJM"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosSaPDVDin]"
+                          name="NetoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosBezPDVDin]"
+                          name="BrutoIznosBezPDVDin"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[BrutoIznosSaPDVDin]"
+                          name="BrutoIznosSaPDVDin"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoID]"
+                          name="IstovarnoMestoID" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[startdate]"
+                          name="startdate" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[enddate]"
+                          name="enddate" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[MaxIMStartDate]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[MaxIMStartDate]"
+                          name="MaxIMStartDate" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[sifraartikla]"
+                          name="sifraartikla" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[datum]"
+                          name="datum" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[NetoIznosBezPDVDin]"
+                          name="NetoIznosBezPDVDin"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoStartDate]"
+                          dataType="date"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IstovarnoMestoStartDate]"
+                          name="IstovarnoMestoStartDate" />
+                        <outputColumn
+                          refId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IM_IstovarnoMestoID]"
+                          dataType="i4"
+                          lineageId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1].Columns[IM_IstovarnoMestoID]"
+                          name="IM_IstovarnoMestoID" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
@@ -3908,6 +4810,16 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   name="Derived Column Output"
                   startId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Outputs[Derived Column Output]" />
                 <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+                  endId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Error]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate Acting.Inputs[Derived Column Input]"
+                  name="Error"
+                  startId="Package\Load To Fct\Load To Fct\Check MaxStartDate.Outputs[Error]" />
+                <path
                   refId="Package\Load To Fct\Load To Fct.Paths[InferredMember]"
                   endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
                   name="InferredMember"
@@ -3918,25 +4830,30 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   name="InferredMemberIstovarnoMesto"
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[InferredMemberIstovarnoMesto]" />
                 <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup IMAct.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
                   endId="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela.Inputs[OLE DB Destination Input]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Datum.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
@@ -3954,11 +4871,16 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   startId="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto.Outputs[NonMatchedIstovarnoMesto]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup IMAct.Inputs[Lookup Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM artikal.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\Insert IM Artikal.Outputs[OLE DB Command Output]" />
@@ -3968,20 +4890,25 @@ and p.Datum &gt;=im.StartDate and p.Datum&lt;=im.EndDate)</property>
                   name="OLE DB Source Output"
                   startId="Package\Load To Fct\Load To Fct\Raspodela Stage.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
                   name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                  startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Artikal.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum.Inputs[Lookup Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate.Inputs[Derived Column Input]"
                   name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 3]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All 3.Outputs[Union All Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -4459,7 +5386,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctDelhaizeRaspodela"
-              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      12/23/2017 7:44:15 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctDelhaizeRaspodela.&#xA;Time:                                      1/15/2018 2:04:53 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4759,444 +5686,160 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="147,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup Datum"
-          TopLeft="934.4,601.6" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela"
-          TopLeft="654.4,626.4" />
+          Size="156,42"
+          Id="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember"
+          TopLeft="74.6,382.4" />
         <NodeLayout
           Size="165,42"
           Id="Package\Load To Fct\Load To Fct\Insert IM Artikal"
-          TopLeft="472,467.2" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Load To Fct\Load To Fct\Union All"
-          TopLeft="211.2,229.6" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup IM artikal"
-          TopLeft="800.8,542.4" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup"
-          TopLeft="245.6,484.8" />
-        <NodeLayout
-          Size="238,42"
-          Id="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto"
-          TopLeft="116.8,107.2" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load To Fct\Load To Fct\Union All 1"
-          TopLeft="711.2,188" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Load To Fct\Load To Fct\Check MaxStartDate"
-          TopLeft="448.8,196.8" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Load To Fct\Load To Fct\Add StartDate Artikal"
-          TopLeft="638.4,417.6" />
+          TopLeft="627,507.2" />
         <NodeLayout
           Size="144,42"
           Id="Package\Load To Fct\Load To Fct\Raspodela Stage"
-          TopLeft="722.857142857143,10.4" />
+          TopLeft="763.857142857143,10.4" />
         <NodeLayout
-          Size="146,42"
-          Id="Package\Load To Fct\Load To Fct\Lookup Artikal"
-          TopLeft="849.6,298.4" />
+          Size="238,42"
+          Id="Package\Load To Fct\Load To Fct\Check InfMember IstovarnoMesto"
+          TopLeft="157.8,107.2" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Datum"
+          TopLeft="975.4,601.6" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Load To Fct\Union All 3"
+          TopLeft="508,439" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load To Fct\Load To Fct\Check MaxStartDate"
+          TopLeft="464.8,142.8" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Load To Fct\Add StartDate Artikal"
+          TopLeft="720.4,418.6" />
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Load To Fct\Union All 2"
-          TopLeft="901.6,452.8" />
+          TopLeft="942.6,452.8" />
         <NodeLayout
-          Size="230,42"
-          Id="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoInfMember"
-          TopLeft="229.6,394.4" />
+          Size="160,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IM artikal"
+          TopLeft="841.8,542.4" />
         <NodeLayout
-          Size="145,42"
-          Id="Package\Load To Fct\Load To Fct\Add StartDate"
-          TopLeft="255.2,292.8" />
+          Size="113,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup"
+          TopLeft="221.6,636.8" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Load To Fct\Load To Fct\InsertIstovarnoMestoActingInfMember"
+          TopLeft="382,314" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load To Fct\Load To Fct\Add StartDate Acting"
+          TopLeft="444,230" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Load To Fct\Load To Fct\Union All"
+          TopLeft="252.2,229.6" />
         <NodeLayout
           Size="226,42"
           Id="Package\Load To Fct\Load To Fct\Check Matched IstovarnoMesto"
-          TopLeft="487.2,72.5714285714286" />
+          TopLeft="528.2,72.5714285714286" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup IMAct"
+          TopLeft="301,388" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load To Fct\Load To Fct\Lookup Artikal"
+          TopLeft="890.6,298.4" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load To Fct\Load To Fct\Add StartDate"
+          TopLeft="213.2,292.8" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela"
+          TopLeft="695.4,626.4" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load To Fct\Load To Fct\Union All 1"
+          TopLeft="752.2,188" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
-          TopLeft="986.666666666667,494.4">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          TopLeft="444,409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.3333333333334,107.2"
+              EndConnector="64,51"
               Start="0,0"
-              End="21.3333333333334,99.7">
+              End="56.5,51">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.6643902439024" />
+                    End="28,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.6643902439024"
-                    Point2="0,43.6643902439024"
-                    Point3="4,43.6643902439024" />
+                    Point1="28,0"
+                    Point2="32,0"
+                    Point3="32,4" />
                   <mssgle:LineSegment
-                    End="17.3333333333334,43.6643902439024" />
+                    End="32,47" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.3333333333334,43.6643902439024"
-                    Point2="21.3333333333334,43.6643902439024"
-                    Point3="21.3333333333334,47.6643902439024" />
+                    Point1="32,47"
+                    Point2="32,51"
+                    Point3="36,51" />
                   <mssgle:LineSegment
-                    End="21.3333333333334,99.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-          TopLeft="331.2,256">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-3.60000000000002,36.8"
-              Start="0,0"
-              End="-3.60000000000002,29.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0.399999999999977,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0.399999999999977,0"
-                    Point2="-3.60000000000002,0"
-                    Point3="-3.60000000000002,4" />
-                  <mssgle:LineSegment
-                    End="-3.60000000000002,29.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
-          TopLeft="796.266666666667,229.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126.133333333333,68.7999999999999"
-              Start="0,0"
-              End="126.133333333333,61.2999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0234146341463" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.0234146341463"
-                    Point2="0,28.0234146341463"
-                    Point3="4,28.0234146341463" />
-                  <mssgle:LineSegment
-                    End="122.133333333333,28.0234146341463" />
-                  <mssgle:CubicBezierSegment
-                    Point1="122.133333333333,28.0234146341463"
-                    Point2="126.133333333333,28.0234146341463"
-                    Point3="126.133333333333,32.0234146341463" />
-                  <mssgle:LineSegment
-                    End="126.133333333333,61.2999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Source Output]"
-          TopLeft="722.857142857143,31.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-122.857142857143,41.3714285714286"
-              Start="0,0"
-              End="-122.857142857143,33.8714285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-118.857142857143,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-118.857142857143,0"
-                    Point2="-122.857142857143,0"
-                    Point3="-122.857142857143,4" />
-                  <mssgle:LineSegment
-                    End="-122.857142857143,33.8714285714286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
-          TopLeft="554.4,508.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="307.2,33.6"
-              Start="0,0"
-              End="307.2,26.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.8"
-                    Point2="0,16.8"
-                    Point3="4,16.8" />
-                  <mssgle:LineSegment
-                    End="303.2,16.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="303.2,16.8"
-                    Point2="307.2,16.8"
-                    Point3="307.2,20.8" />
-                  <mssgle:LineSegment
-                    End="307.2,26.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
-          TopLeft="344.8,436">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42.8,48.8"
-              Start="0,0"
-              End="-42.8,41.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4"
-                    Point2="0,24.4"
-                    Point3="-4,24.4" />
-                  <mssgle:LineSegment
-                    End="-38.8,24.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38.8,24.4"
-                    Point2="-42.8,24.4"
-                    Point3="-42.8,28.4" />
-                  <mssgle:LineSegment
-                    End="-42.8,41.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[NonMatchedIstovarnoMesto]"
-          TopLeft="235.6,148.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="300,48"
-              Start="0,0"
-              End="300,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="4,24" />
-                  <mssgle:LineSegment
-                    End="296,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="296,24"
-                    Point2="300,24"
-                    Point3="300,28" />
-                  <mssgle:LineSegment
-                    End="300,40.5" />
+                    End="56.5,51" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="88.02796875,29,123.9440625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[MatchedIstovarnoMesto]"
-          TopLeft="600,114.171428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176,73.8285714285715"
-              Start="0,0"
-              End="176,66.3285714285715">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.9142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.9142857142857"
-                    Point2="0,36.9142857142857"
-                    Point3="4,36.9142857142857" />
-                  <mssgle:LineSegment
-                    End="172,36.9142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172,36.9142857142857"
-                    Point2="176,36.9142857142857"
-                    Point3="176,40.9142857142857" />
-                  <mssgle:LineSegment
-                    End="176,66.3285714285715" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="34.86796875,41.9142857142857,106.2640625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
-          TopLeft="922.4,340">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-195.2,77.6"
-              Start="0,0"
-              End="-195.2,70.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.8"
-                    Point2="0,38.8"
-                    Point3="-4,38.8" />
-                  <mssgle:LineSegment
-                    End="-191.2,38.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-191.2,38.8"
-                    Point2="-195.2,38.8"
-                    Point3="-195.2,42.8" />
-                  <mssgle:LineSegment
-                    End="-195.2,70.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-153.40638671875,43.8,111.6127734375,11.609375"
+              BoundingBox="-16.19138671875,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="934.4,622.6">
+          TopLeft="295.6,636.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-99,24.8"
+              EndConnector="277.4,-155.8"
               Start="0,0"
-              End="-91.5,24.8">
+              End="277.4,-148.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-45.5,0" />
+                    End="0,-59.6251308900523" />
                   <mssgle:CubicBezierSegment
-                    Point1="-45.5,0"
-                    Point2="-49.5,0"
-                    Point3="-49.5,4" />
+                    Point1="0,-59.6251308900523"
+                    Point2="0,-63.6251308900523"
+                    Point3="4,-63.6251308900523" />
                   <mssgle:LineSegment
-                    End="-49.5,20.8" />
+                    End="273.4,-63.6251308900523" />
                   <mssgle:CubicBezierSegment
-                    Point1="-49.5,20.8"
-                    Point2="-49.5,24.8"
-                    Point3="-53.5,24.8" />
+                    Point1="273.4,-63.6251308900523"
+                    Point2="277.4,-63.6251308900523"
+                    Point3="277.4,-67.6251308900523" />
                   <mssgle:LineSegment
-                    End="-91.5,24.8" />
+                    End="277.4,-148.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-97.69138671875,-17.609375,96.3827734375,11.609375"
+              BoundingBox="90.50861328125,-58.6251308900523,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
-          TopLeft="945.333333333333,340">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="21.0666666666666,112.8"
-              Start="0,0"
-              End="21.0666666666666,105.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.855652173913" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.855652173913"
-                    Point2="0,45.855652173913"
-                    Point3="4,45.855652173913" />
-                  <mssgle:LineSegment
-                    End="17.0666666666666,45.855652173913" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.0666666666666,45.855652173913"
-                    Point2="21.0666666666666,45.855652173913"
-                    Point3="21.0666666666666,49.855652173913" />
-                  <mssgle:LineSegment
-                    End="21.0666666666666,105.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-37.6580533854167,50.855652173913,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
-          TopLeft="880.533333333333,542.4">
+          TopLeft="921.533333333333,542.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5231,44 +5874,80 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="319.466666666667,484.8">
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output1]"
+          TopLeft="975.4,622.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="456.533333333333,-255.2"
+              EndConnector="-99,24.8"
               Start="0,0"
-              End="456.533333333333,-247.7">
+              End="-91.5,24.8">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-100.221538461538" />
+                    End="-45.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-100.221538461538"
-                    Point2="0,-104.221538461538"
-                    Point3="4,-104.221538461538" />
+                    Point1="-45.5,0"
+                    Point2="-49.5,0"
+                    Point3="-49.5,4" />
                   <mssgle:LineSegment
-                    End="452.533333333333,-104.221538461538" />
+                    End="-49.5,20.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="452.533333333333,-104.221538461538"
-                    Point2="456.533333333333,-104.221538461538"
-                    Point3="456.533333333333,-108.221538461538" />
+                    Point1="-49.5,20.8"
+                    Point2="-49.5,24.8"
+                    Point3="-53.5,24.8" />
                   <mssgle:LineSegment
-                    End="456.533333333333,-247.7" />
+                    End="-91.5,24.8" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="180.075279947916,-99.221538461538,96.3827734375,11.609375"
+              BoundingBox="-97.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output]"
+          TopLeft="986.333333333333,340">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.0666666666666,112.8"
+              Start="0,0"
+              End="21.0666666666666,105.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.855652173913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.855652173913"
+                    Point2="0,45.855652173913"
+                    Point3="4,45.855652173913" />
+                  <mssgle:LineSegment
+                    End="17.0666666666666,45.855652173913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.0666666666666,45.855652173913"
+                    Point2="21.0666666666666,45.855652173913"
+                    Point3="21.0666666666666,49.855652173913" />
+                  <mssgle:LineSegment
+                    End="21.0666666666666,105.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.6580533854167,50.855652173913,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[InferredMemberIstovarnoMesto]"
-          TopLeft="197.333333333333,148.8">
+          TopLeft="238.333333333333,148.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5304,60 +5983,136 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[InferredMember]"
-          TopLeft="448.8,217.6">
+          TopLeft="524.133333333333,184.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-117.6,32.8"
+              EndConnector="-193.266666666667,44.8"
               Start="0,0"
-              End="-110.1,32.8">
+              End="-193.266666666667,37.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-54.8,0" />
+                    End="0,18.2873113471213" />
                   <mssgle:CubicBezierSegment
-                    Point1="-54.8,0"
-                    Point2="-58.8,0"
-                    Point3="-58.8,4" />
+                    Point1="0,18.2873113471213"
+                    Point2="0,22.2873113471213"
+                    Point3="-4,22.2873113471213" />
                   <mssgle:LineSegment
-                    End="-58.8,28.8" />
+                    End="-189.266666666667,22.2873113471213" />
                   <mssgle:CubicBezierSegment
-                    Point1="-58.8,28.8"
-                    Point2="-58.8,32.8"
-                    Point3="-62.8,32.8" />
+                    Point1="-189.266666666667,22.2873113471213"
+                    Point2="-193.266666666667,22.2873113471213"
+                    Point3="-193.266666666667,26.2873113471213" />
                   <mssgle:LineSegment
-                    End="-110.1,32.8" />
+                    End="-193.266666666667,37.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.30029296875,-15.7978515625,73.0005859375,9.7978515625"
+              BoundingBox="-133.133626302083,27.2873113471213,73.0005859375,9.7978515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
-          TopLeft="638.4,438.4">
+          Id="Package\Load To Fct\Load To Fct.Paths[Error]"
+          TopLeft="579.466666666667,184.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-84.0000000000001,28.8"
+              EndConnector="-46.4666666666666,45.2"
               Start="0,0"
-              End="-84.0000000000001,21.3">
+              End="-46.4666666666666,37.7">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-80.0000000000001,0" />
+                    End="0,14.3271070615034" />
                   <mssgle:CubicBezierSegment
-                    Point1="-80.0000000000001,0"
-                    Point2="-84.0000000000001,0"
-                    Point3="-84.0000000000001,4" />
+                    Point1="0,14.3271070615034"
+                    Point2="0,18.3271070615034"
+                    Point3="-4,18.3271070615034" />
                   <mssgle:LineSegment
-                    End="-84.0000000000001,21.3" />
+                    End="-42.4666666666666,18.3271070615034" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.4666666666666,18.3271070615034"
+                    Point2="-46.4666666666666,18.3271070615034"
+                    Point3="-46.4666666666666,22.3271070615034" />
+                  <mssgle:LineSegment
+                    End="-46.4666666666666,37.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.7620247395833,23.3271070615034,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output2]"
+          TopLeft="533,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5,42"
+              Start="0,0"
+              End="-59.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-55.5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5,21"
+                    Point2="-59.5,21"
+                    Point3="-59.5,25" />
+                  <mssgle:LineSegment
+                    End="-59.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output1]"
+          TopLeft="809.4,460.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.9,46.6"
+              Start="0,0"
+              End="-99.9,39.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3"
+                    Point2="0,23.3"
+                    Point3="-4,23.3" />
+                  <mssgle:LineSegment
+                    End="-95.9,23.3" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.9,23.3"
+                    Point2="-99.9,23.3"
+                    Point3="-99.9,27.3" />
+                  <mssgle:LineSegment
+                    End="-99.9,39.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5368,30 +6123,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Derived Column Output]"
-          TopLeft="327.6,334.4">
+          TopLeft="285.7,334.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.2,60"
+              EndConnector="-133.1,47.6"
               Start="0,0"
-              End="17.2,52.5">
+              End="-133.1,40.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,19.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
+                    Point1="0,19.8"
+                    Point2="0,23.8"
+                    Point3="-4,23.8" />
                   <mssgle:LineSegment
-                    End="13.2,30" />
+                    End="-129.1,23.8" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.2,30"
-                    Point2="17.2,30"
-                    Point3="17.2,34" />
+                    Point1="-129.1,23.8"
+                    Point2="-133.1,23.8"
+                    Point3="-133.1,27.8" />
                   <mssgle:LineSegment
-                    End="17.2,52.5" />
+                    End="-133.1,40.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5402,7 +6157,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Load To Fct.Paths[Conditional Split Default Output]"
-          TopLeft="487.2,93.3714285714286">
+          TopLeft="528.2,93.3714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5436,9 +6191,385 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
+          TopLeft="573,439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223.866666666667,-209"
+              Start="0,0"
+              End="223.866666666667,-201.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-119.87537993921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-119.87537993921"
+                    Point2="0,-123.87537993921"
+                    Point3="4,-123.87537993921" />
+                  <mssgle:LineSegment
+                    End="219.866666666667,-123.87537993921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="219.866666666667,-123.87537993921"
+                    Point2="223.866666666667,-123.87537993921"
+                    Point3="223.866666666667,-127.87537993921" />
+                  <mssgle:LineSegment
+                    End="223.866666666667,-201.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+          TopLeft="1027.66666666667,494.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.3333333333334,107.2"
+              Start="0,0"
+              End="21.3333333333334,99.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6643902439024" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.6643902439024"
+                    Point2="0,43.6643902439024"
+                    Point3="4,43.6643902439024" />
+                  <mssgle:LineSegment
+                    End="17.3333333333334,43.6643902439024" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.3333333333334,43.6643902439024"
+                    Point2="21.3333333333334,43.6643902439024"
+                    Point3="21.3333333333334,47.6643902439024" />
+                  <mssgle:LineSegment
+                    End="21.3333333333334,99.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          TopLeft="252.2,250.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.5,42.2"
+              Start="0,0"
+              End="33.5,34.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.5,0"
+                    Point2="33.5,0"
+                    Point3="33.5,4" />
+                  <mssgle:LineSegment
+                    End="33.5,34.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          TopLeft="837.266666666667,229.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.133333333333,68.7999999999999"
+              Start="0,0"
+              End="126.133333333333,61.2999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0234146341463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0234146341463"
+                    Point2="0,28.0234146341463"
+                    Point3="4,28.0234146341463" />
+                  <mssgle:LineSegment
+                    End="122.133333333333,28.0234146341463" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.133333333333,28.0234146341463"
+                    Point2="126.133333333333,28.0234146341463"
+                    Point3="126.133333333333,32.0234146341463" />
+                  <mssgle:LineSegment
+                    End="126.133333333333,61.2999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Source Output]"
+          TopLeft="763.857142857143,31.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122.857142857143,41.3714285714286"
+              Start="0,0"
+              End="-122.857142857143,33.8714285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-118.857142857143,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-118.857142857143,0"
+                    Point2="-122.857142857143,0"
+                    Point3="-122.857142857143,4" />
+                  <mssgle:LineSegment
+                    End="-122.857142857143,33.8714285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+          TopLeft="792,528.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.8,35.1999999999999"
+              Start="0,0"
+              End="42.3,35.1999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.9,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.9,0"
+                    Point2="24.9,0"
+                    Point3="24.9,4" />
+                  <mssgle:LineSegment
+                    End="24.9,31.1999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.9,31.1999999999999"
+                    Point2="24.9,35.1999999999999"
+                    Point3="28.9,35.1999999999999" />
+                  <mssgle:LineSegment
+                    End="42.3,35.1999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output1]"
+          TopLeft="152.6,424.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,212.4"
+              Start="0,0"
+              End="108,204.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.660732984293" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,121.660732984293"
+                    Point2="0,125.660732984293"
+                    Point3="4,125.660732984293" />
+                  <mssgle:LineSegment
+                    End="104,125.660732984293" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,125.660732984293"
+                    Point2="108,125.660732984293"
+                    Point3="108,129.660732984293" />
+                  <mssgle:LineSegment
+                    End="108,204.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+          TopLeft="473.5,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-101,32"
+              Start="0,0"
+              End="-101,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="-4,16" />
+                  <mssgle:LineSegment
+                    End="-97,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97,16"
+                    Point2="-101,16"
+                    Point3="-101,20" />
+                  <mssgle:LineSegment
+                    End="-101,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[NonMatchedIstovarnoMesto]"
+          TopLeft="395.8,133.866666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.9999999999999,29.9333333333334"
+              Start="0,0"
+              End="61.4999999999999,29.9333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.1192660550459,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.1192660550459,0"
+                    Point2="29.1192660550459,0"
+                    Point3="29.1192660550459,4" />
+                  <mssgle:LineSegment
+                    End="29.1192660550459,25.9333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.1192660550459,25.9333333333334"
+                    Point2="29.1192660550459,29.9333333333334"
+                    Point3="33.1192660550459,29.9333333333334" />
+                  <mssgle:LineSegment
+                    End="61.4999999999999,29.9333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.8527651949541,-15.7490234375,123.9440625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[MatchedIstovarnoMesto]"
+          TopLeft="641,114.171428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176,73.8285714285715"
+              Start="0,0"
+              End="176,66.3285714285715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9142857142857"
+                    Point2="0,36.9142857142857"
+                    Point3="4,36.9142857142857" />
+                  <mssgle:LineSegment
+                    End="172,36.9142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172,36.9142857142857"
+                    Point2="176,36.9142857142857"
+                    Point3="176,40.9142857142857" />
+                  <mssgle:LineSegment
+                    End="176,66.3285714285715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="34.86796875,41.9142857142857,106.2640625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          TopLeft="940.6,340.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-131.2,78.2"
+              Start="0,0"
+              End="-131.2,70.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7886178861789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7886178861789"
+                    Point2="0,31.7886178861789"
+                    Point3="-4,31.7886178861789" />
+                  <mssgle:LineSegment
+                    End="-127.2,31.7886178861789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-127.2,31.7886178861789"
+                    Point2="-131.2,31.7886178861789"
+                    Point3="-131.2,35.7886178861789" />
+                  <mssgle:LineSegment
+                    End="-131.2,70.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-121.40638671875,36.7886178861789,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Raspodela Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Fct\Load To Fct\Lookup Datum">
     <Properties>
@@ -5459,19 +6590,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -5522,8 +6640,23 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Raspodela Stage">
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup IMAct">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[map].[IstovarnoMestoMappingInferredMember]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -5549,6 +6682,19 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\FctDelhaizeRaspodela">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

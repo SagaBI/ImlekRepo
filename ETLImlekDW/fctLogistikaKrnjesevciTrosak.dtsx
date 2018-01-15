@@ -12,8 +12,8 @@
   DTS:ObjectName="fctLogistikaKrnjesevciTrosak"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{3FEF5D8D-4B09-47FC-8695-483A12823229}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{B629725D-088B-445E-824F-A8F0F68BBD78}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20171218.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180103.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -96,7 +96,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">KrnjesevciData_20171218.xlsx</DTS:VariableValue>
+        DTS:DataType="8">KrnjesevciData_20180103.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -107,7 +107,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20171218.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180103.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -154,7 +154,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\KrnjesevciDataSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\KrnjesevciDataSource_2018-01-03.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -226,7 +226,7 @@
                 <FEFEProperty
                   Folder="\\tabprod\BI_Razmena\IN\Logistika" />
                 <FEFEProperty
-                  FileSpec="KrnjesevciData_20171218.xlsx" />
+                  FileSpec="KrnjesevciData_20180103.xlsx" />
                 <FEFEProperty
                   FileNameRetrievalType="0" />
                 <FEFEProperty
@@ -1617,6 +1617,7 @@ where D.DateID &gt; (select isnull(MAX(DateID), 0) from ImlekDW.[fct].[FctLogist
             <DTS:Executable
               DTS:refId="Package\Load To Fct\Foreach Loop Container\Load To Staging From Raw File"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{A5083710-FC8A-462C-9505-B51F6BAC2EF0}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -1969,7 +1970,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctLogistikaKrnjesevciTrosak"
-              SendMailTask:MessageSource="Package:                              fctLogistikaKrnjesevciTrosak.&#xA;Time:                                      12/18/2017 2:13:28 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctLogistikaKrnjesevciTrosak.&#xA;Time:                                      1/3/2018 3:54:16 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1990,7 +1991,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <NodeLayout
           Size="170,42"
           Id="Package\Load To Fct\Foreach Loop Container\Extract To Raw File"
-          TopLeft="113.358726508521,140.339869727685" />
+          TopLeft="112.358726508521,140.339869727685" />
         <NodeLayout
           Size="159,43"
           Id="Package\Load To Fct\Foreach Loop Container\File System Task"
@@ -2009,30 +2010,30 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           TopLeft="85.5968215399257,13.7947731255361" />
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="160.596821539925,55.7947731255361">
+          TopLeft="160.596821539926,55.7947731255361">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.7619049685953,84.5450966021492"
+              EndConnector="36.7619049685953,84.5450966021489"
               Start="0,0"
-              End="37.7619049685953,77.0450966021492">
+              End="36.7619049685953,77.0450966021489">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.2725483010746" />
+                    End="0,38.2725483010745" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.2725483010746"
-                    Point2="0,42.2725483010746"
-                    Point3="4,42.2725483010746" />
+                    Point1="0,38.2725483010745"
+                    Point2="0,42.2725483010745"
+                    Point3="4,42.2725483010745" />
                   <mssgle:LineSegment
-                    End="33.7619049685953,42.2725483010746" />
+                    End="32.7619049685953,42.2725483010745" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.7619049685953,42.2725483010746"
-                    Point2="37.7619049685953,42.2725483010746"
-                    Point3="37.7619049685953,46.2725483010746" />
+                    Point1="32.7619049685953,42.2725483010745"
+                    Point2="36.7619049685953,42.2725483010745"
+                    Point3="36.7619049685953,46.2725483010745" />
                   <mssgle:LineSegment
-                    End="37.7619049685953,77.0450966021492" />
+                    End="36.7619049685953,77.0450966021489" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2043,18 +2044,18 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="196.668249298329,182.339869727686">
+          TopLeft="196.168249298329,182.339869727685">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.8313758650554"
+              EndConnector="0,39.831375865056"
               Start="0,0"
-              End="0,32.3313758650554">
+              End="0,32.331375865056">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.3313758650554" />
+                    End="0,32.331375865056" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2134,8 +2135,8 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="361,477"
-          Size="361,520"
+          PanelSize="361,516"
+          Size="361,559"
           Id="Package\Load To Fct\Foreach Loop Container"
           TopLeft="31.7444494304198,10.2222207758161" />
         <ContainerLayout

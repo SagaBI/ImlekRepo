@@ -12,8 +12,8 @@
   DTS:ObjectName="fctLogistikaPrimarniTransport"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="142"
-  DTS:VersionGUID="{F0208D76-74E7-43F6-B164-D4A8698F1F2A}">
+  DTS:VersionBuild="145"
+  DTS:VersionGUID="{35E41F72-9171-4801-8F68-2EC35AF7C943}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\PrimarniData_20171218.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\PrimarniData_20180103.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">PrimarniData_20171218.xlsx</DTS:VariableValue>
+        DTS:DataType="8">PrimarniData_20180103.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\PrimarniData_20171218.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\PrimarniData_20180103.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -164,7 +164,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PrimarniTransportSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\PrimarniTransportSource_2018-01-03.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -236,7 +236,7 @@
                 <FEFEProperty
                   Folder="\\tabprod\BI_Razmena\IN\Logistika" />
                 <FEFEProperty
-                  FileSpec="PrimarniData_20171218.xlsx" />
+                  FileSpec="PrimarniData_20180103.xlsx" />
                 <FEFEProperty
                   FileNameRetrievalType="0" />
                 <FEFEProperty
@@ -277,7 +277,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">RawData$</property>
+                          name="OpenRowset">Sheet1$</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1397,8 +1397,8 @@
                           dataType="System.String"
                           description="The SQL command to be executed."
                           name="SqlCommand"
-                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select PT.[DatumTure] as DatumTure, PT.[SifraTure] as SifraTure, CONVERT(nvarchar(12), PT.MagacinTure) as MagacinTure, SUM(PT.[BrojPaleta]) as BrojPaleta, SUM(PT.[TotalKolicina]) as TotalKolicina, 
-		SUM(PT.[TotalKolicinaBP]) as TotalKolicinaBP, SUM(PT.[TotalKolicinaPG]) as TotalKolicinaPG, SUM(PT.[TotalKolicinaKO]) as TotalKolicinaKO
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select PT.[DatumTure] as DatumTure, PT.[SifraTure] as SifraTure, CONVERT(nvarchar(12), PT.MagacinTure) as MagacinTure, isnull(SUM(PT.[BrojPaleta]), 0) as BrojPaleta, isnull(SUM(PT.[TotalKolicina]), 0) as TotalKolicina, 
+		isnull(SUM(PT.[TotalKolicinaBP]), 0) as TotalKolicinaBP, isnull(SUM(PT.[TotalKolicinaPG]), 0) as TotalKolicinaPG, isnull(SUM(PT.[TotalKolicinaKO]), 0) as TotalKolicinaKO
 from [dbo].[LogistikaPrimarniTransport] PT
 left join [ImlekDW].dim.[DimLogistikaTura] L on PT.[SifraTure] = L.[SifraTure]
 left join [ImlekDW].dim.DimDate D on PT.[DatumTure] = D.Date 
@@ -2397,7 +2397,7 @@ where [refTable].[MagacinSifra] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\1195:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\1175:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3551,6 +3551,7 @@ where [refTable].[MagacinSifra] = ?</property>
             <DTS:Executable
               DTS:refId="Package\Load To Fct\Foreach Loop Container\Load To Staging From Raw File"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{DDD9FED7-DB67-410D-B661-05269E224066}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -4288,7 +4289,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctLogistikaPrimarniTransport"
-              SendMailTask:MessageSource="Package:                              fctLogistikaPrimarniTransport.&#xA;Time:                                      12/18/2017 2:13:49 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctLogistikaPrimarniTransport.&#xA;Time:                                      1/3/2018 4:44:38 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4552,7 +4553,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1"
           TopLeft="968,381" />
         <NodeLayout
-          Size="178.666666666667,42"
+          Size="179,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup LogistikaTura"
           TopLeft="368,109" />
         <NodeLayout
@@ -4560,31 +4561,31 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Datum LogistikaTura"
           TopLeft="995,500" />
         <NodeLayout
-          Size="186.666666666667,42"
+          Size="187,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Add StartDate Magacin"
           TopLeft="626,301" />
         <NodeLayout
-          Size="170.666666666667,42"
+          Size="171,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\OLE DB Destination"
           TopLeft="1078,614" />
         <NodeLayout
-          Size="121.333333333334,42"
+          Size="121,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All"
           TopLeft="673,154" />
         <NodeLayout
-          Size="154.666666666667,42"
+          Size="155,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Magacin"
           TopLeft="830,267" />
         <NodeLayout
-          Size="194.666666666667,42"
+          Size="195,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM LogistikaTura"
           TopLeft="330,321" />
         <NodeLayout
-          Size="245.333333333334,42"
+          Size="245,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\LogistikaTuraInsertInfferedMember"
           TopLeft="214,232" />
         <NodeLayout
-          Size="241.333333333334,42"
+          Size="241,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Logistika Primarni Transport Stage"
           TopLeft="293,23" />
         <NodeLayout
@@ -4592,7 +4593,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\MagacinInsertInferredMember"
           TopLeft="612,383" />
         <NodeLayout
-          Size="170.666666666667,42"
+          Size="171,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Magacin"
           TopLeft="777,475" />
         <EdgeLayout
@@ -4626,9 +4627,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4662,9 +4661,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4698,9 +4695,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4734,9 +4729,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4770,9 +4763,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5040,9 +5031,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5188,7 +5177,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Foreach Loop Container\Load To Staging From Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.666666666667,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Staging From Raw File\OLE DB Destination"
@@ -5228,7 +5217,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
