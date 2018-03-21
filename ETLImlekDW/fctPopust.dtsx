@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPopust"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{3512FE3B-A2AF-43C7-9DD4-744F802534B6}">
+  DTS:VersionBuild="155"
+  DTS:VersionGUID="{121B178F-5196-40A8-82AD-EE64B04DEBA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">7/1/2016 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/19/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">8/1/2016 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PopustSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\PopustSource_2018-03-13.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPopust '20171218','20171219'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPopust '20160701','20160801'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2490,7 +2490,7 @@ where [refTable].[JedinicaMereSifra] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\1196:invalid};</property>
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\3103:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4959,24 +4959,24 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipDokumenta.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Valuta.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Valuta.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
-                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipPopusta.Inputs[Derived Column Input]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate JM.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Outputs[Lookup No Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup JM.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  endId="Package\Load To Fct\Load To Fct\Add StartDate TipDokumenta.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM Tip dokumenta.Inputs[Lookup Input]"
@@ -5004,19 +5004,19 @@ and p.DatumFakture &gt;=im.StartDate and p.DatumFakture&lt;=im.EndDate)</propert
                   startId="Package\Load To Fct\Load To Fct\Popust Stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup JM.Inputs[Lookup Input]"
+                  name="Union All Output 1"
+                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
                   endId="Package\Load To Fct\Load To Fct\Lookup Tip Dokumenta.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 2.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
                   endId="Package\Load To Fct\Load To Fct\Lookup TipPopusta.Inputs[Lookup Input]"
                   name="Union All Output 1"
                   startId="Package\Load To Fct\Load To Fct\Union All 1.Outputs[Union All Output 1]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup JM.Inputs[Lookup Input]"
-                  name="Union All Output 1"
-                  startId="Package\Load To Fct\Load To Fct\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Union All Output 13]"
                   endId="Package\Load To Fct\Load To Fct\FctPopust.Inputs[OLE DB Destination Input]"
@@ -5677,7 +5677,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctPopust"
-              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      12/18/2017 2:14:13 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctPopust.&#xA;Time:                                      3/13/2018 11:16:41 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -5841,7 +5841,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     design-time-name="Package\Load To Fct\Extract To Raw File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="130,42"
           Id="Package\Load To Fct\Extract To Raw File\Row Count"
@@ -5885,9 +5885,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5921,9 +5919,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6031,7 +6027,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Union All 2"
           TopLeft="853.6,727.2" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
           TopLeft="916.05,769.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6055,7 +6051,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 12]"
           TopLeft="776.933333333333,236.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6271,7 +6267,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
           TopLeft="646.666666666667,125.371428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6307,7 +6303,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
           TopLeft="828.457142857143,646.74285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6343,7 +6339,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
           TopLeft="856.266666666667,401.142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6379,7 +6375,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
           TopLeft="857,867">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6853,7 +6849,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Union All Output 11]"
           TopLeft="981.066666666667,519.2">
           <EdgeLayout.Curve>
             <mssgle:Curve

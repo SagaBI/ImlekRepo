@@ -1,0 +1,999 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/30/2017 2:48:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INF-SAGASUP"
+  DTS:CreatorName="IMLEK\saga_support"
+  DTS:DTSID="{E4109FEC-205A-4757-B832-7C5C3945D1BF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="stgProdajaNaDan"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="267"
+  DTS:VersionGUID="{70AF8546-0992-4264-82CD-EEABBCFE73FA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{334635B6-2D51-43D8-81FF-93E91CEAEDB6}"
+      DTS:ObjectName="ExtractDateFrom">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/18/2019</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{EDC6B287-06ED-4062-B7B5-E2D16FF69565}"
+      DTS:ObjectName="ExtractDateTo">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/19/2019</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{507044B1-62C2-4938-B852-47ABB5864655}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7F5C523C-23D2-4EB1-914E-173CF066D40B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F17E0F2-EF7E-4741-B77B-22CDCE8FA67E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EndBatchAudit">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED88ECB1-279F-4174-9AA9-60A44A1EDD86}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrKeyCopy">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82AA75EC-78AF-4B8C-8AC2-3C78DD77D4ED}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewStartSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{95CC3087-023D-49FA-9F9A-A3AD37B8EC05}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NR">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{673FD564-7373-4EE2-B0D3-841D3E7D172E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumOfDeletedRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0CA6BE6-0DC1-475E-926E-7922899A5846}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageLogID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E10D572B-7F8C-41F7-B622-8316F262D7CB}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::RawFilePath]  +&quot;\\ProdajaSource_&quot;+REPLACE((DT_STR, 20, 1252)(DT_DBDATE)@[System::StartTime], &quot;:&quot;, &quot;&quot;)+&quot;.raw&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RawfilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\tabtest\rawfiles\ProdajaSource_2018-03-12.raw</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8602F910-F670-4907-817A-AEEAAED29CD1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SCD_2_6_Count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BB0F11D3-44BA-401F-B5B5-CDFAB1841787}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SetSurrogateKey">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E158447C-CE2A-43A3-B1ED-9C79F0F0DE1A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;exec dbo.selFctProdaja &quot; +&quot;'&quot;  +(DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , @[$Package::ExtractDateFrom]) +  RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , @[$Package::ExtractDateFrom]), 2) + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , @[$Package::ExtractDateFrom]), 2)  + &quot;'&quot; + &quot;,&quot; +&quot;'&quot;  +(DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , @[$Package::ExtractDateTo]) +  RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , @[$Package::ExtractDateTo]), 2) + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , @[$Package::ExtractDateTo]), 2)  + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQLCommand">
+      <DTS:VariableValue
+        DTS:DataType="8">exec dbo.selFctProdaja '20191218','20191219'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1D895CCB-495D-4E53-91AF-B6F729C1E38C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartSurrKey">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load To Stg"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5BE34483-4C58-4EFD-8D50-61ABE88FCDE6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load To Stg">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load To Stg\Load To Staging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5F939C98-0FA6-46D3-9872-79942D110D3A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load To Staging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ProdajaNaDan Stage"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[ProdajaNaDan]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Connections[OleDbConnection]"
+                      connectionManagerID="{D39D9B1D-5747-415B-9726-8831FC2A0C07}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[StagingConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Datum]"
+                          cachedDataType="dbDate"
+                          cachedName="Datum"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Datum]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Sifra_grupe]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="Sifra_grupe"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sifra_grupe]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_grupe]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Naziv_grupe]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Naziv_grupe"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Naziv_grupe]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_grupe]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Sifra_podgrupe_1]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="Sifra_podgrupe_1"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sifra_podgrupe_1]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_podgrupe_1]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Naziv_podgrupe_1]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Naziv_podgrupe_1"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Naziv_podgrupe_1]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_podgrupe_1]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Kanal]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="Kanal"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Kanal]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Kanal]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Tip]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Tip"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Tip]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Tip]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[KolicinaSekJM]"
+                          cachedDataType="numeric"
+                          cachedName="KolicinaSekJM"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[KolicinaSekJM]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[KolicinaSekJM]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Iznos_bruto]"
+                          cachedDataType="numeric"
+                          cachedName="Iznos_bruto"
+                          cachedPrecision="15"
+                          cachedScale="4"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Iznos_bruto]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_bruto]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[Iznos_neto]"
+                          cachedDataType="numeric"
+                          cachedName="Iznos_neto"
+                          cachedPrecision="15"
+                          cachedScale="4"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Iznos_neto]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_neto]" />
+                        <inputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].Columns[DatumEksporta]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DatumEksporta"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[DatumEksporta]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[DatumEksporta]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Datum]"
+                          dataType="dbDate"
+                          name="Datum" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sifra_grupe]"
+                          dataType="wstr"
+                          length="6"
+                          name="Sifra_grupe" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Naziv_grupe]"
+                          dataType="wstr"
+                          length="30"
+                          name="Naziv_grupe" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sifra_podgrupe_1]"
+                          dataType="wstr"
+                          length="6"
+                          name="Sifra_podgrupe_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Naziv_podgrupe_1]"
+                          dataType="wstr"
+                          length="30"
+                          name="Naziv_podgrupe_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Kanal]"
+                          dataType="wstr"
+                          length="6"
+                          name="Kanal" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Tip]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Tip" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[KolicinaSekJM]"
+                          dataType="numeric"
+                          name="KolicinaSekJM"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Iznos_bruto]"
+                          dataType="numeric"
+                          name="Iznos_bruto"
+                          precision="15"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[Iznos_neto]"
+                          dataType="numeric"
+                          name="Iznos_neto"
+                          precision="15"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input].ExternalColumns[DatumEksporta]"
+                          dataType="dbTimeStamp"
+                          name="DatumEksporta" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Tekuca Prodaja"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Tekuca_prodaja]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  [Datum]
+      ,[Sifra_grupe]
+      ,[Naziv_grupe]
+      ,[Sifra_podgrupe_1]
+      ,[Naziv_podgrupe_1]
+      ,[Kanal]
+      ,[Tip]
+      ,[KolicinaSekJM]
+      ,[Iznos_bruto]
+      ,[Iznos_neto]
+,getdate() as DatumEksporta from dbo.[Tekuca_prodaja]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Connections[OleDbConnection]"
+                      connectionManagerID="{EF5ED7FF-E2BD-4A77-A91A-761B1BFEDD47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SourceConnMng]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Datum]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Datum]"
+                          name="Datum"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_grupe]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Sifra_grupe]"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_grupe]"
+                          name="Sifra_grupe"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_grupe]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Naziv_grupe]"
+                          length="30"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_grupe]"
+                          name="Naziv_grupe"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_podgrupe_1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Sifra_podgrupe_1]"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Sifra_podgrupe_1]"
+                          name="Sifra_podgrupe_1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_podgrupe_1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Naziv_podgrupe_1]"
+                          length="30"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Naziv_podgrupe_1]"
+                          name="Naziv_podgrupe_1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Kanal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Kanal]"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Kanal]"
+                          name="Kanal"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Tip]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Tip]"
+                          length="1"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Tip]"
+                          name="Tip"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[KolicinaSekJM]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSekJM]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[KolicinaSekJM]"
+                          name="KolicinaSekJM"
+                          precision="18"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_bruto]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Iznos_bruto]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_bruto]"
+                          name="Iznos_bruto"
+                          precision="15"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_neto]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Iznos_neto]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[Iznos_neto]"
+                          name="Iznos_neto"
+                          precision="15"
+                          scale="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[DatumEksporta]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[DatumEksporta]"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].Columns[DatumEksporta]"
+                          name="DatumEksporta"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Datum]"
+                          dataType="dbDate"
+                          name="Datum" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Sifra_grupe]"
+                          dataType="wstr"
+                          length="6"
+                          name="Sifra_grupe" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Naziv_grupe]"
+                          dataType="wstr"
+                          length="30"
+                          name="Naziv_grupe" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Sifra_podgrupe_1]"
+                          dataType="wstr"
+                          length="6"
+                          name="Sifra_podgrupe_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Naziv_podgrupe_1]"
+                          dataType="wstr"
+                          length="30"
+                          name="Naziv_podgrupe_1" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Kanal]"
+                          dataType="wstr"
+                          length="6"
+                          name="Kanal" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Tip]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Tip" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[KolicinaSekJM]"
+                          dataType="numeric"
+                          name="KolicinaSekJM"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Iznos_bruto]"
+                          dataType="numeric"
+                          name="Iznos_bruto"
+                          precision="15"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[Iznos_neto]"
+                          dataType="numeric"
+                          name="Iznos_neto"
+                          precision="15"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output].ExternalColumns[DatumEksporta]"
+                          dataType="dbTimeStamp"
+                          name="DatumEksporta" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                          dataType="dbDate"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Datum]"
+                          name="Datum" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Sifra_grupe]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Sifra_grupe]"
+                          name="Sifra_grupe" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Naziv_grupe]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Naziv_grupe]"
+                          name="Naziv_grupe" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Sifra_podgrupe_1]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Sifra_podgrupe_1]"
+                          name="Sifra_podgrupe_1" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Naziv_podgrupe_1]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Naziv_podgrupe_1]"
+                          name="Naziv_podgrupe_1" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Kanal]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Kanal]"
+                          name="Kanal" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Tip]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Tip]"
+                          name="Tip" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[KolicinaSekJM]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[KolicinaSekJM]"
+                          name="KolicinaSekJM"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Iznos_bruto]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Iznos_bruto]"
+                          name="Iznos_bruto"
+                          precision="15"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Iznos_neto]"
+                          dataType="numeric"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[Iznos_neto]"
+                          name="Iznos_neto"
+                          precision="15"
+                          scale="4" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[DatumEksporta]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[DatumEksporta]"
+                          name="DatumEksporta" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load To Stg\Load To Staging.Paths[OLE DB Source Output]"
+                  endId="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load To Stg\Load To Staging\Tekuca Prodaja.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load To Stg\Truncate Stage"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{86EC21E7-5D13-49A1-A924-DD08703FB307}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate Stage"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D39D9B1D-5747-415B-9726-8831FC2A0C07}"
+              SQLTask:SqlStatementSource="truncate table stg.ProdajaNaDan;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load To Stg.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BC9853B2-5D1E-4971-BA59-B34527F1696D}"
+          DTS:From="Package\Load To Stg\Truncate Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load To Stg\Load To Staging" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{B7EDF8F2-12F2-428A-972B-6C2147DBDACF}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{1BC7714F-6E22-4E29-9BFC-33470F45367A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send email if Task Fails"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{4D81479D-5337-4127-83D9-621A62EB0B02}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send email if Task Fails"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::From]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Package:                              "+ (DT_WSTR, 50)  @[System::PackageName] +".
+Time:                                      " + (DT_WSTR, 50) @[System::StartTime]  +".
+Task:                                       "+  (DT_WSTR, 50) @[System::TaskName]  +".
+Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"SSIS Error: " +  (DT_STR, 50,1252)  @[System::PackageName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::To]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
+              SendMailTask:From="reporting@imlek.rs"
+              SendMailTask:To="sanja.vukovic@saga.rs"
+              SendMailTask:Subject="SSIS Error: stgProdajaNaDan"
+              SendMailTask:MessageSource="Package:                              stgProdajaNaDan.&#xA;Time:                                      3/12/2018 5:49:56 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load To Stg\Load To Staging"
+          TopLeft="130.533336625781,282.949023654634" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load To Stg\Truncate Stage"
+          TopLeft="127.15238607757,85.572551187429" />
+        <EdgeLayout
+          Id="Package\Load To Stg.PrecedenceConstraints[Constraint]"
+          TopLeft="205.342861351675,127.572551187429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,155.376472467205"
+              Start="0,0"
+              End="0,147.876472467205">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,147.876472467205" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="425,506"
+          Size="425,549"
+          Id="Package\Load To Stg"
+          TopLeft="101.61904938367,25.4078431429748" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package.EventHandlers[OnError]\Send email if Task Fails"
+          TopLeft="493.6,292.8" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Load To Stg\Load To Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage"
+          TopLeft="429,246" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load To Stg\Load To Staging\Tekuca Prodaja"
+          TopLeft="324,50" />
+        <EdgeLayout
+          Id="Package\Load To Stg\Load To Staging.Paths[OLE DB Source Output]"
+          TopLeft="400,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117,154"
+              Start="0,0"
+              End="117,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="4,77" />
+                  <mssgle:LineSegment
+                    End="113,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113,77"
+                    Point2="117,77"
+                    Point3="117,81" />
+                  <mssgle:LineSegment
+                    End="117,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Stg\Load To Staging\Tekuca Prodaja">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

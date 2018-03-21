@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="149"
-  DTS:VersionGUID="{98854684-BE29-4C7D-A65E-63BFF4CFC462}">
+  DTS:VersionBuild="165"
+  DTS:VersionGUID="{E2AACEB6-337E-45A6-A0CD-69433B3C0DD9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -1488,10 +1488,10 @@ RIGHT("0" + (DT_STR, 2, 1252) DATEPART("dd" , GETDATE()), 2) + "-" + RIGHT("0" +
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="miljan.danilovic@saga.rs"
-              SendMailTask:Subject="MTD prodaja izveštaj na dan 05-01-2018"
+              SendMailTask:Subject="MTD prodaja izveštaj na dan 31-01-2018"
               SendMailTask:MessageSource="Poštovani, U prilogu je izveštaj o prodaji." xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
               <SendMailTask:Attachments
-                SendMailTask:FileName="\\tabprod\Izvestaji komercijalisti\Report__20180104.xls" />
+                SendMailTask:FileName="\\tabprod\Izvestaji komercijalisti\Report__20180130.xls" />
             </SendMailTask:SendMailTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1602,15 +1602,13 @@ Task:                                       "+  (DT_WSTR, 50) @[System::TaskName
 Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="Subject">"SSIS Error: " +  (DT_STR, 50,1252)  @[System::PackageName]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="ToLine">@[$Project::To]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="reporting@imlek.rs"
-              SendMailTask:To="sanja.vukovic@saga.rs"
+              SendMailTask:To="miljan.danilovic@saga.rs"
               SendMailTask:Subject="SSIS Error: Package"
-              SendMailTask:MessageSource="Package:                              Package.&#xA;Time:                                      5.1.2018. 13.37.35.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              Package.&#xA;Time:                                      31.1.2018. 10.58.56.&#xA;Task:                                       Send Mail If Task Failed.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>

@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetSupervizor"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{BA7CF429-10B2-44E9-A447-46244DD4DCC5}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{49098FE1-CD5A-4B43-B075-D776C5DA1FBA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/1/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/3/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/2/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/4/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -192,7 +192,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\rawfiles\Source_2018-01-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\Source_2018-03-12.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -221,7 +221,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20180101'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20180103'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1516,13 +1516,13 @@ synTblImlekDWSupervizor s on (p.SupervizorSifra = s.SupervizorSifra and Currentf
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                              name="Expression">[ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage.Outputs[OLE DB Source Output].Columns[SupervizorID]}) ==  TRUE  &amp;&amp; [ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage.Outputs[OLE DB Source Output].Columns[MaxSupervizorStartDate]}) ==  TRUE </property>
+                              name="Expression">[ISNULL](#{Package\Load To Fct\Foreach Loop Container\Load To Fct\Budzet Supervizor Stage.Outputs[OLE DB Source Output].Columns[SupervizorID]}) ==  TRUE </property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Specifies the friendly version of the expression. This expression version uses column names."
                               expressionType="Notify"
-                              name="FriendlyExpression">ISNULL(SupervizorID) ==  TRUE  &amp;&amp; ISNULL(MaxSupervizorStartDate) ==  TRUE </property>
+                              name="FriendlyExpression">ISNULL(SupervizorID) ==  TRUE </property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -4186,7 +4186,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetSupervizor"
-              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      1/18/2018 2:00:21 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetSupervizor.&#xA;Time:                                      3/12/2018 2:56:16 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4468,7 +4468,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="63.1753991839028,24.6872613885341,16,16"
+              BoundingBox="63.175399183903,24.6872613885341,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4560,7 +4560,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-74.3809538690411,58.0959793629917,16,16"
+              BoundingBox="-74.380953869041,58.0959793629917,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
