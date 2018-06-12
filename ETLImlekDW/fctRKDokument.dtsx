@@ -12,8 +12,8 @@
   DTS:ObjectName="fctRKDokument"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="272"
-  DTS:VersionGUID="{041BB61E-D8B9-4398-8C19-31FB87EB2D99}">
+  DTS:VersionBuild="276"
+  DTS:VersionGUID="{9D11F48F-F325-43A9-B0D6-3D64B9B52953}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/19/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/19/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/20/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -82,7 +82,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Godina">
       <DTS:VariableValue
-        DTS:DataType="3">2017</DTS:VariableValue>
+        DTS:DataType="3">2018</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -93,7 +93,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="3">12</DTS:VariableValue>
+        DTS:DataType="3">5</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -149,7 +149,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\RKDokumentSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\RKDokumentSource_2018-05-19.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -178,7 +178,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctRKDokumenta '20171218','20171219'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctRKDokumenta '20180519','20180520'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6965,14 +6965,14 @@ synTblImlekDWIstovarnoMesto im on (p.Sifra_Kupca = im.IstovarnoMestoSifra and p.
                   startId="Package\Load To Fct\Load To Fct\Lookup InfMember IstovarnoMesto.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
-                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Ordera.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
                   endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM Tip Ordera.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Fakture.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
                   endId="Package\Load To Fct\Load To Fct\Union All 3.Inputs[Union All Input 2]"
@@ -6990,9 +6990,9 @@ synTblImlekDWIstovarnoMesto im on (p.Sifra_Kupca = im.IstovarnoMestoSifra and p.
                   startId="Package\Load To Fct\Load To Fct\Lookup IM tip Naloga.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
-                  endId="Package\Load To Fct\Load To Fct\Lookup Datum GK.Inputs[Lookup Input]"
+                  endId="Package\Load To Fct\Load To Fct\Union All 2.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
-                  startId="Package\Load To Fct\Load To Fct\Lookup Datum Fakture.Outputs[Lookup Match Output]" />
+                  startId="Package\Load To Fct\Load To Fct\Lookup Tip Ordera.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate TipOrdera.Inputs[Derived Column Input]"
@@ -7211,7 +7211,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctRKDokument"
-              SendMailTask:MessageSource="Package:                              fctRKDokument.&#xA;Time:                                      12/18/2017 2:15:31 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctRKDokument.&#xA;Time:                                      5/19/2018 8:35:29 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -8132,7 +8132,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="1024.5,706">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8168,7 +8168,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="736,759">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8312,7 +8312,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output8]"
           TopLeft="1193,467">
           <EdgeLayout.Curve>
             <mssgle:Curve

@@ -12,8 +12,8 @@
   DTS:ObjectName="fctKonverzijaJM"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="108"
-  DTS:VersionGUID="{610B6EBD-6829-4E80-AE76-D62B29F6F84A}">
+  DTS:VersionBuild="109"
+  DTS:VersionGUID="{2017F404-FF26-486D-96BB-E47A492344F7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">4/2/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/19/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">4/3/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PracenjeCenaSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\PracenjeCenaSource_2018-05-09.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selKonverzijaJM '20171218','20171219'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selKonverzijaJM '20180402','20180403'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2293,7 +2293,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctKonverzijaJM"
-              SendMailTask:MessageSource="Package:                              fctKonverzijaJM.&#xA;Time:                                      12/18/2017 2:09:47 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctKonverzijaJM.&#xA;Time:                                      5/9/2018 5:59:15 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>

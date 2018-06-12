@@ -12,8 +12,8 @@
   DTS:ObjectName="fctBudzetKA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="163"
-  DTS:VersionGUID="{F3D3506A-2803-4B94-8A41-C7A84FDC8E04}">
+  DTS:VersionBuild="167"
+  DTS:VersionGUID="{2D73941F-6B51-4103-A160-37B79E9B132C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FileName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_022018.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_062018.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/1/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/5/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -47,7 +47,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">1/2/2018 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">1/6/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -112,7 +112,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_022018.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_062018.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -123,7 +123,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileNamePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_022018.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Budzeti\\\tabprod\BI_Razmena\IN\Budzeti\BGT_KEY ACCOUNT_062018.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -163,7 +163,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Mesec">
       <DTS:VariableValue
-        DTS:DataType="8">02</DTS:VariableValue>
+        DTS:DataType="8">06</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -210,7 +210,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\rawfiles\Bgt_KA_Source_2018-03-13.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\Bgt_KA_Source_2018-06-07.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -239,7 +239,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFct '20180101'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFct '20180105'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2149,7 +2149,7 @@ where [refTable].[SifraArtikla] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\439:invalid};</property>
+                          name="ParameterMap">#{Package\Load To Fct\Foreach Loop Container\Load To Fct\885:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3727,9 +3727,9 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Check Kupac.Outputs[InferredKupac]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
                       name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output2]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\FctBudzetKA Destination.Inputs[OLE DB Destination Input]"
@@ -3742,9 +3742,9 @@ where [refTable].[Year] = ? and [refTable].[MonthNumberInYear] = ?</property>
                       startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Artikal.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
-                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All.Inputs[Union All Input 3]"
+                      endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Cast godina.Inputs[Derived Column Input]"
                       name="Lookup Match Output"
-                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup IM Kupac.Outputs[Lookup Match Output]" />
+                      startId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Lookup Budzet.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output1]"
                       endId="Package\Load To Fct\Foreach Loop Container\Load To Fct\Union All 1.Inputs[Union All Input 3]"
@@ -3993,7 +3993,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctBudzetKA"
-              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      3/13/2018 4:41:53 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctBudzetKA.&#xA;Time:                                      6/7/2018 10:23:32 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4303,7 +4303,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="44.675399183903,30.649555182721,16,16"
+              BoundingBox="44.6753991839028,30.649555182721,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4899,37 +4899,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output3]"
-          TopLeft="1102,479">
+          TopLeft="286,555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-58,48"
+              EndConnector="370,-325"
               Start="0,0"
-              End="-58,40.5">
+              End="370,-317.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20" />
+                    End="0,-157.466468078255" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="-4,24" />
+                    Point1="0,-157.466468078255"
+                    Point2="0,-161.466468078255"
+                    Point3="4,-161.466468078255" />
                   <mssgle:LineSegment
-                    End="-54,24" />
+                    End="366,-161.466468078255" />
                   <mssgle:CubicBezierSegment
-                    Point1="-54,24"
-                    Point2="-58,24"
-                    Point3="-58,28" />
+                    Point1="366,-161.466468078255"
+                    Point2="370,-161.466468078255"
+                    Point3="370,-165.466468078255" />
                   <mssgle:LineSegment
-                    End="-58,40.5" />
+                    End="370,-317.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-77.19138671875,29,96.3827734375,11.609375"
+              BoundingBox="136.80861328125,-156.466468078255,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5007,37 +5007,37 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load To Fct\Foreach Loop Container\Load To Fct.Paths[Lookup Match Output]"
-          TopLeft="286,555">
+          TopLeft="1102,479">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="370,-325"
+              EndConnector="-58,48"
               Start="0,0"
-              End="370,-317.5">
+              End="-58,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-157.466468078255" />
+                    End="0,20" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-157.466468078255"
-                    Point2="0,-161.466468078255"
-                    Point3="4,-161.466468078255" />
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="-4,24" />
                   <mssgle:LineSegment
-                    End="366,-161.466468078255" />
+                    End="-54,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="366,-161.466468078255"
-                    Point2="370,-161.466468078255"
-                    Point3="370,-165.466468078255" />
+                    Point1="-54,24"
+                    Point2="-58,24"
+                    Point3="-58,28" />
                   <mssgle:LineSegment
-                    End="370,-317.5" />
+                    End="-58,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="136.80861328125,-156.466468078255,96.3827734375,11.609375"
+              BoundingBox="-77.19138671875,29,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

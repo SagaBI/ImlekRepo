@@ -12,8 +12,8 @@
   DTS:ObjectName="fctLogistikaKrnjesevciTrosak"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{0867E1C1-74D2-4052-B3BC-F004C01836A5}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{E4D860DC-96B5-46E1-B2F9-144D9BB13A6F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         DTS:Name="ExcelFilePath">@[User::FilePath]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180315.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180611.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -96,7 +96,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FileName">
       <DTS:VariableValue
-        DTS:DataType="8">KrnjesevciData_20180315.xlsx</DTS:VariableValue>
+        DTS:DataType="8">KrnjesevciData_20180611.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -107,7 +107,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180315.xlsx</DTS:VariableValue>
+        DTS:DataType="8">\\tabprod\BI_Razmena\IN\Logistika\KrnjesevciData_20180611.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -154,7 +154,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\rawfiles\KrnjesevciDataSource_2018-03-15.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\KrnjesevciDataSource_2018-06-11.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -226,7 +226,7 @@
                 <FEFEProperty
                   Folder="\\tabprod\BI_Razmena\IN\Logistika" />
                 <FEFEProperty
-                  FileSpec="KrnjesevciData_20180315.xlsx" />
+                  FileSpec="KrnjesevciData_20180611.xlsx" />
                 <FEFEProperty
                   FileNameRetrievalType="0" />
                 <FEFEProperty
@@ -1862,12 +1862,13 @@ where D.DateID &gt; (select isnull(MAX(DateID), 0) from ImlekDW.[fct].[FctLogist
               DTS:refId="Package\Load To Fct\Foreach Loop Container\Log Krnjesevci Data"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
               DTS:DTSID="{2298f05e-ffd1-4399-8685-dc2db271548c}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Log Krnjesevci Data"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1926,14 +1927,6 @@ where D.DateID &gt; (select isnull(MAX(DateID), 0) from ImlekDW.[fct].[FctLogist
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 3"
               DTS:To="Package\Load To Fct\Foreach Loop Container\File System Task" />
-            <DTS:PrecedenceConstraint
-              DTS:refId="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
-              DTS:CreationName=""
-              DTS:DTSID="{D8524115-7F14-46CD-9C01-3507C179C8C1}"
-              DTS:From="Package\Load To Fct\Foreach Loop Container\File System Task"
-              DTS:LogicalAnd="True"
-              DTS:ObjectName="Constraint 4"
-              DTS:To="Package\Load To Fct\Foreach Loop Container\Log Krnjesevci Data" />
           </DTS:PrecedenceConstraints>
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
@@ -1993,7 +1986,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="miljan.danilovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctLogistikaKrnjesevciTrosak"
-              SendMailTask:MessageSource="Package:                              fctLogistikaKrnjesevciTrosak.&#xA;Time:                                      3/15/2018 9:06:26 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctLogistikaKrnjesevciTrosak.&#xA;Time:                                      6/11/2018 10:13:38 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -2027,6 +2020,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Size="226,42"
           Id="Package\Load To Fct\Foreach Loop Container\Load To Staging From Raw File"
           TopLeft="81.9777720881365,222.171245592741" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load To Fct\Foreach Loop Container\Log Krnjesevci Data"
+          TopLeft="127.977772088136,508.055546709233" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load To Fct\Foreach Loop Container\Truncate Stage"
@@ -2147,44 +2144,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                     Point3="28.46427632364,22.995090898189" />
                   <mssgle:LineSegment
                     End="28.46427632364,30.490181796378" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Load To Fct\Foreach Loop Container\Log Krnjesevci Data"
-          TopLeft="127.977772088136,508.055546709233" />
-        <EdgeLayout
-          Id="Package\Load To Fct\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
-          TopLeft="245.19443040217,461.055546709233">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-31.2166583140335,47"
-              Start="0,0"
-              End="-31.2166583140335,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
-                  <mssgle:LineSegment
-                    End="-27.2166583140335,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.2166583140335,23.5"
-                    Point2="-31.2166583140335,23.5"
-                    Point3="-31.2166583140335,27.5" />
-                  <mssgle:LineSegment
-                    End="-31.2166583140335,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -12,8 +12,8 @@
   DTS:ObjectName="fctArtikliInovacije"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="113"
-  DTS:VersionGUID="{0E427417-ABDD-4550-8810-1DEDD5489AE1}">
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{19450801-48EB-4338-A25B-E28E144DD9AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/17/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/19/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">10/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/20/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\ArtikliInovacijeSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\ArtikliInovacijeSource_2018-05-19.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctArtikliInovacije '20171017','20171018'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctArtikliInovacije '20180519','20180520'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2740,42 +2740,42 @@ where [refTable].[SifraArtikla] = ?</property>
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
                   endId="Package\Load To Fct\Load To Fct\Union All 1.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
                   endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
                   endId="Package\Load To Fct\Load To Fct\Union All.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
                   endId="Package\Load To Fct\Load To Fct\Add StartDate Artikal.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup Artikal.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
                   endId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumDo.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
                   endId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
                   startId="Package\Load To Fct\Load To Fct\Lookup DatumOd.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
                   endId="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\Insert DimDateDo.Outputs[OLE DB Command Output]" />
@@ -2785,7 +2785,7 @@ where [refTable].[SifraArtikla] = ?</property>
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\Insert DimDateOd.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+                  refId="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
                   endId="Package\Load To Fct\Load To Fct\Lookup IM Artikal.Inputs[Lookup Input]"
                   name="OLE DB Command Output"
                   startId="Package\Load To Fct\Load To Fct\insert im artikal.Outputs[OLE DB Command Output]" />
@@ -3167,9 +3167,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{CDE1BC61-8CD5-4FB7-8930-5C836789A132}"
               SendMailTask:From="reporting@imlek.rs"
-              SendMailTask:To="sanja.vukovic@saga.rs;miljan.danilovic@saga.rs"
+              SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctArtikliInovacije"
-              SendMailTask:MessageSource="Package:                              fctArtikliInovacije.&#xA;Time:                                      12/18/2017 2:59:13 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctArtikliInovacije.&#xA;Time:                                      5/19/2018 8:36:08 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -3581,7 +3581,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
           TopLeft="514,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3615,7 +3615,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
           TopLeft="763,100">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3727,7 +3727,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Insert DimDateOd"
           TopLeft="601,360" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output]"
           TopLeft="875,402">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3805,7 +3805,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Union All"
           TopLeft="771,468" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
           TopLeft="693,469">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3841,7 +3841,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
           TopLeft="955.5,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3915,7 +3915,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Insert DimDateDo"
           TopLeft="544,537" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup No Match Output1]"
           TopLeft="813,599">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3955,7 +3955,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM"
           TopLeft="445,621" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output2]"
+          Id="Package\Load To Fct\Load To Fct.Paths[OLE DB Command Output]"
           TopLeft="626,579">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3993,7 +3993,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           Id="Package\Load To Fct\Load To Fct\Union All 1"
           TopLeft="638,681" />
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output4]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output2]"
           TopLeft="624,642">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4023,7 +4023,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output5]"
+          Id="Package\Load To Fct\Load To Fct.Paths[Lookup Match Output3]"
           TopLeft="893.5,620">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4096,15 +4096,25 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Artikli Inovacije Stage">
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumOd">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4132,12 +4142,12 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumOd">
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4160,7 +4170,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4170,7 +4180,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4178,7 +4188,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\FctArtikliInovacije">
+    design-time-name="Package\Load To Fct\Load To Fct\Artikli Inovacije Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4210,6 +4220,42 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Fct\Load To Fct\FctArtikliInovacije">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4275,52 +4321,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumOd_IM">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Fct\Load To Fct\Lookup DatumDo_IM">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dim].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

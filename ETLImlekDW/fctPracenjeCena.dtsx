@@ -12,8 +12,8 @@
   DTS:ObjectName="fctPracenjeCena"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="95"
-  DTS:VersionGUID="{011E5932-36F8-46E1-87BB-F59A5FF22C89}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{2766C8D5-04E1-485D-8CBB-38B41FDD0A60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/18/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/19/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">12/19/2017 12:00:00 PM</DTS:Property>
+        DTS:Name="ParameterValue">5/20/2018 12:00:00 PM</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\RawFiles\PracenjeCenaSource_2017-12-18.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\PracenjeCenaSource_2018-05-19.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SQLCommand">
       <DTS:VariableValue
-        DTS:DataType="8">exec dbo.selFctPracenjeCena '20171218','20171219'</DTS:VariableValue>
+        DTS:DataType="8">exec dbo.selFctPracenjeCena '20180519','20180520'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1434,7 +1434,7 @@ where [refTable].[SifraArtikla] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\1197:invalid};</property>
+                      name="ParameterMap">#{Package\Load To Fct\Load To Fct\640:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3734,7 +3734,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: fctPracenjeCena"
-              SendMailTask:MessageSource="Package:                              fctPracenjeCena.&#xA;Time:                                      12/18/2017 2:14:24 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              fctPracenjeCena.&#xA;Time:                                      5/19/2018 8:34:53 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
