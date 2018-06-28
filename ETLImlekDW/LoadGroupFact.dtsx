@@ -12,8 +12,8 @@
   DTS:ObjectName="LoadGroupFact"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{26E05320-6E67-4043-9926-036346151C6B}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{60B6BA98-44A8-40B8-824D-0942E39654D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -24,7 +24,7 @@
       DTS:ObjectName="ExtractDateFrom">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">4/3/2018</DTS:Property>
+        DTS:Name="ParameterValue">6/28/2018</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -33,7 +33,7 @@
       DTS:ObjectName="ExtractDateTo">
       <DTS:Property
         DTS:DataType="7"
-        DTS:Name="ParameterValue">4/4/2018</DTS:Property>
+        DTS:Name="ParameterValue">6/29/2018</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -383,6 +383,27 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Load to Fct\FctRaspodelaDelhaize PreviousMonth"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7c36bfd4-53ad-4dc5-91f2-5a605f86d7bd}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FctRaspodelaDelhaize PreviousMonth"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>fctDelhaizeRaspodelaPreviousMonth.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>ExtractDateFrom</ParameterName>
+                <BindedVariableOrParameterName>User::ExtractDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Load to Fct\FctRKDokument"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="Execute Package Task"
@@ -544,11 +565,11 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
           DTS:CreationName=""
-          DTS:DTSID="{ED885A88-DA97-41CA-98CF-6A8E226A49E4}"
+          DTS:DTSID="{8252A6C0-B390-4062-9974-938542C6877F}"
           DTS:From="Package\Load to Fct\FctArtikliInovacije"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 13"
-          DTS:To="Package\Load to Fct\FctBudzetKA" />
+          DTS:To="Package\Load to Fct\FctRaspodelaDelhaize PreviousMonth" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 14]"
           DTS:CreationName=""
@@ -565,6 +586,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 15"
           DTS:To="Package\Load to Fct\FctProdaja" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 16]"
+          DTS:CreationName=""
+          DTS:DTSID="{9B79D6D0-F3CA-4931-B499-6953FB9B474B}"
+          DTS:From="Package\Load to Fct\FctRaspodelaDelhaize PreviousMonth"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 16"
+          DTS:To="Package\Load to Fct\FctBudzetKA" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load to Fct.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -682,7 +711,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: LoadGroupFact"
-              SendMailTask:MessageSource="Package:                              LoadGroupFact.&#xA;Time:                                      4/3/2018 10:02:52 AM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              LoadGroupFact.&#xA;Time:                                      6/28/2018 12:27:01 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -908,40 +937,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
-          TopLeft="547,450">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-135,19"
-              Start="0,0"
-              End="-127.5,19">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-63.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.5,0"
-                    Point2="-67.5,0"
-                    Point3="-67.5,4" />
-                  <mssgle:LineSegment
-                    End="-67.5,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-67.5,15"
-                    Point2="-67.5,19"
-                    Point3="-71.5,19" />
-                  <mssgle:LineSegment
-                    End="-127.5,19" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1286,11 +1281,83 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Load to Fct\FctRaspodelaDelhaize PreviousMonth"
+          TopLeft="606,503" />
+        <EdgeLayout
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 13]"
+          TopLeft="638,471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.5,32"
+              Start="0,0"
+              End="94.5,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="90.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.5,16"
+                    Point2="94.5,16"
+                    Point3="94.5,20" />
+                  <mssgle:LineSegment
+                    End="94.5,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load to Fct.PrecedenceConstraints[Constraint 16]"
+          TopLeft="606,524">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194,-55"
+              Start="0,0"
+              End="-186.5,-55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-93,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93,0"
+                    Point2="-97,0"
+                    Point3="-97,-4" />
+                  <mssgle:LineSegment
+                    End="-97,-51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97,-51"
+                    Point2="-97,-55"
+                    Point3="-101,-55" />
+                  <mssgle:LineSegment
+                    End="-186.5,-55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="866,1045"
-          Size="866,1088"
+          PanelSize="879,1045"
+          Size="879,1088"
           Id="Package\Load to Fct"
           TopLeft="103.61904938367,0.407843142974798" />
       </GraphLayout>

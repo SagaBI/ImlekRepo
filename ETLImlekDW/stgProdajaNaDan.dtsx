@@ -12,8 +12,8 @@
   DTS:ObjectName="stgProdajaNaDan"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="270"
-  DTS:VersionGUID="{9E50CC44-D8B6-43B0-9169-97C51D85A2A4}">
+  DTS:VersionBuild="272"
+  DTS:VersionGUID="{69F86056-4B1E-42F2-867F-7D936ECDF56A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -118,7 +118,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RawfilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\tabtest\rawfiles\ProdajaSource_2018-06-06.raw</DTS:VariableValue>
+        DTS:DataType="8">\\tabtest\rawfiles\ProdajaSource_2018-06-21.raw</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1446,7 +1446,7 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
               SendMailTask:From="reporting@imlek.rs"
               SendMailTask:To="sanja.vukovic@saga.rs"
               SendMailTask:Subject="SSIS Error: stgProdajaNaDan"
-              SendMailTask:MessageSource="Package:                              stgProdajaNaDan.&#xA;Time:                                      6/6/2018 2:49:32 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              SendMailTask:MessageSource="Package:                              stgProdajaNaDan.&#xA;Time:                                      6/21/2018 3:30:20 PM.&#xA;Task:                                       Send email if Task Fails.&#xA;Error Description:                " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1464,6 +1464,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Load To Stg\Arhiva"
+          TopLeft="158,49" />
         <NodeLayout
           Size="156,42"
           Id="Package\Load To Stg\Load To Staging"
@@ -1494,10 +1498,6 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="109,42"
-          Id="Package\Load To Stg\Arhiva"
-          TopLeft="158,49" />
         <EdgeLayout
           Id="Package\Load To Stg.PrecedenceConstraints[Constraint 1]"
           TopLeft="210.326193038785,91">
@@ -1543,86 +1543,10 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\Load To Stg\Load To Staging">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Load To Stg\Load To Staging\Tekuca Prodaja"
-          TopLeft="324,50" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage"
-          TopLeft="429,246" />
-        <EdgeLayout
-          Id="Package\Load To Stg\Load To Staging.Paths[OLE DB Source Output]"
-          TopLeft="400,92">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="117,154"
-              Start="0,0"
-              End="117,146.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,73"
-                    Point2="0,77"
-                    Point3="4,77" />
-                  <mssgle:LineSegment
-                    End="113,77" />
-                  <mssgle:CubicBezierSegment
-                    Point1="113,77"
-                    Point2="117,77"
-                    Point3="117,81" />
-                  <mssgle:LineSegment
-                    End="117,146.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load To Stg\Load To Staging\Tekuca Prodaja">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Load To Stg\Arhiva">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="146,42"
           Id="Package\Load To Stg\Arhiva\ProdajaNaDan"
@@ -1662,7 +1586,9 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1683,6 +1609,84 @@ Error Description:                "+ (DT_STR, 2000,1252)  @[System::ErrorDescrip
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load To Stg\Arhiva\ProdajaNaDanArhiva">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load To Stg\Load To Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load To Stg\Load To Staging\Tekuca Prodaja"
+          TopLeft="324,50" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage"
+          TopLeft="429,246" />
+        <EdgeLayout
+          Id="Package\Load To Stg\Load To Staging.Paths[OLE DB Source Output]"
+          TopLeft="400,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117,154"
+              Start="0,0"
+              End="117,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="4,77" />
+                  <mssgle:LineSegment
+                    End="113,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113,77"
+                    Point2="117,77"
+                    Point3="117,81" />
+                  <mssgle:LineSegment
+                    End="117,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Stg\Load To Staging\ProdajaNaDan Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load To Stg\Load To Staging\Tekuca Prodaja">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
